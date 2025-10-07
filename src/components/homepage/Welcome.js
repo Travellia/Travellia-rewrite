@@ -1,49 +1,19 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Image from "next/image";
+import CarouselWrapper from "@/components/ui/carousel";
 
 export default function Welcome() {
+  const slides = [
+    { id: 1, image: "/home/welcome/welcome.jpg" },
+    { id: 2, image: "/home/welcome/welcome2.jpg" },
+    { id: 3, image: "/home/welcome/welcome3.jpg" },
+  ];
+
   return (
     <section className="relative h-[100vh] w-[100vw] flex items-center justify-center">
-      <Carousel className="absolute w-full h-full z-1">
-        <CarouselContent className={"w-full h-full relative"}>
-          <CarouselItem>
-            <Image
-              src="/home/welcome/welcome.jpg"
-              alt="Scenic mountain view for travel"
-              fill
-              className="object-cover"
-            />
-          </CarouselItem>
-          <CarouselItem>
-            <Image
-              src="/home/welcome/welcome2.jpg"
-              alt="Scenic mountain view for travel"
-              fill
-              className="object-cover"
-            />
-          </CarouselItem>
-          <CarouselItem>
-            <Image
-              src="/home/welcome/welcome3.jpg"
-              alt="Scenic mountain view for travel"
-              fill
-              className="object-cover"
-            />
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-transparent border-none text-white" />
-        <CarouselNext className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-transparent border-none text-white" />
-      </Carousel>
-      <ContentLayoutWrapper className="flex flex-col items-center justify-center gap-4 z-10">
+      <CarouselWrapper slides={slides} className={"!absolute"} />
+      <ContentLayoutWrapper className="flex flex-col items-center justify-center gap-7 z-10">
         <h2 className="w-full text-center font-bold text-primary tracking-widest text-[clamp(4rem,10vw,12rem)]">
           TRAVELLIA
         </h2>
