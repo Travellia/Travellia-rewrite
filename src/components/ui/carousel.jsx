@@ -13,6 +13,7 @@ const Carousel = ({
   effect = "fade",
   effectOptions = { crossFade: true },
   speed = 3000,
+  navigation = true,
   slides,
   className,
 }) => {
@@ -26,7 +27,7 @@ const Carousel = ({
         delay: speed,
         disableOnInteraction: false,
       }}
-      navigation={true}
+      navigation={navigation}
       loop={true}
       className={`w-full h-full absolute top-0 left-0 ${className}`}
     >
