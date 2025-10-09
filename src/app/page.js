@@ -9,6 +9,7 @@ export default function Home() {
       <Welcome />
       <OfferedServices />
       <Adventures />
+      <PopularDestination />
     </div>
   );
 }
