@@ -3,6 +3,7 @@ import OfferedServices from "@/components/homepage/OfferedServices";
 import Adventures from "@/components/homepage/Adventures";
 import PopularDestination from "@/components/homepage/PopularDestination";
 import UmrahPackages from "@/components/homepage/UmrahPackages";
+import SummerDeals from "@/components/homepage/SummerDeals";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Adventures />
       <PopularDestination />
       <UmrahPackages />
+      <SummerDeals />
     </div>
   );
 }
