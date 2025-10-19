@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const DESTINAION_CARDS_DATA = [
   {
     id: 1,
-    src: "/home/popular-destinations/destination1.jpg",
+    src: "/home/popular-destinations/destination1.png",
     country: "Barlin",
     city: "France",
     description:
@@ -17,7 +17,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 2,
-    src: "/home/popular-destinations/destination2.jpg",
+    src: "/home/popular-destinations/destination2.png",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -31,7 +31,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 3,
-    src: "/home/popular-destinations/destination3.jpg",
+    src: "/home/popular-destinations/destination3.png",
     country: "Moscow",
     city: "Russia",
     description:
@@ -42,7 +42,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 4,
-    src: "/home/popular-destinations/destination4.jpg",
+    src: "/home/popular-destinations/destination4.png",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -53,7 +53,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 5,
-    src: "/home/popular-destinations/destination5.jpg",
+    src: "/home/popular-destinations/destination5.png",
     country: "Moscow",
     city: "Russia",
     description:
@@ -64,7 +64,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 6,
-    src: "/home/popular-destinations/destination6.jpg",
+    src: "/home/popular-destinations/destination6.png",
     country: "Barlin",
     city: "France",
     description:
