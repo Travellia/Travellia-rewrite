@@ -3,6 +3,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PhotoCollageCarousel from "./photo-collage-carousel";
 import TravelDestinations from "./TravelDestinations";
+import FamilyAdventures from "./FamilyAdventures";
 
 const photos = [
   { id: 1, src: "/home/welcome/welcome.jpg", alt: "Photo 1" },
@@ -35,6 +36,7 @@ const Adventures = () => {
         <PhotoCollageCarousel slides={photos} />
       </ContentLayoutWrapper>
       <TravelDestinations />
+      <FamilyAdventures />
     </section>
   );
 };
