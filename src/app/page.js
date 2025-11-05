@@ -6,6 +6,7 @@ import UmrahPackages from "@/components/homepage/UmrahPackages";
 import SummerDeals from "@/components/homepage/SummerDeals";
 import HotelBookings from "@/components/homepage/HotelBookings";
 import OfferedServices from "@/components/homepage/OfferedServices";
+import TrendingPackages from "@/components/homepage/TrendingPackages";
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
       <UmrahPackages />
       <SummerDeals />
       <HotelBookings />
-      <OfferedServices/>
+      <OfferedServices />
+      <TrendingPackages />
     </div>
   );
 }
