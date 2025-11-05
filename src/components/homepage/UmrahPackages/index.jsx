@@ -57,6 +57,7 @@ const index = () => {
       <div className="absolute top-0 left-0 w-1/2 h-full">
         <Image
           src={"/home/umrah-package/Madina.jpg"}
+          alt="Madina"
           fill
           className={"aspect-auto object-cover"}
         />
@@ -65,20 +66,23 @@ const index = () => {
         <Image
           fill
           src={"/shapes/leaf.png"}
+          alt="leaf"
         />
       </div>
       <div className="absolute -bottom-5 right-3 w-2/10 h-4/10 z-1 rotate-180">
         <Image
           fill
           src={"/shapes/leaf.png"}
+          alt="leaf"
         />
       </div>
       <div className="absolute top-10 left-0 z-1 h-1/2 w-full">
-        <Image src={"/shapes/paper-plane.png"} fill />
+        <Image src={"/shapes/paper-plane.png"} alt="paper-plane" fill />
       </div>
       <div className="absolute right-0 top-0 w-1/2 h-full">
         <Image
           src={"/home/umrah-package/Makkah.jpg"}
+          alt="Makkah"
           fill
           className={" aspect-auto object-cover"}
         />

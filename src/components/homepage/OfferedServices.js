@@ -26,13 +26,13 @@ const services = [
 ];
 export default function OfferedServices() {
     return (
-        <section className="pt-[20vh] bg-background">
-            <ContentLayoutWrapper className="flex flex-col z-10">
-                <div className="text-center mb-8">
+        <section className="pt-[20vh] bg-background relative overflow-hidden">
+            <ContentLayoutWrapper className="flex flex-col z-2">
+                <div className="text-center mb-8 z-2">
                     <h2 className="text-lg font-ultralight text-center capitalize">We Offer best</h2>
                     <h2 className="text-5xl font-bold text-center capitalize text-primary">services</h2>
                 </div>
-                <div className="grid md:grid-rows-2 md:grid-cols-2 sm:grid-cols-1 gap-6 w-[70%]">
+                <div className="grid md:grid-rows-2 md:grid-cols-2 sm:grid-cols-1 gap-6 w-[70%] z-2">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col items-center gap-4 py-8 px-12 border border-gray-200 bg-gray-100 rounded-4xl hover:shadow-lg transition-shadow duration-300">
                             <Image src={service.iconPath} alt={service.title} className="w-20 h-20 object-contain" width={60} height={60} />
@@ -43,6 +43,9 @@ export default function OfferedServices() {
                     ))}
                 </div>
             </ContentLayoutWrapper>
+            <div className="w-1/2 h-full absolute top-0 right-0 z-1">
+                <Image fill src={"/home/offered-services/about-us.png"} alt="About us image"/>
+            </div>
         </section>
     );
 }
