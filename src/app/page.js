@@ -8,6 +8,7 @@ import HotelBookings from "@/components/homepage/HotelBookings";
 import OfferedServices from "@/components/homepage/OfferedServices";
 import TrendingPackages from "@/components/homepage/TrendingPackages";
 import BookNow from "@/components/homepage/BookNow";
+import Testimonials from "@/components/homepage/Testimonial"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <OfferedServices />
       <TrendingPackages />
       <BookNow/>
+      <Testimonials/>
     </div>
   );
 }
