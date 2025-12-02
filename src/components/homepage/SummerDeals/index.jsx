@@ -26,6 +26,7 @@ const index = () => {
     <section className="relative min-h-[115vh] flex items-end justify-end">
       <Image
         src={"/home/summer-deals/plane.png"}
+        alt="plane"
         fill
         className="absolute left-0 top-0 z-0"
       />
@@ -51,11 +52,8 @@ const index = () => {
         <div className="py-8 px-16 rounded-3xl shadow-2xl flex items-center justify-between gap-6 bg-gray-200 h-[35vh] w-full absolute -bottom-40">
           <div className="flex items-center gap-8 justify-between w-full">
             {STATS.map((stat, index) => (
-              <>
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center"
-                >
+              <React.Fragment key={index}>
+                <div className="flex flex-col items-center text-center">
                   <div className="mb-6">
                     <Image
                       src={stat.icon}
@@ -75,7 +73,7 @@ const index = () => {
                 {index !== STATS.length - 1 && (
                   <div className="bg-gray-400/50 h-px w-3/10 rotate-90" />
                 )}
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>

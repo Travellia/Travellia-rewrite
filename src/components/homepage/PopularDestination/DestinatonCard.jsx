@@ -11,6 +11,7 @@ const DestinatonCard = ({ data, largeText }) => {
     >
       <Image
         src={data.src}
+        alt={`${data.country}, ${data.city}`}
         fill
         className="absolute top-0 left-0 object-cover rounded-lg z-0"
       />

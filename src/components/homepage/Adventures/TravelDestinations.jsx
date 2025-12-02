@@ -39,6 +39,7 @@ const TravelDestinations = () => {
           width={100}
           height={100}
           className="!w-full !h-full"
+          alt="Bridge"
         />
       </div>
       <ContentLayoutWrapper>
