@@ -11,7 +11,7 @@ export default function Welcome() {
   ];
 
   return (
-    <section className="relative h-[100vh] w-[100vw] flex items-center justify-center">
+    <section className="relative h-screen max-w-[100vw] flex items-center justify-center">
       <CarouselWrapper slides={slides} className={"!absolute"} />
       <ContentLayoutWrapper className="flex flex-col items-center justify-center gap-7 z-10">
         <h2 className="w-full text-center font-bold text-primary tracking-widest text-[clamp(4rem,10vw,12rem)]">
