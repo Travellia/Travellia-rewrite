@@ -16,7 +16,7 @@ const UMRAH_PACKAGES = [
       "Return Flights, Transport, and Ziyarat included.",
     ],
     price: 1090,
-    image: "/home/umrah-package/package1.jpg",
+    image: "/home/umrah-package/package1.png",
     alt: "Umrah Package 1",
   },
   {
@@ -31,7 +31,7 @@ const UMRAH_PACKAGES = [
       "Return Flights, Transport, and Ziyarat included.",
     ],
     price: 1090,
-    image: "/home/umrah-package/package2.jpg",
+    image: "/home/umrah-package/package2.png",
     alt: "Umrah Package 2",
   },
   {
@@ -46,7 +46,7 @@ const UMRAH_PACKAGES = [
       "Return Flights, Transport, and Ziyarat included.",
     ],
     price: 1090,
-    image: "/home/umrah-package/package3.jpg",
+    image: "/home/umrah-package/package3.png",
     alt: "Umrah Package 3",
   },
 ];
@@ -61,6 +61,21 @@ const index = () => {
           className={"aspect-auto object-cover"}
         />
       </div>
+      <div className="absolute top-0 left-0 w-2/10 h-4/10 z-1">
+        <Image
+          fill
+          src={"/shapes/leaf.png"}
+        />
+      </div>
+      <div className="absolute -bottom-5 right-3 w-2/10 h-4/10 z-1 rotate-180">
+        <Image
+          fill
+          src={"/shapes/leaf.png"}
+        />
+      </div>
+      <div className="absolute top-10 left-0 z-1 h-1/2 w-full">
+        <Image src={"/shapes/paper-plane.png"} fill />
+      </div>
       <div className="absolute right-0 top-0 w-1/2 h-full">
         <Image
           src={"/home/umrah-package/Makkah.jpg"}
@@ -68,7 +83,7 @@ const index = () => {
           className={" aspect-auto object-cover"}
         />
       </div>
-      <div className="bg-white/70 backdrop-blur-sm w-full h-full absolute left-0 top-0" />
+      <div className="bg-white/80 backdrop-blur-md w-full h-full absolute left-0 top-0" />
 
       <ContentLayoutWrapper
         className={
@@ -87,11 +102,11 @@ const index = () => {
         <div className="bg-primary h-0.75 w-2/10 mx-auto" />
 
         <div className="flex flex-col gap-3">
-          <pre className="text-gray-500 uppercase text-3xl mx-auto tracking-wider">
+          <pre className="text-gray-700 uppercase text-3xl mx-auto tracking-wider">
             affordable | comfortable |{" "}
             <span className="tracking-normal">spirtual journey </span>
           </pre>
-          <p className="text-gray-400 text-base">
+          <p className="text-gray-600 text-base">
             Experience a blessed Umrah journey with our 3 Star Umrah Packages,
             designed for comfort and affordability without compromising on
             quality.

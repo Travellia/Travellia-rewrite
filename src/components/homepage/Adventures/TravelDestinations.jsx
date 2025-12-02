@@ -9,7 +9,7 @@ const destinations = [
     rating: 5,
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...",
-    image: "/home/adventure/western-europe.jpg",
+    image: "/home/adventure/western-europe.png",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const destinations = [
     rating: 4,
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...",
-    image: "/home/adventure/south-africa.jpg",
+    image: "/home/adventure/south-africa.png",
     hasDetails: true,
   },
   {
@@ -26,7 +26,7 @@ const destinations = [
     rating: 3,
     description:
       "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...",
-    image: "/home/adventure/scandinavia.jpg",
+    image: "/home/adventure/scandinavia.png",
   },
 ];
 
@@ -35,7 +35,7 @@ const TravelDestinations = () => {
     <section className="relative flex items-center justify-center my-10">
       <div className="absolute left-1 top-1/4 w-1/2 h-full">
         <Image
-          src={"/home/adventure/bridge.png"}
+          src={"/shapes/bridge.png"}
           width={100}
           height={100}
           className="!w-full !h-full"
