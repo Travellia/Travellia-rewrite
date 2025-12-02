@@ -4,6 +4,7 @@ import Adventures from "@/components/homepage/Adventures";
 import PopularDestination from "@/components/homepage/PopularDestination";
 import UmrahPackages from "@/components/homepage/UmrahPackages";
 import SummerDeals from "@/components/homepage/SummerDeals";
+import HotelBookings from "@/components/homepage/HotelBookings";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <PopularDestination />
       <UmrahPackages />
       <SummerDeals />
+      <HotelBookings />
     </div>
   );
 }
