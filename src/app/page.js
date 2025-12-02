@@ -7,6 +7,7 @@ import SummerDeals from "@/components/homepage/SummerDeals";
 import HotelBookings from "@/components/homepage/HotelBookings";
 import OfferedServices from "@/components/homepage/OfferedServices";
 import TrendingPackages from "@/components/homepage/TrendingPackages";
+import BookNow from "@/components/homepage/BookNow";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <HotelBookings />
       <OfferedServices />
       <TrendingPackages />
+      <BookNow/>
     </div>
   );
 }
