@@ -61,8 +61,8 @@ const index = () => {
           </h1>
         </ContentLayoutWrapper>
       </div>
-      <div className="min-h-[60vh] px-10 relative">
-        <div className="flex items-center justify-start gap-8 absolute -top-25 left-14">
+      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 items-center justify-start gap-8 relative z-50 p-12 lg:absolute lg:-top-25 lg:left-14">
           {PACKAGES_DATA.map((data, index) => (
             <PackageCard data={data} index={index} key={index} />
           ))}

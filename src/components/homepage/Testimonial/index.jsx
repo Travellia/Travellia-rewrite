@@ -14,7 +14,7 @@ const TESTIMONIALS = [
   },
   {
     comment:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
   },
   {
     comment:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
@@ -32,7 +32,7 @@ const TESTIMONIALS = [
   },
   {
     comment:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
@@ -43,19 +43,19 @@ const TESTIMONIALS = [
 
 const index = () => {
   return (
-    <section className="min-h-[130vh] relative py-24 px-18">
-      <div className="w-[60vw] h-[110vh] absolute left-0 bottom-0">
+    <section className="lg:min-h-[130vh] relative py-24 px-18">
+      <div className="w-[100vw] lg:w-[60vw] h-[100vh] absolute left-0 bottom-0">
         <Image
           src="/home/testimonial/friends-trip.png"
           alt="friends trip"
           fill
-          className=""
+          className="z-0"
         />
       </div>
-      <div className="flex item-center justify-between gap-7">
-        <div className="flex-[45%] flex flex-col items-end py-8">
-          <h1 className="text-primary text-6xl font-bold uppercase px-32">Testimonial</h1>
-          <p className="text-gray-800 text-5xl font-normal uppercase ml-64 text-left">What our travellers are saying</p>
+      <div className="lg:flex item-center justify-between gap-7">
+        <div className="flex-[45%] flex flex-col items-center lg:items-start py-8 z-50">
+          <h1 className="text-primary text-3xl md:text-6xl font-bold uppercase">Testimonial</h1>
+          <p className="text-gray-800 text-lg md:text-2xl lg:text-4xl font-normal text-center md:text-left uppercase lg:text-left mb-12 lg:mb-0">What our travellers are saying</p>
         </div>
         <div className="flex-[55%] grid grid-cols-2 grid-rows-2 gap-5">
           {TESTIMONIALS.map((testimonial, index) => (

@@ -24,20 +24,20 @@ const BOOKING_STEPS = [
 
 const index = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden">
-      <div className="absolute w-80 h-80 -left-10 top-1/4">
+    <section className="lg:min-h-screen relative overflow-hidden">
+      <div className="absolute w-80 h-80 -left-10 top-1/4 opacity-40">
         <Image src="/shapes/plane.png" alt="Plane" fill />
       </div>
-      <div className="absolute w-80 h-80 -right-10 bottom-0">
+      <div className="absolute w-80 h-80 -right-10 bottom-0 opacity-30">
         <Image src="/shapes/bag.png" alt="Bag" fill />
       </div>
 
       <ContentLayoutWrapper
-        className={"flex items-center justify-between gap-12 mt-16 pt-40"}
+        className={"flex items-center justify-between gap-12 mt-16 pt-40 z-50"}
       >
         <div className="flex-6 w-full py-10">
           <h4 className="uppercase text-gray-800 font-semibold">fast & easy</h4>
-          <h1 className="uppercase text-primary text-5xl font-bold leading-tight">
+          <h1 className="uppercase text-primary text-2xl lg:text-5xl font-bold leading-tight">
             get your favourite hotels/resort bookings
           </h1>
           <div className="mt-5 h-px bg-gray-300/70 w-full" />
@@ -63,7 +63,7 @@ const index = () => {
           </div>
         </div>
         <div className="flex-4 relative w-full self-stretch overflow-hidden rounded-4xl">
-            <Image src={"/home/hotel-booking/resort.jpg"} fill alt="Resort" className="object-cover" />
+          <Image src={"/home/hotel-booking/resort.jpg"} fill alt="Resort" className="object-cover" />
         </div>
       </ContentLayoutWrapper>
     </section>

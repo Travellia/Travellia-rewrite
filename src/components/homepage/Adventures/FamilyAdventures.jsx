@@ -45,7 +45,7 @@ const PLACES = [
 
 const FamilyAdventures = () => {
   return (
-    <section className="min-h-[200vh] relative overflow-hidden pt-40">
+    <section className="lg:min-h-[200vh] relative overflow-hidden pt-40">
       <Image
         fill
         src={"/home/adventure/okl.png"}
@@ -61,7 +61,7 @@ const FamilyAdventures = () => {
               src={"/home/adventure/mobile-and-plane.png"}
               width={10}
               height={10}
-              className="!w-full !h-full"
+              className="!w-full !h-[75%]"
               unoptimized
             />
           </div>
@@ -112,7 +112,7 @@ const FamilyAdventures = () => {
                 </div>
 
                 {/* Text Overlay */}
-                <h3 className="text-2xl font-semibold absolute bottom-0 left-0 right-0 p-6 text-white text-center">
+                <h3 className="text-xl font-semibold absolute bottom-0 left-0 right-0 p-6 text-white text-center">
                   Umrah with {place.name} Stay <br /> Starting From £
                   {place.price}
                 </h3>
