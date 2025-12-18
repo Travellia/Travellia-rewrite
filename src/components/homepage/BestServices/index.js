@@ -32,19 +32,19 @@ export default function OfferedServices() {
                     <h2 className="text-lg font-ultralight text-center capitalize">We Offer best</h2>
                     <h2 className="text-5xl font-bold text-center capitalize text-primary">services</h2>
                 </div>
-                <div className="grid md:grid-rows-2 md:grid-cols-2 sm:grid-cols-1 gap-6 w-[70%] z-2">
+                <div className="grid md:grid-rows-2 md:grid-cols-2 sm:grid-cols-1 gap-6 w-[100%] lg:w-[70%] z-2">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col items-center gap-4 py-8 px-12 border border-gray-200 bg-gray-100 rounded-4xl hover:shadow-lg transition-shadow duration-300">
                             <Image src={service.iconPath} alt={service.title} className="w-20 h-20 object-contain" width={60} height={60} />
-                            <h3 className="text-4xl font-bold text-primary text-center capitalize">{service.title}</h3>
+                            <h3 className="md:text-xl lg:text-4xl font-bold text-primary text-center capitalize">{service.title}</h3>
                             <p className="text-gray-600 text-center">{service.description}</p>
-                            <Button variant="default" className="mt-4 rounded-full px-16 py-5">Book Now</Button>
+                            <Button variant="default" className="mt-4 rounded-full w-[100%]">Book Now</Button>
                         </div>
                     ))}
                 </div>
             </ContentLayoutWrapper>
-            <div className="w-1/2 h-full absolute top-0 right-0 z-1">
-                <Image fill src={"/home/offered-services/about-us.png"} alt="About us image"/>
+            <div className="hidden lg:block w-100 lg:w-1/2 h-full absolute top-0 right-0 z-1">
+                <Image fill src={"/home/offered-services/about-us.png"} alt="About us image" />
             </div>
         </section>
     );

@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="h-px w-full bg-gray-300" />
 
         {/* Travellia Logo */}
-        <div className="relative w-96 h-32 mx-auto py-20">
+        <div className="relative w-[96%] mx-auto py-20">
           <Image src="/logo.png" alt="Travellia Logo" fill />
         </div>
 
@@ -167,7 +167,7 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
         <div className="flex flex-col items-center gap-4 w-full">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex flex-col md:flex-row items-center justify-between w-full">
             <div className="flex items-center justify-between gap-5">
               {SOCIALS.map((social, index) => (
                 <Image
@@ -197,7 +197,7 @@ const Footer = () => {
           </p>
         </div>
       </ContentLayoutWrapper>
-      <div className="w-full h-[75vh] relative">
+      <div className="w-full h-[30vh] lg:h-[75vh] relative">
         <Image src="/footer/Foot4.png" alt="Footer plane" fill />
       </div>
     </footer>

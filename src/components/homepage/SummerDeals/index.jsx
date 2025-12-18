@@ -8,7 +8,7 @@ const index = () => {
     {
       icon: "/icons/users-like.png",
       number: "10K+",
-      label: "HAPPY TRAVELERS",
+      label: "HAPPY TRAVELLERS",
     },
     {
       icon: "/icons/hands.png",
@@ -23,7 +23,7 @@ const index = () => {
   ];
 
   return (
-    <section className="relative min-h-[115vh] flex items-end justify-end">
+    <section className="relative lg:min-h-[115vh] flex items-end justify-end">
       <Image
         src={"/home/summer-deals/plane.png"}
         alt="plane"
@@ -36,21 +36,21 @@ const index = () => {
         }
       >
         <div className="flex flex-col items-center justify-between gap-3">
-          <h1 className="text-primary text-7xl font-bold uppercase">
+          <h1 className="text-primary text-3xl md:text-5xl lg:text-7xl font-bold uppercase">
             Big Summer Deals
           </h1>
-          <h3 className="text-gray-700 font-normal text-5xl uppercase">
+          <h3 className="text-gray-700 font-normal text-2xl md:text-3xl lg:text-5xl uppercase">
             are on now
           </h3>
-          <p className="text-3xl text-gray-500 uppercase">
+          <p className="text-lg md:text-2xl lg:text-3xl text-gray-500 uppercase">
             Make your big summer gateaway happen: Members save 25% or more on
             thousands of hotels worldwide.
           </p>
         </div>
         <Button className={"px-20 py-8 text-2xl rounded-3xl"}>Load More</Button>
 
-        <div className="py-8 px-16 rounded-3xl shadow-2xl flex items-center justify-between gap-6 bg-gray-200 h-[35vh] w-full absolute -bottom-40">
-          <div className="flex items-center gap-8 justify-between w-full">
+        <div className="py-8 px-16 rounded-3xl shadow-2xl flex items-center justify-between gap-6 bg-gray-200 w-full absolute -bottom-40">
+          <div className="flex flex-col md:flex-row items-center gap-8 justify-between md:w-full">
             {STATS.map((stat, index) => (
               <React.Fragment key={index}>
                 <div className="flex flex-col items-center text-center">
@@ -71,7 +71,7 @@ const index = () => {
                   </p>
                 </div>
                 {index !== STATS.length - 1 && (
-                  <div className="bg-gray-400/50 h-px w-3/10 rotate-90" />
+                  <div className="bg-gray-400/50 h-px w-3/10 rotate-180 md:rotate-90" />
                 )}
               </React.Fragment>
             ))}

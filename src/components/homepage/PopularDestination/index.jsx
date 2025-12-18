@@ -77,7 +77,7 @@ const DESTINAION_CARDS_DATA = [
 
 const index = () => {
   return (
-    <section className="w-full min-h-screen pt-28">
+    <section className="w-full min-h-screen pt-10 lg:pt-28">
       <ContentLayoutWrapper
         className={"flex flex-col items-center justify-center gap-3 pt-20"}
       >

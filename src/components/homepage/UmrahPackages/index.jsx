@@ -106,10 +106,9 @@ const index = () => {
         <div className="bg-primary h-0.75 w-2/10 mx-auto" />
 
         <div className="flex flex-col gap-3">
-          <pre className="text-gray-700 uppercase text-3xl mx-auto tracking-wider">
-            affordable | comfortable |{" "}
-            <span className="tracking-normal">spirtual journey </span>
-          </pre>
+          <span className="text-gray-700 uppercase text-lg md:text-2xl lg:text-3xl mx-auto tracking-wider">
+            affordable | comfortable | spiritual journey
+          </span>
           <p className="text-gray-600 text-base">
             Experience a blessed Umrah journey with our 3 Star Umrah Packages,
             designed for comfort and affordability without compromising on
@@ -117,7 +116,7 @@ const index = () => {
           </p>
         </div>
 
-        <div className="flex gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {UMRAH_PACKAGES.map((pkg) => (
             <UmrahPackageCard key={pkg.id} data={pkg} />
           ))}
