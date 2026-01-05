@@ -27,7 +27,7 @@ const TravelItineariesCard = ({ data, index }) => {
       <div
         className={`p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl ${
           isOdd
-            ? "bg-white/85 top-1/2 -translate-y-1/2 h-9/10"
+            ? "bg-white/85 top-1/2 -translate-y-1/2 h-9/10 xl:h-6/10"
             : "bg-secondary bottom-0"
         }`}
       >
