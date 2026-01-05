@@ -39,7 +39,7 @@ const PACKAGES_DATA = [
 const index = () => {
   return (
     <section>
-      <div className="min-h-screen relative flex items-center justify-center">
+      <div className="min-h-[60vh] md-h-[70vh] lg:min-h-[80vh] xl:min-h-screen relative flex items-center justify-center ">
         <Image
           src="/home/trending-packages/plane-wing.jpg"
           alt="Plane wing image"
@@ -51,24 +51,26 @@ const index = () => {
             alt="airplane"
             width={200}
             height={200}
-            className="object-cover mx-auto"
+            className="object-cover mx-auto "
           />
-          <h1 className="text-7xl text-gray-800 uppercase text-center font-bold">
+          <h1 className="text-4xl md:text-5xl lg:text-6x xl:ltext-7xl text-gray-800 uppercase text-center font-bold">
             lets make your
           </h1>
-          <h1 className="text-7xl text-primary uppercase text-center font-bold">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl text-primary uppercase text-center font-bold">
             next holiday amazing
           </h1>
         </ContentLayoutWrapper>
       </div>
-      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 items-center justify-start gap-8 relative z-50 p-12 lg:absolute lg:-top-25 lg:left-14">
+      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 relative ">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 xl:grid-cols-4  xl:grid-rows-1 place-items-center justify-start gap-8  relative z-50 p-12 xl:absolute md:-top-25 xl:left-14">
           {PACKAGES_DATA.map((data, index) => (
             <PackageCard data={data} index={index} key={index} />
           ))}
-          <div className="w-1/10 mt-6">
+          <div className="w-full text-center lg:w-1/2 mt-6 -order-1 sm:order-0">
             <h4 className="uppercase text-gray-800 text-2xl">trendy</h4>
-            <h1 className="uppercase text-primary text-5xl leading-14 font-bold">our trending tour packagees</h1>
+            <h1 className="uppercase text-primary text-3xl sm:text-5xl   leading-14 font-bold">
+              our trending tour packagees
+            </h1>
           </div>
         </div>
       </div>

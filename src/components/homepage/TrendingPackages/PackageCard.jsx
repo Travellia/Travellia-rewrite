@@ -14,10 +14,11 @@ const PackageCard = ({ data, index }) => {
       }
     >
       {/* <div className={`absolute ${isOdd ? "h-full" : "h-6/10"}`}> */}
-      <img
+      <Image
         src={data.image}
         alt={data.city}
-        fill
+        width={200}
+        height={200}
         className={`object-cover absolute top-0 left-0 w-full rounded-3xl ${
           isOdd ? "h-full" : "h-6/10"
         }`}
@@ -25,7 +26,9 @@ const PackageCard = ({ data, index }) => {
       {/* </div> */}
       <div
         className={`p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl ${
-          isOdd ? "bg-white/85 top-1/2 -translate-y-1/2 h-7/10" : "bg-secondary bottom-0"
+          isOdd
+            ? "bg-white/85 top-1/2 -translate-y-1/2 h-7/10"
+            : "bg-secondary bottom-0"
         }`}
       >
         <div className="w-full h-full flex flex-col items-center justify-center gap-5">
@@ -65,9 +68,13 @@ const PackageCard = ({ data, index }) => {
             </div>
           </div>
 
-          <div className="text-sm text-gray-500 px-10 text-center">{data.description}</div>
+          <div className="text-sm text-gray-500 px-10 text-center">
+            {data.description}
+          </div>
 
-          <Button className="rounded-full px-10 py-2 self-stretch mx-10">Book Now</Button>
+          <Button className="rounded-full px-10 py-2 self-stretch mx-10">
+            Book Now
+          </Button>
         </div>
       </div>
     </Card>

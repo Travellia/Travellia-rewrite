@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
-import { useState } from "react";
+import Image from "next/image";
+import { lazy, useState } from "react";
 
 const DestinationCard = ({ destination }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -18,9 +19,11 @@ const DestinationCard = ({ destination }) => {
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <img
+        <Image
           src={destination.image}
           alt={destination.title}
+          fill
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>
@@ -28,12 +31,16 @@ const DestinationCard = ({ destination }) => {
       {/* Content Container */}
       <div
         className={`relative h-full flex flex-col justify-between rounded-3xl transition-colors duration-300 mx-4 ${
-          shouldShowDetails ? "bg-black/90 justify-start" : "justify-between items-center"
+          shouldShowDetails
+            ? "bg-black/90 justify-start"
+            : "justify-between items-center"
         }`}
       >
         <div
           className={`flex gap-1 justify-centertransition-all duration-300 ${
-            shouldShowDetails ? "self-center mt-28" : "self-end"
+            shouldShowDetails
+              ? "self-center mt-4 sm:mt-5 lg:mt-5 xl:mt-25"
+              : "self-end"
           }`}
         >
           {[...Array(destination.rating)].map((_, i) => (
@@ -44,7 +51,7 @@ const DestinationCard = ({ destination }) => {
         {/* Bottom Content */}
         <div className="">
           {/* Title */}
-          <h3 className="text-white text-3xl font-semibold text-center mt-3">
+          <h3 className="text-white lg:text-2xl xl:text-3xl font-semibold text-center mt-3">
             {destination.title}
           </h3>
 

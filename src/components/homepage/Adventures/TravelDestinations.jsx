@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import DestinationCard from "./DestinationCard";
+import { Button } from "@/components/ui/button";
 
 const destinations = [
   {
@@ -33,13 +34,14 @@ const destinations = [
 const TravelDestinations = () => {
   return (
     <section className="relative flex items-center justify-center my-10">
-      <div className="absolute left-1 top-1/4 w-1/2 h-full">
+      <div className="hidden sm:block absolute left-1 top-1/4 w-1/2 h-full">
         <Image
           src={"/shapes/bridge.png"}
+          alt="Bridge"
           width={100}
           height={100}
+          loading="lazy"
           className="!w-full !h-full"
-          alt="Bridge"
         />
       </div>
       <ContentLayoutWrapper>
@@ -53,9 +55,7 @@ const TravelDestinations = () => {
 
           {/* View Packages Button */}
           <div className="flex justify-center mt-12">
-            <button className="bg-primary hover:bg-primary/70 text-white px-20 py-4 rounded-3xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-              View Packages
-            </button>
+            <Button className="btn-main">View Packages</Button>
           </div>
         </div>
       </ContentLayoutWrapper>
