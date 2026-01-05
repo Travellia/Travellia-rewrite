@@ -162,5 +162,18 @@ button:disabled {
   @apply bg-primary hover:bg-primary/70 text-white px-20 w-fit py-4 h-auto rounded-3xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl;
 }
 .btn-main-reverse {
-  @apply bg-white hover:bg-white/70 text-primary/70                  px-20 py-4 h-auto rounded-3xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl;
+  @apply bg-white hover:bg-white/70 text-primary/70 px-20 py-4 h-auto rounded-3xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+/* Headings */
+.heading {
+  @apply text-4xl font-bold text-center text-primary;
+}
+.heading-with-space {
+  @apply text-4xl font-bold text-center text-primary tracking-widest;
+}
+
+/* Paragraph */
+.para {
+  @apply text-gray-600 text-base text-center w-[80%] m-auto;
 }
