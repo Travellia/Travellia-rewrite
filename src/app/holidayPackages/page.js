@@ -2,6 +2,7 @@ import Welcome from "@/components/holidaypackagepage/Welcome";
 import ContactUs from "@/components/holidaypackagepage/ContactUs";
 import LuxuryAssuring from "@/components/holidaypackagepage/LuxuryAssuring";
 import FreshlyAdded from "@/components/holidaypackagepage/FreshlyAdded";
+import BookNow from "@/components/holidaypackagepage/BookNow";
 import React from "react";
 
 const page = () => {
@@ -13,6 +14,7 @@ const page = () => {
         <LuxuryAssuring />
         <div className="flex flex-col">
           <FreshlyAdded />
+          <BookNow />
         </div>
       </div>
     </div>

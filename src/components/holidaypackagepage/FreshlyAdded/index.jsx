@@ -48,8 +48,9 @@ const index = () => {
   return (
     <section className="relative z-1 bg-[url('/holidayPackage/FreshlyAdded/bg.png')] bg-center bg-cover">
       <Image
-        fill
         src={"/holidayPackage/FreshlyAdded/bg.png"}
+        alt="bg"
+        fill
         className="absolute object-cover"
         loading="lazy"
       />
