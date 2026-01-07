@@ -28,12 +28,9 @@ const LuxuryAssuringCard = ({ card }) => {
           className="flex flex-col-reverse items-start gap-2
                 lg:flex lg:flex-row lg:items-center lg:justify-between"
         >
-          <div className="flex items-center bg-primary rounded-full px-2">
-            <Button size="sm" className="rounded-full text-sm">
-              {card.buttonText}{" "}
-            </Button>
-            <MdArrowOutward className="text-white " />
-          </div>
+          <Button className="rounded-full text-sm px-5 h-8">
+            {card.buttonText} <MdArrowOutward className="text-white " />
+          </Button>
           <div className="flex flex-col items-start">
             <p className="font-bold text-primary">{card.price}</p>
             <p className="text-[10px] tracking-tight font-semibold">

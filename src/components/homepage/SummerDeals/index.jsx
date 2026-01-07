@@ -51,7 +51,7 @@ const index = () => {
         <div className="py-8 px-8 sm:p-10 lg:p-16 mx-5 sm:mx-0  rounded-3xl shadow-2xl flex items-center justify-center gap-6 bg-gray-200 w-[90%] sm:w-full absolute -bottom-30 sm:-bottom-40">
           <div className="flex md:flex-row items-center gap-3 sm:gap-8 justify-between md:w-full">
             {STATS.map((stat, index) => (
-              <React.Fragment key={index}>
+              <div key={index}>
                 <div className="flex flex-col items-center text-center ">
                   <div className="mb-6">
                     <Image
@@ -72,7 +72,7 @@ const index = () => {
                 {index !== STATS.length - 1 && (
                   <div className="hidden sm:block sm:bg-gray-600/50 h-px w-3/10 rotate-180 md:rotate-90" />
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </div>

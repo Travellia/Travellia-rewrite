@@ -74,7 +74,7 @@ const index = () => {
           >
             {BOOKING_STEPS.map((step, index) => (
               <div key={index} className="flex flex-col  gap-3 p-2">
-                <div className="flex items-center jus gap-4">
+                <div className="flex items-center  gap-4">
                   <Image
                     src={step.icon}
                     alt={step.title}

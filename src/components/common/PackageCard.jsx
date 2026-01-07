@@ -7,7 +7,7 @@ const PackageCard = ({ data }) => {
       <div className="w-full h-full">
         <Image
           src={data.image}
-          alt={data.name}
+          alt="Image.png"
           fill
           loading="lazy"
           className="object-cover transition-transform duration-300 group-hover:scale-110"

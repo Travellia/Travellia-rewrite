@@ -23,7 +23,7 @@ const Adventures = () => {
           <h2 className="text-lg font-normal text-center uppercase">
             Family Adventures
           </h2>
-          <h2 className="text-xl md:text-3xl lg:text-4xl lg:pb-5 xl:text-5xl xl:pb-5 font-bold text-center uppercase text-primary md:px-20 lg:px-5">
+          <h2 className="text-xl md:text-3xl lg:text-4xl lg:pb-5 xl:text-5xl  font-bold text-center uppercase text-primary md:px-20 lg:px-5">
             Exciting family-friendly destinations
           </h2>
           <p className="mt-3 text-gray-600 lg:px-10 xl:px-20 tracking-widest">

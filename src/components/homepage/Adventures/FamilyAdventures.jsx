@@ -60,13 +60,19 @@ const FamilyAdventures = () => {
   return (
     <section className="relative overflow-hidden pt-12 sm:pt-20 md:pt-30 min-h-[90vh] sm:min-h-[100vh] md:min-h-[110vh] lg:min-h-[120vh] xl:min-h-[150vh]">
       <Image
-        fill
         src={"/home/adventure/okl.png"}
+        alt="okl.png"
+        fill
         className="absolute top-0 left-0 z-1 "
         loading="lazy"
       />
       <div className="w-32/30 h-1/4 absolute left-0 top-30 z-1">
-        <Image src={"/shapes/paper-plane.png"} fill loading="lazy" />
+        <Image
+          src={"/shapes/paper-plane.png"}
+          alt="paper-plan.png"
+          fill
+          loading="lazy"
+        />
       </div>
       <ContentLayoutWrapper className={"flex flex-col gap-5 relative z-2"}>
         {/* Header div */}
@@ -75,11 +81,11 @@ const FamilyAdventures = () => {
           <div className="col-span-1 md:col-start-1 md:col-end-6 w-full h-full flex justify-center md:justify-start">
             <Image
               src={"/home/adventure/mobile-and-plane.png"}
+              alt="Family adventure - mobile and plane"
               width={800}
               height={600}
               className="w-full h-auto max-h-[75%] object-contain"
               loading="lazy"
-              alt="Family adventure - mobile and plane"
             />
           </div>
 

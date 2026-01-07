@@ -3,8 +3,8 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { FaLocationArrow } from "react-icons/fa";
 
 import React from "react";
-import TravelItineariesCard from "./TravelItineariesCard";
 import Image from "next/image";
+import BookPackageCard from "@/components/common/BookPackageCard";
 
 const index = () => {
   const PACKAGES_DATA = [
@@ -59,6 +59,7 @@ const index = () => {
       text: "nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus.",
     },
   ];
+
   return (
     <section className="w-full">
       <ContentLayoutWrapper className="flex flex-col gap-20 items-center w-full py-10">
@@ -75,13 +76,17 @@ const index = () => {
                     key={index}
                     className="md:col-span-2 xl:col-span-1 md:flex md:justify-center"
                   >
-                    <TravelItineariesCard data={data} index={index} />
+                    <BookPackageCard data={data} isOdd={index % 2 !== 0} />
                   </div>
                 );
               }
 
               return (
-                <TravelItineariesCard data={data} index={index} key={index} />
+                <BookPackageCard
+                  data={data}
+                  isOdd={index % 2 !== 0}
+                  key={index}
+                />
               );
             })}
           </div>

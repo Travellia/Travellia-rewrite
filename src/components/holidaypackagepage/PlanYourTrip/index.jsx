@@ -15,11 +15,11 @@ const Index = () => {
         {/* Form */}
         <div className="w-full">
           <form className="">
-            <div class="grid grid-cols-2 gap-4 mb-4 w-full">
+            <div className="grid grid-cols-2 gap-4 mb-4 w-full">
               <div className="">
                 <label
-                  for="firstName"
-                  class="block text-sm font-bold pl-5 text-gray-500 mb-1"
+                  htmlFor="firstName"
+                  className="block text-sm font-bold pl-5 text-gray-500 mb-1"
                 >
                   First Name
                 </label>
@@ -27,13 +27,13 @@ const Index = () => {
                   type="text"
                   id="firstName"
                   placeholder="Your First name..."
-                  class="w-full p-5 bg-white rounded-md"
+                  className="w-full p-5 bg-white rounded-md"
                 />
               </div>
               <div>
                 <label
-                  for="lastName"
-                  class="block text-sm font-bold pl-5 text-gray-500 mb-1"
+                  htmlFor="lastName"
+                  className="block text-sm font-bold pl-5 text-gray-500 mb-1"
                 >
                   Last Name
                 </label>
@@ -41,15 +41,15 @@ const Index = () => {
                   type="text"
                   id="lastName"
                   placeholder="Your Last name..."
-                  class="w-full p-5 bg-white rounded-md"
+                  className="w-full p-5 bg-white rounded-md"
                 />
               </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 mb-4 w-full">
+            <div className="grid grid-cols-2 gap-4 mb-4 w-full">
               <div>
                 <label
-                  for="email"
-                  class="block text-sm font-bold pl-5 text-gray-500 mb-1"
+                  htmlFor="email"
+                  className="block text-sm font-bold pl-5 text-gray-500 mb-1"
                 >
                   Your Email
                 </label>
@@ -57,13 +57,13 @@ const Index = () => {
                   type="email"
                   id="email"
                   placeholder="name@travellia.com"
-                  class="w-full p-5 bg-white rounded-md"
+                  className="w-full p-5 bg-white rounded-md"
                 />
               </div>
               <div>
                 <label
-                  for="phone"
-                  class="block text-sm font-bold pl-5 text-gray-500 mb-1"
+                  htmlFor="phone"
+                  className="block text-sm font-bold pl-5 text-gray-500 mb-1"
                 >
                   Phone Number
                 </label>
@@ -71,21 +71,21 @@ const Index = () => {
                   type="tel"
                   id="phone"
                   placeholder="+44 55 66 77 88"
-                  class="w-full p-5 bg-white rounded-md"
+                  className="w-full p-5 bg-white rounded-md"
                 />
               </div>
             </div>
-            <div class="mb-4">
+            <div className="mb-4">
               <label
-                for="instructions"
-                class="block text-sm font-bold pl-5 text-gray-500 mb-1"
+                htmlFor="instructions"
+                className="block text-sm font-bold pl-5 text-gray-500 mb-1"
               >
                 Booking Instructions
               </label>
               <textarea
                 id="instructions"
                 placeholder="Booking Instructions..."
-                class="w-full p-5 bg-white rounded-md h-40"
+                className="w-full p-5 bg-white rounded-md h-40"
               ></textarea>
             </div>
             <div className="flex justify-center py-6">

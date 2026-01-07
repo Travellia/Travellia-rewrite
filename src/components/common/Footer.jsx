@@ -75,14 +75,16 @@ const Footer = () => {
   return (
     <footer className="pt-10">
       <ContentLayoutWrapper
-        className={"flex flex-col items-center justify-between gap-16"}
+        className={
+          "flex flex-col items-center justify-between gap-16 pt-16 sm:pt-0"
+        }
       >
         {/* Brand Logos */}
         <div className="flex items-center justify-between w-full">
           {BRANDS.map((brand, index) => {
             return (
               <React.Fragment key={index}>
-                <div className="w-20 h-20 sm:w-25 sm:h-25 md:w-30 md:h-30 lg-w-35 lg:h-35 xl:w-44 xl:h-44  relative">
+                <div className="w-20 h-18 sm:w-25 sm:h-22 md:w-30 md:h-27 lg:w-35 lg:h-32 xl:w-44 xl:h-40  relative">
                   <Image src={brand} alt="brand" fill loading="lazy" />
                 </div>
                 {index < BRANDS.length - 1 && (
@@ -96,8 +98,15 @@ const Footer = () => {
         <div className="h-px w-full bg-gray-300" />
 
         {/* Travellia Logo */}
-        <div className="relative w-[96%] mx-auto py-20">
-          <Image src="/logo.png" alt="Travellia Logo" fill loading="lazy" />
+        <div className="mx-auto">
+          <Image
+            src="/logo.png"
+            alt="Travellia Logo"
+            width={300}
+            height={200}
+            loading="lazy"
+            className="bg-contain"
+          />
         </div>
 
         {/* Footer Links and Contact Info */}

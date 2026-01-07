@@ -17,10 +17,7 @@ const Welcome = () => {
         navigation={true}
       />
       <ContentLayoutWrapper className="flex flex-col items-center justify-center gap-7 z-10">
-        <h1
-          style={{ textShadow: "1px 1px 20px black" }}
-          className="font-semibold  text-white text-4xl sm:-translate-y-10 sm:text-5xl lg:-translate-y-20 lg:text-6xl xl:-translate-y-25 xl:text-7xl"
-        >
+        <h1 className="font-semibold text-shadow  text-white  text-4xl sm:-translate-y-10 sm:text-5xl lg:-translate-y-20 lg:text-6xl xl:-translate-y-25 xl:text-7xl ">
           HOLIDAY PACKAGES
         </h1>
       </ContentLayoutWrapper>

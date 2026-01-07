@@ -181,3 +181,7 @@ button:disabled {
 .para {
   @apply text-gray-600 text-base text-center w-[80%] m-auto;
 }
+
+.text-shadow {
+  text-shadow: 1px 1px 20px black;
+}

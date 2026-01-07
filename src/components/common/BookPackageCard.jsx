@@ -5,8 +5,7 @@ import Image from "next/image";
 import React from "react";
 import { FaRegUser } from "react-icons/fa";
 
-const PackageCard = ({ data, index }) => {
-  const isOdd = index % 2 !== 0;
+const BookPackageCard = ({ data, isOdd }) => {
   return (
     <Card
       className={
@@ -22,7 +21,6 @@ const PackageCard = ({ data, index }) => {
           isOdd ? "h-full" : "h-6/10"
         }`}
       />
-      {/* </div> */}
       <div
         className={`p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl ${
           isOdd
@@ -32,27 +30,35 @@ const PackageCard = ({ data, index }) => {
       >
         <div className="w-full h-full flex flex-col items-center justify-center gap-5">
           <div className="flex items-center justify-between gap-3 text-gray-500">
-            <div className="flex items-center justify-between gap-1">
-              <CalendarDays className="w-3 h-3 block" />
-              <p>{data.days}</p>
-              <p>Days</p>
-            </div>
-            <div className="flex items-center justify-between gap-1 text-gray-500">
-              <FaRegUser className="w-3 h-3 block" />
-              <p>{data.people}</p>
-              <p>People</p>
-              <p>Going</p>
-            </div>
+            {data.days ? (
+              <>
+                <div className="flex items-center justify-between gap-1">
+                  <CalendarDays className="w-3 h-3 block" />
+                  <p>{data.days}</p>
+                  <p>Days</p>
+                </div>
+                <div className="flex items-center justify-between gap-1 text-gray-500">
+                  <FaRegUser className="w-3 h-3 block" />
+                  <p>{data.people}</p>
+                  <p>People</p>
+                  <p>Going</p>
+                </div>
+              </>
+            ) : (
+              <div className="flex items-center justify-between gap-3 text-gray-500">
+                <p>{"⭐".repeat(data.stars)}</p>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col items-center gap-1">
             <h2 className="text-2xl font-semibold text-primary uppercase">
-              {data.city}
+              {data.city ? data.city : data.package}
             </h2>
 
             <div className="mx-auto flex items-center justify-center">
               <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-              <span>{data.country}</span>
+              <span>{data.country ? data.country : data.title}</span>
             </div>
           </div>
 
@@ -80,4 +86,4 @@ const PackageCard = ({ data, index }) => {
   );
 };
 
-export default PackageCard;
+export default BookPackageCard;
