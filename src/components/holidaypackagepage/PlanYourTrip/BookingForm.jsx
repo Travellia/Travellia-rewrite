@@ -1,7 +1,7 @@
 "use client";
 
 import { Formik, Form, input, ErrorMessage } from "formik";
-import bookingSchema from "@/schemas/ContactUs";
+import bookingSchema from "@/schemas/holidayPackages/ContactUs";
 import { Button } from "@/components/ui/button";
 
 const BookingForm = () => {
