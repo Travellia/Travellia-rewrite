@@ -1,7 +1,8 @@
+import Welcome from "@/components/hotel/Welcome";
 import FilterSearch from "@/components/hotel/FilterSearch";
 import Packages from "@/components/hotel/Packages";
 import TouristFeedback from "@/components/hotel/TouristFeedback";
-import Welcome from "@/components/hotel/Welcome";
+import BookNow from "@/components/hotel/BookNow";
 import React from "react";
 
 const page = () => {
@@ -15,6 +16,7 @@ const page = () => {
           <Packages />
           <TouristFeedback />
         </div>
+        <BookNow />
       </div>
     </div>
   );

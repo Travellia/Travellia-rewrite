@@ -61,7 +61,7 @@ const index = () => {
           </h1>
         </ContentLayoutWrapper>
       </div>
-      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 relative ">
+      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 mb-20 relative ">
         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 xl:grid-cols-4  xl:grid-rows-1 place-items-center justify-start gap-8  relative z-50 p-12 xl:absolute md:-top-25 xl:left-14">
           {PACKAGES_DATA.map((data, index) => (
             <BookPackageCard data={data} isOdd={index % 2 !== 0} key={index} />
