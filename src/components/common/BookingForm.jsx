@@ -1,10 +1,12 @@
 "use client";
 
-import { Formik, Form, input, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import bookingSchema from "@/schemas/holidayPackages/ContactUs";
 import { Button } from "@/components/ui/button";
 
-const BookingForm = () => {
+const BookingForm = ({ data }) => {
+  console.log(data);
+
   const handleSubmit = (values, { resetForm }) => {
     console.log("Submitted Data:", values);
 
@@ -29,15 +31,15 @@ const BookingForm = () => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-sm font-bold pl-5 text-gray-500 mb-1">
-              First Name
+              {data.firstNameLabel}
             </label>
-            <input
-              name="firstName"
-              placeholder="Your First name..."
+            <Field
+              name={data.firstNameName}
+              placeholder={data.firstNamePlaceholder}
               className="w-full p-5 bg-white rounded-md"
             />
             <ErrorMessage
-              name="firstName"
+              name={data.firstNameName}
               component="p"
               className="text-red-500 text-sm pl-5 pt-2 "
             />
@@ -45,15 +47,15 @@ const BookingForm = () => {
 
           <div>
             <label className="block text-sm font-bold pl-5 text-gray-500 mb-1">
-              Last Name
+              {data.lastNameLabel}{" "}
             </label>
-            <input
-              name="lastName"
-              placeholder="Your Last name..."
+            <Field
+              name={data.lastNameName}
+              placeholder={data.lastNamePlaceholder}
               className="w-full p-5 bg-white rounded-md"
             />
             <ErrorMessage
-              name="lastName"
+              name={data.lastNameName}
               component="p"
               className="text-red-500 text-sm pl-5 pt-2"
             />
@@ -64,16 +66,16 @@ const BookingForm = () => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-sm font-bold pl-5 text-gray-500 mb-1">
-              Email
+              {data.emailLabel}{" "}
             </label>
-            <input
-              type="email"
-              name="email"
-              placeholder="name@travellia.com"
+            <Field
+              type={data.emailName}
+              name={data.emailName}
+              placeholder={data.emailPlaceholder}
               className="w-full p-5 bg-white rounded-md"
             />
             <ErrorMessage
-              name="email"
+              name={data.emailName}
               component="p"
               className="text-red-500 text-sm pl-5 pt-2"
             />
@@ -81,15 +83,15 @@ const BookingForm = () => {
 
           <div>
             <label className="block text-sm font-bold pl-5 text-gray-500 mb-1">
-              Phone
+              {data.phoneLabel}{" "}
             </label>
-            <input
-              name="phone"
-              placeholder="+44 55 66 77 88"
+            <Field
+              name={data.phoneName}
+              placeholder={data.phonePlaceholder}
               className="w-full p-5 bg-white rounded-md"
             />
             <ErrorMessage
-              name="phone"
+              name={data.phoneName}
               component="p"
               className="text-red-500 text-sm pl-5 pt-2"
             />
@@ -99,15 +101,16 @@ const BookingForm = () => {
         {/* Instructions */}
         <div className="mb-4">
           <label className="block text-sm font-bold pl-5 text-gray-500 mb-1">
-            Booking Instructions
+            {data.messsgaeLabel}
           </label>
-          <textarea
+          <Field
             as="textarea"
-            name="instructions"
+            name={data.messsgaeName}
+            placeholder={data.messsgaePlaceholder}
             className="w-full p-5 bg-white rounded-md h-40"
           />
           <ErrorMessage
-            name="instructions"
+            name={data.messsgaeName}
             component="p"
             className="text-red-500 text-sm pl-5 pt-2"
           />
@@ -115,7 +118,7 @@ const BookingForm = () => {
 
         <div className="flex justify-center py-6">
           <Button type="submit" className="btn-main">
-            Submit Booking
+            {data.button}
           </Button>
         </div>
       </Form>

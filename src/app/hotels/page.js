@@ -3,6 +3,7 @@ import FilterSearch from "@/components/hotel/FilterSearch";
 import Packages from "@/components/hotel/Packages";
 import TouristFeedback from "@/components/hotel/TouristFeedback";
 import BookNow from "@/components/hotel/BookNow";
+import PlanYourTrip from "@/components/hotel/PlanYourTrip";
 import React from "react";
 
 const page = () => {
@@ -17,6 +18,7 @@ const page = () => {
           <TouristFeedback />
         </div>
         <BookNow />
+        <PlanYourTrip />
       </div>
     </div>
   );
