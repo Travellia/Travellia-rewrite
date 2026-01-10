@@ -9,26 +9,29 @@ const PopularPackage = () => {
       days: "5 Days/6 Nights",
       place: "LAKE GARDA",
       price: "$180/",
-      person: "Per Persom",
+      person: "Per Person",
     },
     {
       image: "/hotel/Packages/PopularPackages/Image2.png",
       days: "5 Days/6 Nights",
       place: "PARIS HILL TOUR",
       price: "$200/",
-      person: "Per Persom",
+      person: "Per Person",
     },
     {
       image: "/hotel/Packages/PopularPackages/Image3.png",
       days: "5 Days/6 Nights",
       place: "LAKE GARDA",
       price: "$200/",
-      person: "Per Persom",
+      person: "Per Person",
     },
   ];
   return (
-    <section className="flex flex-col gap-5">
-      <h1 className="heading-black"> POPULAR PACKAGES</h1>
+    <section className="flex flex-col gap-5 w-full">
+      <h1 className="text-2xl lg:text-2xl xl:text-3xl font-bold  text-black">
+        {" "}
+        POPULAR PACKAGES
+      </h1>
       {Popular_Destination.map((card, index) => (
         <PopularPackageCard
           key={index}

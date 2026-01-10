@@ -29,7 +29,13 @@ const BookNow = ({ data }) => {
         </div>
       </div>
       <div className="h-[40vh] sm:h-[50vh] lg:h-full w-full col-start-10 col-end-21 row-start-1 relative">
-        <Image src={data.image} alt={data.alt} fill className="object-cover" />
+        <Image
+          src={data.image}
+          alt={data.alt}
+          fill
+          className="object-cover"
+          loading="lazy"
+        />
       </div>
     </section>
   );

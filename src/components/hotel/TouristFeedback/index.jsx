@@ -5,7 +5,7 @@ import ProfileCard from "./ProfileCard";
 
 const TouristFeedback = () => {
   return (
-    <section>
+    <section className="h-auto md:pb-15 lg:pb-10">
       <ContentLayoutWrapper className="flex flex-col items-center w-full gap-10">
         <div className="flex flex-col items-center w-full">
           <h1 className="text-4xl font-bold text-primary tracking-widest">
@@ -17,20 +17,21 @@ const TouristFeedback = () => {
           </p>
         </div>
 
-        <div className="relative w-full flex ">
+        <div className="relative w-full flex flex-col lg:flex-row ">
           {/* Image */}
-          <div className="w-2/3">
+          <div className="w-full sm:w-2/3">
             <Image
               src="/hotel/TouristFeedback/Image.png"
               alt="Tourist"
               width={600}
               height={400}
-              className="w-full h-auto rounded-2xl shadow-lg border border-amber-950"
+              className="w-full h-auto rounded-2xl shadow-lg "
+              loading="lazy"
             />
           </div>
 
           {/* Card (overlapping image) */}
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/3">
+          <div className="w-full sm:absolute sm:right-0 sm:top-1/2 sm:transform md:translate-x-20 sm:-translate-y-1/2 md:w-1/2 ">
             <ProfileCard />
           </div>
         </div>

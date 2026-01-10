@@ -141,14 +141,14 @@ const Packages = () => {
   ];
   return (
     <section>
-      <ContentLayoutWrapper className="grid grid-cols-12 gap-6">
+      <ContentLayoutWrapper className=" flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-6">
         {/* Cards */}
-        <div className="col-span-8">
+        <div className="lg:col-span-8">
           <PackagesClient packages={PACKAGES_DATA} />
         </div>
 
         {/* Sidebar */}
-        <div className="col-span-4">
+        <div className="lg:col-span-4">
           <SideMenu />
         </div>
       </ContentLayoutWrapper>

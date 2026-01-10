@@ -2,7 +2,7 @@ import BookNow from "@/components/common/BookNow";
 import React from "react";
 
 const imageData = {
-  image: "/hotel/BookNow/Image.png",
+  image: "/hotel/BookNow/bg.png",
   alt: "resturant",
 };
 

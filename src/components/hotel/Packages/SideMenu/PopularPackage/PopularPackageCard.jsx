@@ -6,21 +6,36 @@ const PopularPackageCard = ({ data, index, total }) => {
 
   return (
     <>
-      <section className="flex gap-5 items-center">
-        <Image src={data.image} alt={data.place} height={150} width={150} />
+      <section className="flex gap-5 items-center [w-50%]">
+        {/* <div className="w-full lg:w-auto flex justify-center lg:justify-start">
+          </div> */}
+        <Image
+          src={data.image}
+          alt={data.place}
+          width={100}
+          height={100}
+          className="
+                  rounded-xl object-cover
+                  w-auto       h-30
+                  sm:w-auto sm:h-35
+                  md:w-auto md:h-50
+                  lg:w-auto lg:h-25
+                  xl:w-auto xl:h-30
+                      "
+          loading="lazy"
+        />
+        <div className="flex flex-col w-[50%]">
+          <div className="text-xl sm:text-2xl lg:text-sm">{data.days}</div>
 
-        <div className="flex flex-col">
-          <div className="text-sm">{data.days}</div>
-
-          <div className="text-primary  font-bold tracking-wide">
+          <div className="text-xl sm:text-3xl lg:text-lg text-primary font-bold tracking-wide">
             {data.place}
           </div>
 
           <div className="flex items-end gap-2">
-            <div className="text-primary font-bold tracking-wide text-xl">
+            <div className="text-xl sm:text-3xl lg:text-lg text-primary font-bold tracking-wide ">
               {data.price}
             </div>
-            <div>{data.person}</div>
+            <div className="text-sm sm:text-xl lg:text-sm">{data.person}</div>
           </div>
         </div>
       </section>
