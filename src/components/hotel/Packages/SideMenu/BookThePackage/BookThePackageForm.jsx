@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/popover";
 import { format } from "date-fns";
 
-import { Calendar1, Calendar1Icon, ChevronDownIcon } from "lucide-react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import bookThePackageSchema from "@/schemas/hotel/BookThePackageSchema";

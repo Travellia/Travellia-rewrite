@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CalendarDays, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import { FaRegUser } from "react-icons/fa";
 
 const PackageCard = ({ data }) => {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import PopularPackageCard from "./PopularPackageCard";
-import index from "@/components/holidaypackagepage/BookNow";
 
 const PopularPackage = () => {
   const Popular_Destination = [
