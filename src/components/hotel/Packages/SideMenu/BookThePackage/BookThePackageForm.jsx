@@ -142,37 +142,36 @@ const BookThePackageForm = () => {
           </div>
 
           {/* Date Picker */}
-          <div>
-            <Popover>
-              <PopoverTrigger asChild>
-                <div
-                  className={`w-full p-5 bg-gray-100 rounded-2xl text-gray-500 ${
-                    values.date ? "text-black" : ""
-                  }`}
-                >
-                  {values.date
-                    ? format(new Date(values.date), "dd-MM-yyyy")
-                    : "DD-MM-YY"}
-                </div>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-gray-100 rounded-2xl">
-                <Calendar
-                  mode="single"
-                  selected={values.date ? new Date(values.date) : undefined}
-                  onSelect={(date) => {
-                    if (date) setFieldValue("date", date.toISOString());
-                  }}
-                  disabled={(date) => date < today}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
-            <ErrorMessage
-              name="date"
-              component="p"
-              className="text-red-500 text-sm pt-2"
-            />
-          </div>
+
+          <Popover>
+            <PopoverTrigger asChild>
+              <button
+                className={`w-full p-5 text-left bg-gray-100 rounded-2xl text-gray-500 ${
+                  values.date ? "text-black" : ""
+                }`}
+              >
+                {values.date
+                  ? format(new Date(values.date), "dd-MM-yyyy")
+                  : "DD-MM-YY"}
+              </button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0 bg-gray-100 rounded-2xl">
+              <Calendar
+                mode="single"
+                selected={values.date ? new Date(values.date) : undefined}
+                onSelect={(date) => {
+                  if (date) setFieldValue("date", date.toISOString());
+                }}
+                disabled={(date) => date < today}
+                initialFocus
+              />
+            </PopoverContent>
+          </Popover>
+          <ErrorMessage
+            name="date"
+            component="p"
+            className="text-red-500 text-sm pt-2"
+          />
 
           {/* Message */}
           <div>

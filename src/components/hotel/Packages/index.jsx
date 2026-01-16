@@ -2,6 +2,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
 import SideMenu from "./SideMenu/index.";
 import PackagesClient from "./PackagesClient";
+import Image from "next/image";
 
 const Packages = () => {
   const PACKAGES_DATA = [
@@ -140,7 +141,24 @@ const Packages = () => {
     },
   ];
   return (
-    <section>
+    <section className="relative">
+      <Image
+        src="/hotel/Ballon.png"
+        alt="background"
+        width={300}
+        height={300}
+        className="absolute top-1/2 left-0 "
+        loading="lazy"
+      />
+
+      <Image
+        src="/hotel/passport.png"
+        alt="passport"
+        width={300}
+        height={300}
+        className="absolute right-0 bottom-0 "
+        loading="lazy"
+      />
       <ContentLayoutWrapper className=" flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-6">
         {/* Cards */}
         <div className="lg:col-span-8">
