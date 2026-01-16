@@ -4,18 +4,18 @@ import { useState } from "react";
 
 import FlightsForm from "./FlightsForm/FlightsForm";
 import Image from "next/image";
-// import HotelsForm from "./tabs/HotelsForm";
+import HotelsForm from "./HotelsForm/HotelsForm";
 // import HolidaysForm from "./tabs/HolidaysForm";
 // import UmrahForm from "./tabs/UmrahForm";
 
 const TABS = [
   { key: "flights", label: "Flights", component: <FlightsForm /> },
-  // { key: "hotels", label: "Hotels", component: <HotelsForm /> },
+  { key: "hotels", label: "Hotels", component: <HotelsForm /> },
   // { key: "holidays", label: "Holidays", component: <HolidaysForm /> },
   // { key: "umrah", label: "Umrah", component: <UmrahForm /> },
 ];
 
-const SearchTabs = ({ defaultTab = "flights" }) => {
+const SearchTabs = ({ defaultTab = "hotels" }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
   return (
@@ -44,18 +44,19 @@ const Tab = ({ label, active, onClick }) => (
       ${
         active
           ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
-          : "bg-gray-100/80 text-gray-700 hover:bg-gray-200"
+          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
       }
         `}
   >
-    <Image
-      src="/holidayPackage/ContactUs/bag.png"
-      alt="background"
-      width={25}
-      height={4}
-      className="filter invert brightness-200 h-5.5 text-white"
-    />
-    <button variant="ghost" onClick={onClick}>
+    <button variant="ghost" onClick={onClick} className="flex gap-2">
+      <Image
+        src="/holidayPackage/ContactUs/bag.png"
+        alt="background"
+        width={25}
+        height={4}
+        className="filter invert brightness-200 h-5.5 text-white"
+        loading="lazy"
+      />
       {label}
     </button>
   </div>

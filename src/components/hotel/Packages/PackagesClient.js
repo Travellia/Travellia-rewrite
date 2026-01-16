@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import PackageCard from "./PackageCard";
-import Pagination from "./Pagination";
+// import Pagination from "./Pagination";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -39,11 +39,11 @@ export default function PackagesClient({ packages }) {
       </div>
 
       {/* Pagination - always visible */}
-      <Pagination
+      {/* <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
-      />
+      /> */}
     </div>
   );
 }

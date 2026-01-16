@@ -7,4 +7,5 @@ const filterSearchSchema = Yup.object({
   departDate: Yup.date().required("Required"),
   returnDate: Yup.date().nullable(),
 });
-z;
+
+export default filterSearchSchema;

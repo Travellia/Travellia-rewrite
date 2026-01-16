@@ -24,6 +24,9 @@ const cityList = CITY_LIST;
 const FormFields = ({ flightType }) => {
   const { values, setFieldValue } = useFormikContext();
 
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   return (
     <FieldArray name="routes">
       {({ push, remove }) => (
@@ -243,6 +246,7 @@ const FormFields = ({ flightType }) => {
                               selected ? format(selected, "yyyy-MM-dd") : ""
                             );
                           }}
+                          disabled={(date) => date < today}
                           initialFocus
                         />
                       </PopoverContent>
@@ -293,6 +297,7 @@ const FormFields = ({ flightType }) => {
                                 selected ? format(selected, "yyyy-MM-dd") : ""
                               );
                             }}
+                            disabled={(date) => date < today}
                             initialFocus
                           />
                         </PopoverContent>

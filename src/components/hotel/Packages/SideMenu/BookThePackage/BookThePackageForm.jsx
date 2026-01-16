@@ -17,12 +17,13 @@ import {
 import { format } from "date-fns";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import bookThePackageSchema from "@/schemas/hotel/BookThePackageSchema";
 import { Button } from "@/components/ui/button";
 
 const BookThePackageForm = () => {
-  const [open, setOpen] = useState(false); // ✅ ADD THIS
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   const handleSubmit = (values, { resetForm }) => {
     console.log("Submitted Data:", values);
@@ -161,6 +162,7 @@ const BookThePackageForm = () => {
                   onSelect={(date) => {
                     if (date) setFieldValue("date", date.toISOString());
                   }}
+                  disabled={(date) => date < today}
                   initialFocus
                 />
               </PopoverContent>
