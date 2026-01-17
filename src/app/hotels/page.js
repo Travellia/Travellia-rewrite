@@ -12,7 +12,7 @@ const page = () => {
       <Welcome />
 
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
-        <FilterSearch />
+        <FilterSearch defaultTab="hotels" />
         <div className="flex flex-col gap-10  sm:pb-15 h-auto ">
           <Packages />
           <TouristFeedback />
