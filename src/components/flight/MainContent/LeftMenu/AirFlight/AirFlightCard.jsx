@@ -37,12 +37,14 @@ const AirFlightCard = ({ data }) => {
               alt="phone"
               width={22}
               height={22}
+              loading="lazy"
             />
             <Image
               src="/flight/MainContent/LeftMenu/AirFlights/Whatsapp logo.png"
               alt="whatsapp"
               width={22}
               height={22}
+              loading="lazy"
             />
           </div>
         </div>
@@ -62,7 +64,7 @@ const AirFlightCard = ({ data }) => {
 const FlightRow = ({ data }) => {
   return (
     <div className="flex flex-col gap-5 md:flex md:flex-row md:items-center md:gap-6">
-      <Image src={data.logo} alt="logo" width={80} height={80} />
+      <Image src={data.logo} alt="logo" width={80} height={80} loading="lazy" />
 
       <div className="flex gap-10 text-center">
         <FlightCol title={data.from.time} sub={data.from.location} />

@@ -9,6 +9,7 @@ const CallUs = () => {
         alt="call center"
         fill
         className="object-cover rounded-4xl"
+        loading="lazy"
       />
       <div className="absolute bg-black/70 rounded-4xl flex flex-col gap-5 justify-center items-center w-full h-full">
         <div className=" flex flex-col gap-2 justify-center items-center w-full">

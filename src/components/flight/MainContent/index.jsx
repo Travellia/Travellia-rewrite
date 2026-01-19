@@ -12,7 +12,7 @@ const index = () => {
         alt="Plan Image"
         width={2000}
         height={2000}
-        className="absolute w-[70%] h-auto  "
+        className="hidden lg:block absolute w-[55%] h-auto bottom-1  "
       />
       <ContentLayoutWrapper className="relative flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-6">
         {/* Main Content */}
