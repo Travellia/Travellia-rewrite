@@ -7,7 +7,7 @@ const BiggestOffer = () => {
     <section className="relative w-full min-h-[50vh] rounded-3xl overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/hotel/Packages/BiggestOffer/bg.png"
+        src="/common/BiggestOffer/bg.png"
         alt="bg-image"
         fill
         className="object-cover"

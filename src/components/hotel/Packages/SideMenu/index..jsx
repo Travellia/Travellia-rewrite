@@ -1,7 +1,7 @@
 import React from "react";
-import BookThePackage from "./BookThePackage";
-import PopularPackage from "./PopularPackage";
-import BiggestOffer from "./BiggestOffer";
+import BiggestOffer from "@/components/common/BiggestOffer";
+import BookThePackage from "@/components/common/BookThePackage";
+import PopularPackage from "@/components/common/PopularPackage";
 
 const SideMenu = () => {
   return (
