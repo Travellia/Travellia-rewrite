@@ -218,7 +218,7 @@ const FormFields = ({ flightType }) => {
                           variant="outline"
                           className={cn(
                             "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
-                            !route.depart && "text-muted-foreground"
+                            !route.depart && "text-muted-foreground",
                           )}
                         >
                           {route.depart ? (
@@ -243,7 +243,7 @@ const FormFields = ({ flightType }) => {
                           onSelect={(selected) => {
                             setFieldValue(
                               `routes.${index}.depart`,
-                              selected ? format(selected, "yyyy-MM-dd") : ""
+                              selected ? format(selected, "yyyy-MM-dd") : "",
                             );
                           }}
                           disabled={(date) => date < today}
@@ -269,7 +269,7 @@ const FormFields = ({ flightType }) => {
                             variant="outline"
                             className={cn(
                               "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
-                              !route.return && "text-muted-foreground"
+                              !route.return && "text-muted-foreground",
                             )}
                           >
                             {route.return ? (
@@ -294,7 +294,7 @@ const FormFields = ({ flightType }) => {
                             onSelect={(selected) => {
                               setFieldValue(
                                 `routes.${index}.return`,
-                                selected ? format(selected, "yyyy-MM-dd") : ""
+                                selected ? format(selected, "yyyy-MM-dd") : "",
                               );
                             }}
                             disabled={(date) => date < today}
