@@ -115,11 +115,36 @@ const index = () => {
             height={1000}
             className="w-full h-auto absolute right-0 top-2/3 translate-x-10 lg:translate-y-40 xl:translate-y-0  lg:top-1/2"
           />
-          <ContentLayoutWrapper>
+          <ContentLayoutWrapper className="flex flex-col gap-10">
             <TermsList
               terms={secondHalf}
               className="w-full md:w-[72%] mx-auto"
             />
+
+            <p className="w-full md:w-[72%] mx-auto">
+              <span className="text-primary font-bold text-2xl pr-2">›</span>{" "}
+              <span className="font-bold">Flights</span>– If the airline offers
+              a full or partial refund, the customer will be entitled to receive
+              this refund, subject to Travellia Limited’s administration fee for
+              processing. <br />
+              <span className="text-primary font-bold text-2xl pr-2">
+                ›{" "}
+              </span>{" "}
+              <span className="font-bold">Hotels & Transport</span>– Refunds may
+              not be provided, or may only be processed in accordance with the
+              relevant supplier’s terms and conditions. Travellia Limited has no
+              control over these decisions. <br /> This policy clearly sets out
+              our limitation of liability in force majeure situations and
+              explains the refund procedures applicable to flights, hotels, and
+              transport services. <br />
+              <br />
+              <span className="font-bold">
+                By making a booking with Travellia Limited, you confirm that you
+                have read, understood, and agreed to all of the above Terms &
+                Conditions, including those of our suppliers, and that these
+                will apply to all members of your booking party.
+              </span>
+            </p>
           </ContentLayoutWrapper>
         </div>
       </div>
