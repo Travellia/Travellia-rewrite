@@ -14,7 +14,7 @@ const BookPackageCard = ({ data, isOdd }) => {
     >
       <Image
         src={data.image}
-        alt={data.city}
+        alt="data.city"
         width={200}
         height={200}
         className={`object-cover absolute top-0 left-0 w-full rounded-3xl ${
@@ -57,8 +57,14 @@ const BookPackageCard = ({ data, isOdd }) => {
             </h2>
 
             <div className="mx-auto flex items-center justify-center">
-              <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-              <span>{data.country ? data.country : data.title}</span>
+              {data.country ? (
+                <>
+                  <MapPin className="w-4 h-4 text-gray-500 mr-1" />
+                  <span>{data.country}</span>
+                </>
+              ) : (
+                <span>{data.country ? data.country : data.title}</span>
+              )}
             </div>
           </div>
 

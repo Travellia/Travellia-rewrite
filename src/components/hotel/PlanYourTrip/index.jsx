@@ -23,7 +23,7 @@ const Form_Fileds = {
   messsgaeName: "instructions",
   messsgaePlaceholder: "Booking Instructions...",
 
-  button: "Submit Booking",
+  button: "Booking Instructions",
 };
 
 const Index = () => {

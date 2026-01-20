@@ -1,9 +1,37 @@
+"use client";
+
 import React, { lazy } from "react";
 import ContentLayoutWrapper from "./ContentLayoutWrapper";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { data } from "@/lib/data/homepage-data";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+
+import { usePathname } from "next/navigation";
+
+const FOOTER_IMAGE_MAP = [
+  {
+    match: "/",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Home Footer",
+    },
+  },
+  {
+    match: "/hotels",
+    image: {
+      src: "/footer/hotelFooter.png",
+      alt: "Hotel Footer",
+    },
+  },
+  {
+    match: "/holidayPackages",
+    image: {
+      src: "/footer/holidayPackagesFooter.png",
+      alt: "Holiday Packages Footer",
+    },
+  },
+];
 
 const BRANDS = [
   "/footer/iata.png",
@@ -72,6 +100,16 @@ const FOOTER_LINKS = [
 ];
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  const footerImage = FOOTER_IMAGE_MAP.find((item) => {
+    if (item.match === "/") return pathname === "/";
+    return pathname.startsWith(item.match);
+  })?.image || {
+    src: "/footer/Foot4.png",
+    alt: "Default Footer",
+  };
+
   return (
     <footer className="pt-10">
       <ContentLayoutWrapper
@@ -208,8 +246,13 @@ const Footer = () => {
           </p>
         </div>
       </ContentLayoutWrapper>
-      <div className="w-full h-[30vh] lg:h-[75vh] relative">
-        <Image src="/footer/Foot4.png" alt="Footer plane" fill loading="lazy" />
+      <div className="w-full h-[30vh] lg:h-[75vh] relative ">
+        <Image
+          src={footerImage.src}
+          alt={footerImage.alt}
+          fill
+          loading="lazy"
+        />
       </div>
     </footer>
   );
