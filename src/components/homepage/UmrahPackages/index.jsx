@@ -53,7 +53,7 @@ const UMRAH_PACKAGES = [
 
 const index = () => {
   return (
-    <section className="pt-5 min-h-screen relative">
+    <section className="py-15 min-h-screen relative">
       <div className="absolute top-0 left-0 w-1/2 h-full">
         <Image
           src={"/home/umrah-package/Madina.jpg"}
@@ -63,18 +63,10 @@ const index = () => {
         />
       </div>
       <div className="absolute top-0 left-0 w-2/10 h-4/10 z-1">
-        <Image
-          fill
-          src={"/shapes/leaf.png"}
-          alt="leaf"
-        />
+        <Image src={"/shapes/leaf.png"} alt="leaf" fill />
       </div>
       <div className="absolute -bottom-5 right-3 w-2/10 h-4/10 z-1 rotate-180">
-        <Image
-          fill
-          src={"/shapes/leaf.png"}
-          alt="leaf"
-        />
+        <Image fill src={"/shapes/leaf.png"} alt="leaf" />
       </div>
       <div className="absolute top-10 left-0 z-1 h-1/2 w-full">
         <Image src={"/shapes/paper-plane.png"} alt="paper-plane" fill />
@@ -106,10 +98,19 @@ const index = () => {
         <div className="bg-primary h-0.75 w-2/10 mx-auto" />
 
         <div className="flex flex-col gap-3">
-          <span className="text-gray-700 uppercase text-lg md:text-2xl lg:text-3xl mx-auto tracking-wider">
-            affordable | comfortable | spiritual journey
+          <span className="text-gray-700 uppercase text-sm md:text-2xl lg:text-3xl mx-auto tracking-wider">
+            affordable{" "}
+            <span className="text-2xl text-primary uppercase tracking-wider">
+              |
+            </span>{" "}
+            comfortable{" "}
+            <span className="text-2xl text-primary uppercase tracking-wider">
+              |
+            </span>{" "}
+            spiritual journey
           </span>
-          <p className="text-gray-600 text-base">
+
+          <p className="text-gray-600 text-base text-center w-[80%] m-auto">
             Experience a blessed Umrah journey with our 3 Star Umrah Packages,
             designed for comfort and affordability without compromising on
             quality.

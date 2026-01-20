@@ -27,7 +27,7 @@ const Carousel = ({
         delay: speed,
         disableOnInteraction: false,
       }}
-      navigation={navigation}
+      navigation={navigation ? { enabled: true } : false}
       loop={true}
       className={`w-full h-full absolute top-0 left-0 ${className}`}
     >
@@ -38,8 +38,8 @@ const Carousel = ({
               src={slide.image}
               alt={`Tour ${slide.id}`}
               fill
-              className="object-cover"
               priority={slide.id === 1}
+              className="object-cover"
             />
           </div>
         </SwiperSlide>

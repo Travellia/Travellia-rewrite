@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
-      image: "/home/testimonial/user-1.jpg"
+      image: "/home/testimonial/user-1.jpg",
     },
   },
   {
@@ -18,7 +18,7 @@ const TESTIMONIALS = [
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
-      image: "/home/testimonial/user-2.jpg"
+      image: "/home/testimonial/user-2.jpg",
     },
   },
   {
@@ -27,7 +27,7 @@ const TESTIMONIALS = [
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
-      image: "/home/testimonial/user-3.jpg"
+      image: "/home/testimonial/user-3.jpg",
     },
   },
   {
@@ -36,14 +36,14 @@ const TESTIMONIALS = [
     user: {
       name: "Shannon J. Williams",
       location: "New York, USA",
-      image: "/home/testimonial/user-4.jpg"
+      image: "/home/testimonial/user-4.jpg",
     },
   },
 ];
 
 const index = () => {
   return (
-    <section className="lg:min-h-[130vh] relative py-24 px-18">
+    <section className="lg:min-h-screen xl:min-h-[130vh] relative py-24 p-10 sm:px-12 lg:px-18">
       <div className="w-[100vw] lg:w-[60vw] h-[100vh] absolute left-0 bottom-0">
         <Image
           src="/home/testimonial/friends-trip.png"
@@ -52,12 +52,16 @@ const index = () => {
           className="z-0"
         />
       </div>
-      <div className="lg:flex item-center justify-between gap-7">
-        <div className="flex-[45%] flex flex-col items-center lg:items-start py-8 z-50">
-          <h1 className="text-primary text-3xl md:text-6xl font-bold uppercase">Testimonial</h1>
-          <p className="text-gray-800 text-lg md:text-2xl lg:text-4xl font-normal text-center md:text-left uppercase lg:text-left mb-12 lg:mb-0">What our travellers are saying</p>
+      <div className="lg:flex item-center lg:flex-col xl:flex-row justify-between gap-7">
+        <div className="flex-[45%] flex flex-col gap-2 sm:gap-3 md:gap-5 items-center   py-8 z-50">
+          <h1 className="text-primary text-3xl md:text-6xl font-bold uppercase  ">
+            Testimonial
+          </h1>
+          <p className="text-gray-800 text-lg md:text-2xl lg:text-4xl font-normal text-center md:text-left uppercase lg:text-left sm:mb-8 lg:mb-10 ">
+            What our travellers are saying
+          </p>
         </div>
-        <div className="flex-[55%] grid grid-cols-2 grid-rows-2 gap-5">
+        <div className="flex-[55%] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 grid-rows-2 gap-5">
           {TESTIMONIALS.map((testimonial, index) => (
             <TestimonialCard testimonial={testimonial} key={index} />
           ))}

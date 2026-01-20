@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import Image from "next/image";
 
 export default function PhotoCollageCarousel({ slides, autoplay = true }) {
   return (
@@ -53,9 +54,12 @@ export default function PhotoCollageCarousel({ slides, autoplay = true }) {
                   height: "clamp(340px, 32vw, 520px)",
                 }}
               >
-                <img
+                <Image
                   src={s.src || "/placeholder.svg"}
                   alt={s.alt}
+                  width={200}
+                  height={200}
+                  loading="lazy"
                   className="h-full w-full object-cover rounded-3xl"
                 />
               </figure>
