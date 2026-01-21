@@ -5,7 +5,7 @@ import React from "react";
 
 const AirFlightCard = ({ data }) => {
   return (
-    <Card className="relative bg-secondary rounded-4xl px-6 py-5  flex-flex-col gap-3 shadow-lg ">
+    <Card className="relative bg-secondary rounded-4xl px-3 md:px-6 py-5  flex-flex-col gap-3 shadow-lg ">
       {/* Floating Header */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -68,7 +68,7 @@ const AirFlightCard = ({ data }) => {
 /* Reusable Flight Row */
 const FlightRow = ({ data }) => {
   return (
-    <div className="grid grid-cols-5 items-center gap-6 w-full ">
+    <div className="grid grid-cols-5 items-center gap-3 text-center md:gap-6 w-full ">
       {/* Logo column */}
       <div className="flex justify-center">
         <Image
