@@ -40,7 +40,7 @@ const AirFlightCard = ({ data }) => {
               loading="lazy"
             />
             <Image
-              src="/flight/MainContent/LeftMenu/AirFlights/Whatsapp logo.png"
+              src="/flight/MainContent/LeftMenu/AirFlights/Whatsapp Logo.png"
               alt="whatsapp"
               width={22}
               height={22}
