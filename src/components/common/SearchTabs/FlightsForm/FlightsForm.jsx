@@ -60,7 +60,7 @@ const FlightsForm = () => {
       validationSchema={getSchema()}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue, resetForm }) => {
+      {({ values, setFieldValue, resetForm, isValid, isSubmitting }) => {
         // handle flight type change + reset logic
         const handleFlightTypeChange = (type) => {
           setFlightType(type);
@@ -117,7 +117,11 @@ const FlightsForm = () => {
             {/* Form */}
             <FormFields flightType={flightType} />
 
-            <Button type="submit" className="btn-main self-center">
+            <Button
+              type="submit"
+              className="btn-main self-center"
+              disabled={!isValid || isSubmitting}
+            >
               Search Flights
             </Button>
           </Form>
