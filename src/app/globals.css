@@ -169,6 +169,9 @@ button:disabled {
 .heading {
   @apply text-4xl font-bold text-center text-primary;
 }
+.heading-black {
+  @apply text-4xl font-bold text-center text-black;
+}
 .heading-with-space {
   @apply text-4xl font-bold text-center text-primary tracking-widest;
 }

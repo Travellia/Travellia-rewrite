@@ -2,15 +2,15 @@ import BookNow from "@/components/common/BookNow";
 import React from "react";
 
 const imageData = {
-  image: "/holidayPackage/BookNow/bgImage.png",
+  image: "/hotel/BookNow/bg.png",
   alt: "resturant",
 };
 
 const index = () => {
   return (
-    <section>
+    <div>
       <BookNow data={imageData} />
-    </section>
+    </div>
   );
 };
 
