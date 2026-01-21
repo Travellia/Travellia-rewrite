@@ -63,10 +63,10 @@ const AirFlightCard = ({ data }) => {
 /* Reusable Flight Row */
 const FlightRow = ({ data }) => {
   return (
-    <div className="flex flex-col gap-5 md:flex md:flex-row md:items-center md:gap-6">
+    <div className="flex flex-col gap-3 md:flex md:flex-row md:items-center md:gap-6">
       <Image src={data.logo} alt="logo" width={80} height={80} loading="lazy" />
 
-      <div className="flex gap-10 text-center">
+      <div className="flex gap-5 text-center">
         <FlightCol title={data.from.time} sub={data.from.location} />
         <FlightCol title={data.stop.number} sub={data.stop.location} />
         <FlightCol title={data.to.time} sub={data.to.location} />
