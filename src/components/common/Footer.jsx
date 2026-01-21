@@ -18,6 +18,13 @@ const FOOTER_IMAGE_MAP = [
     },
   },
   {
+    match: "/flights",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Flight Footer",
+    },
+  },
+  {
     match: "/hotels",
     image: {
       src: "/footer/hotelFooter.png",
@@ -29,6 +36,13 @@ const FOOTER_IMAGE_MAP = [
     image: {
       src: "/footer/holidayPackagesFooter.png",
       alt: "Holiday Packages Footer",
+    },
+  },
+  {
+    match: "/terms",
+    image: {
+      src: "/footer/termsFooter.png",
+      alt: "Terms and condition Footer",
     },
   },
 ];
