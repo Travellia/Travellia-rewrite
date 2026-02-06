@@ -6,7 +6,7 @@ import FlightForm from "./FlightForm";
 const LeftMenu = () => {
   return (
     <section className="flex flex-col gap-5">
-      <div className="flex flex-col gap-10 pb-5">
+      <div className="flex flex-col gap-10 mb-5">
         <AirFlight />
         <CallUs />
       </div>

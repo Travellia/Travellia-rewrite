@@ -2,8 +2,8 @@ import * as Yup from "yup";
 
 const bookThePackageSchema = Yup.object().shape({
   firstName: Yup.string()
-    .min(2, "Too short!")
-    .max(50, "Too long!")
+    .min(2, "First name must be at least 2 characters long")
+    .max(50, "First name cannot exceed 50 characters")
     .required("First name is required"),
 
   phone: Yup.string()
@@ -40,7 +40,10 @@ const bookThePackageSchema = Yup.object().shape({
     .required("Select number of children")
     .min(0, "Invalid number"),
 
-  instruction: Yup.string().max(500, "Message too long"),
+  instruction: Yup.string()
+    .trim()
+    .required("Please provide special instructions or additional information")
+    .min(1, "Instructions cannot be empty"),
 
   subscribe: Yup.boolean().oneOf([true], "You must subscribe to continue"),
 
