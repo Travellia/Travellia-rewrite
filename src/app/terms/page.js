@@ -1,8 +1,8 @@
-import FilterSearch from "@/components/flight/FilterSearch";
 import Welcome from "@/components/terms/welcome";
 import MainContent from "@/components/terms/MainContent";
 import React from "react";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
+import FilterSearch from "@/components/common/FilterSearch";
 
 const page = () => {
   return (

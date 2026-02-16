@@ -1,11 +1,11 @@
 import Welcome from "@/components/hotel/Welcome";
-import FilterSearch from "@/components/hotel/FilterSearch";
 import Packages from "@/components/hotel/Packages";
 import TouristFeedback from "@/components/hotel/TouristFeedback";
 import BookNow from "@/components/hotel/BookNow";
 
 import React from "react";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
+import FilterSearch from "@/components/common/FilterSearch";
 
 const page = () => {
   return (
