@@ -1,8 +1,9 @@
+import React from "react";
 import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/flights/welcome";
 import FlyWithUs from "@/components/flights/FlyWithUs";
 import PopularFlights from "@/components/flights/PopularFlights";
-import React from "react";
+import FamilyAdventure from "@/components/flights/FamilyAdventure";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
         <FilterSearch defaultTab="flights" />
         <FlyWithUs />
         <PopularFlights />
+        <FamilyAdventure />
       </div>
     </section>
   );
