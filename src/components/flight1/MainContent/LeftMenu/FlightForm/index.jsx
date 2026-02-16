@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import FlightFormSchema from "@/schemas/flight/FlightFormSchema";
 import { Button } from "@/components/ui/button";
