@@ -5,8 +5,15 @@ import FlyWithUs from "@/components/flights/FlyWithUs";
 import PopularFlights from "@/components/flights/PopularFlights";
 import FamilyAdventure from "@/components/flights/FamilyAdventure";
 import TrendingPackage from "@/components/flights/TrendingPackage";
+import BookNow from "@/components/common/BookNow";
+import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
+  const imageData = {
+    image: "/flights/booknow.png",
+    alt: "resturant",
+  };
+
   return (
     <section className="relative flex flex-col">
       <Welcome />
@@ -16,6 +23,10 @@ const page = () => {
         <PopularFlights />
         <FamilyAdventure />
         <TrendingPackage />
+        <div className="mt-10">
+          <BookNow data={imageData} />
+          <PlanYourTrip />
+        </div>
       </div>
     </section>
   );
