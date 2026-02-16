@@ -9,7 +9,7 @@ import OfferedServices from "@/components/homepage/OfferedServices";
 import TrendingPackages from "@/components/homepage/TrendingPackages";
 import BookNow from "@/components/homepage/BookNow";
 import Testimonials from "@/components/homepage/Testimonial";
-import FilterSearch from "@/components/flight/FilterSearch";
+import FilterSearch from "@/components/flight1/FilterSearch";
 
 export default function Home() {
   return (
