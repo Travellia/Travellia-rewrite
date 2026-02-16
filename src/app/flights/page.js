@@ -4,6 +4,7 @@ import Welcome from "@/components/flights/welcome";
 import FlyWithUs from "@/components/flights/FlyWithUs";
 import PopularFlights from "@/components/flights/PopularFlights";
 import FamilyAdventure from "@/components/flights/FamilyAdventure";
+import TrendingPackage from "@/components/flights/TrendingPackage";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
         <FlyWithUs />
         <PopularFlights />
         <FamilyAdventure />
+        <TrendingPackage />
       </div>
     </section>
   );

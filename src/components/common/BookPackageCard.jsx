@@ -9,7 +9,7 @@ const BookPackageCard = ({ data, isOdd }) => {
   return (
     <Card
       className={
-        "relative h-[clamp(380px,32vw,700px)] w-[clamp(280px,32vw,350px)] !shadow-none !border-none  bg-transparent !p-0 overflow-hidden rounded-3xl"
+        "group relative h-[clamp(380px,32vw,700px)] w-[clamp(280px,32vw,350px)] !shadow-none !border-none  bg-transparent !p-0 overflow-hidden rounded-3xl"
       }
     >
       <Image
@@ -17,17 +17,10 @@ const BookPackageCard = ({ data, isOdd }) => {
         alt="data.city"
         width={200}
         height={200}
-        className={`object-cover absolute top-0 left-0 w-full rounded-3xl ${
-          isOdd ? "h-full" : "h-6/10"
-        }`}
+        className="object-cover h-6/10 absolute top-0 left-0 w-full rounded-3xl ${
+          group-hover:h-full transition-all duration-500 "
       />
-      <div
-        className={`p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl ${
-          isOdd
-            ? "bg-white/85 top-1/2 -translate-y-1/2 h-7/10"
-            : "bg-secondary bottom-0"
-        }`}
-      >
+      <div className="p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl bg-secondary bottom-0 group-hover:bg-white/85 group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:h-7/10 transition-all duration-500">
         <div className="w-full h-full flex flex-col items-center justify-center gap-5">
           <div className="flex items-center justify-between gap-3 text-gray-500">
             {data.days ? (

@@ -8,6 +8,7 @@ const PackageCard = ({ data }) => {
   return (
     <Card
       className="
+        group  
         relative
         h-170 sm:h-140 md:h-140 xl:h-162.5
         w-full
@@ -20,10 +21,10 @@ const PackageCard = ({ data }) => {
         alt="data.city"
         width={200}
         height={200}
-        className="object-cover absolute top-0 left-0 w-full rounded-3xl sm:h7/10 xl:h-6/10"
+        className="object-cover absolute top-0 left-0 w-full rounded-3xl sm:h7/10 xl:h-6/10 group-hover:h-full transition-all duration-500 "
         loading="lazy"
       />
-      <div className="p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl  top-1/2 md:-translate-y-18 xl:-translate-y-12  sm:h7/10 xl:h-5/10 bg-secondary">
+      <div className="p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl  top-1/2 md:-translate-y-18 xl:-translate-y-12  sm:h7/10 xl:h-5/10 bg-secondary group-hover:bg-white/85 group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:h-7/10 transition-all duration-500">
         <div className="w-full h-full flex flex-col items-center justify-center gap-4 sm:gap-3 xl:gap-1">
           <p className="text-[8px]">{"⭐".repeat(data.stars)}</p>
 
