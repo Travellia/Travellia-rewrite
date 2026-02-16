@@ -13,6 +13,7 @@ const OurPopularCard = ({ data, largeText }) => {
         src={data.src}
         alt={`${data.country}, ${data.city}`}
         fill
+        loading="lazy"
         className="absolute top-0 left-0 object-cover rounded-lg z-0"
       />
 

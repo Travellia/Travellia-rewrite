@@ -84,6 +84,7 @@ const index = () => {
         alt="plane"
         height={500}
         width={500}
+        loading="lazy"
         className="hidden md:block absolute md:-translate-y-5 xl:-translate-y-10 top-0 -z-1"
       />{" "}
       <Image
@@ -91,6 +92,7 @@ const index = () => {
         alt="plane"
         height={250}
         width={250}
+        loading="lazy"
         className="hidden md:block absolute md:-translate-y-5 xl:-translate-y-10 bottom-0 -z-1"
       />{" "}
       <Image
@@ -98,6 +100,7 @@ const index = () => {
         alt="plane"
         height={250}
         width={250}
+        loading="lazy"
         className="hidden md:block absolute md:-translate-y-5 xl:-translate-y-10 top-1/2 right-0 -z-1"
       />
       <ContentLayoutWrapper

@@ -12,6 +12,7 @@ const Index = () => {
           alt="Plane"
           fill
           className="object-contain"
+          loading="lazy"
         />
       </div>
 
@@ -30,6 +31,7 @@ const Index = () => {
           alt="World Map"
           width={1920} // original image width
           height={1080} // original image height
+          loading="lazy"
           className="w-full h-auto object-cover"
         />
       </div>
