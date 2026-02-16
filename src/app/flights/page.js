@@ -1,5 +1,6 @@
 import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/flights/welcome";
+import FlyWithUs from "@/components/flights/FlyWithUs";
 import React from "react";
 
 const page = () => {
@@ -8,6 +9,7 @@ const page = () => {
       <Welcome />
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch defaultTab="flights" />
+        <FlyWithUs />
       </div>
     </section>
   );

@@ -180,6 +180,9 @@ button:disabled {
   @apply text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase;
 }
 
+  @apply text-lg font-extralight text-center capitalize;
+}
+
 /* Paragraph */
 .para {
   @apply text-gray-600 text-base text-center w-[80%] m-auto;
