@@ -5,6 +5,8 @@ import popularFlightData from "@/lib/data/popularFlightsData";
 import Testimonials from "@/components/flights/page-2/Testimonials";
 
 import React from "react";
+import BookNow from "@/components/common/BookNow";
+import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const welcomeData = {
@@ -18,6 +20,11 @@ const page = () => {
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
   };
 
+  const imageData = {
+    image: "/flights/page-2/bg.png",
+    alt: "resturant",
+  };
+
   const FLIGHTS_CARDS_DATA = popularFlightData.slice(0, 12);
 
   return (
@@ -26,8 +33,10 @@ const page = () => {
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch defaultTab="flights" />
         <PopularFlights cards={FLIGHTS_CARDS_DATA} show={false} />
-        <div >
+        <div>
           <Testimonials />
+          <BookNow data={imageData} />
+          <PlanYourTrip />
         </div>
       </div>
     </section>
