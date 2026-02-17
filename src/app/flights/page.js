@@ -2,7 +2,8 @@ import React from "react";
 import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/common/Welcome";
 import FlyWithUs from "@/components/flights/page-1/FlyWithUs";
-import PopularFlights from "@/components/flights/page-1/PopularFlights";
+import popularFlightData from "@/lib/data/popularFlightsData";
+import PopularFlights from "@/components/common/PopularFlights";
 import FamilyAdventure from "@/components/flights/page-1/FamilyAdventure";
 import TrendingPackage from "@/components/flights/page-1/TrendingPackage";
 import BookNow from "@/components/common/BookNow";
@@ -16,9 +17,10 @@ const page = () => {
       { id: 3, image: "/flights/welcome/Image3.png" },
     ],
     title: "TRAVELLIA",
-
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
   };
+
+  const FLIGHTS_CARDS_DATA = popularFlightData.slice(0, 6);
 
   const imageData = {
     image: "/flights/page-1/booknow.png",
@@ -31,7 +33,7 @@ const page = () => {
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch defaultTab="flights" />
         <FlyWithUs />
-        <PopularFlights />
+        <PopularFlights cards={FLIGHTS_CARDS_DATA} />
         <FamilyAdventure />
         <TrendingPackage />
         <div className="mt-10">

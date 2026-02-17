@@ -4,10 +4,12 @@ import { Star } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
 
-const OurPopularCard = ({ data, largeText }) => {
+const OurPopularCard = ({ data }) => {
   return (
     <Card
-      className={"relative h-[clamp(380px,32vw,500px)] bg-transparent !p-4"}
+      className={
+        "group relative h-[clamp(380px,32vw,500px)] bg-transparent !p-4"
+      }
     >
       <Image
         src={data.src}
@@ -23,11 +25,7 @@ const OurPopularCard = ({ data, largeText }) => {
         <div className="flex justify-between items-center">
           <h2 className="flex items-center gap-1">
             <FaMapMarkerAlt className="inline-block text-primary" />
-            <span
-              className={`text-white font-semibold uppercase ${
-                largeText ? "text-2xl" : "text-lg"
-              }`}
-            >
+            <span className="text-white font-semibold uppercase text-lg hovwe:text-2xl">
               {data.country}, {data.city}
             </span>
           </h2>
@@ -38,19 +36,11 @@ const OurPopularCard = ({ data, largeText }) => {
           </div>
         </div>
         <div>
-          <h1
-            className={`text-3xl uppercase text-white/90 font-semibold mb-1 tracking-wide ${
-              largeText ? "text-3xl" : "text-xl"
-            }`}
-          >
+          <h1 className="text-3xl uppercase text-white/90 font-semibold mb-1 tracking-wide text-xl group-hover:text-3xl">
             Discover {data.country}
           </h1>
           <p className="text-[13px] text-gray-200">{data.description}</p>
-          <div
-            className={`${
-              data.isSaleCard ? "block" : "hidden"
-            } flex items-center justify-between`}
-          >
+          <div className="hidden group-hover:flex duration-500 items-center justify-between">
             <div>
               <span className="text-xl uppercase font-bold text-primary">
                 ${data.price}
@@ -64,7 +54,7 @@ const OurPopularCard = ({ data, largeText }) => {
             </div>
           </div>
           {data.tags && (
-            <div className="flex gap-1 items-center justify-between">
+            <div className="hidden  group-hover:flex duration-500 gap-1 items-center justify-between">
               <div className="flex flex-wrap gap-2 mt-2">
                 {data.tags.map((tag, index) => (
                   <div
@@ -87,3 +77,7 @@ const OurPopularCard = ({ data, largeText }) => {
 };
 
 export default OurPopularCard;
+
+//  className={`${
+//               data.isSaleCard ? "block" : "hidden"
+//             } flex items-center justify-between`}
