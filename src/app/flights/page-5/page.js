@@ -1,5 +1,5 @@
-import Welcome from "@/components/flight/welcome";
-import MainContent from "@/components/flight/MainContent";
+import Welcome from "@/components/flight1/welcome";
+import MainContent from "@/components/flight1/MainContent";
 import React from "react";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
 import Image from "next/image";
