@@ -11,7 +11,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 699,
     description: "Experience the Vibrant city  of Los Angeles.",
-    image: "/flights/TrendingPackage/package1.png",
+    image: "/flights/page-1/TrendingPackage/package1.png",
   },
   {
     days: 8,
@@ -21,7 +21,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 699,
     description: "Experience the Vibrant city  of Los Angeles.",
-    image: "/flights/TrendingPackage/package2.png",
+    image: "/flights/page-1/TrendingPackage/package2.png",
   },
   {
     days: 8,
@@ -31,7 +31,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 599,
     description: "Experience the stunning islands of Maldives",
-    image: "/flights/TrendingPackage/package3.png",
+    image: "/flights/page-1/TrendingPackage/package3.png",
   },
   {
     days: 8,
@@ -41,7 +41,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 599,
     description: "Experience the Vibrant city  of Los Angeles.",
-    image: "/flights/TrendingPackage/package4.png",
+    image: "/flights/page-1/TrendingPackage/package4.png",
   },
   {
     days: 8,
@@ -51,7 +51,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 599,
     description: "Experience the stunning islands of Maldives",
-    image: "/flights/TrendingPackage/package5.png",
+    image: "/flights/page-1/TrendingPackage/package5.png",
   },
   {
     days: 8,
@@ -61,7 +61,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 599,
     description: "Experience the Vibrant city  of Los Angeles.",
-    image: "/flights/TrendingPackage/package6.png",
+    image: "/flights/page-1/TrendingPackage/package6.png",
   },
 ];
 

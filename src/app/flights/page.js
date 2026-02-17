@@ -10,7 +10,7 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const imageData = {
-    image: "/flights/booknow.png",
+    image: "/flights/page-1/booknow.png",
     alt: "resturant",
   };
 

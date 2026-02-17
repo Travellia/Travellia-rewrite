@@ -6,7 +6,7 @@ const CallUs = () => {
   return (
     <section className="relative w-full h-75">
       <Image
-        src="/flight/MainContent/LeftMenu/CallUs/callcenterbg.png"
+        src="/flights/page-5/MainContent/LeftMenu/CallUs/callcenterbg.png"
         alt="call center"
         fill
         className="object-cover rounded-4xl"

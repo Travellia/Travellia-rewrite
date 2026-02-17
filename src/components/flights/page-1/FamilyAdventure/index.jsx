@@ -7,7 +7,7 @@ const index = () => {
   return (
     <section className="relative h-auto my-10">
       <Image
-        src={"/flights/FamilyAdventure/bg.png"}
+        src={"/flights/page-1/FamilyAdventure/bg.png"}
         alt="Family adventure - mobile and plane"
         fill
         className="w-full h-auto  absolute object-cover"

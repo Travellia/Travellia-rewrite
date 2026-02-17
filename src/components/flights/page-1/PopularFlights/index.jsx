@@ -7,7 +7,7 @@ import Image from "next/image";
 const FLIGHTS_CARDS_DATA = [
   {
     id: 1,
-    src: "/flights/PopularFlights/Barlin.png",
+    src: "/flights/page-1/PopularFlights/Barlin.png",
     country: "Barlin",
     city: "France",
     description:
@@ -18,7 +18,7 @@ const FLIGHTS_CARDS_DATA = [
   },
   {
     id: 2,
-    src: "/flights/PopularFlights/Amsterdam.png",
+    src: "/flights/page-1/PopularFlights/Amsterdam.png",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -32,7 +32,7 @@ const FLIGHTS_CARDS_DATA = [
   },
   {
     id: 3,
-    src: "/flights/PopularFlights/Moscow.png",
+    src: "/flights/page-1/PopularFlights/Moscow.png",
     country: "Moscow",
     city: "Russia",
     description:
@@ -43,7 +43,7 @@ const FLIGHTS_CARDS_DATA = [
   },
   {
     id: 4,
-    src: "/flights/PopularFlights/South-Africa.png",
+    src: "/flights/page-1/PopularFlights/South-Africa.png",
     country: "South-Africa",
     city: "",
     description:
@@ -54,7 +54,7 @@ const FLIGHTS_CARDS_DATA = [
   },
   {
     id: 5,
-    src: "/flights/PopularFlights/Eygypt.png",
+    src: "/flights/page-1/PopularFlights/Eygypt.png",
     country: "Eygypt",
     city: "",
     description:
@@ -65,7 +65,7 @@ const FLIGHTS_CARDS_DATA = [
   },
   {
     id: 6,
-    src: "/flights/PopularFlights/Asia.png",
+    src: "/flights/page-1/PopularFlights/Asia.png",
     country: "Asia",
     city: "",
     description:
@@ -80,7 +80,7 @@ const index = () => {
   return (
     <section className="w-full min-h-screen relative ">
       <Image
-        src="/flights/PopularFlights/plane.png"
+        src="/common/plane.png"
         alt="plane"
         height={500}
         width={500}
@@ -88,16 +88,16 @@ const index = () => {
         className="hidden md:block absolute md:-translate-y-5 xl:-translate-y-10 top-0 -z-1"
       />{" "}
       <Image
-        src="/flights/PopularFlights/passport.png"
-        alt="plane"
+        src="/common/passport.png"
+        alt="passport"
         height={250}
         width={250}
         loading="lazy"
         className="hidden md:block absolute md:-translate-y-5 xl:-translate-y-10 bottom-0 -z-1"
       />{" "}
       <Image
-        src="/flights/PopularFlights/ballon.png"
-        alt="plane"
+        src="/common/ballon.png"
+        alt="ballon"
         height={250}
         width={250}
         loading="lazy"

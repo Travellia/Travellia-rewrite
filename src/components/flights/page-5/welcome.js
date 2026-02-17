@@ -4,9 +4,9 @@ import ContentLayoutWrapper from "../../common/ContentLayoutWrapper";
 
 const Welcome = () => {
   const slides = [
-    { id: 1, image: "/flight/welcome/slide-1.png" },
-    { id: 2, image: "/flight/welcome/slide-2.png" },
-    { id: 3, image: "/flight/welcome/slide-3.png" },
+    { id: 1, image: "/flights/welcome/Image4.png" },
+    { id: 2, image: "/flights/welcome/Image5.png" },
+    { id: 3, image: "/flights/welcome/Image3.png" },
   ];
 
   return (

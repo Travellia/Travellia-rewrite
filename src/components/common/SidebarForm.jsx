@@ -33,7 +33,7 @@ const SidebarForm = ({ data }) => {
             BOOK NOW
           </Button>
           <Image
-            src="/common/sidebarForm/whatsapp-logo.png"
+            src="/common/Whatsapp-Logo.png"
             alt="logo"
             width={40}
             height={40}

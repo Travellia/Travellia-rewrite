@@ -38,14 +38,14 @@ const AirFlightCard = ({ data }) => {
 
           <div className="flex gap-4">
             <Image
-              src="/flight/MainContent/LeftMenu/AirFlights/phone-logo.png"
+              src="/common/phone-logo.png"
               alt="phone"
               width={22}
               height={22}
               loading="lazy"
             />
             <Image
-              src="/flight/MainContent/LeftMenu/AirFlights/Whatsapp-Logo.png"
+              src="/common/Whatsapp-Logo.png"
               alt="whatsapp"
               width={22}
               height={22}
@@ -72,8 +72,8 @@ const FlightRow = ({ data }) => {
       {/* Logo column */}
       <div className="flex justify-center">
         <Image
-          src={data.logo}
-          alt="logo"
+          src={data.src}
+          alt={data.alt}
           width={80}
           height={80}
           loading="lazy"
