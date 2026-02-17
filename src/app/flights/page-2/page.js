@@ -2,6 +2,7 @@ import Welcome from "@/components/common/Welcome";
 import FilterSearch from "@/components/common/FilterSearch";
 import PopularFlights from "@/components/common/PopularFlights";
 import popularFlightData from "@/lib/data/popularFlightsData";
+import Testimonials from "@/components/flights/page-2/Testimonials";
 
 import React from "react";
 
@@ -25,6 +26,9 @@ const page = () => {
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch defaultTab="flights" />
         <PopularFlights cards={FLIGHTS_CARDS_DATA} show={false} />
+        <div >
+          <Testimonials />
+        </div>
       </div>
     </section>
   );
