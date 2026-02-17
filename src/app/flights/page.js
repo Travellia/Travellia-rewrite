@@ -1,10 +1,10 @@
 import React from "react";
 import FilterSearch from "@/components/common/FilterSearch";
-import Welcome from "@/components/flights/welcome";
-import FlyWithUs from "@/components/flights/FlyWithUs";
-import PopularFlights from "@/components/flights/PopularFlights";
-import FamilyAdventure from "@/components/flights/FamilyAdventure";
-import TrendingPackage from "@/components/flights/TrendingPackage";
+import Welcome from "@/components/flights/page-1/welcome";
+import FlyWithUs from "@/components/flights/page-1/FlyWithUs";
+import PopularFlights from "@/components/flights/page-1/PopularFlights";
+import FamilyAdventure from "@/components/flights/page-1/FamilyAdventure";
+import TrendingPackage from "@/components/flights/page-1/TrendingPackage";
 import BookNow from "@/components/common/BookNow";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
 
