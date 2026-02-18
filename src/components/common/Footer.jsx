@@ -18,6 +18,13 @@ const FOOTER_IMAGE_MAP = [
     },
   },
   {
+    match: "/flights",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Flight Footer",
+    },
+  },
+  {
     match: "/hotels",
     image: {
       src: "/footer/hotelFooter.png",
@@ -29,6 +36,13 @@ const FOOTER_IMAGE_MAP = [
     image: {
       src: "/footer/holidayPackagesFooter.png",
       alt: "Holiday Packages Footer",
+    },
+  },
+  {
+    match: "/terms",
+    image: {
+      src: "/footer/termsFooter.png",
+      alt: "Terms and condition Footer",
     },
   },
 ];
@@ -122,11 +136,19 @@ const Footer = () => {
           {BRANDS.map((brand, index) => {
             return (
               <React.Fragment key={index}>
-                <div className="w-20 h-18 sm:w-25 sm:h-22 md:w-30 md:h-27 lg:w-35 lg:h-32 xl:w-44 xl:h-40  relative">
-                  <Image src={brand} alt="brand" fill loading="lazy" />
+                <div className="flex-1 flex items-center justify-center h-25 md:h-30">
+                  <div className="relative w-22 h-15 md:w-35 md:h-25  lg:w-40 lg:h-30 xl:w-50 xl:h-40">
+                    <Image
+                      src={brand}
+                      alt="brand"
+                      fill
+                      className="object-contain"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 {index < BRANDS.length - 1 && (
-                  <div className="bg-gray-300 sm:bg-gray-800 self-stretch w-0.5" />
+                  <div className="bg-gray-300 lg:bg-gray-800 self-center h-10 md:h-15 xl:h-25 w-0.5" />
                 )}
               </React.Fragment>
             );

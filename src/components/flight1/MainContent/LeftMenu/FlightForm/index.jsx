@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import FlightFormSchema from "@/schemas/flight/FlightFormSchema";
 import { Button } from "@/components/ui/button";
@@ -52,13 +51,6 @@ const FlightForm = () => {
       onSubmit={handleSubmit}
     >
       {({ values, setFieldValue }) => {
-        const [departDate, setDepartDate] = useState(
-          values.depart ? new Date(values.depart) : null,
-        );
-        const [returnDate, setReturnDate] = useState(
-          values.return ? new Date(values.return) : null,
-        );
-
         return (
           <Form className="h-auto grid grid-cols-2  gap-3">
             {/* First Name */}
@@ -137,9 +129,8 @@ const FlightForm = () => {
                 >
                   <Calendar
                     mode="single"
-                    selected={departDate}
+                    selected={values.depart ? new Date(values.depart) : null}
                     onSelect={(selected) => {
-                      setDepartDate(selected);
                       setFieldValue(
                         "depart",
                         selected ? format(selected, "yyyy-MM-dd") : "",
@@ -185,9 +176,8 @@ const FlightForm = () => {
                 >
                   <Calendar
                     mode="single"
-                    selected={returnDate}
+                    selected={values.return ? new Date(values.return) : null}
                     onSelect={(selected) => {
-                      setReturnDate(selected);
                       setFieldValue(
                         "return",
                         selected ? format(selected, "yyyy-MM-dd") : "",

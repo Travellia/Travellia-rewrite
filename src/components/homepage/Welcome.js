@@ -4,16 +4,12 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import CarouselWrapper from "@/components/ui/carousel";
 
 export default function Welcome() {
-  const slides = [
-    { id: 1, image: "/home/welcome/welcome.jpg" },
-    { id: 2, image: "/home/welcome/welcome2.jpg" },
-    { id: 3, image: "/home/welcome/welcome3.jpg" },
-  ];
+  const slide = [{ id: 1, image: "/home/welcome/welcome.png" }];
 
   return (
     <section className="h-[65vh] md:h-[72vh] relative lg:h-[77vh] xl:h-screen max-w-[100vw] flex items-center justify-center ">
       <CarouselWrapper
-        slides={slides}
+        slides={slide}
         className={"!absolute"}
         navigation={true}
       />

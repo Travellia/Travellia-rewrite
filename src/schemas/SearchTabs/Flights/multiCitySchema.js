@@ -14,7 +14,7 @@ const multiCitySchema = Yup.object({
         child: Yup.number()
           .min(0, "Children cannot be negative")
           .required("Children are required"),
-      })
+      }),
     )
     .required(),
   category: Yup.string()

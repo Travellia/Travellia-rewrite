@@ -137,11 +137,11 @@ const index = () => {
           <div className="flex flex-col gap-3">
             <span className="text-gray-700 uppercase text-sm md:text-2xl lg:text-3xl mx-auto tracking-wider">
               affordable{" "}
-              <span className="text-2xl text-primary uppercase tracking-wider">
+              <span className="text-2xl text-primary uppercase tracking-wider items-center">
                 |
               </span>{" "}
               comfortable{" "}
-              <span className="text-2xl text-primary uppercase tracking-wider">
+              <span className="text-2xl text-primary uppercase tracking-wider items-center">
                 |
               </span>{" "}
               spiritual journey

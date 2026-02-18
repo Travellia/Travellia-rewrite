@@ -39,13 +39,17 @@ const FlightsForm = () => {
         resetForm();
       }}
     >
-      {({ values, setFieldValue, resetForm }) => {
+      {({ values, setFieldValue, resetForm, isValid, isSubmitting }) => {
         return (
           <Form className="flex flex-col gap-7">
             {/* Form */}
             <HotelFormFields />
 
-            <Button type="submit" className="btn-main self-center">
+            <Button
+              type="submit"
+              className="btn-main self-center"
+              disabled={!isValid || isSubmitting}
+            >
               Search
             </Button>
           </Form>

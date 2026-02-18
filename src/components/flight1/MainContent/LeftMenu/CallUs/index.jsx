@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { data } from "@/lib/data/homepage-data";
 import React from "react";
 
 const CallUs = () => {
@@ -24,7 +25,7 @@ const CallUs = () => {
           </p>
         </div>
         <button className="bg-primary px-8 rounded-full font-bold text-4xl py-1 text-white ">
-          020 3504 0786
+          {data.PhoneNumber}
         </button>
       </div>
     </section>

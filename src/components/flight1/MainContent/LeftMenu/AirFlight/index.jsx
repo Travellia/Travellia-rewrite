@@ -14,7 +14,7 @@ const AirFlight = () => {
         time: "18H.20M",
       },
       return: {
-        logo: "/flight/MainContent/LeftMenu/AirFlights/plan-logo.png",
+        logo: "/flight/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
         from: { time: "08:10", location: "MIL" },
         stop: { number: "2 Stop", location: "CGN, VKO" },
         to: { time: "07:10", location: "KJA" },
