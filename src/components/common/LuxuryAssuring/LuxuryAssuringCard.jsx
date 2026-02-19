@@ -25,10 +25,10 @@ const LuxuryAssuringCard = ({ card }) => {
         </p>
 
         <div
-          className="flex flex-col-reverse items-start gap-2
+          className="flex justify-between md:flex-col-reverse md:items-start gap-2 
                 lg:flex lg:flex-row lg:items-center lg:justify-between"
         >
-          <Button className="rounded-full text-sm px-5 h-8">
+          <Button className="rounded-full text-sm px-5 h-8 ">
             {card.buttonText} <MdArrowOutward className="text-white " />
           </Button>
           <div className="flex flex-col items-start">
