@@ -20,7 +20,7 @@ const QUESTION_DATA = [
 
 const index = () => {
   return (
-    <section className="">
+    <section className="py-10">
       <ContentLayoutWrapper className="flex flex-col gap-10">
         <div className="flex flex-col gap-2">
           <h1 className="heading">Do You Have Any Question?</h1>

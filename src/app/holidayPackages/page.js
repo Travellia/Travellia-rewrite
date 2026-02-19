@@ -1,12 +1,14 @@
 import Welcome from "@/components/common/Welcome";
 import LuxuryAssuring from "@/components/common/LuxuryAssuring";
 import FreshlyAdded from "@/components/holidaypackagepage/FreshlyAdded";
-import TravelItinearies from "@/components/holidaypackagepage/TravelItinearies";
+import TravelItinearies from "@/components/common/TravelItinearies";
 import PlanYourTrip from "@/components/holidaypackagepage/PlanYourTrip";
 import React from "react";
 import FilterSearch from "@/components/common/FilterSearch";
 import BookNow from "@/components/common/BookNow";
-import { LuxuryAssuringHolidayPackage } from "@/lib/data/LuxuryAssuringHolidayPackage";
+import { LuxuryAssuringHolidayPackage } from "@/lib/data/holidayPackage/LuxuryAssuringHolidayPackage";
+import { PACKAGES_DATA } from "@/lib/data/holidayPackage/TravelItineariesPackageData-holidayPackage";
+import { Bullets } from "@/lib/data/holidayPackage/TravelItineariesBullets-holidayPackage";
 
 const page = () => {
   const welcomeData = {
@@ -19,6 +21,9 @@ const page = () => {
   };
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHolidayPackage;
+
+  const PACKAGE_DATA = PACKAGES_DATA;
+  const BULLETS = Bullets;
 
   const imageData = {
     image: "/holidayPackage/BookNow/bgImage.png",
@@ -36,7 +41,7 @@ const page = () => {
           <BookNow data={imageData} />
         </div>
         <div className="flex flex-col">
-          <TravelItinearies />
+          <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
         </div>
         <PlanYourTrip />
       </div>

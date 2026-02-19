@@ -6,69 +6,16 @@ import React from "react";
 import Image from "next/image";
 import BookPackageCard from "@/components/common/BookPackageCard";
 
-const index = () => {
-  const PACKAGES_DATA = [
-    {
-      stars: 5,
-      package: "3 STAR PACKAGE",
-      title: "Cras dapibus. Vivamus elementum ",
-      discountPrice: 499,
-      oldPrice: 699,
-      description:
-        "venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-      image: "/holidayPackage/TravelItinearies/Image-1.png",
-    },
-    {
-      stars: 5,
-      package: "4 STAR PACKAGE",
-      title: "Cras dapibus. Vivamus elementum ",
-      discountPrice: 499,
-      oldPrice: 699,
-      description:
-        "venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-      image: "/holidayPackage/TravelItinearies/Image-2.png",
-    },
-    {
-      stars: 5,
-      package: "5 STAR PACKAGE",
-      title: "Cras dapibus. Vivamus elementum ",
-      discountPrice: 499,
-      oldPrice: 699,
-      description:
-        "venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-      image: "/holidayPackage/TravelItinearies/Image-3.png",
-    },
-  ];
-
-  const Bulltes = [
-    { id: 1, text: "Ullam accumsan lorem in dui. Cras ultricies mi." },
-    {
-      id: 2,
-      text: "posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam arcu. Duis arcu tortor, suscipit ege",
-    },
-    {
-      id: 3,
-      text: "nonummy metus. Vestibulum volutpat pretium libero. Cras eros et nisl sagittis vestibulum. Nullam",
-    },
-    {
-      id: 4,
-      text: "volutpat pretium libero. Cras eros et nisl sagittis vestibulum.",
-    },
-    {
-      id: 5,
-      text: "nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus.",
-    },
-  ];
-
+const index = ({ data1, data2 }) => {
   return (
     <section className="w-full">
       <ContentLayoutWrapper className="flex flex-col gap-20 items-center w-full py-10">
         {/* -------------------- TravelItineraries --------------------  */}
         <div className="flex flex-col gap-8">
-          <h1 className="heading-with-space">TRAVEL ITINERARIES</h1>
+          <h1 className="heading-with-space">{data1.heading}</h1>
           {/* <div className="flex flex-col gap-8 "> */}
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-3 xl:grid-rows-1 place-items-center gap-8">
-            {PACKAGES_DATA.map((data, index) => {
+            {data1.packageDataCar.map((data, index) => {
               // 3rd card (index 2)
               if (index === 2) {
                 return (
@@ -96,18 +43,10 @@ const index = () => {
         {/* -------------------- Travellia referral program -------------------- */}
         <div className="flex flex-col gap-5">
           {/* heading */}
-          <h1 className="heading">
-            Travellia Referral Program <br /> Share the Blessings, Earn the
-            Rewards
-          </h1>
+          <h1 className="heading">{data2.heading}</h1>
 
           {/* Description */}
-          <p className="para font-bold">
-            Whether you're planning a romantic honeymoon or a family vacation,
-            our price section has got you covered. So, start browsing today and
-            find the perfect vacation package at a price that won't leave you
-            feeling guilty.
-          </p>
+          <p className="para font-bold">{data2.description}</p>
 
           {/* Discount */}
           <div className="flex flex-col items-center lg:flex-row  gap-10">
@@ -124,7 +63,7 @@ const index = () => {
 
             {/* Bulltes */}
             <div className="flex flex-col gap-2 justify-center">
-              {Bulltes.map((item) => (
+              {data2.bullets.map((item) => (
                 <div key={item.id} className="flex items-start gap-3">
                   <FaLocationArrow className="text-primary shrink-0 h-full " />
 

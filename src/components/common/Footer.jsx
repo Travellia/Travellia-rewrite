@@ -39,6 +39,13 @@ const FOOTER_IMAGE_MAP = [
     },
   },
   {
+    match: "/hajj-umrah",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Flight Footer",
+    },
+  },
+  {
     match: "/contact",
     image: {
       src: "/footer/contactFooter.png",
