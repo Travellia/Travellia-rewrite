@@ -3,8 +3,10 @@ import Welcome from "@/components/common/Welcome";
 import LuxuryAssuring from "@/components/common/LuxuryAssuring";
 import Question from "@/components/hajj-ummrah/Question";
 import { LuxuryAssuringHajjUmmrahPackage } from "@/lib/data/LuxuryAssuringHajjUmmrahPackage";
+import HalalFriendly from "@/components/hajj-ummrah/HalalFriendly";
 import React from "react";
 import Image from "next/image";
+import BookNow from "@/components/common/BookNow";
 
 const page = () => {
   const welcomeData = {
@@ -16,6 +18,11 @@ const page = () => {
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHajjUmmrahPackage;
 
+  const imageData = {
+    image: "/hajj-ummrah/BookNow/bgImage.png",
+    alt: "hajj-umrah",
+  };
+
   return (
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
@@ -23,13 +30,17 @@ const page = () => {
         <FilterSearch defaultTab={"hotels"} />
         <div>
           <Image
-            src="/hajj-ummrah/haram.png"
+            src="/hajj-ummrah/halalFriendly/haram.png"
             alt="haram"
             fill
             className="object-contain absolute bottom-0"
           />
           <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
           <Question />
+        </div>
+        <div>
+          <HalalFriendly />
+          <BookNow data={imageData} />
         </div>
       </div>
     </div>
