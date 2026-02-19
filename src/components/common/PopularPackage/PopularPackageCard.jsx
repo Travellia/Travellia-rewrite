@@ -2,8 +2,6 @@ import Image from "next/image";
 import React from "react";
 
 const PopularPackageCard = ({ data, index, total }) => {
-  console.log(total);
-
   return (
     <>
       <section className="flex gap-5 items-center [w-50%]">

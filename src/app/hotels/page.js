@@ -34,8 +34,10 @@ const page = () => {
           <Packages />
           <TouristFeedback />
         </div>
-        <BookNow data={imageData} />
-        <PlanYourTrip />
+        <div>
+          <BookNow data={imageData} />
+          <PlanYourTrip />
+        </div>
       </div>
     </div>
   );

@@ -1,23 +1,37 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
 import React from "react";
+import { cn } from "@/lib/utils";
+
 import BookingForm from "./BookingForm";
 
-const PlanYourTrip = () => {
+const PlanYourTrip = ({
+  titleLines1 = "PLAN YOUR TRIP",
+  titleLines2 = "WITH US",
+  titleLines2Class = "text-black",
+  sectionBg = "bg-secondary",
+  inputBg = "bg-white",
+  paddingY = "py-20",
+}) => {
   return (
-    <section className="bg-secondary">
-      <ContentLayoutWrapper className="flex flex-col gap-5 items-center py-20">
+    <section className={sectionBg}>
+      <div
+        className={`
+          flex flex-col gap-10 items-center py-20 w-full,
+          paddingY,
+        `}
+      >
         {/* Heading */}
+
         <div className="flex flex-col gap-3 text-center heading-big">
-          <h1 className="">PLAN YOUR TRIP</h1>
-          <h1 className=" text-black">WITH US</h1>
+          <h1 className="">{titleLines1}</h1>
+          <h1 className={titleLines2Class}>{titleLines2}</h1>
         </div>
 
         {/* Form */}
         <div className="w-full">
-          <BookingForm />
+          <BookingForm inputBg={inputBg} />
         </div>
-      </ContentLayoutWrapper>
+      </div>
     </section>
   );
 };

@@ -39,12 +39,28 @@ const FOOTER_IMAGE_MAP = [
     },
   },
   {
+    match: "/contact",
+    image: {
+      src: "/footer/contactFooter.png",
+      alt: "Contact Footer",
+    },
+  },
+  {
     match: "/terms",
     image: {
       src: "/footer/termsFooter.png",
       alt: "Terms and condition Footer",
     },
   },
+];
+
+const PAGE_PATH = [
+  "/",
+  "/flights",
+  "/hotels",
+  "/holidayPackages",
+  "/contact",
+  "/terms",
 ];
 
 const BRANDS = [
@@ -124,20 +140,22 @@ const Footer = () => {
     alt: "Default Footer",
   };
 
+  const isContactPage = pathname.startsWith("/contact");
+
   return (
-    <footer className="pt-10">
+    <footer className={`pt-10 ${isContactPage ? "bg-secondary" : "bg-white"}`}>
       <ContentLayoutWrapper
         className={
           "flex flex-col items-center justify-between gap-16 pt-16 sm:pt-0"
         }
       >
         {/* Brand Logos */}
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full ">
           {BRANDS.map((brand, index) => {
             return (
               <React.Fragment key={index}>
                 <div className="flex-1 flex items-center justify-center h-25 md:h-30">
-                  <div className="relative w-22 h-15 md:w-35 md:h-25  lg:w-40 lg:h-30 xl:w-50 xl:h-40">
+                  <div className="relative w-18 h-12 md:w-35 md:h-25  lg:w-40 lg:h-30 xl:w-50 xl:h-40">
                     <Image
                       src={brand}
                       alt="brand"
@@ -158,7 +176,7 @@ const Footer = () => {
         <div className="h-px w-full bg-gray-300" />
 
         {/* Travellia Logo */}
-        <div className="mx-auto">
+        <div className="mx-auto ">
           <Image
             src="/logo.png"
             alt="Travellia Logo"
@@ -222,11 +240,15 @@ const Footer = () => {
           <p className="text-2xl text-gray-500 text-center">
             Subscribe to get the lastest blog news from us.
           </p>
-          <div className="bg-secondary rounded-full h-20 w-full flex items-center">
+          <div
+            className={`rounded-full h-20 w-full flex items-center ${isContactPage ? "bg-white" : "bg-secondary"}`}
+          >
             <input
               type="text"
               placeholder="Email"
-              className="h-full w-7/10 px-8 bg-transparent outline-none placeholder:text-lg placeholder:text-gray-600"
+              className={
+                "h-full w-7/10 px-8 bg-transparent outline-none placeholder:text-lg placeholder:text-gray-600"
+              }
             />
             <Button className="rounded-full h-full w-3/10 text-xl sm:text-2xl">
               Submit
@@ -269,6 +291,10 @@ const Footer = () => {
         </div>
       </ContentLayoutWrapper>
       <div className="w-full h-[30vh] lg:h-[75vh] relative ">
+        <div
+          className={`absolute inset-0 z-10 bg-linear-to-b to-transparent ${isContactPage ? "from-secondary white via-secondary/20" : "from-white via-white/20"}  `}
+        />
+
         <Image
           src={footerImage.src}
           alt={footerImage.alt}

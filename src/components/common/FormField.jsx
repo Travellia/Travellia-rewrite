@@ -12,6 +12,7 @@ const FormField = ({
   wrapperClass,
   labelClass,
   errorClass,
+  inputBg = "bg-white",
 }) => {
   return (
     <div className={cn("w-full", wrapperClass)}>
@@ -29,7 +30,7 @@ const FormField = ({
         type={type}
         placeholder={placeholder}
         as={as}
-        className={cn("w-full p-5 bg-white rounded-md", className)}
+        className={cn("w-full p-5  rounded-md", inputBg, className)}
       />
 
       <ErrorMessage
