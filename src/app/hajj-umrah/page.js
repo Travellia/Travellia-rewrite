@@ -1,8 +1,10 @@
 import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/common/Welcome";
 import LuxuryAssuring from "@/components/common/LuxuryAssuring";
-import React from "react";
+import Question from "@/components/hajj-ummrah/Question";
 import { LuxuryAssuringHajjUmmrahPackage } from "@/lib/data/LuxuryAssuringHajjUmmrahPackage";
+import React from "react";
+import Image from "next/image";
 
 const page = () => {
   const welcomeData = {
@@ -19,7 +21,16 @@ const page = () => {
       <Welcome data={welcomeData} />
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch defaultTab={"hotels"} />
-        <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
+        <div>
+          <Image
+            src="/hajj-ummrah/haram.png"
+            alt="haram"
+            fill
+            className="object-contain absolute bottom-0"
+          />
+          <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
+          <Question />
+        </div>
       </div>
     </div>
   );
