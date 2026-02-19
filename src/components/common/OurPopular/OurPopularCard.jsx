@@ -7,9 +7,18 @@ import Image from "next/image";
 const OurPopularCard = ({ data }) => {
   return (
     <Card
-      className={
-        "group relative h-[clamp(380px,32vw,500px)] bg-transparent !p-4"
-      }
+      className={`
+    group relative 
+    h-[clamp(380px,32vw,500px)] 
+    bg-transparent 
+    !p-4 
+    overflow-hidden
+    after:absolute 
+    after:inset-0 
+    after:bg-black/45 
+    after:rounded-lg
+    after:z-0
+  `}
     >
       <Image
         src={data.src}
@@ -18,8 +27,6 @@ const OurPopularCard = ({ data }) => {
         loading="lazy"
         className="absolute top-0 left-0 object-cover rounded-lg z-0"
       />
-
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-lg z-0" />
 
       <div className="flex flex-col justify-between h-full z-10">
         <div className="flex justify-between items-center">
@@ -77,7 +84,3 @@ const OurPopularCard = ({ data }) => {
 };
 
 export default OurPopularCard;
-
-//  className={`${
-//               data.isSaleCard ? "block" : "hidden"
-//             } flex items-center justify-between`}
