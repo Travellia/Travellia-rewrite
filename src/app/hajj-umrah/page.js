@@ -34,7 +34,7 @@ const page = () => {
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
-        <FilterSearch defaultTab={"hotels"} />
+        <FilterSearch defaultTab={"hotels"}  />
         <div className="space-y-5">
           <Image
             src="/hajj-ummrah/halalFriendly/haram.png"
