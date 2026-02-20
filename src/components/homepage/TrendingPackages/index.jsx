@@ -66,7 +66,7 @@ const index = () => {
           {PACKAGES_DATA.map((data, index) => (
             <BookPackageCard data={data} key={index} />
           ))}
-          <div className="w-full text-center lg:w-1/2 mt-6 -order-1 sm:order-0">
+          <div className="w-full  lg:w-2/3 text-center mt-6 -order-1 sm:order-0">
             <h4 className="uppercase text-gray-800 text-2xl">trendy</h4>
             <h1 className="uppercase text-primary text-3xl sm:text-5xl   leading-14 font-bold">
               our trending tour packagees
