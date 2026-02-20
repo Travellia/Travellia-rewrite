@@ -15,9 +15,10 @@ const HotelPackage = ({ data, reverse = false }) => {
           <Image
             src={data.image}
             alt={data.alt}
-            width={600} // arbitrary large number
-            height={700} // arbitrary large number
+            width={600}
+            height={700}
             className="w-full h-auto object-cover"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col gap-8 xl:gap-10 p-1">

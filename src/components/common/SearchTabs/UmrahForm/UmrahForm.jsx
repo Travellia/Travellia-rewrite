@@ -37,6 +37,7 @@ const UmrahForm = () => {
                       alt={service.title}
                       fill
                       className="object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <p className="font-bold text-sm">{service.title}</p>
@@ -57,6 +58,7 @@ const UmrahForm = () => {
                       alt={service.title}
                       fill
                       className="object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <p className="font-bold text-sm">{service.title}</p>

@@ -12,6 +12,7 @@ const ServicePackage = ({ data }) => {
             alt={data.alt}
             fill
             className="object-contain"
+            loading="lazy"
           />
         </div>
         <h1 className="text-lg font-bold">{data.title}</h1>
