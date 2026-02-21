@@ -1,5 +1,6 @@
 import Welcome from "@/components/common/Welcome";
 import AboutTravellia from "@/components/about/AboutTravellia";
+import WhyChooseUs from "@/components/about/WhyChooseUs";
 import React from "react";
 
 const page = () => {
@@ -10,9 +11,10 @@ const page = () => {
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
   };
   return (
-    <div className="flex flex-col gap-20 bg-background">
+    <div className="flex flex-col gap-10 bg-background">
       <Welcome data={welcomeData} />
       <AboutTravellia />
+      <WhyChooseUs />
     </div>
   );
 };

@@ -17,6 +17,7 @@ const index = () => {
                 height={200}
                 width={200}
                 className="w-full h-full object-cover rounded-3xl"
+                loading="lazy"
               />
             </div>
 
@@ -28,6 +29,7 @@ const index = () => {
                 height={200}
                 width={200}
                 className="w-full h-full object-cover rounded-3xl"
+                loading="lazy"
               />
             </div>
           </div>
