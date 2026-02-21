@@ -1,8 +1,8 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
 import LeftMenu from "./LeftMenu";
-import RightMenu from "../../../common/RightMenu";
 import Image from "next/image";
+import RightMenu from "@/components/common/RightMenu";
 
 const index = () => {
   return (
