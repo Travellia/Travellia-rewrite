@@ -14,7 +14,7 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const welcomeData = {
-    slides: [{ id: 1, image: "/hajj-umrah/welcome/slide1.png" }],
+    slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
     heading: "SCROLL DOWN",
     title: "BEST UMMRAH PACKAGES",
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
@@ -34,7 +34,7 @@ const page = () => {
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
-        <FilterSearch defaultTab={"hotels"}  />
+        <FilterSearch defaultTab={"hotels"} />
         <div className="space-y-5">
           <Image
             src="/hajj-ummrah/halalFriendly/haram.png"

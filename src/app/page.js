@@ -8,8 +8,9 @@ import HotelBookings from "@/components/homepage/HotelBookings";
 import OfferedServices from "@/components/homepage/OfferedServices";
 import TrendingPackages from "@/components/homepage/TrendingPackages";
 import BookNow from "@/components/homepage/BookNow";
-import Testimonials from "@/components/homepage/Testimonial";
+import Testimonials from "@/components/common/Testimonial";
 import FilterSearch from "@/components/common/FilterSearch";
+import { TESTIMONIALS } from "@/lib/data/home/Testimonial";
 
 export default function Home() {
   const welcomeData = {
@@ -21,6 +22,8 @@ export default function Home() {
     ],
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
   };
+
+  const TESTIMONIAL = TESTIMONIALS;
 
   return (
     <div className="flex flex-col bg-background">
@@ -36,7 +39,7 @@ export default function Home() {
         <OfferedServices />
         <TrendingPackages />
         <BookNow />
-        <Testimonials />
+        <Testimonials data={TESTIMONIAL} variant="home" />
       </div>
     </div>
   );
