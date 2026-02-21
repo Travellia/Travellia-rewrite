@@ -8,7 +8,7 @@ const index = () => {
     <section className="w-full">
       <ContentLayoutWrapper className="flex flex-col gap-10">
         <div className="flex items-center gap-5">
-          <div className="grid grid-cols-8 grid-rows-7 gap-6 h-[600px] w-full lg:w-1/2 ">
+          <div className="grid grid-cols-8 grid-rows-7 gap-6 h-[600px] w-full md:w-1/2 ">
             {/* LEFT LARGE IMAGE */}
             <div className="relative col-start-1 col-end-9 row-start-1 row-end-8  rounded-3xl p-5  bg-background">
               <Image
@@ -33,7 +33,7 @@ const index = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-10 lg:w-1/2">
+          <div className="flex flex-col md:gap-5 lg:gap-10 md:w-1/2">
             <h1 className="text-4xl font-bold text-primary">
               ABOUT <br />
               TRAVELLIA

@@ -44,7 +44,7 @@ const index = () => {
     },
   ];
   return (
-    <section className="py-5 md:py-20  bg-background relative overflow-hidden flex flex-col">
+    <section className="py-5 md:py-10  bg-background relative overflow-hidden flex flex-col">
       <ContentLayoutWrapper className="flex flex-col z-2">
         <div className="text-center mb-8 z-2">
           <h2 className="text-lg font-ultralight text-center capitalize">
