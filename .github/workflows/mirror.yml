@@ -15,13 +15,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false   # 🔥 IMPORTANT
 
       - name: Push to Personal Repository
         env:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
-          # Add personal remote securely
+          if [ -z "$PERSONAL_ACCESS_TOKEN" ]; then
+            echo "PAT is NOT set"
+            exit 1
+          else
+            echo "PAT is set"
+          fi
           git remote add personal https://x-access-token:${PERSONAL_ACCESS_TOKEN}@github.com/Travellia/Travellia-rewrite.git
-          
-          # Push only the branch that triggered the workflow
           git push personal ${{ github.ref_name }} --force-with-lease
