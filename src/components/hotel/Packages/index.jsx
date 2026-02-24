@@ -147,7 +147,7 @@ const Packages = () => {
         alt="background"
         width={300}
         height={300}
-        className="absolute top-1/2 left-0 "
+        className="hidden lg:block absolute top-1/2 left-0 "
         loading="lazy"
       />
 
@@ -156,7 +156,7 @@ const Packages = () => {
         alt="passport"
         width={300}
         height={300}
-        className="absolute right-0 bottom-0 "
+        className="hidden lg:block absolute right-0 bottom-0 "
         loading="lazy"
       />
       <ContentLayoutWrapper className=" flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-6">

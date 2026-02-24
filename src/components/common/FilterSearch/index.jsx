@@ -15,7 +15,7 @@ const FilterSearch = ({ defaultTab }) => {
           priority
           className="absolute object-cover min-h-50 -z-10 rounded-3xl "
         />
-        <SearchTabs defaultTab="flights" />
+        <SearchTabs defaultTab={defaultTab} />
       </ContentLayoutWrapper>
     </section>
   );
