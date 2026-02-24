@@ -3,36 +3,7 @@ import ProfileCard from "@/components/common/ProfileCard";
 import Image from "next/image";
 import React from "react";
 
-const TESTIMONIALS = [
-  {
-    comment:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque.",
-    src: "/common/CardPic1.png",
-    name: "Shannon J. Williams",
-    location: "New York, USA",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque.",
-    src: "/common/CardPic2.png",
-    name: "Shannon J. Williams",
-    location: "New York, USA",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque.",
-    src: "/common/CardPic3.png",
-    name: "Shannon J. Williams",
-    location: "New York, USA",
-  },
-  {
-    comment:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque.",
-    src: "/common/CardPic4.png",
-    name: "Shannon J. Williams",
-    location: "New York, USA",
-  },
-];
+
 
 const index = () => {
   return (

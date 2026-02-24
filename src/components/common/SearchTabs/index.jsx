@@ -5,6 +5,7 @@ import { useState } from "react";
 import FlightsForm from "./FlightsForm/FlightsForm";
 import Image from "next/image";
 import HotelsForm from "./HotelsForm/HotelsForm";
+import UmrahForm from "./UmrahForm/UmrahForm";
 // import HolidaysForm from "./tabs/HolidaysForm";
 // import UmrahForm from "./tabs/UmrahForm";
 
@@ -12,7 +13,7 @@ const TABS = [
   { key: "flights", label: "Flights", component: <FlightsForm /> },
   { key: "hotels", label: "Hotels", component: <HotelsForm /> },
   // { key: "holidays", label: "Holidays", component: <HolidaysForm /> },
-  // { key: "umrah", label: "Umrah", component: <UmrahForm /> },
+  { key: "umrah", label: "Umrah", component: <UmrahForm /> },
 ];
 
 const SearchTabs = ({ defaultTab = "hotels" }) => {

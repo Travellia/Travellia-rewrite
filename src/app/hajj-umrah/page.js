@@ -14,7 +14,7 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const welcomeData = {
-    slides: [{ id: 1, image: "/hajj-umrah/welcome/slide1.png" }],
+    slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
     heading: "SCROLL DOWN",
     title: "BEST UMMRAH PACKAGES",
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",

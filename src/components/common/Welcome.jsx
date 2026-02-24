@@ -7,7 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Welcome = ({ data }) => {
   return (
     <section
-      className={`${data.heightClassName} relative max-w-[100vw] flex items-center justify-center`}
+      className={`relative max-w-[100vw] flex items-center justify-center ${data.heightClassName} `}
     >
       <CarouselWrapper
         slides={data.slides}

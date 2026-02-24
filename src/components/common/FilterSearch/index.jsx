@@ -7,7 +7,7 @@ const FilterSearch = ({ defaultTab }) => {
   return (
     <section className="">
       {/* Content */}
-      <ContentLayoutWrapper className="lg:w-[90vw] xl:w-[60vw] relative z-10 border border-primary rounded-3xl shadow-2xl">
+      <ContentLayoutWrapper className="lg:w-[90vw] xl:w-[60vw] relative z-10 border border-primary rounded-3xl shadow-2xl bg-secondary">
         <Image
           src="/holidayPackage/ContactUs/bg.png"
           alt="background"
@@ -15,6 +15,7 @@ const FilterSearch = ({ defaultTab }) => {
           priority
           className="absolute object-cover min-h-50 -z-10 rounded-3xl "
         />
+
         <SearchTabs defaultTab={defaultTab} />
       </ContentLayoutWrapper>
     </section>
