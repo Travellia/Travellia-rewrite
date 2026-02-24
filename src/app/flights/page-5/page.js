@@ -1,9 +1,9 @@
-import Welcome from "@/components/flight/welcome";
-import FilterSearch from "@/components/flight/FilterSearch";
-import MainContent from "@/components/flight/MainContent";
+import Welcome from "@/components/flight1/welcome";
+import MainContent from "@/components/flight1/MainContent";
 import React from "react";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
 import Image from "next/image";
+import FilterSearch from "@/components/common/FilterSearch";
 
 const page = () => {
   return (

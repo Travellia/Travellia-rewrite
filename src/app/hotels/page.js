@@ -1,13 +1,17 @@
 import Welcome from "@/components/hotel/Welcome";
-import FilterSearch from "@/components/hotel/FilterSearch";
 import Packages from "@/components/hotel/Packages";
 import TouristFeedback from "@/components/hotel/TouristFeedback";
-import BookNow from "@/components/hotel/BookNow";
-
 import React from "react";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
+import FilterSearch from "@/components/common/FilterSearch";
+import BookNow from "@/components/common/BookNow";
 
 const page = () => {
+  const imageData = {
+    image: "/hotel/BookNow/bg.png",
+    alt: "resturant",
+  };
+
   return (
     <div className="flex flex-col">
       <Welcome />
@@ -18,7 +22,7 @@ const page = () => {
           <Packages />
           <TouristFeedback />
         </div>
-        <BookNow />
+        <BookNow data={imageData} />
         <PlanYourTrip />
       </div>
     </div>

@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
 
-const DestinatonCard = ({ data, largeText }) => {
+const OurPopularCard = ({ data, largeText }) => {
   return (
     <Card
       className={"relative h-[clamp(380px,32vw,500px)] bg-transparent !p-4"}
@@ -13,9 +13,13 @@ const DestinatonCard = ({ data, largeText }) => {
         src={data.src}
         alt={`${data.country}, ${data.city}`}
         fill
+        loading="lazy"
         className="absolute top-0 left-0 object-cover rounded-lg z-0"
       />
-      <div className="flex flex-col justify-between h-full z-1">
+
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-lg z-0" />
+
+      <div className="flex flex-col justify-between h-full z-10">
         <div className="flex justify-between items-center">
           <h2 className="flex items-center gap-1">
             <FaMapMarkerAlt className="inline-block text-primary" />
@@ -41,7 +45,7 @@ const DestinatonCard = ({ data, largeText }) => {
           >
             Discover {data.country}
           </h1>
-          <p className="text-sm text-gray-200">{data.description}</p>
+          <p className="text-[13px] text-gray-200">{data.description}</p>
           <div
             className={`${
               data.isSaleCard ? "block" : "hidden"
@@ -82,4 +86,4 @@ const DestinatonCard = ({ data, largeText }) => {
   );
 };
 
-export default DestinatonCard;
+export default OurPopularCard;

@@ -1,6 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
-import SearchTabs from "../../common/SearchTabs";
+import SearchTabs from "../SearchTabs";
 import Image from "next/image";
 
 const FilterSearch = ({ defaultTab }) => {

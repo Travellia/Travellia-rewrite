@@ -1,24 +1,27 @@
 import Welcome from "@/components/holidaypackagepage/Welcome";
-// import ContactUs from "@/components/holidaypackagepage/ContactUs";
 import LuxuryAssuring from "@/components/holidaypackagepage/LuxuryAssuring";
 import FreshlyAdded from "@/components/holidaypackagepage/FreshlyAdded";
-import BookNow from "@/components/holidaypackagepage/BookNow";
 import TravelItinearies from "@/components/holidaypackagepage/TravelItinearies";
 import PlanYourTrip from "@/components/holidaypackagepage/PlanYourTrip";
 import React from "react";
-import FilterSearch from "@/components/flight/FilterSearch";
+import FilterSearch from "@/components/common/FilterSearch";
+import BookNow from "@/components/common/BookNow";
 
 const page = () => {
+  const imageData = {
+    image: "/holidayPackage/BookNow/bgImage.png",
+    alt: "resturant",
+  };
+
   return (
     <div className="flex flex-col ">
       <Welcome />
       <div className="flex flex-col md:gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 z-1 -mb-20">
-        {/* <ContactUs /> */}
         <FilterSearch />
         <LuxuryAssuring />
         <div className="flex flex-col">
           <FreshlyAdded />
-          <BookNow />
+          <BookNow data={imageData} />
         </div>
         <div className="flex flex-col">
           <TravelItinearies />
