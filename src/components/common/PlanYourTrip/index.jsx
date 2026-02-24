@@ -1,6 +1,5 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
-import { cn } from "@/lib/utils";
 
 import BookingForm from "./BookingForm";
 
@@ -14,7 +13,7 @@ const PlanYourTrip = ({
 }) => {
   return (
     <section className={sectionBg}>
-      <div
+      <ContentLayoutWrapper
         className={`
           flex flex-col gap-10 items-center py-20 w-full,
           paddingY,
@@ -31,7 +30,7 @@ const PlanYourTrip = ({
         <div className="w-full">
           <BookingForm inputBg={inputBg} />
         </div>
-      </div>
+      </ContentLayoutWrapper>
     </section>
   );
 };

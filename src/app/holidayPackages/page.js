@@ -1,11 +1,14 @@
 import Welcome from "@/components/common/Welcome";
-import LuxuryAssuring from "@/components/holidaypackagepage/LuxuryAssuring";
+import LuxuryAssuring from "@/components/common/LuxuryAssuring";
 import FreshlyAdded from "@/components/holidaypackagepage/FreshlyAdded";
-import TravelItinearies from "@/components/holidaypackagepage/TravelItinearies";
+import TravelItinearies from "@/components/common/TravelItinearies";
 import PlanYourTrip from "@/components/holidaypackagepage/PlanYourTrip";
 import React from "react";
 import FilterSearch from "@/components/common/FilterSearch";
 import BookNow from "@/components/common/BookNow";
+import { LuxuryAssuringHolidayPackage } from "@/lib/data/holidayPackage/LuxuryAssuringHolidayPackage";
+import { PACKAGES_DATA } from "@/lib/data/holidayPackage/TravelItineariesPackageData-holidayPackage";
+import { Bullets } from "@/lib/data/holidayPackage/TravelItineariesBullets-holidayPackage";
 
 const page = () => {
   const welcomeData = {
@@ -14,9 +17,13 @@ const page = () => {
       { id: 2, image: "/holidayPackage/welcome/welcome2.jpg" },
     ],
     title: "HOLIDAY PACKAGES",
-
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
   };
+
+  const LUXURY_ASSURING_DATA = LuxuryAssuringHolidayPackage;
+
+  const PACKAGE_DATA = PACKAGES_DATA;
+  const BULLETS = Bullets;
 
   const imageData = {
     image: "/holidayPackage/BookNow/bgImage.png",
@@ -28,13 +35,13 @@ const page = () => {
       <Welcome data={welcomeData} />
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch />
-        <LuxuryAssuring />
+        <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
         <div className="flex flex-col">
           <FreshlyAdded />
           <BookNow data={imageData} />
         </div>
         <div className="flex flex-col">
-          <TravelItinearies />
+          <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
         </div>
         <PlanYourTrip />
       </div>

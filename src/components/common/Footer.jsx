@@ -39,6 +39,13 @@ const FOOTER_IMAGE_MAP = [
     },
   },
   {
+    match: "/hajj-umrah",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Flight Footer",
+    },
+  },
+  {
     match: "/contact",
     image: {
       src: "/footer/contactFooter.png",
@@ -122,7 +129,7 @@ const FOOTER_LINKS = [
   {
     title: "Packages",
     links: [
-      { name: "Hajj/Umrah Packages", href: "/packages/hajj-umrah" },
+      { name: "Hajj/Umrah Packages", href: "/hajj-umrah" },
       { name: "Holiday Packages", href: "/holidayPackages" },
       { name: "Custom Packages", href: "/packages/custom" },
     ],

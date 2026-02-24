@@ -16,9 +16,16 @@ const Welcome = ({ data }) => {
       />
 
       <ContentLayoutWrapper className="flex flex-col items-center justify-center gap-7 z-10 text-center">
-        <h1 className="font-bold text-white text-[clamp(2rem,6vw,6rem)]">
-          {data.title}
-        </h1>
+        <div className="flex flex-col">
+          {data.heading && (
+            <h1 className=" text-white tracking-wider text-4xl">
+              {data.heading}
+            </h1>
+          )}
+          <h1 className="font-bold text-white text-[clamp(2rem,6vw,5rem)]">
+            {data.title}
+          </h1>
+        </div>
 
         {data.subtitle && <p className="text-white/90 text-lg">{subtitle}</p>}
 
