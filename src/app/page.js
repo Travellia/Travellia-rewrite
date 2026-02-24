@@ -10,7 +10,7 @@ import TrendingPackages from "@/components/homepage/TrendingPackages";
 import BookNow from "@/components/homepage/BookNow";
 import Testimonials from "@/components/common/Testimonial";
 import FilterSearch from "@/components/common/FilterSearch";
-import { TESTIMONIALS } from "@/lib/data/home/Testimonial";
+import { TESTIMONIALS } from "@/lib/data/Testimonial";
 
 export default function Home() {
   const welcomeData = {
@@ -39,7 +39,7 @@ export default function Home() {
         <OfferedServices />
         <TrendingPackages />
         <BookNow />
-        <Testimonials data={TESTIMONIAL} variant="home" />
+        <Testimonials data={TESTIMONIAL} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Testimonials from "@/components/common/Testimonial";
 import React from "react";
 import BookNow from "@/components/common/BookNow";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
-import { TESTIMONIALS } from "@/lib/data/Flight-page-2/Testimonial";
+import { TESTIMONIALS } from "@/lib/data/Testimonial";
 
 const page = () => {
   const welcomeData = {
@@ -36,7 +36,7 @@ const page = () => {
         <FilterSearch defaultTab="flights" />
         <PopularFlights cards={FLIGHTS_CARDS_DATA} show={false} />
         <div>
-          <Testimonials data={TESTIMONIAL} variant="flight" />
+          <Testimonials data={TESTIMONIAL} />
           <BookNow data={imageData} />
           <PlanYourTrip />
         </div>
