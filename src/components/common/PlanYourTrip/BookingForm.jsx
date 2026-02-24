@@ -7,6 +7,12 @@ import FormField from "@/components/common/FormField";
 
 const bookingFields = [
   {
+    label: "First Name",
+    name: "firstName",
+    placeholder: "Your First name...",
+    grid: "col-span-1",
+  },
+  {
     label: "Last Name",
     name: "lastName",
     placeholder: "Your Last name...",
@@ -34,7 +40,7 @@ const bookingFields = [
   },
 ];
 
-const BookingForm = () => {
+const BookingForm = ({ inputBg = "bg-white" }) => {
   const handleSubmit = (values, { resetForm }) => {
     console.log("Submitted Data:", values);
     resetForm();
@@ -55,13 +61,18 @@ const BookingForm = () => {
       <Form className="w-full">
         <div className="grid grid-cols-2 gap-4 mb-4">
           {bookingFields.map((field) => (
-            <FormField key={field.name} {...field} wrapperClass={field.grid} />
+            <FormField
+              key={field.name}
+              {...field}
+              wrapperClass={field.grid}
+              inputBg={inputBg}
+            />
           ))}
         </div>
 
         <div className="flex justify-center py-6">
           <Button type="submit" className="btn-main">
-            Submit Booking
+            Booking Instructions
           </Button>
         </div>
       </Form>
