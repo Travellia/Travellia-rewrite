@@ -1,7 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
-import DestinatonCard from "./DestinatonCard";
 import { Button } from "@/components/ui/button";
+import OurPopularCard from "@/components/common/OurPopular/OurPopularCard";
 
 const DESTINAION_CARDS_DATA = [
   {
@@ -38,7 +38,7 @@ const DESTINAION_CARDS_DATA = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
     rating: 0,
     isSaleCard: false,
-    css: "col-start-1 col-end-11 row-start-3 row-end-4  md:col-start-1 md:col-end-5 row-start-2 row-end-3 xl:col-start-8 xl:col-end-11 xl:row-start-1 xl:row-end-2",
+    css: "col-start-1 col-end-11 row-start-3 row-end-4 md:col-start-1 md:col-end-5 md:row-start-2 md:row-end-3 xl:col-start-8 xl:col-end-11 xl:row-start-1 xl:row-end-2",
   },
   {
     id: 4,
@@ -82,12 +82,8 @@ const index = () => {
         className={"flex flex-col items-center justify-center gap-10 py-20"}
       >
         <div className="text-center ">
-          <h4 className="text-base text-gray-600 font-semibold uppercase">
-            Our popular
-          </h4>
-          <h2 className="text-5xl font-bold uppercase text-primary">
-            Destinations
-          </h2>
+          <h4 className="heading-para">Our popular</h4>
+          <h2 className="heading">Destinations</h2>
         </div>
         <div className="grid grid-cols-10 grid-rows-2 gap-6 w-full">
           {DESTINAION_CARDS_DATA.map((card, i) => (
@@ -95,7 +91,7 @@ const index = () => {
               key={card.id}
               className={`${card.css} rounded-4xl overflow-hidden`}
             >
-              <DestinatonCard
+              <OurPopularCard
                 data={card}
                 largeText={i === 0 || i === DESTINAION_CARDS_DATA.length - 1}
               />

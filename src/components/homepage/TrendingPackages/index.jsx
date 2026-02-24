@@ -61,12 +61,12 @@ const index = () => {
           </h1>
         </ContentLayoutWrapper>
       </div>
-      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 relative ">
+      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 mb-20 relative ">
         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 xl:grid-cols-4  xl:grid-rows-1 place-items-center justify-start gap-8  relative z-50 p-12 xl:absolute md:-top-25 xl:left-14">
           {PACKAGES_DATA.map((data, index) => (
-            <BookPackageCard data={data} isOdd={index % 2 !== 0} key={index} />
+            <BookPackageCard data={data} key={index} />
           ))}
-          <div className="w-full text-center lg:w-1/2 mt-6 -order-1 sm:order-0">
+          <div className="w-full  lg:w-2/3 text-center mt-6 -order-1 sm:order-0">
             <h4 className="uppercase text-gray-800 text-2xl">trendy</h4>
             <h1 className="uppercase text-primary text-3xl sm:text-5xl   leading-14 font-bold">
               our trending tour packagees

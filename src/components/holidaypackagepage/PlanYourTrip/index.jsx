@@ -1,7 +1,30 @@
+import BookingForm from "@/components/common/BookingForm";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
 import React from "react";
-import BookingForm from "./BookingForm";
+
+const Form_Fileds = {
+  firstNameLabel: "First Name",
+  firstNameName: "firstName",
+  firstNamePlaceholder: "Your First Name...",
+
+  lastNameLabel: "Last Name",
+  lastNameName: "lastName",
+  lastNamePlaceholder: "Your Last Name...",
+
+  emailLabel: "Your Email",
+  emailName: "email",
+  emailPlaceholder: "name@travellia.com",
+
+  phoneLabel: "Phone Number",
+  phoneName: "phone",
+  phonePlaceholder: "+44 55 66 77 88",
+
+  messsgaeLabel: "Booking Instructions",
+  messsgaeName: "instructions",
+  messsgaePlaceholder: "Booking Instructions...",
+
+  button: "Submit Booking",
+};
 
 const Index = () => {
   return (
@@ -15,7 +38,7 @@ const Index = () => {
 
         {/* Form */}
         <div className="w-full">
-          <BookingForm />
+          <BookingForm data={Form_Fileds} />
         </div>
       </ContentLayoutWrapper>
     </section>

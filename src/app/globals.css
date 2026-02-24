@@ -169,12 +169,19 @@ button:disabled {
 .heading {
   @apply text-4xl font-bold text-center text-primary;
 }
+.heading-black {
+  @apply text-4xl font-bold text-center text-black;
+}
 .heading-with-space {
   @apply text-4xl font-bold text-center text-primary tracking-widest;
 }
 
 .heading-big {
-  @apply text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase;
+  @apply text-primary text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold uppercase;
+}
+
+.heading-para {
+  @apply text-lg font-extralight text-center capitalize;
 }
 
 /* Paragraph */
