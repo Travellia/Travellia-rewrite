@@ -1,7 +1,7 @@
 "use client";
 
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import PhotoCollageCarousel from "./photo-collage-carousel";
+import PhotoCollageCarousel from "../../common/photo-collage-carousel";
 import TravelDestinations from "./TravelDestinations";
 import FamilyAdventures from "./FamilyAdventures";
 
