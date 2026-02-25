@@ -1,7 +1,7 @@
 "use client";
 
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import PhotoCollageCarousel from "./photo-collage-carousel";
+import PhotoCollageCarousel from "../../common/photo-collage-carousel";
 import TravelDestinations from "./TravelDestinations";
 import FamilyAdventures from "./FamilyAdventures";
 
@@ -23,10 +23,10 @@ const Adventures = () => {
           <h2 className="text-lg font-normal text-center uppercase">
             Family Adventures
           </h2>
-          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-center uppercase text-primary md:px-20">
+          <h2 className="text-xl md:text-3xl lg:text-4xl lg:pb-5 xl:text-5xl  font-bold text-center uppercase text-primary md:px-20 lg:px-5">
             Exciting family-friendly destinations
           </h2>
-          <p className="mt-3 text-gray-600 lg:px-40 tracking-widest">
+          <p className="mt-3 text-gray-600 lg:px-10 xl:px-20 tracking-widest">
             Embark on thrilling family adventures at our handpicked
             destinations. From theme parks and wildlife safaris to interactive
             museums and outdoor activities. Create unforgetable memories with

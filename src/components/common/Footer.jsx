@@ -1,9 +1,74 @@
-import React from "react";
+"use client";
+
+import React, { lazy } from "react";
 import ContentLayoutWrapper from "./ContentLayoutWrapper";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { data } from "@/lib/data/homepage-data";
-import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+
+import { usePathname } from "next/navigation";
+
+const FOOTER_IMAGE_MAP = [
+  {
+    match: "/",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Home Footer",
+    },
+  },
+  {
+    match: "/flights",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Flight Footer",
+    },
+  },
+  {
+    match: "/hotels",
+    image: {
+      src: "/footer/hotelFooter.png",
+      alt: "Hotel Footer",
+    },
+  },
+  {
+    match: "/holidayPackages",
+    image: {
+      src: "/footer/holidayPackagesFooter.png",
+      alt: "Holiday Packages Footer",
+    },
+  },
+  {
+    match: "/hajj-umrah",
+    image: {
+      src: "/footer/homeFooter.png",
+      alt: "Flight Footer",
+    },
+  },
+  {
+    match: "/contact",
+    image: {
+      src: "/footer/contactFooter.png",
+      alt: "Contact Footer",
+    },
+  },
+  {
+    match: "/terms",
+    image: {
+      src: "/footer/termsFooter.png",
+      alt: "Terms and condition Footer",
+    },
+  },
+];
+
+const PAGE_PATH = [
+  "/",
+  "/flights",
+  "/hotels",
+  "/holidayPackages",
+  "/contact",
+  "/terms",
+];
 
 const BRANDS = [
   "/footer/iata.png",
@@ -64,29 +129,51 @@ const FOOTER_LINKS = [
   {
     title: "Packages",
     links: [
-      { name: "Hajj/Umrah Packages", href: "/packages/hajj-umrah" },
-      { name: "Holiday Packages", href: "/packages/holiday" },
+      { name: "Hajj/Umrah Packages", href: "/hajj-umrah" },
+      { name: "Holiday Packages", href: "/holidayPackages" },
       { name: "Custom Packages", href: "/packages/custom" },
     ],
   },
 ];
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  const footerImage = FOOTER_IMAGE_MAP.find((item) => {
+    if (item.match === "/") return pathname === "/";
+    return pathname.startsWith(item.match);
+  })?.image || {
+    src: "/footer/Foot4.png",
+    alt: "Default Footer",
+  };
+
+  const isContactPage = pathname.startsWith("/contact");
+
   return (
-    <footer className="pt-10">
+    <footer className={`pt-10 ${isContactPage ? "bg-secondary" : "bg-white"}`}>
       <ContentLayoutWrapper
-        className={"flex flex-col items-center justify-between gap-16"}
+        className={
+          "flex flex-col items-center justify-between gap-16 pt-16 sm:pt-0"
+        }
       >
         {/* Brand Logos */}
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-between w-full ">
           {BRANDS.map((brand, index) => {
             return (
               <React.Fragment key={index}>
-                <div className="w-44 h-44 relative">
-                  <Image src={brand} alt="brand" fill />
+                <div className="flex-1 flex items-center justify-center h-25 md:h-30">
+                  <div className="relative w-18 h-12 md:w-35 md:h-25  lg:w-40 lg:h-30 xl:w-50 xl:h-40">
+                    <Image
+                      src={brand}
+                      alt="brand"
+                      fill
+                      className="object-contain"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 {index < BRANDS.length - 1 && (
-                  <div className="bg-gray-800 self-stretch w-0.5" />
+                  <div className="bg-gray-300 lg:bg-gray-800 self-center h-10 md:h-15 xl:h-25 w-0.5" />
                 )}
               </React.Fragment>
             );
@@ -96,13 +183,20 @@ const Footer = () => {
         <div className="h-px w-full bg-gray-300" />
 
         {/* Travellia Logo */}
-        <div className="relative w-[96%] mx-auto py-20">
-          <Image src="/logo.png" alt="Travellia Logo" fill />
+        <div className="mx-auto ">
+          <Image
+            src="/logo.png"
+            alt="Travellia Logo"
+            width={300}
+            height={200}
+            loading="lazy"
+            className="bg-contain"
+          />
         </div>
 
         {/* Footer Links and Contact Info */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4 gap-8 md:gap-10">
             {/* Contact Information */}
             <div>
               <h3 className="text-primary font-bold text-3xl mb-4">
@@ -153,13 +247,17 @@ const Footer = () => {
           <p className="text-2xl text-gray-500 text-center">
             Subscribe to get the lastest blog news from us.
           </p>
-          <div className="bg-secondary rounded-full h-20 w-full flex items-center">
+          <div
+            className={`rounded-full h-20 w-full flex items-center ${isContactPage ? "bg-white" : "bg-secondary"}`}
+          >
             <input
               type="text"
               placeholder="Email"
-              className="h-full w-7/10 px-8 bg-transparent outline-none placeholder:text-lg placeholder:text-gray-600"
+              className={
+                "h-full w-7/10 px-8 bg-transparent outline-none placeholder:text-lg placeholder:text-gray-600"
+              }
             />
-            <Button className="rounded-full h-full w-3/10 text-2xl">
+            <Button className="rounded-full h-full w-3/10 text-xl sm:text-2xl">
               Submit
             </Button>
           </div>
@@ -176,6 +274,7 @@ const Footer = () => {
                   width={40}
                   height={40}
                   key={index}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -187,6 +286,7 @@ const Footer = () => {
                   width={50}
                   height={50}
                   key={index}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -197,8 +297,17 @@ const Footer = () => {
           </p>
         </div>
       </ContentLayoutWrapper>
-      <div className="w-full h-[30vh] lg:h-[75vh] relative">
-        <Image src="/footer/Foot4.png" alt="Footer plane" fill />
+      <div className="w-full h-[30vh] lg:h-[75vh] relative ">
+        <div
+          className={`absolute inset-0 z-10 bg-linear-to-b to-transparent ${isContactPage ? "from-secondary white via-secondary/20" : "from-white via-white/20"}  `}
+        />
+
+        <Image
+          src={footerImage.src}
+          alt={footerImage.alt}
+          fill
+          loading="lazy"
+        />
       </div>
     </footer>
   );

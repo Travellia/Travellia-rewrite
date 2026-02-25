@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/common/Navbar";
 import Banner from "@/components/common/Banner";
 import Footer from "@/components/common/Footer";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +25,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-[100vh] bg-background text-foreground`}
-      > 
-        <Banner/>
-        <Navbar/>
+      >
+        <Banner />
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
