@@ -1,3 +1,15 @@
+import UnderConstruction from "@/components/common/UnderConstruction";
+
+export default function Home() {
+  return <UnderConstruction />;
+}
+
+/* ── Restore instructions ──────────────────────────────────────────────
+   1. Delete src/components/common/UnderConstruction.jsx
+   2. Delete src/middleware.js
+   3. Uncomment layout.js Banner / Navbar / Footer
+   4. Replace this file with the original content below:
+
 import Welcome from "@/components/common/Welcome";
 import BestServices from "@/components/homepage/BestServices";
 import Adventures from "@/components/homepage/Adventures";
@@ -44,3 +56,4 @@ export default function Home() {
     </div>
   );
 }
+─────────────────────────────────────────────────────────────────────── */
