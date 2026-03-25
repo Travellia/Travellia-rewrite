@@ -26,10 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-[100vh] bg-background text-foreground`}
       >
-        <Banner />
-        <Navbar />
+        {/* Under Construction — Banner, Navbar, Footer hidden temporarily */}
+        {/* <Banner /> */}
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
         <SpeedInsights />
       </body>
     </html>
