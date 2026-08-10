@@ -1,8 +1,7 @@
 import { data } from "@/lib/data/homepage-data";
 import { IoIosCall } from "react-icons/io";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 import Image from "next/image";
 
 export default function Banner() {
@@ -40,12 +39,30 @@ export default function Banner() {
         </div>
         <p className="text-white">|</p>
         <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center bg-primary rounded-full p-1">
+          <a
+            href={data.socials.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-primary rounded-full p-1"
+          >
+            <FaFacebookF className="text-white h-4 w-4" />
+          </a>
+          <a
+            href={data.socials.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-primary rounded-full p-1"
+          >
             <FaInstagram className="text-white h-4 w-4" />
-          </div>
-          <div className="flex items-center justify-center bg-primary rounded-full p-1">
-            <FaLinkedinIn className="text-white h-4 w-4" />
-          </div>
+          </a>
+          <a
+            href={data.socials.tiktok}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-primary rounded-full p-1"
+          >
+            <FaTiktok className="text-white h-4 w-4" />
+          </a>
         </div>
       </div>
     </div>
