@@ -20,7 +20,7 @@ const index = ({ data }) => {
       {/* Main Layout */}
       <div className="relative z-10 ">
         <ContentLayoutWrapper>
-          <div className="flex-[45%] flex flex-col gap-2 sm:gap-3 md:gap-5 items-center xl:items-center py-8">
+          <div className="flex-[45%] flex flex-col gap-2 sm:gap-3 md:gap-5 items-center xl:items-center pb-8">
             <h1 className="text-primary text-3xl md:text-5xl font-bold uppercase">
               Testimonial
             </h1>
