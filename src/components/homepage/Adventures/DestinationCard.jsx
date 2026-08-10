@@ -23,6 +23,7 @@ const DestinationCard = ({ destination }) => {
           src={destination.image}
           alt={destination.title}
           fill
+          sizes="(max-width: 768px) 280px, 20vw"
           loading="lazy"
           className="w-full h-full object-cover"
         />

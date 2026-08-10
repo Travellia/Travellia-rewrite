@@ -12,6 +12,7 @@ const index = ({ data }) => {
           src="/common/Testimonial/friends-trip.png"
           alt="friends trip"
           fill
+          sizes="60vw"
           className="z-0"
         />
       </div>

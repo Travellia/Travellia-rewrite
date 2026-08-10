@@ -9,6 +9,7 @@ const CallUs = () => {
         src="/flights/page-5/MainContent/LeftMenu/CallUs/callcenterbg.png"
         alt="call center"
         fill
+        sizes="(max-width: 1024px) 100vw, 33vw"
         className="object-cover rounded-4xl"
         loading="lazy"
       />

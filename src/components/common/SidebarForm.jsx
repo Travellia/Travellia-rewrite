@@ -9,6 +9,7 @@ const SidebarForm = ({ data }) => {
         src="/common/sidebarForm/bg-image.png"
         alt="bg.png"
         fill
+        sizes="(max-width: 1024px) 100vw, 33vw"
         className="absolute h-auto z-1 rounded-3xl"
         loading="lazy"
       />

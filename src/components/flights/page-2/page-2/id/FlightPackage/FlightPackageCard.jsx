@@ -17,6 +17,7 @@ const FlightPackageCard = ({ data }) => {
           src={data.heroImage}
           alt={data.city}
           fill
+          sizes="100vw"
           className="object-cover object-bottom"
           loading="lazy"
         />
@@ -40,6 +41,7 @@ const FlightPackageCard = ({ data }) => {
             src={data.heroImage}
             alt={data.city}
             fill
+            sizes="50vw"
             className="object-cover object-bottom"
             loading="lazy"
           />
@@ -49,6 +51,7 @@ const FlightPackageCard = ({ data }) => {
             src={data.heroImage}
             alt={data.city}
             fill
+            sizes="50vw"
             className="object-cover object-bottom"
             loading="lazy"
           />

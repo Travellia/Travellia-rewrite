@@ -166,6 +166,7 @@ const Footer = () => {
                       src={brand}
                       alt="brand"
                       fill
+                      sizes="(max-width: 768px) 72px, (max-width: 1024px) 140px, 200px"
                       className="object-contain"
                       loading="lazy"
                     />
@@ -187,7 +188,7 @@ const Footer = () => {
             src="/logo.png"
             alt="Travellia Logo"
             width={300}
-            height={200}
+            height={90}
             loading="lazy"
             className="bg-contain"
           />
@@ -278,6 +279,7 @@ const Footer = () => {
                     src={social.icon}
                     alt="social"
                     fill
+                    sizes="40px"
                     className="object-contain"
                     loading="lazy"
                   />
@@ -312,6 +314,7 @@ const Footer = () => {
           src={footerImage.src}
           alt={footerImage.alt}
           fill
+          sizes="100vw"
           loading="lazy"
         />
       </div>

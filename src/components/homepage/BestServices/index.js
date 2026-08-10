@@ -69,6 +69,7 @@ export default function OfferedServices() {
           src={"/home/offered-services/about-us.png"}
           alt="About us image"
           fill
+          sizes="(max-width: 1024px) 0px, 50vw"
         />
       </div>
     </section>

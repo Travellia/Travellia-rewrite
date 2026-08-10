@@ -44,6 +44,7 @@ const index = () => {
           src="/home/trending-packages/plane-wing.jpg"
           alt="Plane wing image"
           fill
+          sizes="100vw"
         />
         <ContentLayoutWrapper className="text-center relative z-1">
           <Image

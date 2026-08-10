@@ -51,6 +51,7 @@ const index = () => {
         src={"/hajj-ummrah/halalfriendly-bg.png"}
         alt="qaba"
         fill
+        sizes="100vw"
         className="absolute object-cover"
         loading="lazy"
       />

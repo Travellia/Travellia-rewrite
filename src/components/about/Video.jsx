@@ -10,6 +10,7 @@ const Video = () => {
           src="/about/video/video.png"
           alt="Video thumbnail"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />

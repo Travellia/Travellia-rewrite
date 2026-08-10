@@ -63,6 +63,7 @@ const FamilyAdventures = () => {
         src={"/home/adventure/okl.png"}
         alt="okl.png"
         fill
+        sizes="100vw"
         className="absolute top-0 left-0 z-1 "
         loading="lazy"
       />
@@ -71,6 +72,7 @@ const FamilyAdventures = () => {
           src={"/shapes/paper-plane.png"}
           alt="paper-plan.png"
           fill
+          sizes="100vw"
           loading="lazy"
         />
       </div>

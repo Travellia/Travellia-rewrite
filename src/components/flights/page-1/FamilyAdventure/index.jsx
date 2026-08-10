@@ -10,6 +10,7 @@ const index = () => {
         src={"/flights/page-1/FamilyAdventure/bg.png"}
         alt="Family adventure - mobile and plane"
         fill
+        sizes="100vw"
         className="w-full h-auto  absolute object-cover"
         loading="lazy"
       />

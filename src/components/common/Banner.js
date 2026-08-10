@@ -17,6 +17,7 @@ export default function Banner() {
               src="/common/phone-white-logo.png"
               alt="phone"
               fill
+              sizes="24px"
               className="object-contain"
               loading="lazy"
             />
@@ -31,6 +32,7 @@ export default function Banner() {
               src="/social-media/gmail.png"
               alt="mail"
               fill
+              sizes="24px"
               className="object-contain"
               loading="lazy"
             />
@@ -66,6 +68,7 @@ export default function Banner() {
                 src={social.icon}
                 alt="social"
                 fill
+                sizes="20px"
                 className="object-contain"
                 loading="lazy"
               />

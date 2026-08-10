@@ -40,6 +40,7 @@ const page = () => {
             src="/hajj-ummrah/halalFriendly/haram.png"
             alt="haram"
             fill
+            sizes="100vw"
             className="object-contain absolute bottom-0"
           />
           <LuxuryAssuring data={LUXURY_ASSURING_DATA} />

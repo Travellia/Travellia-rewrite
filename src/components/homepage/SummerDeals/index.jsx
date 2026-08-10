@@ -28,6 +28,7 @@ const index = () => {
         src={"/home/summer-deals/plane.png"}
         alt="plane"
         fill
+        sizes="100vw"
         className="absolute left-0 top-0 z-0"
       />
       <ContentLayoutWrapper

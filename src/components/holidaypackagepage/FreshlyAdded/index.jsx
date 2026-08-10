@@ -51,6 +51,7 @@ const index = () => {
         src={"/holidayPackage/FreshlyAdded/bg.png"}
         alt="bg"
         fill
+        sizes="100vw"
         className="absolute object-cover"
         loading="lazy"
       />

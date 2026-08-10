@@ -24,6 +24,7 @@ const OurPopularCard = ({ data }) => {
         src={data.src}
         alt={`${data.country}, ${data.city}`}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         loading="lazy"
         className="absolute top-0 left-0 object-cover rounded-lg z-0"
       />

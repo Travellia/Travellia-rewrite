@@ -38,6 +38,7 @@ const Carousel = ({
               src={slide.image}
               alt={`Tour ${slide.id}`}
               fill
+              sizes="100vw"
               priority={slide.id === 1}
               className="object-cover"
             />
