@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { data } from "@/lib/data/homepage-data";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 import { usePathname } from "next/navigation";
 
@@ -79,9 +78,9 @@ const BRANDS = [
 ];
 
 const SOCIALS = [
-  { icon: FaFacebookF, href: data.socials.facebook },
-  { icon: FaInstagram, href: data.socials.instagram },
-  { icon: FaTiktok, href: data.socials.tiktok },
+  { icon: "/social-media/facebook.png", href: data.socials.facebook },
+  { icon: "/social-media/instagram.png", href: data.socials.instagram },
+  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok },
 ];
 
 const CARDS = [
@@ -273,9 +272,15 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   key={index}
-                  className="flex items-center justify-center bg-primary rounded-full w-10 h-10"
+                  className="relative w-10 h-10"
                 >
-                  <social.icon className="text-white w-4 h-4" />
+                  <Image
+                    src={social.icon}
+                    alt="social"
+                    fill
+                    className="object-contain"
+                    loading="lazy"
+                  />
                 </a>
               ))}
             </div>

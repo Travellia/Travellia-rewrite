@@ -1,24 +1,39 @@
 import { data } from "@/lib/data/homepage-data";
-import { IoIosCall } from "react-icons/io";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 import Image from "next/image";
+
+const SOCIALS = [
+  { icon: "/social-media/facebook.png", href: data.socials.facebook },
+  { icon: "/social-media/instagram.png", href: data.socials.instagram },
+  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok },
+];
 
 export default function Banner() {
   return (
     <div className="w-full bg-foreground flex items-center justify-between px-4 py-2">
       <div className="flex flex-col md:flex-row gap-1 md:gap-6">
         <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center bg-primary rounded-full p-1">
-            <IoIosCall className="text-white h-4 w-4" />
+          <div className="relative w-6 h-6 flex-shrink-0">
+            <Image
+              src="/common/phone-white-logo.png"
+              alt="phone"
+              fill
+              className="object-contain"
+              loading="lazy"
+            />
           </div>
           <p className="text-white font-medium text-xs md:text-base">
             {data?.PhoneNumber}
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center bg-primary rounded-full p-1">
-            <MdOutlineMailOutline className="text-white h-4 w-4" />
+          <div className="relative w-6 h-6 flex-shrink-0">
+            <Image
+              src="/social-media/gmail.png"
+              alt="mail"
+              fill
+              className="object-contain"
+              loading="lazy"
+            />
           </div>
           <p className="text-white font-medium text-xs md:text-base">
             {data?.email}
@@ -39,30 +54,23 @@ export default function Banner() {
         </div>
         <p className="text-white">|</p>
         <div className="flex items-center gap-2">
-          <a
-            href={data.socials.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-primary rounded-full p-1"
-          >
-            <FaFacebookF className="text-white h-4 w-4" />
-          </a>
-          <a
-            href={data.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-primary rounded-full p-1"
-          >
-            <FaInstagram className="text-white h-4 w-4" />
-          </a>
-          <a
-            href={data.socials.tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-primary rounded-full p-1"
-          >
-            <FaTiktok className="text-white h-4 w-4" />
-          </a>
+          {SOCIALS.map((social, index) => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+              className="relative w-5 h-5"
+            >
+              <Image
+                src={social.icon}
+                alt="social"
+                fill
+                className="object-contain"
+                loading="lazy"
+              />
+            </a>
+          ))}
         </div>
       </div>
     </div>
