@@ -6,6 +6,7 @@ export const TESTIMONIALS = [
       name: "Marcus D. Johnson",
       location: "Manchester, UK",
       src: "/common/Testimonial/CardPic1.png",
+      alt: "Marcus D. Johnson",
     },
   },
   {
@@ -15,6 +16,7 @@ export const TESTIMONIALS = [
       name: "Grace Mei Lin",
       location: "Birmingham, UK",
       src: "/common/Testimonial/CardPic2.png",
+      alt: "Grace Mei Lin",
     },
   },
   {
@@ -24,6 +26,7 @@ export const TESTIMONIALS = [
       name: "Charlotte Grace Bennett",
       location: "London, UK",
       src: "/common/Testimonial/CardPic3.png",
+      alt: "Charlotte Grace Bennett",
     },
   },
   {
@@ -33,6 +36,7 @@ export const TESTIMONIALS = [
       name: "Oliver Thomas Sinclair",
       location: "Leeds, UK",
       src: "/common/Testimonial/CardPic4.png",
+      alt: "Oliver Thomas Sinclair",
     },
   },
 ];

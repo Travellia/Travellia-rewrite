@@ -5,13 +5,13 @@ import PhotoCollageCarousel from "../../common/photo-collage-carousel";
 import TravelDestinations from "./TravelDestinations";
 
 const photos = [
-  { id: 1, src: "/home/welcome/welcome.jpg", alt: "Photo 1" },
-  { id: 2, src: "/home/welcome/welcome2.jpg", alt: "Photo 2" },
-  { id: 3, src: "/home/welcome/welcome3.jpg", alt: "Photo 3" },
-  { id: 4, src: "/abc.jpg", alt: "Photo 4" },
-  { id: 5, src: "/def.jpg", alt: "Photo 5" },
-  { id: 6, src: "/home/welcome/welcome3.jpg", alt: "Photo 3" },
-  { id: 7, src: "/home/welcome/welcome2.jpg", alt: "Photo 2" },
+  { id: 1, src: "/home/adventure/1.jpg", alt: "Photo 1" },
+  { id: 2, src: "/home/adventure/2.jpg", alt: "Photo 2" },
+  { id: 3, src: "/home/adventure/3.jpg", alt: "Photo 3" },
+  { id: 4, src: "/home/adventure/4.jpg", alt: "Photo 4" },
+  { id: 5, src: "/home/adventure/5.jpg", alt: "Photo 5" },
+  { id: 6, src: "/home/adventure/1.jpg", alt: "Photo 1" },
+  { id: 7, src: "/home/adventure/2.jpg", alt: "Photo 2" },
 ];
 
 const Adventures = () => {
