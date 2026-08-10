@@ -27,7 +27,7 @@ const Welcome = ({ data }) => {
           </h1>
         </div>
 
-        {data.subtitle && <p className="text-white/90 text-lg">{subtitle}</p>}
+        {data.subtitle && <p className="text-white/90 text-lg">{data.subtitle}</p>}
 
         {data.buttons && (
           <div className="flex flex-col md:flex-row gap-6">
