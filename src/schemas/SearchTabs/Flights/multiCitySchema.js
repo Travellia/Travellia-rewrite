@@ -14,12 +14,25 @@ const multiCitySchema = Yup.object({
         child: Yup.number()
           .min(0, "Children cannot be negative")
           .required("Children are required"),
+        infant: Yup.number()
+          .min(0, "Infants cannot be negative")
+          .required("Infants are required"),
       }),
     )
     .required(),
   category: Yup.string()
     .oneOf(["ECONOMY", "PREMIUM", "BUSINESS CLASS"])
     .required("Cabin class is required"),
+
+  name: Yup.string()
+    .min(2, "Name must be at least 2 characters")
+    .required("Name is required"),
+
+  email: Yup.string().email("Invalid email").required("Email is required"),
+
+  contact: Yup.string()
+    .min(10, "Invalid contact number")
+    .required("Contact number is required"),
 });
 
 export default multiCitySchema;
