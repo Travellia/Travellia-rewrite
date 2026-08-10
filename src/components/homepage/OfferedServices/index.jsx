@@ -56,7 +56,7 @@ const SERVICES = [
 const Index = () => {
   return (
     <section className="xl:min-h-screen">
-      <ContentLayoutWrapper className="py-10 md:py-20">
+      <ContentLayoutWrapper className="py-10 md:pt-20 pb-10">
         <h1 className="text-3xl md:text-4xl text-primary font-bold text-center">
           Services we offer
         </h1>

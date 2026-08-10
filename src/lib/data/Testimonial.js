@@ -1,37 +1,37 @@
 export const TESTIMONIALS = [
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "Travellia put together our family holiday package end to end and every single detail was handled with care. Our flights, hotel and excursions were all perfectly timed. Honestly, the smoothest family trip we have ever taken!",
     user: {
-      name: "Shannon J. Williams",
-      location: "New York, USA",
+      name: "Marcus D. Johnson",
+      location: "Manchester, UK",
       src: "/common/Testimonial/CardPic1.png",
     },
   },
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "I booked a last minute getaway to Dubai and the team found me an amazing hotel deal within my budget. The booking process was quick and simple, and their support team answered every question I had along the way.",
     user: {
-      name: "Shannon J. Williams",
-      location: "New York, USA",
+      name: "Grace Mei Lin",
+      location: "Birmingham, UK",
       src: "/common/Testimonial/CardPic2.png",
     },
   },
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "From flight booking to airport pickup, Travellia made my Istanbul city break completely stress free. The hotel they recommended had a stunning view and the price was better than anything I found on other travel sites!",
     user: {
-      name: "Shannon J. Williams",
-      location: "New York, USA",
+      name: "Charlotte Grace Bennett",
+      location: "London, UK",
       src: "/common/Testimonial/CardPic3.png",
     },
   },
   {
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi amet deleniti est voluptatum quia magnam. Adipisci, temporibus nemo, maxime voluptatum illum culpa corrupti animi vero deleniti sint iusto quisquam magni!",
+      "I travel often for work and Travellia has become my go to for hotel bookings. Fast confirmations, fair prices and real customer support whenever I need to make changes. It has genuinely made business travel much easier.",
     user: {
-      name: "Shannon J. Williams",
-      location: "New York, USA",
+      name: "Oliver Thomas Sinclair",
+      location: "Leeds, UK",
       src: "/common/Testimonial/CardPic4.png",
     },
   },
