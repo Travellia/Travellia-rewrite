@@ -16,7 +16,7 @@ const TABS = [
   { key: "umrah", label: "Umrah", component: <UmrahForm /> },
 ];
 
-const SearchTabs = ({ defaultTab = "hotels" }) => {
+const SearchTabs = ({ defaultTab = "flights" }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
   return (

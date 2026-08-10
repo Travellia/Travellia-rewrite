@@ -90,7 +90,7 @@ const FlightsForm = () => {
                       checked={flightType === type.value}
                       onCheckedChange={() => handleFlightTypeChange(type.value)}
                     />
-                    <span className="text-sm font-medium">{type.label}</span>
+                    <span className="text-sm font-normal text-muted-foreground">{type.label}</span>
                   </label>
                 ))}
               </div>
