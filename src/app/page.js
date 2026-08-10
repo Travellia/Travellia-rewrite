@@ -1,8 +1,8 @@
 import Welcome from "@/components/common/Welcome";
 import BestServices from "@/components/homepage/BestServices";
 import Adventures from "@/components/homepage/Adventures";
-import PopularDestination from "@/components/homepage/PopularDestination";
 import UmrahPackages from "@/components/homepage/UmrahPackages";
+import UmrahStayPackages from "@/components/homepage/UmrahPackages/UmrahStayPackages";
 import SummerDeals from "@/components/homepage/SummerDeals";
 import HotelBookings from "@/components/homepage/HotelBookings";
 import OfferedServices from "@/components/homepage/OfferedServices";
@@ -35,12 +35,12 @@ export default function Home() {
       <div className="flex flex-col  -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch />
         <FamilyAdventures/>
-        <PopularDestination />
         <TrendingPackages />
         <BookNow />
         <HotelBookings />
         <UmrahPackages />
-        <Adventures /> 
+        <UmrahStayPackages />
+        <Adventures />
         <SummerDeals />
         <OfferedServices />
         <BestServices />
