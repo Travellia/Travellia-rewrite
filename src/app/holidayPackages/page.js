@@ -17,7 +17,7 @@ const page = () => {
       { id: 2, image: "/holidayPackage/welcome/welcome2.jpg" },
     ],
     title: "HOLIDAY PACKAGES",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
+    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHolidayPackage;

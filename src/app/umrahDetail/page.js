@@ -14,7 +14,7 @@ const page = () => {
   const welcomeData = {
     slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.png" }],
     title: "DETAIL PAGE",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
+    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const MAKKAH_HOTEL_PACKAGE = MAKKAH_PACKAGE_DETAIL;

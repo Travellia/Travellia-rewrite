@@ -1,8 +1,8 @@
 import React from "react";
 import CarouselWrapper from "@/components/ui/carousel";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
-import { FaArrowRightLong } from "react-icons/fa6";
+// import { Button } from "@/components/ui/button";
+// import { FaArrowRightLong } from "react-icons/fa6";
 
 const Welcome = ({ data }) => {
   return (
