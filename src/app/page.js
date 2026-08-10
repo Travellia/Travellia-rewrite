@@ -14,7 +14,10 @@ import { TESTIMONIALS } from "@/lib/data/Testimonial";
 
 export default function Home() {
   const welcomeData = {
-    slides: [{ id: 1, image: "/home/welcome/welcome.png" }],
+    slides: [
+      { id: 1, image: "/home/welcome/welcome.png" },
+      { id: 2, image: "/flights/welcome/Image2.png" },
+      { id: 3, image: "/flights/welcome/Image3.png" },],
     title: "TRAVELLIA",
     buttons: [
       { label: "Explore Our Tours" },
