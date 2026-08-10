@@ -47,8 +47,10 @@ const SearchTabs = ({ defaultTab = "flights" }) => {
 };
 
 const Tab = ({ label, active, onClick }) => (
-  <div
-    className={`flex items-center justify-center p-3 gap-2 rounded-full text-sm font-semibold transition-all z-10
+  <button
+    type="button"
+    onClick={onClick}
+    className={`flex items-center justify-center p-3 gap-2 rounded-full text-sm font-semibold transition-all z-10 cursor-pointer
       ${
         active
           ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
@@ -56,18 +58,16 @@ const Tab = ({ label, active, onClick }) => (
       }
         `}
   >
-    <button variant="ghost" onClick={onClick} className="flex gap-2">
-      <Image
-        src="/holidayPackage/ContactUs/bag.png"
-        alt="background"
-        width={25}
-        height={4}
-        className="filter invert brightness-200 h-5.5 text-white"
-        loading="lazy"
-      />
-      {label}
-    </button>
-  </div>
+    <Image
+      src="/holidayPackage/ContactUs/bag.png"
+      alt="background"
+      width={25}
+      height={4}
+      className="filter invert brightness-200 h-5.5 text-white"
+      loading="lazy"
+    />
+    {label}
+  </button>
 );
 
 export default SearchTabs;

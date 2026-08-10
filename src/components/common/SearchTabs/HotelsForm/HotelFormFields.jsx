@@ -58,7 +58,13 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
             variant="outline"
             className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
           >
-            <span className="text-muted-foreground">Rooms</span>
+            <span className="text-foreground truncate">
+              {rooms} {rooms === 1 ? "Room" : "Rooms"}
+              {totalTravellers > 0 &&
+                ` - ${totalTravellers} ${
+                  totalTravellers === 1 ? "Person" : "Persons"
+                }`}
+            </span>
           </Button>
         </PopoverTrigger>
 
