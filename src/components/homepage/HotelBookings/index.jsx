@@ -24,7 +24,7 @@ const BOOKING_STEPS = [
 
 const index = () => {
   return (
-    <section className="relative overflow-hidden pt-30   xl:min-h-screen">
+    <section className="relative overflow-hidden    xl:min-h-screen">
       {/* Decorative shapes (hidden on small screens) */}
       <div className="hidden lg:block absolute w-80 h-80 -left-10 top-1/4 opacity-40">
         <Image src="/shapes/plane.png" alt="Plane" fill sizes="320px" />
@@ -40,7 +40,7 @@ const index = () => {
           items-center 
           gap-12 
           pt-10 
-          lg:pt-40
+          lg:py-30
         "
       >
         {/* LEFT CONTENT */}

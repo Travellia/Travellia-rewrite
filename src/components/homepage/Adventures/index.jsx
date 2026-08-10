@@ -16,7 +16,7 @@ const photos = [
 
 const Adventures = () => {
   return (
-    <section className="min-h-screen pt-20 bg-background">
+    <section className="min-h-screen py-20 bg-background">
       <ContentLayoutWrapper className={"flex flex-col"}>
         <div className="text-center mb-8">
           <h2 className="text-lg font-normal text-center uppercase">

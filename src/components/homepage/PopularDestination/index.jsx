@@ -79,7 +79,7 @@ const index = () => {
   return (
     <section className="w-full min-h-screen pt-5 ">
       <ContentLayoutWrapper
-        className={"flex flex-col items-center justify-center gap-10 py-20"}
+        className={"flex flex-col items-center justify-center gap-10 "}
       >
         <div className="text-center ">
           <h4 className="heading-para">Our popular</h4>

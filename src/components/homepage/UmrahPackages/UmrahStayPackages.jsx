@@ -56,7 +56,7 @@ const PLACES = [
 
 const UmrahStayPackages = () => {
   return (
-    <section className="pb-12 sm:pb-20 md:pb-30">
+    <section className="">
       <ContentLayoutWrapper className={"flex flex-col justify-center items-center gap-10"}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-auto gap-6 w-full">
           {PLACES.map((place) => (

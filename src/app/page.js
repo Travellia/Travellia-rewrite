@@ -42,8 +42,8 @@ export default function Home() {
         <UmrahStayPackages />
         <Adventures />
         <SummerDeals />
-        <OfferedServices />
         <BestServices />
+        <OfferedServices />
         <Testimonials data={TESTIMONIAL} />
       </div>
     </div>
