@@ -29,7 +29,7 @@ const Welcome = ({ data }) => {
 
         {data.subtitle && <p className="text-white/90 text-lg">{data.subtitle}</p>}
 
-        {data.buttons && (
+        {/* {data.buttons && (
           <div className="flex flex-col md:flex-row gap-6">
             {data.buttons.map((btn, index) => (
               <Button
@@ -44,7 +44,7 @@ const Welcome = ({ data }) => {
               </Button>
             ))}
           </div>
-        )}
+        )} */}
       </ContentLayoutWrapper>
     </section>
   );
