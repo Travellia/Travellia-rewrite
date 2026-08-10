@@ -24,6 +24,7 @@ const FlightsForm = () => {
             to: "",
             depart: "",
             return: "",
+            room: "1",
             adult: "0",
             child: "0",
             infant: "0",

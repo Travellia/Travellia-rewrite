@@ -27,6 +27,7 @@ import { useState } from "react";
 const cityList = CITY_LIST;
 
 const TravellersPopover = ({ index, route, setFieldValue }) => {
+  const rooms = route.room ? Number.parseInt(route.room) : 1;
   const adults = route.adult ? Number.parseInt(route.adult) : 1;
   const children = route.child ? Number.parseInt(route.child) : 0;
   const infants = route.infant ? Number.parseInt(route.infant) : 0;
@@ -36,7 +37,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
 
   const updateTravellers = (type, value) => {
     const newValue = Math.max(0, value);
-    if (type === "adult" && newValue < 1) return;
+    if (type === "room" && newValue < 1) return;
     setFieldValue(`routes.${index}.${type}`, newValue.toString());
   };
 
@@ -45,7 +46,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
       {/* LEFT ICON (same as other fields) */}
       <Image
         src="/holidayPackage/ContactUs/map-icon.png"
-        alt="Travellers"
+        alt="Rooms"
         width={20}
         height={20}
         className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
@@ -57,13 +58,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
             variant="outline"
             className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
           >
-            <span className={cn(!totalTravellers && "text-muted-foreground")}>
-              {totalTravellers > 0
-                ? `${totalTravellers} Traveller${
-                    totalTravellers > 1 ? "s" : ""
-                  }`
-                : "Travellers"}
-            </span>
+            <span className="text-muted-foreground">Rooms</span>
           </Button>
         </PopoverTrigger>
 
@@ -74,6 +69,41 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
           className="w-80 p-4"
         >
           <div className="space-y-4">
+            {/* Rooms */}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-medium text-sm">Rooms</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("room", rooms - 1)}
+                  disabled={rooms <= 1}
+                >
+                  <Minus className="h-4 w-4" />
+                </Button>
+                <Input
+                  type="number"
+                  value={rooms}
+                  className="h-8 w-14 text-center"
+                  min="1"
+                  readOnly
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("room", rooms + 1)}
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
             {/* Adults */}
             <div className="flex items-center justify-between">
               <div>
@@ -87,7 +117,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
                   size="icon"
                   className="h-8 w-8 rounded-full"
                   onClick={() => updateTravellers("adult", adults - 1)}
-                  disabled={adults <= 1}
+                  disabled={adults <= 0}
                 >
                   <Minus className="h-4 w-4" />
                 </Button>
@@ -95,7 +125,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
                   type="number"
                   value={adults}
                   className="h-8 w-14 text-center"
-                  min="1"
+                  min="0"
                   readOnly
                 />
                 <Button
@@ -192,6 +222,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
       </Popover>
 
       {/* Hidden fields */}
+      <Field name={`routes.${index}.room`} type="hidden" />
       <Field name={`routes.${index}.adult`} type="hidden" />
       <Field name={`routes.${index}.child`} type="hidden" />
       <Field name={`routes.${index}.infant`} type="hidden" />
@@ -368,7 +399,7 @@ const HotelFormFields = () => {
                     />
 
                     {/* Going To */}
-                    <div className="relative flex-1">
+                    {/* <div className="relative flex-1">
                       <Image
                         src="/holidayPackage/ContactUs/map-icon.png"
                         alt="To"
@@ -403,7 +434,7 @@ const HotelFormFields = () => {
                           </Select>
                         )}
                       </Field>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

@@ -5,13 +5,15 @@ const hotelSchema = Yup.object({
     .of(
       Yup.object({
         from: Yup.string().required("Where To is required"),
-        to: Yup.string().required("Going To is required"),
+        to: Yup.string(),
 
         depart: Yup.string().required("Check-in date is required"),
 
         return: Yup.string().required("Check-out date is required"),
 
-        adult: Yup.number().min(1, "At least 1 adult required").required(),
+        room: Yup.number().min(1, "At least 1 room required").required(),
+
+        adult: Yup.number().min(0).required(),
 
         child: Yup.number().min(0),
         infant: Yup.number().min(0),
