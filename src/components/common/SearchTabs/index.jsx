@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import FlightsForm from "./FlightsForm/FlightsForm";
 import Image from "next/image";
@@ -10,14 +11,20 @@ import UmrahForm from "./UmrahForm/UmrahForm";
 // import UmrahForm from "./tabs/UmrahForm";
 
 const TABS = [
-  { key: "flights", label: "Flights", component: <FlightsForm /> },
-  { key: "hotels", label: "Hotels", component: <HotelsForm /> },
-  // { key: "holidays", label: "Holidays", component: <HolidaysForm /> },
-  { key: "umrah", label: "Umrah", component: <UmrahForm /> },
+  { key: "flights", label: "Flights", path: "/flights", component: <FlightsForm /> },
+  { key: "hotels", label: "Hotels", path: "/hotels", component: <HotelsForm /> },
+  // { key: "holidays", label: "Holidays", path: "/holidayPackages", component: <HolidaysForm /> },
+  { key: "umrah", label: "Umrah", path: "/hajj-umrah", component: <UmrahForm /> },
 ];
 
 const SearchTabs = ({ defaultTab = "flights" }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
+  const router = useRouter();
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab.key);
+    router.push(tab.path);
+  };
 
   return (
     <section className="flex flex-col gap-5 px-5 -translate-y-10  ">
@@ -28,7 +35,7 @@ const SearchTabs = ({ defaultTab = "flights" }) => {
             key={tab.key}
             label={tab.label}
             active={activeTab === tab.key}
-            onClick={() => setActiveTab(tab.key)}
+            onClick={() => handleTabClick(tab)}
           />
         ))}
       </div>
