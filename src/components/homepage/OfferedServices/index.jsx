@@ -5,13 +5,21 @@ import { BiSolidNavigation } from "react-icons/bi";
 
 const SERVICES = [
   {
-    title: "Umrah Packages",
-    description: "Affordable and flexible options tailored to your needs.",
+    title: "Flight Bookings",
+    description: "Convenient travel plans with trusted airlines.",
   },
   {
-    title: "Hajj Packages",
+    title: "Hotel Accommodation",
+    description: "Comfortable and well-located stays near Haram.",
+  },
+  {
+    title: "Halal-Friendly Holidays Abutting Umrah Trip",
     description:
-      "Complete arrangements with full guidance for a peaceful pilgrimage.",
+      "Combine your pilgrimage with family-friendly halal holiday experiences.",
+  },
+  {
+    title: "Umrah Packages",
+    description: "Affordable and flexible options tailored to your needs.",
   },
   {
     title: "January Umrah Packages",
@@ -22,29 +30,21 @@ const SERVICES = [
     description: "End the year spiritually with exclusive winter offers.",
   },
   {
-    title: "Visa Assistance",
-    description: "Reliable and hassle-free visa processing.",
-  },
-  {
-    title: "Flight Bookings",
-    description: "Convenient travel plans with trusted airlines.",
-  },
-  {
-    title: "Hotel Accommodation",
-    description: "Comfortable and well-located stays near Haram.",
+    title: "Hajj Packages",
+    description:
+      "Complete arrangements with full guidance for a peaceful pilgrimage.",
   },
   {
     title: "Guided Ziyarat Tours",
     description: "Spiritual tours led by experienced guides.",
   },
   {
-    title: "Halal-Friendly Holidays Abutting Umrah Trip",
-    description:
-      "Combine your pilgrimage with family-friendly halal holiday experiences.",
-  },
-  {
     title: "Family & Group Packages",
     description: "Special deals for families, groups, and organizations.",
+  },
+  {
+    title: "Visa Assistance",
+    description: "Reliable and hassle-free visa processing.",
   },
   {
     title: "24/7 Customer Support",

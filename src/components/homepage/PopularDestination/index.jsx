@@ -98,7 +98,7 @@ const index = () => {
             </div>
           ))}
         </div>
-        <Button className={"btn-main"}>Load More</Button>
+        {/* <Button className={"btn-main"}>Load More</Button> */}
       </ContentLayoutWrapper>
     </section>
   );

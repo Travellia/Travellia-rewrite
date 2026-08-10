@@ -11,6 +11,7 @@ import BookNow from "@/components/homepage/BookNow";
 import Testimonials from "@/components/common/Testimonial";
 import FilterSearch from "@/components/common/FilterSearch";
 import { TESTIMONIALS } from "@/lib/data/Testimonial";
+import FamilyAdventures from "@/components/homepage/Adventures/FamilyAdventures";
 
 export default function Home() {
   const welcomeData = {
@@ -33,15 +34,16 @@ export default function Home() {
       <Welcome data={welcomeData} />
       <div className="flex flex-col  -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch />
-        <BestServices />
-        <Adventures />
+        <FamilyAdventures/>
         <PopularDestination />
-        <UmrahPackages />
-        <SummerDeals />
-        <HotelBookings />
-        <OfferedServices />
         <TrendingPackages />
         <BookNow />
+        <HotelBookings />
+        <UmrahPackages />
+        <Adventures /> 
+        <SummerDeals />
+        <OfferedServices />
+        <BestServices />
         <Testimonials data={TESTIMONIAL} />
       </div>
     </div>
