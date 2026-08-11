@@ -113,18 +113,18 @@ const FOOTER_LINKS = [
       { name: "About Us", href: "/about" },
       { name: "Contact Us", href: "/contact" },
       { name: "Services", href: "/services" },
-      { name: "Testimonial", href: "/testimonial" },
+      // { name: "Testimonial", href: "/testimonial" },
       { name: "Terms and Conditions", href: "/terms" },
     ],
   },
-  {
-    title: "Destinations",
-    links: [
-      { name: "Maldives", href: "/destinations/maldives" },
-      { name: "Los Angeles", href: "/destinations/los-angeles" },
-      { name: "Las Vegas", href: "/destinations/las-vegas" },
-    ],
-  },
+  // {
+  //   title: "Destinations",
+  //   links: [
+  //     { name: "Maldives", href: "/destinations/maldives" },
+  //     { name: "Los Angeles", href: "/destinations/los-angeles" },
+  //     { name: "Las Vegas", href: "/destinations/las-vegas" },
+  //   ],
+  // },
   {
     title: "Packages",
     links: [
@@ -196,7 +196,7 @@ const Footer = () => {
 
         {/* Footer Links and Contact Info */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
             {/* Contact Information */}
             <div>
               <h3 className="text-primary font-bold text-3xl mb-4">
