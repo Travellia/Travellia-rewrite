@@ -4,7 +4,7 @@ import React, { lazy } from "react";
 import ContentLayoutWrapper from "./ContentLayoutWrapper";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { data } from "@/lib/data/homepage-data";
+import { data } from "@/lib/contactInfo";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
 import { usePathname } from "next/navigation";

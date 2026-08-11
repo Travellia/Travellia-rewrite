@@ -1,3 +1,5 @@
+import { data } from "@/lib/contactInfo";
+
 const Contact_footer_List = [
   [
     "HEADQUARTERS",
@@ -5,7 +7,7 @@ const Contact_footer_List = [
     "Nullam accumsan lorem in dui.",
     "Cras ultricies mi eu turpis ",
   ],
-  ["CALL US", "11 22 33 44", "Monday to Friday", "9AM - 6PM"],
+  ["CALL US", data.PhoneNumber, "Monday to Friday", "9AM - 6PM"],
   [
     "AVAILABILITY",
     "DATES",

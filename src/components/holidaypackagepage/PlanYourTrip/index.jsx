@@ -1,5 +1,6 @@
 import BookingForm from "@/components/common/BookingForm";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
+import { data } from "@/lib/contactInfo";
 import React from "react";
 
 const Form_Fileds = {
@@ -13,11 +14,11 @@ const Form_Fileds = {
 
   emailLabel: "Your Email",
   emailName: "email",
-  emailPlaceholder: "name@travellia.com",
+  emailPlaceholder: data.inquiryEmail,
 
   phoneLabel: "Phone Number",
   phoneName: "phone",
-  phonePlaceholder: "+44 55 66 77 88",
+  phonePlaceholder: data.PhoneNumber,
 
   messsgaeLabel: "Booking Instructions",
   messsgaeName: "instructions",

@@ -1,4 +1,4 @@
-import { data } from "@/lib/data/homepage-data";
+import { data } from "@/lib/contactInfo";
 import Image from "next/image";
 
 const SOCIALS = [
