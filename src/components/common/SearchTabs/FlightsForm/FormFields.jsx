@@ -1,14 +1,7 @@
 // RoutesFields.jsx
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { FieldArray, Field, ErrorMessage, useFormikContext } from "formik";
 import Image from "next/image";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import {
   Popover,
   PopoverContent,
@@ -19,10 +12,129 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { format, parseISO } from "date-fns";
 import { cn } from "@/lib/utils";
-import { CITY_LIST } from "@/components/common/cities";
+import { CITY_LIST } from "@/components/common/citiesCode";
 import { Plus, Minus } from "lucide-react";
 
 const cityList = CITY_LIST;
+
+const PAGE_SIZE = 100;
+
+const CityCombobox = ({ name, placeholder }) => {
+  const { setFieldValue, setFieldTouched } = useFormikContext();
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return cityList.filter((item) => item.code);
+    return cityList.filter(
+      (item) =>
+        item.code &&
+        (item.city.toLowerCase().includes(q) ||
+          item.code.toLowerCase().includes(q)),
+    );
+  }, [query]);
+
+  const visible = filtered.slice(0, visibleCount);
+
+  const handleListScroll = (e) => {
+    const el = e.currentTarget;
+    if (
+      el.scrollTop + el.clientHeight >= el.scrollHeight - 40 &&
+      visibleCount < filtered.length
+    ) {
+      setVisibleCount((count) => Math.min(count + PAGE_SIZE, filtered.length));
+    }
+  };
+
+  return (
+    <Field name={name}>
+      {({ field }) => {
+        const selected = field.value
+          ? cityList.find((item) => item.code === field.value)
+          : undefined;
+        const label = selected ? `${selected.city} (${selected.code})` : "";
+
+        return (
+          <Popover
+            open={open}
+            onOpenChange={(next) => {
+              setOpen(next);
+              if (!next) {
+                setQuery("");
+                setVisibleCount(PAGE_SIZE);
+                setFieldTouched(name, true);
+              }
+            }}
+          >
+            <PopoverTrigger asChild>
+              <Button
+                type="button"
+                variant="outline"
+                className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
+              >
+                <span
+                  className={cn("truncate", !label && "text-muted-foreground")}
+                >
+                  {label || placeholder}
+                </span>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent
+              side="bottom"
+              align="center"
+              sideOffset={10}
+              alignOffset={0}
+              className="w-72 p-0"
+            >
+              <div className="p-2 border-b sticky top-0 bg-white z-10">
+                <Input
+                  autoFocus
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setVisibleCount(PAGE_SIZE);
+                  }}
+                  placeholder="Search city or code..."
+                  className="h-9"
+                />
+              </div>
+              <div
+                className="max-h-80 overflow-y-auto overscroll-contain py-1"
+                onScroll={handleListScroll}
+              >
+                {filtered.length === 0 && (
+                  <p className="px-3 py-2 text-sm text-muted-foreground">
+                    No results found.
+                  </p>
+                )}
+                {visible.map((item) => (
+                  <button
+                    key={item.code}
+                    type="button"
+                    onClick={() => {
+                      setFieldValue(name, item.code);
+                      setOpen(false);
+                      setQuery("");
+                      setFieldTouched(name, true);
+                    }}
+                    className={cn(
+                      "w-full text-left px-3 py-2 text-sm hover:bg-gray-100 transition",
+                      field.value === item.code && "bg-gray-100 font-medium",
+                    )}
+                  >
+                    {item.city} ({item.code})
+                  </button>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
+        );
+      }}
+    </Field>
+  );
+};
 
 const FieldError = ({ name }) => (
   <ErrorMessage
@@ -243,36 +355,10 @@ const FormFields = ({ flightType }) => {
                         height={20}
                         className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
                       />
-                      <Field name={`routes.${index}.from`}>
-                        {({ field, form }) => (
-                          <Select
-                            value={field.value}
-                            onValueChange={(value) =>
-                              form.setFieldValue(
-                                `routes.${index}.from`,
-                                value,
-                              )
-                            }
-                          >
-                            <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
-                              <SelectValue placeholder="Leaving From" />
-                            </SelectTrigger>
-                            <SelectContent
-                              position="popper"
-                              side="bottom"
-                              align="center"
-                              sideOffset={10}
-                              alignOffset={0}
-                            >
-                              {cityList.map((item) => (
-                                <SelectItem key={item.code} value={item.code}>
-                                  {item.city} ({item.code})
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        )}
-                      </Field>
+                      <CityCombobox
+                        name={`routes.${index}.from`}
+                        placeholder="Leaving From"
+                      />
                     </div>
                     <FieldError name={`routes.${index}.from`} />
                   </div>
@@ -287,33 +373,10 @@ const FormFields = ({ flightType }) => {
                         height={20}
                         className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
                       />
-                      <Field name={`routes.${index}.to`}>
-                        {({ field, form }) => (
-                          <Select
-                            value={field.value}
-                            onValueChange={(value) =>
-                              form.setFieldValue(`routes.${index}.to`, value)
-                            }
-                          >
-                            <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
-                              <SelectValue placeholder="Going To" />
-                            </SelectTrigger>
-                            <SelectContent
-                              position="popper"
-                              side="bottom"
-                              align="center"
-                              sideOffset={10}
-                              alignOffset={0}
-                            >
-                              {cityList.map((item) => (
-                                <SelectItem key={item.code} value={item.code}>
-                                  {item.city} ({item.code})
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        )}
-                      </Field>
+                      <CityCombobox
+                        name={`routes.${index}.to`}
+                        placeholder="Going To"
+                      />
                     </div>
                     <FieldError name={`routes.${index}.to`} />
                   </div>
