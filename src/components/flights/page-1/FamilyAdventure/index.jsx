@@ -56,8 +56,12 @@ const index = () => {
             </p>
 
             <div className="flex justify-center md:justify-start mt-10">
-              <Button className="px-12 py-6 rounded-full text-xl" size={"lg"}>
-                View Packages
+              <Button
+                asChild
+                className="px-12 py-6 rounded-full text-xl"
+                size={"lg"}
+              >
+                <a href="#plan-your-trip">Request a call</a>
               </Button>
             </div>
           </div>
