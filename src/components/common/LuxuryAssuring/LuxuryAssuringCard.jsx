@@ -31,7 +31,8 @@ const LuxuryAssuringCard = ({ card }) => {
           <Button className="rounded-full text-sm px-5 h-8 ">
             {card.buttonText} <MdArrowOutward className="text-white " />
           </Button>
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center">
+            <p className="text-[10px] tracking-tight font-semibold">{card.start}</p>
             <p className="font-bold text-primary">{card.price}</p>
             <p className="text-[10px] tracking-tight font-semibold">
               {card.perPerson}

@@ -26,7 +26,8 @@ const page = () => {
   const BULLETS = Bullets;
 
   const imageData = {
-    image: "/hajj-ummrah/BookNow/bgImage.png",
+    image: "/umrahDetail/BookNow/BookNow-bg.png",
+    
     alt: "hajj-umrah",
   };
 
@@ -44,7 +45,7 @@ const page = () => {
             className="object-contain absolute bottom-0"
           />
           <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
-          <Question />
+          
         </div>
         <div>
           <HalalFriendly />
@@ -52,6 +53,7 @@ const page = () => {
         </div>
         <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
         <PlanYourTrip />
+        <Question />
       </div>
     </div>
   );

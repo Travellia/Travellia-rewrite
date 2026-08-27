@@ -1,5 +1,4 @@
 export const LuxuryAssuringHajjUmmrahPackage = {
-  subtitle: "LUXURY ASSURING 5 STAR",
   title: "UMMRAH PACKAGE",
   highlights: ["affordable", "comfortable", "spiritual journey"],
   description:
@@ -15,30 +14,33 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card1-image-1.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
-          perPerson: "per person",
+            "3-Star December Ummrah Packages for 7 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 695",
+          start:"Starting from"
+          // perPerson: "per person",
         },
         {
           id: 2,
           image: "/hajj-ummrah/LuxuryAssuring/card1-image-2.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
-          perPerson: "per person",
+            "3-Star December Ummrah Packages for 10 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 745",
+          start:"Starting from"
+          // perPerson: "per person",
         },
         {
           id: 3,
           image: "/hajj-ummrah/LuxuryAssuring/card1-image-3.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
-          perPerson: "per person",
+            "3-Star December Ummrah Packages for 14 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 835",
+          start:"Starting from"
+          // perPerson: "per person",
         },
       ],
     },
@@ -51,9 +53,9 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card2-image-1.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
+            "4-Star December Ummrah Packages for 7 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 765",
           perPerson: "per person",
         },
         {
@@ -61,9 +63,9 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card2-image-2.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
+            "4-Star December Ummrah Packages for 10 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 835",
           perPerson: "per person",
         },
         {
@@ -71,9 +73,9 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card2-image-3.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
+            "4-Star December Ummrah Packages for 14 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 920",
           perPerson: "per person",
         },
       ],
@@ -87,9 +89,9 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card3-image-1.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
+            "5-Star December Ummrah Packages for 7 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 885",
           perPerson: "per person",
         },
         {
@@ -97,9 +99,9 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card3-image-2.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
+            "5-Star December Ummrah Packages for 10 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 950",
           perPerson: "per person",
         },
         {
@@ -107,9 +109,9 @@ export const LuxuryAssuringHajjUmmrahPackage = {
           image: "/hajj-ummrah/LuxuryAssuring/card3-image-3.png",
           stars: 3,
           description:
-            "3-Star December Ummrah Packages for 5 Nights - All-inclusive",
-          buttonText: "Book Now",
-          price: "£ 1090/",
+            "5-Star December Ummrah Packages for 14 Nights - All-inclusive",
+          buttonText: "View Packages",
+          price: "£ 1145",
           perPerson: "per person",
         },
       ],

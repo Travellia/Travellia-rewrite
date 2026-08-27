@@ -9,7 +9,6 @@ const index = ({ data }) => {
         <div className="flex flex-col gap-5 m-auto">
           {/* Header */}
           <div className="flex flex-col items-center">
-            <p className="font-semibold">{data.subtitle}</p>
             <h1 className="text-4xl font-bold text-primary tracking-widest">
               {data.title}
             </h1>
