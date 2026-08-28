@@ -52,7 +52,7 @@ const index = ({ data }) => {
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {section.cards.map((card) => (
-                    <LuxuryAssuringCard key={card.id} card={card} />
+                    <LuxuryAssuringCard key={card.id} card={card} link={card.link} />
                   ))}
                 </div>
               </div>
