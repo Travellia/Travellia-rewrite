@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import FlightsForm from "./FlightsForm/FlightsForm";
 import Image from "next/image";
@@ -10,14 +11,20 @@ import UmrahForm from "./UmrahForm/UmrahForm";
 // import UmrahForm from "./tabs/UmrahForm";
 
 const TABS = [
-  { key: "flights", label: "Flights", component: <FlightsForm /> },
-  { key: "hotels", label: "Hotels", component: <HotelsForm /> },
-  // { key: "holidays", label: "Holidays", component: <HolidaysForm /> },
-  { key: "umrah", label: "Umrah", component: <UmrahForm /> },
+  { key: "flights", label: "Flights", path: "/flights", component: <FlightsForm /> },
+  { key: "hotels", label: "Hotels", path: "/hotels", component: <HotelsForm /> },
+  // { key: "holidays", label: "Holidays", path: "/holidayPackages", component: <HolidaysForm /> },
+  { key: "umrah", label: "Umrah", path: "/hajj-umrah", component: <UmrahForm /> },
 ];
 
-const SearchTabs = ({ defaultTab = "hotels" }) => {
+const SearchTabs = ({ defaultTab = "flights" }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
+  const router = useRouter();
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab.key);
+    router.push(tab.path);
+  };
 
   return (
     <section className="flex flex-col gap-5 px-5 -translate-y-10  ">
@@ -28,7 +35,7 @@ const SearchTabs = ({ defaultTab = "hotels" }) => {
             key={tab.key}
             label={tab.label}
             active={activeTab === tab.key}
-            onClick={() => setActiveTab(tab.key)}
+            onClick={() => handleTabClick(tab)}
           />
         ))}
       </div>
@@ -40,8 +47,10 @@ const SearchTabs = ({ defaultTab = "hotels" }) => {
 };
 
 const Tab = ({ label, active, onClick }) => (
-  <div
-    className={`flex items-center justify-center p-3 gap-2 rounded-full text-sm font-semibold transition-all z-10
+  <button
+    type="button"
+    onClick={onClick}
+    className={`flex items-center justify-center p-3 gap-2 rounded-full text-sm font-semibold transition-all z-10 cursor-pointer
       ${
         active
           ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
@@ -49,18 +58,16 @@ const Tab = ({ label, active, onClick }) => (
       }
         `}
   >
-    <button variant="ghost" onClick={onClick} className="flex gap-2">
-      <Image
-        src="/holidayPackage/ContactUs/bag.png"
-        alt="background"
-        width={25}
-        height={4}
-        className="filter invert brightness-200 h-5.5 text-white"
-        loading="lazy"
-      />
-      {label}
-    </button>
-  </div>
+    <Image
+      src="/holidayPackage/ContactUs/bag.png"
+      alt="background"
+      width={25}
+      height={4}
+      className="filter invert brightness-200 h-5.5 text-white"
+      loading="lazy"
+    />
+    {label}
+  </button>
 );
 
 export default SearchTabs;

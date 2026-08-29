@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import bookingSchema from "@/schemas/common/bookingSchema";
 import { Button } from "@/components/ui/button";
 import FormField from "@/components/common/FormField";
+import { data } from "@/lib/contactInfo";
 
 const bookingFields = [
   {
@@ -22,13 +23,13 @@ const bookingFields = [
     label: "Email",
     name: "email",
     type: "email",
-    placeholder: "name@travellia.com",
+    placeholder: data.inquiryEmail,
     grid: "col-span-1",
   },
   {
     label: "Phone",
     name: "phone",
-    placeholder: "+44 55 66 77 88",
+    placeholder: data.PhoneNumber,
     grid: "col-span-1",
   },
   {

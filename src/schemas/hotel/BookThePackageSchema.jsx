@@ -31,8 +31,6 @@ const bookThePackageSchema = Yup.object().shape({
     .min(0, "Invalid number")
     .required("Select number of children"),
 
-  date: Yup.date().required("Date is required").nullable(),
-
   message: Yup.string().max(500, "Message too long"),
 });
 

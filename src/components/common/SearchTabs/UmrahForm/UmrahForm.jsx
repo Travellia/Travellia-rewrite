@@ -36,6 +36,7 @@ const UmrahForm = () => {
                       src={service.image}
                       alt={service.title}
                       fill
+                      sizes="56px"
                       className="object-contain"
                       loading="lazy"
                     />
@@ -57,6 +58,7 @@ const UmrahForm = () => {
                       src={service.image}
                       alt={service.title}
                       fill
+                      sizes="56px"
                       className="object-contain"
                       loading="lazy"
                     />

@@ -17,7 +17,7 @@ const page = () => {
     ],
     title: "TRAVELLIA",
 
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
+    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const imageData = {

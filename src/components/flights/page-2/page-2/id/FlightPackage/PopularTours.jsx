@@ -9,7 +9,7 @@ const PopularTours = ({ data }) => {
     <section className="flex flex-col justify-center items-center gap-10 md:justify-start md:items-start md:text-start">
       <div className="">
         <h1 className="text-2xl md:text-3xl text-black/70">POPULAR TOURS IN</h1>
-        <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-primary text-center">
+        <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-primary text-left">
           {data.country}
         </h1>
       </div>

@@ -8,23 +8,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { format } from "date-fns";
-
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import bookThePackageSchema from "@/schemas/hotel/BookThePackageSchema";
 import { Button } from "@/components/ui/button";
 
 const BookThePackageForm = () => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
   const handleSubmit = (values, { resetForm }) => {
     console.log("Submitted Data:", values);
 
@@ -40,7 +29,6 @@ const BookThePackageForm = () => {
         phone: "",
         adult: "",
         child: "",
-        date: "",
         message: "",
       }}
       validationSchema={bookThePackageSchema}
@@ -140,38 +128,6 @@ const BookThePackageForm = () => {
               />
             </div>
           </div>
-
-          {/* Date Picker */}
-
-          <Popover>
-            <PopoverTrigger asChild>
-              <button
-                className={`w-full p-5 text-left bg-gray-100 rounded-2xl text-gray-500 ${
-                  values.date ? "text-black" : ""
-                }`}
-              >
-                {values.date
-                  ? format(new Date(values.date), "dd-MM-yyyy")
-                  : "DD-MM-YY"}
-              </button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0 bg-gray-100 rounded-2xl">
-              <Calendar
-                mode="single"
-                selected={values.date ? new Date(values.date) : undefined}
-                onSelect={(date) => {
-                  if (date) setFieldValue("date", date.toISOString());
-                }}
-                disabled={(date) => date < today}
-                initialFocus
-              />
-            </PopoverContent>
-          </Popover>
-          <ErrorMessage
-            name="date"
-            component="p"
-            className="text-red-500 text-sm pt-2"
-          />
 
           {/* Message */}
           <div>

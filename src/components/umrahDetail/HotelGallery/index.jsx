@@ -43,6 +43,7 @@ const index = () => {
             src={data.image}
             alt={data.alt}
             fill
+            sizes="(max-width: 768px) 33vw, 30vw"
             className="object-cover rounded-2xl"
             loading="lazy"
           />

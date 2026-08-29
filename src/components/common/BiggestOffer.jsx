@@ -10,6 +10,7 @@ const BiggestOffer = () => {
         src="/common/BiggestOffer/bg.png"
         alt="bg-image"
         fill
+        sizes="100vw"
         className="object-cover"
         loading="lazy"
       />

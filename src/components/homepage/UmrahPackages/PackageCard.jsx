@@ -12,7 +12,13 @@ const UmrahPackageCard = ({ data }) => {
     <Card className="w-full overflow-hidden p-2 !gap-3">
       {/* Image Header */}
       <div className="relative h-48 w-full rounded-xl overflow-hidden">
-        <Image src={data.image} alt={data.alt} fill className="object-cover" />
+        <Image
+          src={data.image}
+          alt={data.alt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
+        />
       </div>
 
       <CardHeader className="pb-1 !px-3">

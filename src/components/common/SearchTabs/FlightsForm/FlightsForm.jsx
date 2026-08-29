@@ -52,10 +52,14 @@ const FlightsForm = () => {
             to: "",
             depart: "",
             return: "",
-            adult: "",
-            child: "",
+            adult: "0",
+            child: "0",
+            infant: "0",
           },
         ],
+        name: "",
+        email: "",
+        contact: "",
       }}
       validationSchema={getSchema()}
       onSubmit={handleSubmit}
@@ -70,7 +74,17 @@ const FlightsForm = () => {
             resetForm({
               values: {
                 ...values,
-                routes: [{ from: "", to: "", depart: "", return: "" }],
+                routes: [
+                  {
+                    from: "",
+                    to: "",
+                    depart: "",
+                    return: "",
+                    adult: "0",
+                    child: "0",
+                    infant: "0",
+                  },
+                ],
               },
             });
           }
@@ -90,7 +104,7 @@ const FlightsForm = () => {
                       checked={flightType === type.value}
                       onCheckedChange={() => handleFlightTypeChange(type.value)}
                     />
-                    <span className="text-sm font-medium">{type.label}</span>
+                    <span className="text-sm font-normal text-muted-foreground">{type.label}</span>
                   </label>
                 ))}
               </div>

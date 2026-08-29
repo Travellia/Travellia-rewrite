@@ -2,6 +2,17 @@ export const MADINAH_PACKAGE_DETAIL = {
   heading: "MADINAH HOTEL PACKAGE",
   desc: "DESCRIPTION",
   image: "/umrahDetail/umrahPackage/madinahHotel.png",
+  images: [
+    "/hajj-ummrah/hajj-umrah-packages/madinah/5 Star/Pullman Zamzam Madinah/1.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/madinah/5 Star/Pullman Zamzam Madinah/2.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/madinah/5 Star/Pullman Zamzam Madinah/3.jpeg",
+    {
+      src: "/hajj-ummrah/hajj-umrah-packages/madinah/5 Star/Pullman Zamzam Madinah/4.jpeg",
+      fit: "contain",
+    },
+    "/hajj-ummrah/hajj-umrah-packages/madinah/5 Star/Pullman Zamzam Madinah/5.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/madinah/5 Star/Pullman Zamzam Madinah/6.jpeg",
+  ],
   alt: "Madinah Hotel",
   packages: [
     {

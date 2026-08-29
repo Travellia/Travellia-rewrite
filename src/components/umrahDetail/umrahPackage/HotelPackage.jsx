@@ -1,9 +1,11 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import ServicePackage from "@/components/common/ServicePackage";
-import Image from "next/image";
+import HotelImageCarousel from "./HotelImageCarousel";
 import React from "react";
 
 const HotelPackage = ({ data, reverse = false }) => {
+  const images = data.images?.length ? data.images : [data.image];
+
   return (
     <section className="">
       <ContentLayoutWrapper
@@ -11,15 +13,8 @@ const HotelPackage = ({ data, reverse = false }) => {
           reverse ? "lg:flex-row-reverse" : ""
         }`}
       >
-        <div className="w-full max-w-xs lg:max-w-md xl:max-w-sm mx-auto h-auto items-start">
-          <Image
-            src={data.image}
-            alt={data.alt}
-            width={600}
-            height={700}
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
+        <div className="w-full max-w-xs lg:max-w-md xl:max-w-sm mx-auto">
+          <HotelImageCarousel images={images} alt={data.alt} />
         </div>
         <div className="flex flex-col gap-8 xl:gap-10 p-1">
           <div>

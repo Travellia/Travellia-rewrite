@@ -2,6 +2,17 @@ export const MAKKAH_PACKAGE_DETAIL = {
   heading: "MAKKAH HOTEL PACKAGE",
   desc: "DESCRIPTION",
   image: "/umrahDetail/umrahPackage/makkahHotel.png",
+  images: [
+    "/hajj-ummrah/hajj-umrah-packages/makkah/5 Star/Anjum Makkah Hotel/1.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/makkah/5 Star/Anjum Makkah Hotel/2.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/makkah/5 Star/Anjum Makkah Hotel/3.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/makkah/5 Star/Anjum Makkah Hotel/4.jpeg",
+    "/hajj-ummrah/hajj-umrah-packages/makkah/5 Star/Anjum Makkah Hotel/5.jpeg",
+    {
+      src: "/hajj-ummrah/hajj-umrah-packages/makkah/5 Star/Anjum Makkah Hotel/6.jpeg",
+      fit: "contain",
+    },
+  ],
   alt: "Makkah Hotel",
   packages: [
     {

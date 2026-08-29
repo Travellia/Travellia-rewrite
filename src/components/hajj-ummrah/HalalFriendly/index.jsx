@@ -48,9 +48,10 @@ const index = () => {
   return (
     <section className="relative ">
       <Image
-        src={"/hajj-ummrah/halalfriendly-bg.png"}
+        src={"/hajj-ummrah/halalFriendly/halalfriendly-bg.png"}
         alt="qaba"
         fill
+        sizes="100vw"
         className="absolute object-cover"
         loading="lazy"
       />

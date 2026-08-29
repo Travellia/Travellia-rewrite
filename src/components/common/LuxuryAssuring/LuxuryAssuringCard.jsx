@@ -2,9 +2,10 @@ import { MdArrowOutward } from "react-icons/md";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const LuxuryAssuringCard = ({ card }) => {
+const LuxuryAssuringCard = ({ card, link }) => {
   return (
     <div className=" rounded-xl overflow-hidden shadow-2xl">
       <div className="w-full h-[24vh] sm:h-[11vh] lg:h-[18vh] xl:h-[21vh] overflow-hidden">
@@ -28,10 +29,19 @@ const LuxuryAssuringCard = ({ card }) => {
           className="flex justify-between md:flex-col-reverse md:items-start gap-2 
                 lg:flex lg:flex-row lg:items-center lg:justify-between"
         >
-          <Button className="rounded-full text-sm px-5 h-8 ">
-            {card.buttonText} <MdArrowOutward className="text-white " />
-          </Button>
-          <div className="flex flex-col items-start">
+          {link ? (
+            <Button asChild className="rounded-full text-sm px-5 h-8 ">
+              <Link href={link}>
+                {card.buttonText} <MdArrowOutward className="text-white " />
+              </Link>
+            </Button>
+          ) : (
+            <Button className="rounded-full text-sm px-5 h-8 ">
+              {card.buttonText} <MdArrowOutward className="text-white " />
+            </Button>
+          )}
+          <div className="flex flex-col items-center">
+            <p className="text-[10px] tracking-tight font-semibold">{card.start}</p>
             <p className="font-bold text-primary">{card.price}</p>
             <p className="text-[10px] tracking-tight font-semibold">
               {card.perPerson}

@@ -4,7 +4,7 @@ import React, { lazy } from "react";
 import ContentLayoutWrapper from "./ContentLayoutWrapper";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { data } from "@/lib/data/homepage-data";
+import { data } from "@/lib/contactInfo";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
 import { usePathname } from "next/navigation";
@@ -78,10 +78,9 @@ const BRANDS = [
 ];
 
 const SOCIALS = [
-  "/footer/facebook.png",
-  "/footer/instagram.png",
-  "/footer/twitter.png",
-  "/footer/linkedin.png",
+  { icon: "/social-media/facebook.png", href: data.socials.facebook },
+  { icon: "/social-media/instagram.png", href: data.socials.instagram },
+  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok },
 ];
 
 const CARDS = [
@@ -114,18 +113,18 @@ const FOOTER_LINKS = [
       { name: "About Us", href: "/about" },
       { name: "Contact Us", href: "/contact" },
       { name: "Services", href: "/services" },
-      { name: "Testimonial", href: "/testimonial" },
+      // { name: "Testimonial", href: "/testimonial" },
       { name: "Terms and Conditions", href: "/terms" },
     ],
   },
-  {
-    title: "Destinations",
-    links: [
-      { name: "Maldives", href: "/destinations/maldives" },
-      { name: "Los Angeles", href: "/destinations/los-angeles" },
-      { name: "Las Vegas", href: "/destinations/las-vegas" },
-    ],
-  },
+  // {
+  //   title: "Destinations",
+  //   links: [
+  //     { name: "Maldives", href: "/destinations/maldives" },
+  //     { name: "Los Angeles", href: "/destinations/los-angeles" },
+  //     { name: "Las Vegas", href: "/destinations/las-vegas" },
+  //   ],
+  // },
   {
     title: "Packages",
     links: [
@@ -167,6 +166,7 @@ const Footer = () => {
                       src={brand}
                       alt="brand"
                       fill
+                      sizes="(max-width: 768px) 72px, (max-width: 1024px) 140px, 200px"
                       className="object-contain"
                       loading="lazy"
                     />
@@ -188,7 +188,7 @@ const Footer = () => {
             src="/logo.png"
             alt="Travellia Logo"
             width={300}
-            height={200}
+            height={90}
             loading="lazy"
             className="bg-contain"
           />
@@ -196,7 +196,7 @@ const Footer = () => {
 
         {/* Footer Links and Contact Info */}
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
             {/* Contact Information */}
             <div>
               <h3 className="text-primary font-bold text-3xl mb-4">
@@ -268,14 +268,22 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between w-full">
             <div className="flex items-center justify-between gap-5">
               {SOCIALS.map((social, index) => (
-                <Image
-                  src={social}
-                  alt="social"
-                  width={40}
-                  height={40}
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={index}
-                  loading="lazy"
-                />
+                  className="relative w-10 h-10"
+                >
+                  <Image
+                    src={social.icon}
+                    alt="social"
+                    fill
+                    sizes="40px"
+                    className="object-contain"
+                    loading="lazy"
+                  />
+                </a>
               ))}
             </div>
             <div className="flex items-center justify-between gap-5">
@@ -306,6 +314,7 @@ const Footer = () => {
           src={footerImage.src}
           alt={footerImage.alt}
           fill
+          sizes="100vw"
           loading="lazy"
         />
       </div>

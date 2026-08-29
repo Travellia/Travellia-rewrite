@@ -17,6 +17,7 @@ const TestimonialCard = ({ testimonial, variant = "home" }) => {
             src={testimonial.user.src}
             alt={testimonial.user.alt}
             fill
+            sizes="48px"
             className="object-cover"
           />
         </div>

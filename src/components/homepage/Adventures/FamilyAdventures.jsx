@@ -1,68 +1,17 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import PackageCard from "@/components/common/PackageCard";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
-
-const PLACES = [
-  {
-    id: 1,
-    name: "Egypt",
-    price: 1349,
-    image: "/home/adventure/egypt.png",
-    description: "Umrah with Egypt Stay",
-    startingPrice: "Starting From £134",
-  },
-  {
-    id: 2,
-    name: "Turkey",
-    price: 1349,
-    image: "/home/adventure/turkey.png",
-    description: "Umrah with Turkey Stay",
-    startingPrice: "Starting From £134",
-  },
-  {
-    id: 3,
-    name: "Dubai",
-    price: 1349,
-    image: "/home/adventure/dubai.png",
-    description: "Umrah with Dubai Stay",
-    startingPrice: "Starting From £134",
-  },
-  {
-    id: 4,
-    name: "Abu Dhabi",
-    price: 1349,
-    image: "/home/adventure/abu-dhabi.png",
-    description: "Umrah with Abu Dhabi Stay",
-    startingPrice: "Starting From £134",
-  },
-  {
-    id: 5,
-    name: "turkey",
-    price: 1349,
-    image: "/home/adventure/turkey-2.png",
-    description: "Umrah with turkey Stay",
-    startingPrice: "Starting From £134",
-  },
-  {
-    id: 6,
-    name: "Dubai",
-    price: 1349,
-    image: "/home/adventure/dubai-2.png",
-    description: "Umrah with Dubai Stay",
-    startingPrice: "Starting From £134",
-  },
-];
+import PopularDestination from "@/components/homepage/PopularDestination";
 
 const FamilyAdventures = () => {
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-20 md:pt-30 min-h-[90vh] sm:min-h-[100vh] md:min-h-[110vh] lg:min-h-[120vh] xl:min-h-[150vh]">
+    <section className="relative overflow-hidden pt-12 sm:pt-20 md:pt-30 pb-12 sm:pb-20 md:pb-30">
       <Image
         src={"/home/adventure/okl.png"}
         alt="okl.png"
         fill
+        sizes="100vw"
         className="absolute top-0 left-0 z-1 "
         loading="lazy"
       />
@@ -71,6 +20,7 @@ const FamilyAdventures = () => {
           src={"/shapes/paper-plane.png"}
           alt="paper-plan.png"
           fill
+          sizes="100vw"
           loading="lazy"
         />
       </div>
@@ -116,24 +66,10 @@ const FamilyAdventures = () => {
             </div>
           </div>
         </div>
-
-        {/* card div */}
-        <div className="flex flex-col justify-center items-center gap-10 my-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-auto gap-6  w-full">
-            {PLACES.map((place) => {
-              return (
-                <Card
-                  key={place.id}
-                  className="relative overflow-hidden rounded-4xl h-96 group cursor-pointer py-0"
-                >
-                  <PackageCard data={place} text />
-                </Card>
-              );
-            })}
-          </div>
-          <Button className="btn-main ">Load More</Button>
-        </div>
       </ContentLayoutWrapper>
+      <div className="relative z-2">
+        <PopularDestination />
+      </div>
     </section>
   );
 };

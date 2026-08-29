@@ -11,6 +11,7 @@ const ServicePackage = ({ data }) => {
             src={data.image}
             alt={data.alt}
             fill
+            sizes="48px"
             className="object-contain"
             loading="lazy"
           />
