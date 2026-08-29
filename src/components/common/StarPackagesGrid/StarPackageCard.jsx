@@ -2,6 +2,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { FaKaaba, FaMosque } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import CarouselWrapper from "@/components/ui/carousel";
+import Link from "next/link";
 import React from "react";
 
 const parseNightsBreakdown = (nights) => {
@@ -28,8 +29,9 @@ const HotelRow = ({ icon: Icon, hotel, nights }) => (
   </div>
 );
 
-const StarPackageCard = ({ card, description, stars }) => {
+const StarPackageCard = ({ card, description, stars, tier }) => {
   const { makkahNights, madinahNights } = parseNightsBreakdown(card.nights);
+  const detailLink = tier ? `/hajj-umrah/${tier}/umrahDetail` : null;
 
   const slides = [card.makkahImages?.[0], card.madinahImages?.[0]]
     .filter(Boolean)
@@ -58,9 +60,17 @@ const StarPackageCard = ({ card, description, stars }) => {
           className="flex justify-between md:flex-col-reverse md:items-start gap-2
                 lg:flex lg:flex-row lg:items-center lg:justify-between pt-1"
         >
-          <Button className="rounded-full text-sm px-5 h-8 ">
-            {card.buttonText} <MdArrowOutward className="text-white " />
-          </Button>
+          {detailLink ? (
+            <Button asChild className="rounded-full text-sm px-5 h-8 ">
+              <Link href={detailLink}>
+                {card.buttonText} <MdArrowOutward className="text-white " />
+              </Link>
+            </Button>
+          ) : (
+            <Button className="rounded-full text-sm px-5 h-8 ">
+              {card.buttonText} <MdArrowOutward className="text-white " />
+            </Button>
+          )}
           <div className="flex flex-col items-center">
             <p className="text-[10px] tracking-tight font-semibold">{card.start}</p>
             <p className="font-bold text-primary">{card.price}</p>

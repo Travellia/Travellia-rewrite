@@ -49,7 +49,7 @@ const page = async (props) => {
             sizes="100vw"
             className="object-contain absolute bottom-0 -z-10 pointer-events-none"
           />
-          <StarPackagesGrid data={STAR_PACKAGES_DATA} />
+          <StarPackagesGrid data={STAR_PACKAGES_DATA} tier={params.tier} />
         </div>
         <div>
           <HalalFriendly />

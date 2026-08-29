@@ -5,12 +5,20 @@ import HotelPackage from "@/components/umrahDetail/umrahPackage/HotelPackage";
 import { BookNowList } from "@/lib/data/umrahDetail/BookNowList";
 import { MADINAH_PACKAGE_DETAIL } from "@/lib/data/umrahDetail/MadinahHotelPackage copy";
 import { MAKKAH_PACKAGE_DETAIL } from "@/lib/data/umrahDetail/MakkahHotelPackage";
+import { StarPackagesByTier } from "@/lib/data/hajj-umrah/StarPackagesData";
 import HotelGallery from "@/components/umrahDetail/HotelGallery";
 import PackageInclude from "@/components/umrahDetail/PackageInclude";
 import Image from "next/image";
 import React from "react";
+import { notFound } from "next/navigation";
 
-const page = () => {
+const page = async (props) => {
+  const params = await props.params;
+
+  if (!StarPackagesByTier[params.tier]) {
+    notFound();
+  }
+
   const welcomeData = {
     slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.png" }],
     title: "DETAIL PAGE",

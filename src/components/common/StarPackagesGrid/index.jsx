@@ -2,7 +2,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import StarPackageCard from "./StarPackageCard";
 import React from "react";
 
-const StarPackagesGrid = ({ data }) => {
+const StarPackagesGrid = ({ data, tier }) => {
   const headingMatch = data.heading?.match(/(\d+)\s*Star\s*(\d+)\s*NIGHTS/i);
   const description = headingMatch
     ? `${headingMatch[1]}-Star December Ummrah Packages for ${headingMatch[2]} Nights - All-inclusive`
@@ -32,6 +32,7 @@ const StarPackagesGrid = ({ data }) => {
                 card={card}
                 description={description}
                 stars={data.stars}
+                tier={tier}
               />
             ))}
           </div>
