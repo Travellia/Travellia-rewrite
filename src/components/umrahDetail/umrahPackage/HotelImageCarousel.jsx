@@ -19,11 +19,19 @@ const HotelImageCarousel = ({ images, alt }) => {
   return (
     <div className="flex flex-col gap-3 w-full">
       <div className="relative w-full aspect-[4/6] rounded-3xl overflow-hidden shadow-lg">
+        {/* The slide width is forced to 100% in CSS: Swiper writes an inline
+            width measured at init, which lands short inside this aspect-ratio
+            box and lets the next image peek in at the edge.
+            Do NOT add observer/observeParents here -- in loop mode they make
+            Swiper re-clone slides on every DOM mutation it causes itself,
+            which duplicates the slides and the dots. */}
         <Swiper
           loop={slides.length > 1}
+          slidesPerView={1}
+          spaceBetween={0}
           onSwiper={setSwiper}
           onSlideChange={(instance) => setActiveIndex(instance.realIndex)}
-          className="w-full h-full"
+          className="w-full h-full [&_.swiper-slide]:w-full!"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={slide.src}>

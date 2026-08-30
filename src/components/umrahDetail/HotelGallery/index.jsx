@@ -1,4 +1,3 @@
-import { da } from "date-fns/locale";
 import Image from "next/image";
 import React from "react";
 
@@ -31,8 +30,8 @@ const index = () => {
     {
       id: 5,
       image: "/umrahDetail/HotelGallery/grid5.png",
-      alt: "Hotel room with city viewame: ",
-      classname: "col-span-1 row-span-1",
+      alt: "Hotel room with city view",
+      className: "col-span-1 row-span-1",
     },
   ];
   return (
