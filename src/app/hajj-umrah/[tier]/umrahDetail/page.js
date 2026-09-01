@@ -3,8 +3,7 @@ import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/common/Welcome";
 import HotelPackage from "@/components/umrahDetail/umrahPackage/HotelPackage";
 import { BookNowList } from "@/lib/data/umrahDetail/BookNowList";
-import { MADINAH_PACKAGE_DETAIL } from "@/lib/data/umrahDetail/MadinahHotelPackage copy";
-import { MAKKAH_PACKAGE_DETAIL } from "@/lib/data/umrahDetail/MakkahHotelPackage";
+import { buildHotelPackageDetails } from "@/lib/data/umrahDetail/HotelPackageDetail";
 import { StarPackagesByTier } from "@/lib/data/hajj-umrah/StarPackagesData";
 import HotelGallery from "@/components/umrahDetail/HotelGallery";
 import PackageInclude from "@/components/umrahDetail/PackageInclude";
@@ -14,10 +13,19 @@ import { notFound } from "next/navigation";
 
 const page = async (props) => {
   const params = await props.params;
+  const searchParams = await props.searchParams;
 
-  if (!StarPackagesByTier[params.tier]) {
+  const tierData = StarPackagesByTier[params.tier];
+
+  if (!tierData) {
     notFound();
   }
+
+  // `?package=` identifies which of the tier's cards was clicked; fall back to
+  // the first card so a bare /umrahDetail URL still renders a real package.
+  const packageId = Number(searchParams?.package);
+  const card =
+    tierData.cards.find((item) => item.id === packageId) ?? tierData.cards[0];
 
   const welcomeData = {
     slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.png" }],
@@ -25,8 +33,8 @@ const page = async (props) => {
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
-  const MAKKAH_HOTEL_PACKAGE = MAKKAH_PACKAGE_DETAIL;
-  const MADINAH_HOTEL_PACKAGE = MADINAH_PACKAGE_DETAIL;
+  const { makkah: MAKKAH_HOTEL_PACKAGE, madinah: MADINAH_HOTEL_PACKAGE } =
+    buildHotelPackageDetails(card, tierData.stars);
 
   const imageData = {
     image: "/umrahDetail/BookNow/BookNow-bg.png",
@@ -51,7 +59,7 @@ const page = async (props) => {
             alt="makkah"
             height={1000}
             width={1000}
-            className="hidden lg:block absolute bottom-0 right-0"
+            className="hidden lg:block absolute bottom-0 right-0 -z-10 pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -59,7 +67,7 @@ const page = async (props) => {
             alt="makkah"
             height={1000}
             width={1000}
-            className="hidden lg:block absolute bottom-0 left-0"
+            className="hidden lg:block absolute bottom-0 left-0 -z-10 pointer-events-none"
             loading="lazy"
           />
           <Image
@@ -67,7 +75,7 @@ const page = async (props) => {
             alt="makkah"
             height={1000}
             width={1000}
-            className="hidden lg:block absolute w-full right-0 -translate-y-10"
+            className="hidden lg:block absolute w-full right-0 -translate-y-10 -z-10 pointer-events-none"
             loading="lazy"
           />
 

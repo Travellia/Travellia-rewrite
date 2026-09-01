@@ -21,7 +21,7 @@ const index = () => {
         alt="masjid "
         width={1000}
         height={1000}
-        className="absolute right-0 top-0  object-contain overflow-hidden opacity-30"
+        className="absolute right-0 top-0  object-contain overflow-hidden opacity-30 -z-10 pointer-events-none"
         loading="lazy"
       />
       <ContentLayoutWrapper className="relative flex flex-col gap-10">

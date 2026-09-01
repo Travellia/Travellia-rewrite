@@ -31,7 +31,9 @@ const HotelRow = ({ icon: Icon, hotel, nights }) => (
 
 const StarPackageCard = ({ card, description, stars, tier }) => {
   const { makkahNights, madinahNights } = parseNightsBreakdown(card.nights);
-  const detailLink = tier ? `/hajj-umrah/${tier}/umrahDetail` : null;
+  const detailLink = tier
+    ? `/hajj-umrah/${tier}/umrahDetail?package=${card.id}`
+    : null;
 
   const slides = [card.makkahImages?.[0], card.madinahImages?.[0]]
     .filter(Boolean)
