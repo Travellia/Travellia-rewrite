@@ -10,7 +10,7 @@ const page = () => {
     slides: [{ id: 1, image: "/about/welcome/Image1.png" }],
     title: "ABOUT US",
 
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
+    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
   return (
     <div className="flex flex-col gap-10 bg-background mb-10 md:mb-15 lg:mb-20">

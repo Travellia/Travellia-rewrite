@@ -4,23 +4,31 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import umrahSchema from "@/schemas/SearchTabs/Umrah/umrahSchema";
+import FormStatus from "@/components/common/FormStatus";
+import HoneypotField from "@/components/common/HoneypotField";
+import useFormSubmit from "@/hooks/useFormSubmit";
 
 const UmrahContactForm = () => {
+  const { status, error, submit } = useFormSubmit("umrahEnquiry");
+
+  const handleSubmit = async (values, { resetForm }) => {
+    const sent = await submit(values, { hp: values._hp });
+    if (sent) resetForm();
+  };
+
   return (
     <Formik
       initialValues={{
         firstName: "",
         contact: "",
         email: "",
+        _hp: "",
       }}
       validationSchema={umrahSchema}
-      onSubmit={(values, { resetForm }) => {
-        console.log("Form Data:", values);
-        resetForm();
-      }}
+      onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="flex flex-col gap-5 w-[80%] mx-auto">
+        <Form className="flex flex-col gap-5 w-[80%] mx-auto relative">
           <div className="space-y-3">
             {/* First Name */}
             <div className="flex flex-col gap-2">
@@ -80,14 +88,17 @@ const UmrahContactForm = () => {
             </div>
           </div>
 
+          <HoneypotField />
+
           {/* Submit */}
           <Button
             type="submit"
             className="btn-main self-center px-10"
             disabled={isSubmitting}
           >
-            Submit
+            {isSubmitting ? "Sending…" : "Submit"}
           </Button>
+          <FormStatus status={status} error={error} />
         </Form>
       )}
     </Formik>

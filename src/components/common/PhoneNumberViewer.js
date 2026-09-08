@@ -1,4 +1,4 @@
-import { data } from '@/lib/data/homepage-data'
+import { data } from '@/lib/contactInfo'
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function PhoneNumberViewer() {

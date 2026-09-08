@@ -59,23 +59,25 @@ const index = () => {
           src={"/home/umrah-package/Madina.jpg"}
           alt="Madina"
           fill
+          sizes="50vw"
           className={"aspect-auto object-cover"}
         />
       </div>
       <div className="absolute top-0 left-0 w-2/10 h-4/10 z-1">
-        <Image src={"/shapes/leaf.png"} alt="leaf" fill />
+        <Image src={"/shapes/leaf.png"} alt="leaf" fill sizes="20vw" />
       </div>
       <div className="absolute -bottom-5 right-3 w-2/10 h-4/10 z-1 rotate-180">
-        <Image fill src={"/shapes/leaf.png"} alt="leaf" />
+        <Image fill src={"/shapes/leaf.png"} alt="leaf" sizes="20vw" />
       </div>
       <div className="absolute top-10 left-0 z-1 h-1/2 w-full">
-        <Image src={"/shapes/paper-plane.png"} alt="paper-plane" fill />
+        <Image src={"/shapes/paper-plane.png"} alt="paper-plane" fill sizes="100vw" />
       </div>
       <div className="absolute right-0 top-0 w-1/2 h-full">
         <Image
           src={"/home/umrah-package/Makkah.jpg"}
           alt="Makkah"
           fill
+          sizes="50vw"
           className={" aspect-auto object-cover"}
         />
       </div>

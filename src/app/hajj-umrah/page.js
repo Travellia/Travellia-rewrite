@@ -2,7 +2,7 @@ import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/common/Welcome";
 import LuxuryAssuring from "@/components/common/LuxuryAssuring";
 import Question from "@/components/hajj-ummrah/Question";
-import { LuxuryAssuringHajjUmmrahPackage } from "@/lib/data/holidayPackage/LuxuryAssuringHajjUmmrahPackage";
+import { LuxuryAssuringHajjUmmrahPackage } from "@/lib/data/hajj-umrah/LuxuryAssuringHajjUmmrahPackage";
 import HalalFriendly from "@/components/hajj-ummrah/HalalFriendly";
 import React from "react";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const page = () => {
     slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
     heading: "SCROLL DOWN",
     title: "BEST UMMRAH PACKAGES",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
+    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHajjUmmrahPackage;
@@ -26,7 +26,8 @@ const page = () => {
   const BULLETS = Bullets;
 
   const imageData = {
-    image: "/hajj-ummrah/BookNow/bgImage.png",
+    image: "/umrahDetail/BookNow/BookNow-bg.png",
+    
     alt: "hajj-umrah",
   };
 
@@ -34,16 +35,16 @@ const page = () => {
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
-        <FilterSearch defaultTab={"hotels"} />
-        <div className="space-y-5">
+        <FilterSearch defaultTab={"umrah"} />
+        <div className="relative space-y-5">
           <Image
-            src="/hajj-ummrah/halalFriendly/haram.png"
+            src="/hajj-ummrah/haram.png"
             alt="haram"
             fill
-            className="object-contain absolute bottom-0"
+            sizes="100vw"
+            className="object-contain absolute bottom-0 -z-10 pointer-events-none"
           />
           <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
-          <Question />
         </div>
         <div>
           <HalalFriendly />
@@ -51,6 +52,7 @@ const page = () => {
         </div>
         <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
         <PlanYourTrip />
+        <Question />
       </div>
     </div>
   );

@@ -85,6 +85,7 @@ const index = () => {
           src={"/about/WhyChooseUs/bag.png"}
           alt="About us image"
           fill
+          sizes="50vw"
           className="object-contain"
           loading="lazy"
         />
@@ -94,6 +95,7 @@ const index = () => {
           src={"/about/WhyChooseUs/bg.png"}
           alt="About us image"
           fill
+          sizes="100vw"
           className="object-cover"
           loading="lazy"
         />

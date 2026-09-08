@@ -17,7 +17,7 @@ const page = () => {
     ],
     title: "FLIGHT DETAIL",
 
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-screen",
+    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const AIR_FLIGHTS_LIST = AirFlightLists;

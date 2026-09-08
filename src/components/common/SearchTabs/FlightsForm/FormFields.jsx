@@ -1,13 +1,7 @@
 // RoutesFields.jsx
-import { FieldArray, Field, useFormikContext, ErrorMessage } from "formik";
+import { useMemo, useState } from "react";
+import { FieldArray, Field, ErrorMessage, useFormikContext } from "formik";
 import Image from "next/image";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import {
   Popover,
   PopoverContent,
@@ -15,14 +9,323 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { format, parseISO } from "date-fns";
 import { cn } from "@/lib/utils";
-import { CITY_LIST } from "@/components/common/cities";
+import { CITY_LIST } from "@/components/common/citiesCode";
+import { Plus, Minus } from "lucide-react";
 
 const cityList = CITY_LIST;
 
+const PAGE_SIZE = 100;
+
+const CityCombobox = ({ name, placeholder }) => {
+  const { setFieldValue, setFieldTouched } = useFormikContext();
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return cityList.filter((item) => item.code);
+    return cityList.filter(
+      (item) =>
+        item.code &&
+        (item.city.toLowerCase().includes(q) ||
+          item.code.toLowerCase().includes(q)),
+    );
+  }, [query]);
+
+  const visible = filtered.slice(0, visibleCount);
+
+  const handleListScroll = (e) => {
+    const el = e.currentTarget;
+    if (
+      el.scrollTop + el.clientHeight >= el.scrollHeight - 40 &&
+      visibleCount < filtered.length
+    ) {
+      setVisibleCount((count) => Math.min(count + PAGE_SIZE, filtered.length));
+    }
+  };
+
+  return (
+    <Field name={name}>
+      {({ field }) => {
+        const selected = field.value
+          ? cityList.find((item) => item.code === field.value)
+          : undefined;
+        const label = selected ? `${selected.city} (${selected.code})` : "";
+
+        return (
+          <Popover
+            open={open}
+            onOpenChange={(next) => {
+              setOpen(next);
+              if (!next) {
+                setQuery("");
+                setVisibleCount(PAGE_SIZE);
+                setFieldTouched(name, true);
+              }
+            }}
+          >
+            <PopoverTrigger asChild>
+              <Button
+                type="button"
+                variant="outline"
+                className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
+              >
+                <span
+                  className={cn("truncate", !label && "text-muted-foreground")}
+                >
+                  {label || placeholder}
+                </span>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent
+              side="bottom"
+              align="center"
+              sideOffset={10}
+              alignOffset={0}
+              className="w-72 p-0"
+            >
+              <div className="p-2 border-b sticky top-0 bg-white z-10">
+                <Input
+                  autoFocus
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setVisibleCount(PAGE_SIZE);
+                  }}
+                  placeholder="Search city or code..."
+                  className="h-9"
+                />
+              </div>
+              <div
+                className="max-h-80 overflow-y-auto overscroll-contain py-1"
+                onScroll={handleListScroll}
+              >
+                {filtered.length === 0 && (
+                  <p className="px-3 py-2 text-sm text-muted-foreground">
+                    No results found.
+                  </p>
+                )}
+                {visible.map((item) => (
+                  <button
+                    key={item.code}
+                    type="button"
+                    onClick={() => {
+                      setFieldValue(name, item.code);
+                      setOpen(false);
+                      setQuery("");
+                      setFieldTouched(name, true);
+                    }}
+                    className={cn(
+                      "w-full text-left px-3 py-2 text-sm hover:bg-gray-100 transition",
+                      field.value === item.code && "bg-gray-100 font-medium",
+                    )}
+                  >
+                    {item.city} ({item.code})
+                  </button>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
+        );
+      }}
+    </Field>
+  );
+};
+
+const FieldError = ({ name }) => (
+  <ErrorMessage
+    name={name}
+    component="p"
+    className="text-red-500 text-xs pl-1 pt-1"
+  />
+);
+
+const TravellersPopover = ({ index, route, setFieldValue, setFieldTouched }) => {
+  const adults = route.adult ? Number.parseInt(route.adult) : 0;
+  const children = route.child ? Number.parseInt(route.child) : 0;
+  const infants = route.infant ? Number.parseInt(route.infant) : 0;
+  const totalTravellers = adults + children + infants;
+
+  const [travellersOpen, setTravellersOpen] = useState(false);
+
+  const updateTravellers = (type, value) => {
+    const newValue = Math.max(0, value);
+    setFieldValue(`routes.${index}.${type}`, newValue.toString());
+  };
+
+  return (
+    <div className="relative w-full">
+      <Popover
+        open={travellersOpen}
+        onOpenChange={(open) => {
+          setTravellersOpen(open);
+          if (!open) setFieldTouched(`routes.${index}.adult`, true);
+        }}
+      >
+        <PopoverTrigger asChild>
+          <Button
+            type="button"
+            variant="outline"
+            className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
+          >
+            <Image
+              src="/holidayPackage/ContactUs/map-icon.png"
+              alt="Travellers"
+              width={20}
+              height={20}
+              className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+            />
+            <span className={cn(!totalTravellers && "text-muted-foreground")}>
+              {totalTravellers > 0
+                ? `${totalTravellers} Traveller${
+                    totalTravellers > 1 ? "s" : ""
+                  }`
+                : "Travellers"}
+            </span>
+          </Button>
+        </PopoverTrigger>
+
+        <PopoverContent
+          side="bottom"
+          align="center"
+          sideOffset={10}
+          className="w-80 p-4"
+        >
+          <div className="space-y-4">
+            {/* Adults */}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-medium text-sm">Adults</p>
+                <p className="text-xs text-muted-foreground">12+ years</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("adult", adults - 1)}
+                  disabled={adults <= 0}
+                >
+                  <Minus className="h-4 w-4" />
+                </Button>
+                <Input
+                  type="number"
+                  value={adults}
+                  className="h-8 w-14 text-center"
+                  readOnly
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("adult", adults + 1)}
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Children */}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-medium text-sm">Children</p>
+                <p className="text-xs text-muted-foreground">2–11 years</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("child", children - 1)}
+                  disabled={children <= 0}
+                >
+                  <Minus className="h-4 w-4" />
+                </Button>
+                <Input
+                  type="number"
+                  value={children}
+                  className="h-8 w-14 text-center"
+                  readOnly
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("child", children + 1)}
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Infants */}
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-medium text-sm">Infants</p>
+                <p className="text-xs text-muted-foreground">Under 2 years</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("infant", infants - 1)}
+                  disabled={infants <= 0}
+                >
+                  <Minus className="h-4 w-4" />
+                </Button>
+                <Input
+                  type="number"
+                  value={infants}
+                  className="h-8 w-14 text-center"
+                  readOnly
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-8 w-8 rounded-full"
+                  onClick={() => updateTravellers("infant", infants + 1)}
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+
+            <Button
+              type="button"
+              className="w-full"
+              onClick={() => {
+                setTravellersOpen(false);
+                setFieldTouched(`routes.${index}.adult`, true);
+              }}
+            >
+              Done
+            </Button>
+          </div>
+        </PopoverContent>
+      </Popover>
+
+      {/* Hidden fields */}
+      <Field name={`routes.${index}.adult`} type="hidden" />
+      <Field name={`routes.${index}.child`} type="hidden" />
+      <Field name={`routes.${index}.infant`} type="hidden" />
+      <FieldError name={`routes.${index}.adult`} />
+    </div>
+  );
+};
+
 const FormFields = ({ flightType }) => {
-  const { values, setFieldValue } = useFormikContext();
+  const { values, setFieldValue, setFieldTouched } = useFormikContext();
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -40,222 +343,11 @@ const FormFields = ({ flightType }) => {
               : undefined;
 
             return (
-              <div className="flex gap-5">
-                <div
-                  key={index}
-                  className="flex flex-col gap-4 md:grid md:grid-col-3 md:grid-rows-2 xl:flex xl:flex-row  xl:gap-4 xl:items-center relative w-full"
-                >
+              <div className="flex gap-5" key={index}>
+                <div className="flex flex-col gap-4 md:grid md:grid-cols-2 xl:grid-cols-3 xl:items-start relative w-full">
                   {/* Leaving From */}
-                  <div className="relative md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 md:w-full xl:w-[10vw]">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="From"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                    />
-                    <Field name={`routes.${index}.from`}>
-                      {({ field, form }) => (
-                        <Select
-                          value={field.value}
-                          onValueChange={(value) =>
-                            form.setFieldValue(`routes.${index}.from`, value)
-                          }
-                        >
-                          <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
-                            <SelectValue placeholder="Leaving From" />
-                          </SelectTrigger>
-                          <SelectContent
-                            position="popper"
-                            side="bottom"
-                            align="center"
-                            sideOffset={10}
-                            alignOffset={0}
-                          >
-                            {cityList.map((item) => (
-                              <SelectItem key={item.code} value={item.code}>
-                                {item.city} ({item.code})
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      )}
-                    </Field>
-                  </div>
-
-                  {/* Going To */}
-                  <div className="relative  md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 md:w-full xl:w-[10vw]">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="To"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                    />
-
-                    <Field name={`routes.${index}.to`}>
-                      {({ field, form }) => (
-                        <Select
-                          value={field.value}
-                          onValueChange={(value) =>
-                            form.setFieldValue(`routes.${index}.to`, value)
-                          }
-                        >
-                          <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
-                            <SelectValue placeholder="Going To" />
-                          </SelectTrigger>
-                          <SelectContent
-                            position="popper"
-                            side="bottom"
-                            align="center"
-                            sideOffset={10}
-                            alignOffset={0}
-                          >
-                            {cityList.map((item) => (
-                              <SelectItem key={item.code} value={item.code}>
-                                {item.city} ({item.code})
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      )}
-                    </Field>
-                  </div>
-
-                  {/* Adults */}
-                  <div className="relative md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-2 md:w-full xl:w-[7vw]">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="Adults"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                    />
-
-                    <Field name={`routes.${index}.adult`}>
-                      {({ field, form }) => (
-                        <Select
-                          value={field.value}
-                          onValueChange={(value) =>
-                            form.setFieldValue(`routes.${index}.adult`, value)
-                          }
-                        >
-                          <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
-                            <SelectValue placeholder="Adults" />
-                          </SelectTrigger>
-
-                          <SelectContent
-                            position="popper"
-                            side="bottom"
-                            align="center"
-                            sideOffset={10}
-                          >
-                            {[...Array(6)].map((_, i) => (
-                              <SelectItem
-                                key={i + 1}
-                                value={(i + 1).toString()}
-                              >
-                                {i + 1} Adults
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      )}
-                    </Field>
-                  </div>
-
-                  {/* Children */}
-                  <div className="relative md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3 md:w-full xl:w-[8vw]">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="Children"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                    />
-
-                    <Field name={`routes.${index}.child`}>
-                      {({ field, form }) => (
-                        <Select
-                          value={field.value}
-                          onValueChange={(value) =>
-                            form.setFieldValue(`routes.${index}.child`, value)
-                          }
-                        >
-                          <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
-                            <SelectValue placeholder="Children" />
-                          </SelectTrigger>
-
-                          <SelectContent
-                            position="popper"
-                            side="bottom"
-                            align="center"
-                            sideOffset={10}
-                          >
-                            {[...Array(5)].map((_, i) => (
-                              <SelectItem key={i} value={i.toString()}>
-                                {i} Children
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      )}
-                    </Field>
-                  </div>
-
-                  {/* Depart Date */}
-                  <div className="relative md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 md:w-full xl:w-[7vw]">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="From"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                    />
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
-                            !route.depart && "text-muted-foreground",
-                          )}
-                        >
-                          {route.depart ? (
-                            format(departDate, "dd/MM/yyyy") // or "PPP" for "Jan 12th, 2026"
-                          ) : (
-                            <span className="text-muted-foreground">
-                              Depart date
-                            </span>
-                          )}
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent
-                        side="bottom"
-                        align="center"
-                        sideOffset={10}
-                        alignOffset={0}
-                        className="w-auto p-0"
-                      >
-                        <Calendar
-                          mode="single"
-                          selected={departDate}
-                          onSelect={(selected) => {
-                            setFieldValue(
-                              `routes.${index}.depart`,
-                              selected ? format(selected, "yyyy-MM-dd") : "",
-                            );
-                          }}
-                          disabled={(date) => date < today}
-                          initialFocus
-                        />
-                      </PopoverContent>
-                    </Popover>
-                  </div>
-
-                  {/* Return Date – only if not oneway */}
-                  {flightType !== "oneway" && (
-                    <div className="relative md:col-start-3 md:col-end-4 md:row-start-2 md:row-end-3 md:w-full xl:w-[7vw]">
+                  <div className="w-full">
+                    <div className="relative">
                       <Image
                         src="/holidayPackage/ContactUs/map-icon.png"
                         alt="From"
@@ -263,20 +355,67 @@ const FormFields = ({ flightType }) => {
                         height={20}
                         className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
                       />
+                      <CityCombobox
+                        name={`routes.${index}.from`}
+                        placeholder="Leaving From"
+                      />
+                    </div>
+                    <FieldError name={`routes.${index}.from`} />
+                  </div>
+
+                  {/* Going To */}
+                  <div className="w-full">
+                    <div className="relative">
+                      <Image
+                        src="/holidayPackage/ContactUs/map-icon.png"
+                        alt="To"
+                        width={20}
+                        height={20}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                      />
+                      <CityCombobox
+                        name={`routes.${index}.to`}
+                        placeholder="Going To"
+                      />
+                    </div>
+                    <FieldError name={`routes.${index}.to`} />
+                  </div>
+
+                  {/* Travellers */}
+                  <div className="w-full">
+                    <TravellersPopover
+                      index={index}
+                      route={route}
+                      setFieldValue={setFieldValue}
+                      setFieldTouched={setFieldTouched}
+                    />
+                  </div>
+
+                  {/* Depart Date */}
+                  <div className="w-full">
+                    <div className="relative">
+                      <Image
+                        src="/holidayPackage/ContactUs/map-icon.png"
+                        alt="Depart"
+                        width={20}
+                        height={20}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                      />
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button
+                            type="button"
                             variant="outline"
                             className={cn(
                               "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
-                              !route.return && "text-muted-foreground",
+                              !route.depart && "text-muted-foreground",
                             )}
                           >
-                            {route.return ? (
-                              format(returnDate, "dd/MM/yyyy")
+                            {route.depart ? (
+                              format(departDate, "dd/MM/yyyy")
                             ) : (
                               <span className="text-muted-foreground">
-                                Return date
+                                Depart date
                               </span>
                             )}
                           </Button>
@@ -290,10 +429,10 @@ const FormFields = ({ flightType }) => {
                         >
                           <Calendar
                             mode="single"
-                            selected={returnDate}
+                            selected={departDate}
                             onSelect={(selected) => {
                               setFieldValue(
-                                `routes.${index}.return`,
+                                `routes.${index}.depart`,
                                 selected ? format(selected, "yyyy-MM-dd") : "",
                               );
                             }}
@@ -303,18 +442,76 @@ const FormFields = ({ flightType }) => {
                         </PopoverContent>
                       </Popover>
                     </div>
-                  )}
+                    <FieldError name={`routes.${index}.depart`} />
+                  </div>
 
-                  {/* Remove button */}
+                  {/* Return Date – only if not oneway */}
+                  {flightType !== "oneway" && (
+                    <div className="w-full">
+                      <div className="relative">
+                        <Image
+                          src="/holidayPackage/ContactUs/map-icon.png"
+                          alt="Return"
+                          width={20}
+                          height={20}
+                          className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                        />
+                        <Popover>
+                          <PopoverTrigger asChild>
+                            <Button
+                              type="button"
+                              variant="outline"
+                              className={cn(
+                                "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
+                                !route.return && "text-muted-foreground",
+                              )}
+                            >
+                              {route.return ? (
+                                format(returnDate, "dd/MM/yyyy")
+                              ) : (
+                                <span className="text-muted-foreground">
+                                  Return date
+                                </span>
+                              )}
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent
+                            side="bottom"
+                            align="center"
+                            sideOffset={10}
+                            alignOffset={0}
+                            className="w-auto p-0"
+                          >
+                            <Calendar
+                              mode="single"
+                              selected={returnDate}
+                              onSelect={(selected) => {
+                                setFieldValue(
+                                  `routes.${index}.return`,
+                                  selected
+                                    ? format(selected, "yyyy-MM-dd")
+                                    : "",
+                                );
+                              }}
+                              disabled={(date) => date < today}
+                              initialFocus
+                            />
+                          </PopoverContent>
+                        </Popover>
+                      </div>
+                      <FieldError name={`routes.${index}.return`} />
+                    </div>
+                  )}
                 </div>
+
                 {flightType === "multicity" && values.routes.length > 1 && (
                   <button
                     type="button"
                     onClick={() => remove(index)}
-                    className=" flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-xl font-bold hover:bg-red-600 transition md:col-start-3 md:col-end-4 md:row-start-2 md:row-end-3 self-center "
+                    className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-xl font-bold leading-none hover:bg-red-600 transition self-start mt-1"
                     aria-label="Remove route"
                   >
-                    ×
+                    <span className="-translate-y-px">×</span>
                   </button>
                 )}
               </div>
@@ -330,6 +527,9 @@ const FormFields = ({ flightType }) => {
                   to: "",
                   depart: "",
                   return: "",
+                  adult: "0",
+                  child: "0",
+                  infant: "0",
                 })
               }
               className="text-primary hover:text-primary/80 font-medium text-sm mt-4 block"
@@ -337,6 +537,77 @@ const FormFields = ({ flightType }) => {
               + Add another route
             </button>
           )}
+
+          {/* Traveller Contact Details - once per form */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 pt-2">
+            <div className="w-full">
+              <div className="relative">
+                <Image
+                  src="/holidayPackage/ContactUs/map-icon.png"
+                  alt="Name"
+                  width={20}
+                  height={20}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                />
+                <Field name="name">
+                  {({ field }) => (
+                    <Input
+                      {...field}
+                      placeholder="Name"
+                      className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                    />
+                  )}
+                </Field>
+              </div>
+              <FieldError name="name" />
+            </div>
+
+            <div className="w-full">
+              <div className="relative">
+                <Image
+                  src="/holidayPackage/ContactUs/map-icon.png"
+                  alt="Number"
+                  width={20}
+                  height={20}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                />
+                <Field name="contact">
+                  {({ field }) => (
+                    <Input
+                      {...field}
+                      type="tel"
+                      placeholder="Number"
+                      className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                    />
+                  )}
+                </Field>
+              </div>
+              <FieldError name="contact" />
+            </div>
+
+            <div className="w-full">
+              <div className="relative">
+                <Image
+                  src="/holidayPackage/ContactUs/map-icon.png"
+                  alt="Email"
+                  width={20}
+                  height={20}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                />
+                <Field name="email">
+                  {({ field }) => (
+                    <Input
+                      {...field}
+                      type="email"
+                      placeholder="Email"
+                      className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                    />
+                  )}
+                </Field>
+              </div>
+              <FieldError name="email" />
+            </div>
+          </div>
         </div>
       )}
     </FieldArray>

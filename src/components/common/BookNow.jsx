@@ -108,6 +108,7 @@ const BookNow = ({ data, reverse, data2, data3 = [] }) => {
           src={data?.image}
           alt={data?.alt}
           fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-cover"
           loading="lazy"
         />

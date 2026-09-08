@@ -30,7 +30,7 @@ const services = [
 ];
 export default function OfferedServices() {
   return (
-    <section className="pt-5 md:pt-10  xl:pt-20 bg-background relative overflow-hidden">
+    <section className="z-0 pt-5 md:pt-10  xl:pt-60 bg-background relative overflow-hidden">
       <ContentLayoutWrapper className="flex flex-col z-2">
         <div className="text-center mb-8 z-2">
           <h2 className="text-lg font-ultralight text-center capitalize">
@@ -69,6 +69,7 @@ export default function OfferedServices() {
           src={"/home/offered-services/about-us.png"}
           alt="About us image"
           fill
+          sizes="(max-width: 1024px) 0px, 50vw"
         />
       </div>
     </section>

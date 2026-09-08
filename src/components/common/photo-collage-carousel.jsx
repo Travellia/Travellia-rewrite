@@ -57,8 +57,9 @@ export default function PhotoCollageCarousel({ slides, autoplay = true }) {
                 <Image
                   src={s.src || "/placeholder.svg"}
                   alt={s.alt}
-                  width={200}
-                  height={200}
+                  width={720}
+                  height={1040}
+                  sizes="(max-width: 768px) 260px, 360px"
                   loading="lazy"
                   className="h-full w-full object-cover rounded-3xl"
                 />

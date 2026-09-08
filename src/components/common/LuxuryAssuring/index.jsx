@@ -9,7 +9,6 @@ const index = ({ data }) => {
         <div className="flex flex-col gap-5 m-auto">
           {/* Header */}
           <div className="flex flex-col items-center">
-            <p className="font-semibold">{data.subtitle}</p>
             <h1 className="text-4xl font-bold text-primary tracking-widest">
               {data.title}
             </h1>
@@ -53,7 +52,7 @@ const index = ({ data }) => {
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {section.cards.map((card) => (
-                    <LuxuryAssuringCard key={card.id} card={card} />
+                    <LuxuryAssuringCard key={card.id} card={card} link={card.link} />
                   ))}
                 </div>
               </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import CarouselWrapper from "@/components/ui/carousel";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
-import { FaArrowRightLong } from "react-icons/fa6";
+// import { Button } from "@/components/ui/button";
+// import { FaArrowRightLong } from "react-icons/fa6";
 
 const Welcome = ({ data }) => {
   return (
@@ -27,9 +27,9 @@ const Welcome = ({ data }) => {
           </h1>
         </div>
 
-        {data.subtitle && <p className="text-white/90 text-lg">{subtitle}</p>}
+        {data.subtitle && <p className="text-white/90 text-lg">{data.subtitle}</p>}
 
-        {data.buttons && (
+        {/* {data.buttons && (
           <div className="flex flex-col md:flex-row gap-6">
             {data.buttons.map((btn, index) => (
               <Button
@@ -44,7 +44,7 @@ const Welcome = ({ data }) => {
               </Button>
             ))}
           </div>
-        )}
+        )} */}
       </ContentLayoutWrapper>
     </section>
   );

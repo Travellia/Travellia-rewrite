@@ -13,6 +13,7 @@ const FilterSearch = ({ defaultTab }) => {
           alt="background"
           fill
           priority
+          sizes="(max-width: 1024px) 90vw, 60vw"
           className="absolute object-cover min-h-50 -z-10 rounded-3xl "
         />
 

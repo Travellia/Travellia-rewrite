@@ -38,12 +38,13 @@ const PACKAGES_DATA = [
 
 const index = () => {
   return (
-    <section>
+    <section className="xl:mb-10">
       <div className="min-h-[60vh] md-h-[70vh] lg:min-h-[80vh] xl:min-h-screen relative flex items-center justify-center ">
         <Image
           src="/home/trending-packages/plane-wing.jpg"
           alt="Plane wing image"
           fill
+          sizes="100vw"
         />
         <ContentLayoutWrapper className="text-center relative z-1">
           <Image
