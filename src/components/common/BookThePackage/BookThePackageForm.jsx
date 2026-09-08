@@ -12,14 +12,16 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import bookThePackageSchema from "@/schemas/hotel/BookThePackageSchema";
 import { Button } from "@/components/ui/button";
+import FormStatus from "@/components/common/FormStatus";
+import HoneypotField from "@/components/common/HoneypotField";
+import useFormSubmit from "@/hooks/useFormSubmit";
 
 const BookThePackageForm = () => {
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Submitted Data:", values);
+  const { status, error, submit } = useFormSubmit("bookThePackage");
 
-    // API call later
-
-    resetForm(); // Clear inputs
+  const handleSubmit = async (values, { resetForm }) => {
+    const sent = await submit(values, { hp: values._hp });
+    if (sent) resetForm();
   };
   return (
     <Formik
@@ -30,12 +32,13 @@ const BookThePackageForm = () => {
         adult: "",
         child: "",
         message: "",
+        _hp: "",
       }}
       validationSchema={bookThePackageSchema}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue }) => (
-        <Form className="w-full flex flex-col gap-5">
+      {({ values, setFieldValue, isSubmitting }) => (
+        <Form className="w-full flex flex-col gap-5 relative">
           {/* First Name */}
           <div>
             <Field
@@ -144,10 +147,13 @@ const BookThePackageForm = () => {
             />
           </div>
 
-          <div className="flex justify-center">
-            <Button type="submit" className="btn-main">
-              Book Now
+          <HoneypotField />
+
+          <div className="flex flex-col items-center gap-4">
+            <Button type="submit" className="btn-main" disabled={isSubmitting}>
+              {isSubmitting ? "Sending…" : "Book Now"}
             </Button>
+            <FormStatus status={status} error={error} />
           </div>
         </Form>
       )}

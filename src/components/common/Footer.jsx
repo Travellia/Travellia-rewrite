@@ -3,7 +3,7 @@
 import React, { lazy } from "react";
 import ContentLayoutWrapper from "./ContentLayoutWrapper";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import NewsletterForm from "@/components/common/NewsletterForm";
 import { data } from "@/lib/contactInfo";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
@@ -247,20 +247,7 @@ const Footer = () => {
           <p className="text-2xl text-gray-500 text-center">
             Subscribe to get the lastest blog news from us.
           </p>
-          <div
-            className={`rounded-full h-20 w-full flex items-center ${isContactPage ? "bg-white" : "bg-secondary"}`}
-          >
-            <input
-              type="text"
-              placeholder="Email"
-              className={
-                "h-full w-7/10 px-8 bg-transparent outline-none placeholder:text-lg placeholder:text-gray-600"
-              }
-            />
-            <Button className="rounded-full h-full w-3/10 text-xl sm:text-2xl">
-              Submit
-            </Button>
-          </div>
+          <NewsletterForm inputBg={isContactPage ? "bg-white" : "bg-secondary"} />
         </div>
 
         {/* Footer Bottom Section */}
