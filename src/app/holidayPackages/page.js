@@ -1,6 +1,7 @@
 import Welcome from "@/components/common/Welcome";
 import LuxuryAssuring from "@/components/common/LuxuryAssuring";
 import FreshlyAdded from "@/components/holidaypackagepage/FreshlyAdded";
+import ContactUs from "@/components/holidaypackagepage/ContactUs";
 import TravelItinearies from "@/components/common/TravelItinearies";
 import PlanYourTrip from "@/components/holidaypackagepage/PlanYourTrip";
 import React from "react";
@@ -43,6 +44,7 @@ const page = () => {
         <div className="flex flex-col">
           <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
         </div>
+        <ContactUs />
         <PlanYourTrip />
       </div>
     </div>

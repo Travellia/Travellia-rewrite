@@ -22,14 +22,19 @@ import {
 import { format } from "date-fns";
 import { Search } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import FormStatus from "@/components/common/FormStatus";
+import HoneypotField from "@/components/common/HoneypotField";
+import useFormSubmit from "@/hooks/useFormSubmit";
 
 const FlightForm = () => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Submitted Data:", values);
-    resetForm();
+  const { status, error, submit } = useFormSubmit("flightEnquiry");
+
+  const handleSubmit = async (values, { resetForm }) => {
+    const sent = await submit(values, { hp: values._hp });
+    if (sent) resetForm();
   };
 
   return (
@@ -46,13 +51,16 @@ const FlightForm = () => {
         instruction: "",
         subscribe: false,
         confirmSubmit: false,
+        _hp: "",
       }}
       validationSchema={FlightFormSchema}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue }) => {
+      {({ values, setFieldValue, isSubmitting }) => {
+        const canSubmit = values.subscribe && values.confirmSubmit;
+
         return (
-          <Form className="h-auto grid grid-cols-2  gap-3">
+          <Form className="h-auto grid grid-cols-2  gap-3 relative">
             {/* First Name */}
             <div className="col-start-1 col-end-2 row-start-1 row-end-2">
               <label className="block text-sm font-bold pl-5 text-gray-500 mb-1">
@@ -325,18 +333,22 @@ const FlightForm = () => {
               />
             </div>
 
-            <div className="flex justify-center items-center gap-4  col-start-1 col-end-3 row-start-8 row-end-9">
+            <HoneypotField />
+
+            <div className="flex flex-col justify-center items-center gap-4  col-start-1 col-end-3 row-start-8 row-end-9">
               <Button
                 type="submit"
+                disabled={!canSubmit || isSubmitting}
                 className={`btn-main ${
-                  !(values.subscribe && values.confirmSubmit)
+                  !canSubmit || isSubmitting
                     ? "opacity-50 cursor-not-allowed"
                     : ""
                 }`}
               >
                 <Search />
-                Search{" "}
+                {isSubmitting ? "Sending…" : "Search"}
               </Button>
+              <FormStatus status={status} error={error} />
             </div>
           </Form>
         );

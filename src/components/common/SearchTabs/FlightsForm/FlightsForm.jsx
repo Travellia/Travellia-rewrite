@@ -16,6 +16,9 @@ import oneWaySchema from "@/schemas/SearchTabs/Flights/oneWaySchema";
 import multiCitySchema from "@/schemas/SearchTabs/Flights/multiCitySchema";
 import { Button } from "@/components/ui/button";
 import FormFields from "./FormFields";
+import FormStatus from "@/components/common/FormStatus";
+import HoneypotField from "@/components/common/HoneypotField";
+import useFormSubmit from "@/hooks/useFormSubmit";
 
 // Data
 const flightTypes = [
@@ -28,11 +31,14 @@ const flightCategories = ["ECONOMY", "PREMIUM", "BUSINESS CLASS"];
 
 const FlightsForm = () => {
   const [flightType, setFlightType] = useState("return");
+  const { status, error, submit } = useFormSubmit("flightSearch");
 
   // Handle Submit
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Submitted Data", values);
-    resetForm();
+  const handleSubmit = async (values, { resetForm }) => {
+    // flightType lives in component state, not the form — send it along so the
+    // server picks the matching schema and the email says which trip type it was.
+    const sent = await submit({ ...values, flightType }, { hp: values._hp });
+    if (sent) resetForm();
   };
 
   // Schemas
@@ -60,6 +66,7 @@ const FlightsForm = () => {
         name: "",
         email: "",
         contact: "",
+        _hp: "",
       }}
       validationSchema={getSchema()}
       onSubmit={handleSubmit}
@@ -91,7 +98,7 @@ const FlightsForm = () => {
         };
 
         return (
-          <Form className="flex flex-col gap-7">
+          <Form className="flex flex-col gap-7 relative">
             {/* Flight Type */}
             <div className="flex flex-col items-start gap-5 sm:flex-row sm:justify-between sm:items-end ">
               <div className="flex gap-4">
@@ -131,13 +138,16 @@ const FlightsForm = () => {
             {/* Form */}
             <FormFields flightType={flightType} />
 
+            <HoneypotField />
+
             <Button
               type="submit"
               className="btn-main self-center"
               disabled={!isValid || isSubmitting}
             >
-              Search Flights
+              {isSubmitting ? "Sending…" : "Search Flights"}
             </Button>
+            <FormStatus status={status} error={error} />
           </Form>
         );
       }}
