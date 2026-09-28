@@ -6,12 +6,12 @@ import React from "react";
 import Image from "next/image";
 import BookPackageCard from "@/components/common/BookPackageCard";
 
-const index = ({ data1, data2 }) => {
+const index = ({ data1, data2, href }) => {
   return (
     <section className="w-full">
       <ContentLayoutWrapper className="flex flex-col gap-20 items-center w-full py-10">
         {/* -------------------- TravelItineraries --------------------  */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 w-full xl:w-[min(1100px,90vw)]">
           <h1 className="heading-with-space">{data1.heading}</h1>
           {/* <div className="flex flex-col gap-8 "> */}
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-3 xl:grid-rows-1 place-items-center gap-8">
@@ -21,9 +21,9 @@ const index = ({ data1, data2 }) => {
                 return (
                   <div
                     key={index}
-                    className="md:col-span-2 xl:col-span-1 md:flex md:justify-center"
+                    className="w-full md:col-span-2 xl:col-span-1 flex justify-center"
                   >
-                    <BookPackageCard data={data} isOdd={index % 2 !== 0} />
+                    <BookPackageCard data={data} isOdd={index % 2 !== 0} href={href} />
                   </div>
                 );
               }
@@ -32,6 +32,7 @@ const index = ({ data1, data2 }) => {
                 <BookPackageCard
                   data={data}
                   isOdd={index % 2 !== 0}
+                  href={href}
                   key={index}
                 />
               );

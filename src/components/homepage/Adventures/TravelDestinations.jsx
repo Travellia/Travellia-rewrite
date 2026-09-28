@@ -2,6 +2,7 @@ import Image from "next/image";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import DestinationCard from "./DestinationCard";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const destinations = [
   {
@@ -55,7 +56,9 @@ const TravelDestinations = () => {
 
           {/* View Packages Button */}
           <div className="flex justify-center mt-12">
-            <Button className="btn-main">View Packages</Button>
+            <Button asChild className="btn-main">
+              <Link href="/holidayPackages">View Packages</Link>
+            </Button>
           </div>
         </div>
       </ContentLayoutWrapper>

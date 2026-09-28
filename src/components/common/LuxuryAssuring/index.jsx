@@ -34,9 +34,7 @@ const index = ({ data }) => {
             </span>
 
             <p className="text-gray-600 text-base text-center w-[80%] m-auto">
-              Experience a blessed Umrah journey with our 3 Star Umrah Packages,
-              designed for comfort and affordability without compromising on
-              quality.
+              {data.description}
             </p>
           </div>
 

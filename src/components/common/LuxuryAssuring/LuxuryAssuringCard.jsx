@@ -11,7 +11,7 @@ const LuxuryAssuringCard = ({ card, link }) => {
       <div className="w-full h-[24vh] sm:h-[11vh] lg:h-[18vh] xl:h-[21vh] overflow-hidden">
         <Image
           src={card.image}
-          alt="card"
+          alt={card.description}
           height={150}
           width={250}
           className="w-full object-cover"

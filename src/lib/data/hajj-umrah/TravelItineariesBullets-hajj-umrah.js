@@ -1,11 +1,11 @@
 export const Bullets = {
-  headig: (
+  heading: (
     <>
       Travellia Referral Program <br /> Share the Blessings, Earn the Rewards
     </>
   ),
   description:
-    "At Holy Travellers, we believe every journey towards the House of Allah is special, and sharing this opportunity with others should be rewarding for you too. That’s why we’ve introduced our Referral Program",
+    "At Travellia, we believe every journey towards the House of Allah is special, and sharing this opportunity with others should be rewarding for you too. That’s why we’ve introduced our Referral Program",
   bullets: [
     {
       id: 1,

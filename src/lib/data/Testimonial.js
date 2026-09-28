@@ -1,42 +1,38 @@
+// Verified customer reviews from Trustpilot:
+// https://www.trustpilot.com/review/travellia.co.uk
+export const TRUSTPILOT_URL = "https://www.trustpilot.com/review/travellia.co.uk";
+
 export const TESTIMONIALS = [
   {
     comment:
-      "Travellia put together our family holiday package end to end and every single detail was handled with care. Our flights, hotel and excursions were all perfectly timed. Honestly, the smoothest family trip we have ever taken!",
+      "I recently used Travellia to book my airline travel and was thoroughly impressed with the level of service provided. The booking process was seamless, the platform was user-friendly, and I appreciated the transparency in pricing with no hidden fees. Their customer support was responsive and helpful in addressing my needed itinerary adjustments. I received timely confirmations and updates, which made the entire experience hassle-free. I confidently recommend Travellia to anyone seeking a reliable and efficient flight booking service.",
     user: {
-      name: "Marcus D. Johnson",
-      location: "Manchester, UK",
-      src: "/common/Testimonial/CardPic1.png",
-      alt: "Marcus D. Johnson",
+      name: "Mohammad Salman",
+      location: "Pakistan · Trustpilot",
     },
   },
   {
     comment:
-      "I booked a last minute getaway to Dubai and the team found me an amazing hotel deal within my budget. The booking process was quick and simple, and their support team answered every question I had along the way.",
+      "I had an excellent experience booking my flight with Travellia! Damien was incredibly helpful and made the entire process smooth and easy. Highly recommend purchasing tickets from Travellia for top-notch customer service!",
     user: {
-      name: "Grace Mei Lin",
-      location: "Birmingham, UK",
-      src: "/common/Testimonial/CardPic2.png",
-      alt: "Grace Mei Lin",
+      name: "Wayne Reid",
+      location: "United Kingdom · Trustpilot",
     },
   },
   {
     comment:
-      "From flight booking to airport pickup, Travellia made my Istanbul city break completely stress free. The hotel they recommended had a stunning view and the price was better than anything I found on other travel sites!",
+      "I booked my Umrah package with Bilal, and he was absolutely superb! He helped me secure a direct flight and the best hotels, making the entire process smooth and stress-free. His knowledge was outstanding—he had answers to all my questions and guided me perfectly. I highly recommend Travellia Limited for anyone looking for a reliable and professional travel agency. Exceptional service from start to finish!",
     user: {
-      name: "Charlotte Grace Bennett",
-      location: "London, UK",
-      src: "/common/Testimonial/CardPic3.png",
-      alt: "Charlotte Grace Bennett",
+      name: "Tossef Khan",
+      location: "Saudi Arabia · Trustpilot",
     },
   },
   {
     comment:
-      "I travel often for work and Travellia has become my go to for hotel bookings. Fast confirmations, fair prices and real customer support whenever I need to make changes. It has genuinely made business travel much easier.",
+      "Really happy with the service from Travelia. The staff were very helpful and made the whole travel process easy for me. They were always available to answer my questions and everything was handled smoothly. I would definitely recommend Travelia to anyone looking for reliable travel services.",
     user: {
-      name: "Oliver Thomas Sinclair",
-      location: "Leeds, UK",
-      src: "/common/Testimonial/CardPic4.png",
-      alt: "Oliver Thomas Sinclair",
+      name: "Menahi",
+      location: "Saudi Arabia · Trustpilot",
     },
   },
 ];

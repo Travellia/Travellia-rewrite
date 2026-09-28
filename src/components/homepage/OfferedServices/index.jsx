@@ -5,51 +5,32 @@ import { BiSolidNavigation } from "react-icons/bi";
 
 const SERVICES = [
   {
-    title: "Flight Bookings",
-    description: "Convenient travel plans with trusted airlines.",
-  },
-  {
-    title: "Hotel Accommodation",
-    description: "Comfortable and well-located stays near Haram.",
-  },
-  {
-    title: "Halal-Friendly Holidays Abutting Umrah Trip",
-    description:
-      "Combine your pilgrimage with family-friendly halal holiday experiences.",
+    title: "Flights & Hotels",
+    description: "Convenient flights and comfortable stays near the Haram.",
   },
   {
     title: "Umrah Packages",
-    description: "Affordable and flexible options tailored to your needs.",
-  },
-  {
-    title: "January Umrah Packages",
-    description: "Begin the new year with a blessed journey.",
-  },
-  {
-    title: "December Umrah Packages",
-    description: "End the year spiritually with exclusive winter offers.",
+    description:
+      "Flexible Umrah packages designed around your travel needs, including seasonal options.",
   },
   {
     title: "Hajj Packages",
     description:
-      "Complete arrangements with full guidance for a peaceful pilgrimage.",
+      "Complete Hajj arrangements with guidance throughout your pilgrimage.",
   },
   {
-    title: "Guided Ziyarat Tours",
-    description: "Spiritual tours led by experienced guides.",
-  },
-  {
-    title: "Family & Group Packages",
-    description: "Special deals for families, groups, and organizations.",
+    title: "Ziyarat & Holidays",
+    description:
+      "Guided Ziyarat tours and family-friendly halal holiday experiences.",
   },
   {
     title: "Visa Assistance",
-    description: "Reliable and hassle-free visa processing.",
+    description: "Reliable support for a smooth and hassle-free visa process.",
   },
   {
-    title: "24/7 Customer Support",
+    title: "Family & Group Travel",
     description:
-      "Round-the-clock assistance before, during, and after your journey",
+      "Special arrangements for families, groups, and organizations, with 24/7 support throughout your journey.",
   },
 ];
 

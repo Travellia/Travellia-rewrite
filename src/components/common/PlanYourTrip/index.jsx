@@ -12,7 +12,7 @@ const PlanYourTrip = ({
   paddingY = "py-20",
 }) => {
   return (
-    <section id="plan-your-trip" className={sectionBg}>
+    <section id="plan-your-trip" className={`${sectionBg} scroll-mt-24`}>
       <ContentLayoutWrapper
         className={`
           flex flex-col gap-10 items-center py-20 w-full,

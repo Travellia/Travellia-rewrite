@@ -6,7 +6,7 @@ const services = [
   { title: "VISA", image: "/umrahDetail/From/visa.png" },
   { title: "FLIGHTS", image: "/umrahDetail/From/flight.png" },
   { title: "TRANSPORTATION", image: "/umrahDetail/From/transportation.png" },
-  { title: "ACCOMODATION", image: "/umrahDetail/From/accomodation.png" },
+  { title: "ACCOMMODATION", image: "/umrahDetail/From/accomodation.png" },
   {
     title: "24/7 CUSTOMER SERVICE",
     image: "/umrahDetail/From/customer-service.png",

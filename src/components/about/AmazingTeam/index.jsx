@@ -26,9 +26,8 @@ const index = () => {
             OUR AMAZING TEAM
           </h2>
           <p className="mt-3 text-gray-600 lg:px-10 xl:px-20 tracking-widest">
-            Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis,
-            ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a,
-            consectetuer eget, posuere ut, mauris. Praesent adipiscing
+            Our friendly, experienced travel consultants are here to plan every
+            detail of your trip, from the first quote to your safe return home.
           </p>
         </div>
         <PhotoCollageCarousel slides={photos} />

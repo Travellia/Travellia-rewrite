@@ -3,51 +3,57 @@ import Image from "next/image";
 import React from "react";
 import UmrahPackageCard from "./PackageCard";
 
+const COMMON_FEATURES = [
+  "Return flights from London, Manchester, Birmingham, Bradford and Scotland",
+  "Umrah visa and hotels in Makkah and Madinah",
+  "Transport and Ziyarat included",
+];
+
 const UMRAH_PACKAGES = [
   {
     id: 1,
-    title: "5-Star December Umrah Packages for 5 Nights - All-inclusive",
-    rating: 5,
+    title: "3-Star Umrah Packages",
+    rating: 3,
     features: [
-      "5 nights in Makkah at Jabbal Omar Marriott Hotel",
-      "5 Nights in Medina at Al Eiman Royal Madinah",
-      "Flights from London, Manchester, birmingham, Bradford, and Scotland.",
-      "Hotel in Makkah and Medina, Visa",
-      "Return Flights, Transport, and Ziyarat included.",
+      "7 nights (4 Makkah + 3 Madinah), with 10 and 14 night options",
+      "Makkah: Batoul Ajyad, Elaf Ajyad or Emaar Elite",
+      "Madinah: Al Eiman Al Manar, Diyaar Al Nakheel or Emaar Taibah",
+      ...COMMON_FEATURES,
     ],
-    price: 1090,
+    price: 695,
+    href: "/hajj-umrah/3-star-7-nights",
     image: "/home/umrah-package/package1.png",
-    alt: "Umrah Package 1",
+    alt: "3-Star Umrah Package",
   },
   {
     id: 2,
-    title: "5-Star December Umrah Packages for 5 Nights - All-inclusive",
-    rating: 5,
+    title: "4-Star Umrah Packages",
+    rating: 4,
     features: [
-      "5 nights in Makkah at Jabbal Omar Marriott Hotel",
-      "5 Nights in Medina at Al Eiman Royal Madinah",
-      "Flights from London, Manchester, birmingham, Bradford, and Scotland.",
-      "Hotel in Makkah and Medina, Visa",
-      "Return Flights, Transport, and Ziyarat included.",
+      "7 nights (4 Makkah + 3 Madinah), with 10 and 14 night options",
+      "Makkah: Al Kiswah Towers, Emaar Grand or Sheraton Jabal Al Kaaba",
+      "Madinah: Al Mukhtara International, Dar Al Naem or Saja Al Madinah",
+      ...COMMON_FEATURES,
     ],
-    price: 1090,
+    price: 765,
+    href: "/hajj-umrah/4-star-7-nights",
     image: "/home/umrah-package/package2.png",
-    alt: "Umrah Package 2",
+    alt: "4-Star Umrah Package",
   },
   {
     id: 3,
-    title: "5-Star December Umrah Packages for 5 Nights - All-inclusive",
+    title: "5-Star Umrah Packages",
     rating: 5,
     features: [
-      "5 nights in Makkah at Jabbal Omar Marriott Hotel",
-      "5 Nights in Medina at Al Eiman Royal Madinah",
-      "Flights from London, Manchester, birmingham, Bradford, and Scotland.",
-      "Hotel in Makkah and Medina, Visa",
-      "Return Flights, Transport, and Ziyarat included.",
+      "7 nights (4 Makkah + 3 Madinah), with 10 and 14 night options",
+      "Makkah: Al Marwa Rayhaan, Anjum Makkah or Swissôtel Makkah",
+      "Madinah: Anwar Al Madinah Mövenpick, InterContinental Dar Al Hijra or Pullman Zamzam",
+      ...COMMON_FEATURES,
     ],
-    price: 1090,
+    price: 885,
+    href: "/hajj-umrah/5-star-7-nights",
     image: "/home/umrah-package/package3.png",
-    alt: "Umrah Package 3",
+    alt: "5-Star Umrah Package",
   },
 ];
 
@@ -90,7 +96,7 @@ const index = () => {
       >
         <div className="text-center">
           <h3 className="text-xl text-gray-800 uppercase">
-            luxury assuring 5 star
+            3, 4 &amp; 5 star
           </h3>
           <h1 className="text-5xl text-primary font-bold uppercase tracking-wider">
             umrah package
@@ -113,9 +119,9 @@ const index = () => {
           </span>
 
           <p className="text-gray-600 text-base text-center w-[80%] m-auto">
-            Experience a blessed Umrah journey with our 3 Star Umrah Packages,
-            designed for comfort and affordability without compromising on
-            quality.
+            Experience a blessed Umrah journey with our 3, 4 and 5 Star Umrah
+            Packages, designed for comfort and affordability without
+            compromising on quality.
           </p>
         </div>
 

@@ -5,7 +5,7 @@ import React from "react";
 const StarPackagesGrid = ({ data, tier }) => {
   const headingMatch = data.heading?.match(/(\d+)\s*Star\s*(\d+)\s*NIGHTS/i);
   const description = headingMatch
-    ? `${headingMatch[1]}-Star December Ummrah Packages for ${headingMatch[2]} Nights - All-inclusive`
+    ? `${headingMatch[1]}-Star December Umrah Packages for ${headingMatch[2]} Nights - All-inclusive`
     : null;
 
   return (

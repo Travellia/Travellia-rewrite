@@ -34,7 +34,7 @@ const index = () => {
     {
       id: 5,
       image: "/hajj-ummrah/halalFriendly/Image-5.png",
-      description: "Umrah With Turkey Stay",
+      description: "Umrah with Turkey Stay",
       startingPrice: "Starting From £1349",
     },
     {
@@ -68,10 +68,10 @@ const index = () => {
         <div>
           {" "}
           <p className="text-gray-600 text-base text-center w-[90%] sm:w-[80%] m-auto">
-            Enjoy your Umrah journey with long holidays complying the rules of
-            Islamic Shariet. Visit countries with special arrangements of hotels
-            serving halal food, alcohol-free properties, cloistered beaches,
-            isolated pools, and women only spas. Add a special spark of
+            Extend your Umrah journey with a holiday that follows the rules of
+            Islamic Shariah. Visit countries with hotels serving halal food,
+            alcohol-free properties, private beaches, secluded pools and
+            women-only spas. Add a special spark of
             excitement in your Umrah trip by having a holiday stay in any
             halal-friendly destination.
           </p>

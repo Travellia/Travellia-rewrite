@@ -42,7 +42,11 @@ const page = () => {
           <BookNow data={imageData} />
         </div>
         <div className="flex flex-col">
-          <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
+          <TravelItinearies
+            data1={PACKAGE_DATA}
+            data2={BULLETS}
+            href="#plan-your-trip"
+          />
         </div>
         <ContactUs />
         <PlanYourTrip />

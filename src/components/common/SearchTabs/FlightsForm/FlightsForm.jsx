@@ -3,13 +3,6 @@
 import { useState } from "react";
 import { Formik, Form } from "formik";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 import returnSchema from "@/schemas/SearchTabs/Flights/returnSchema";
 import oneWaySchema from "@/schemas/SearchTabs/Flights/oneWaySchema";
@@ -26,8 +19,6 @@ const flightTypes = [
   { label: "One Way", value: "oneway" },
   { label: "Multi City", value: "multicity" },
 ];
-
-const flightCategories = ["ECONOMY", "PREMIUM", "BUSINESS CLASS"];
 
 const FlightsForm = () => {
   const [flightType, setFlightType] = useState("return");
@@ -114,24 +105,6 @@ const FlightsForm = () => {
                     <span className="text-sm font-normal text-muted-foreground">{type.label}</span>
                   </label>
                 ))}
-              </div>
-
-              <div className="justify-start min-w-45 flex sm:justify-end">
-                <Select
-                  value={values.category}
-                  onValueChange={(value) => setFieldValue("category", value)}
-                >
-                  <SelectTrigger className="bg-gray-100 rounded-xl h-11">
-                    <SelectValue placeholder="Select Category" />
-                  </SelectTrigger>
-                  <SelectContent position="popper" side="bottom" align="end">
-                    {flightCategories.map((cls) => (
-                      <SelectItem key={cls} value={cls}>
-                        {cls}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
             </div>
 

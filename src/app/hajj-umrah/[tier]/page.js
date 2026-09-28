@@ -24,7 +24,7 @@ const page = async (props) => {
   const welcomeData = {
     slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
     heading: "SCROLL DOWN",
-    title: "BEST UMMRAH PACKAGES",
+    title: "BEST UMRAH PACKAGES",
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
@@ -56,8 +56,8 @@ const page = async (props) => {
           <BookNow data={imageData} />
         </div>
         <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
-        <PlanYourTrip />
         <Question />
+        <PlanYourTrip />
       </div>
     </div>
   );

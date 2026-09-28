@@ -33,7 +33,7 @@ const page = () => {
       <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
         <FilterSearch defaultTab="flights" />
         <FlyWithUs />
-        <PopularFlights cards={FLIGHTS_CARDS_DATA} />
+        <PopularFlights cards={FLIGHTS_CARDS_DATA} show={false} />
         <FamilyAdventure />
         <TrendingPackage />
         <div className="mt-10">

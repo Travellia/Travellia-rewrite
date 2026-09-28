@@ -1,4 +1,5 @@
 import BookNow from "@/components/common/BookNow";
+import PlanYourTrip from "@/components/common/PlanYourTrip";
 import FilterSearch from "@/components/common/FilterSearch";
 import Welcome from "@/components/common/Welcome";
 import HotelPackage from "@/components/umrahDetail/umrahPackage/HotelPackage";
@@ -93,6 +94,7 @@ const page = async (props) => {
           <HotelGallery />
           <PackageInclude />
         </div>
+        <PlanYourTrip />
       </div>
     </div>
   );

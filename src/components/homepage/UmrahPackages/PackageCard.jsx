@@ -6,10 +6,12 @@ import {
 } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const UmrahPackageCard = ({ data }) => {
   return (
-    <Card className="w-full overflow-hidden p-2 !gap-3">
+    <Card className="w-full overflow-hidden p-2 !gap-3 flex flex-col">
       {/* Image Header */}
       <div className="relative h-48 w-full rounded-xl overflow-hidden">
         <Image
@@ -33,7 +35,7 @@ const UmrahPackageCard = ({ data }) => {
         </div>
       </CardHeader>
 
-      <CardContent className="pb-1 !px-3">
+      <CardContent className="pb-1 !px-3 flex-1">
         <ul className="space-y-2 text-sm text-gray-700">
           {data.features.map((feature, i) => {
             return (
@@ -46,11 +48,16 @@ const UmrahPackageCard = ({ data }) => {
         </ul>
       </CardContent>
 
-      <CardFooter className="flex flex-col items-center py-2 border-t !px-3">
-        <p className="text-sm text-gray-600">From</p>
-        <p className="text-3xl font-bold text-primary">
-          £ {data.price}
-          <span className="text-lg font-normal text-gray-600">/ Per Person</span>
+      <CardFooter className="flex flex-col items-center gap-3 py-3 border-t !px-3">
+        <Button asChild className="btn-main w-full">
+          <Link href={data.href}>Book Now</Link>
+        </Button>
+        <p className="text-sm text-gray-600">
+          Starting from{" "}
+          <span className="text-2xl font-bold text-primary">
+            £{data.price}
+          </span>{" "}
+          per person
         </p>
       </CardFooter>
     </Card>

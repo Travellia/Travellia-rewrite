@@ -2,6 +2,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PackageCard from "@/components/common/PackageCard";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 const PLACES = [
   {
@@ -10,7 +11,7 @@ const PLACES = [
     price: 1349,
     image: "/home/adventure/egypt.png",
     description: "Umrah with Egypt Stay",
-    startingPrice: "Starting From £134",
+    startingPrice: "Starting From £1349",
   },
   {
     id: 2,
@@ -18,7 +19,7 @@ const PLACES = [
     price: 1349,
     image: "/home/adventure/turkey.png",
     description: "Umrah with Turkey Stay",
-    startingPrice: "Starting From £134",
+    startingPrice: "Starting From £1349",
   },
   {
     id: 3,
@@ -26,7 +27,7 @@ const PLACES = [
     price: 1349,
     image: "/home/adventure/dubai.png",
     description: "Umrah with Dubai Stay",
-    startingPrice: "Starting From £134",
+    startingPrice: "Starting From £1349",
   },
   {
     id: 4,
@@ -34,15 +35,15 @@ const PLACES = [
     price: 1349,
     image: "/home/adventure/abu-dhabi.png",
     description: "Umrah with Abu Dhabi Stay",
-    startingPrice: "Starting From £134",
+    startingPrice: "Starting From £1349",
   },
   {
     id: 5,
-    name: "turkey",
+    name: "Turkey",
     price: 1349,
     image: "/home/adventure/turkey-2.png",
-    description: "Umrah with turkey Stay",
-    startingPrice: "Starting From £134",
+    description: "Umrah with Turkey Stay",
+    startingPrice: "Starting From £1349",
   },
   {
     id: 6,
@@ -50,7 +51,7 @@ const PLACES = [
     price: 1349,
     image: "/home/adventure/dubai-2.png",
     description: "Umrah with Dubai Stay",
-    startingPrice: "Starting From £134",
+    startingPrice: "Starting From £1349",
   },
 ];
 
@@ -68,7 +69,9 @@ const UmrahStayPackages = () => {
             </Card>
           ))}
         </div>
-        <Button className="btn-main">Load More</Button>
+        <Button asChild className="btn-main">
+          <Link href="/hajj-umrah">Explore Now</Link>
+        </Button>
       </ContentLayoutWrapper>
     </section>
   );

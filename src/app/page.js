@@ -12,6 +12,7 @@ import Testimonials from "@/components/common/Testimonial";
 import FilterSearch from "@/components/common/FilterSearch";
 import { TESTIMONIALS } from "@/lib/data/Testimonial";
 import FamilyAdventures from "@/components/homepage/Adventures/FamilyAdventures";
+import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 export default function Home() {
   const welcomeData = {
@@ -45,6 +46,7 @@ export default function Home() {
         <BestServices />
         <OfferedServices />
         <Testimonials data={TESTIMONIAL} />
+        <PlanYourTrip />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { format, parseISO, isValid } from "date-fns";
-import { CITY_LIST as AIRPORT_LIST } from "@/components/common/citiesCode";
+import { AIRPORTS, airportLabel } from "@/lib/data/airports";
 import { CITY_LIST as CITY_SHORTLIST } from "@/components/common/cities";
 
 /**
@@ -8,18 +8,25 @@ import { CITY_LIST as CITY_SHORTLIST } from "@/components/common/cities";
  * value object into ordered [{ label, value }] rows ready for buildNotification().
  */
 
-// The curated shortlist wins on naming; the full IATA table is the fallback.
+const airportByCode = new Map(AIRPORTS.map((item) => [item.code, item]));
+
+// Hotel searches pick from the curated city shortlist, where a code stands for
+// the city rather than one of its airports.
 const cityByCode = new Map();
-[...AIRPORT_LIST, ...CITY_SHORTLIST].forEach(({ city, code }) => {
+CITY_SHORTLIST.forEach(({ city, code }) => {
   if (code) cityByCode.set(code.toUpperCase(), city);
 });
 
-const formatCity = (code) => {
+const formatPlace = (code, type) => {
   if (!code) return "";
   const raw = String(code).trim();
   const key = raw.toUpperCase();
+
   const city = cityByCode.get(key);
+  const airport = airportByCode.get(key);
+  if (type === "airport" && airport) return airportLabel(airport);
   if (city) return `${city} (${key})`;
+  if (airport) return airportLabel(airport);
   // Not a known IATA code — a free-text place name, most likely. Pass it
   // through untouched rather than upper-casing it into "DUBAI".
   return raw;
@@ -32,7 +39,7 @@ const formatDate = (value) => {
 };
 
 const formatValue = (value, type) => {
-  if (type === "airport" || type === "city") return formatCity(value);
+  if (type === "airport" || type === "city") return formatPlace(value, type);
   if (type === "date") return formatDate(value);
   if (type === "bool") return value ? "Yes" : "No";
   return value == null ? "" : String(value).trim();

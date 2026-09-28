@@ -1,34 +1,39 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
     title: "Incredible Destinations",
     description:
-      "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+      "Discover handpicked holiday destinations and family-friendly getaways, planned around you.",
     iconPath: "/home/offered-services/destination.png",
+    href: "/holidayPackages",
   },
   {
     title: "Best Flight Options",
     description:
-      "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+      "Compare fares from trusted airlines and fly from your nearest UK airport at the best price.",
     iconPath: "/home/offered-services/flight-route.png",
+    href: "/flights",
   },
   {
     title: "Hajj / Umrah Tours",
     description:
-      "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+      "All-inclusive Hajj and Umrah packages with flights, visa, hotels near the Haram and Ziyarat.",
     iconPath: "/home/offered-services/religion.png",
+    href: "/hajj-umrah",
   },
   {
-    title: "Luxury Accomodation",
+    title: "Luxury Accommodation",
     description:
-      "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+      "Comfortable, well-located hotels and resorts, from 3-star value stays to 5-star luxury.",
     iconPath: "/home/offered-services/five.png",
+    href: "/hotels",
   },
 ];
-export default function OfferedServices() {
+export default function BestServices() {
   return (
     <section className="z-0 pt-5 md:pt-10  xl:pt-60 bg-background relative overflow-hidden">
       <ContentLayoutWrapper className="flex flex-col z-2">
@@ -57,8 +62,12 @@ export default function OfferedServices() {
                 {service.title}
               </h3>
               <p className="text-gray-600 text-center">{service.description}</p>
-              <Button variant="default" className="mt-4 rounded-full w-[100%]">
-                Book Now
+              <Button
+                asChild
+                variant="default"
+                className="mt-4 rounded-full w-[100%]"
+              >
+                <Link href={service.href}>Book Now</Link>
               </Button>
             </div>
           ))}

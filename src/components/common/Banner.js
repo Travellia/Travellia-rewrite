@@ -1,5 +1,6 @@
 import { data } from "@/lib/contactInfo";
 import Image from "next/image";
+import { MdEmail } from "react-icons/md";
 
 const SOCIALS = [
   { icon: "/social-media/facebook.png", href: data.socials.facebook },
@@ -26,21 +27,14 @@ export default function Banner() {
             {data?.PhoneNumber}
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="relative w-6 h-6 flex-shrink-0">
-            <Image
-              src="/social-media/gmail.png"
-              alt="mail"
-              fill
-              sizes="24px"
-              className="object-contain"
-              loading="lazy"
-            />
-          </div>
-          <p className="text-white font-medium text-xs md:text-base">
+        <a href={`mailto:${data?.email}`} className="flex items-center gap-2">
+          <span className="w-6 h-6 flex-shrink-0 rounded-full bg-primary flex items-center justify-center">
+            <MdEmail className="w-3.5 h-3.5 text-foreground" aria-hidden="true" />
+          </span>
+          <span className="text-white font-medium text-xs md:text-base">
             {data?.email}
-          </p>
-        </div>
+          </span>
+        </a>
       </div>
       <div className="flex gap-6">
         <div className="flex items-center gap-2">
