@@ -17,7 +17,6 @@ const page = () => {
       { id: 3, image: "/flights/welcome/Image3.png" },
     ],
     title: "TRAVELLIA",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const FLIGHTS_CARDS_DATA = popularFlightData.slice(0, 6);

@@ -1,80 +1,88 @@
-import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PopularDestination from "@/components/homepage/PopularDestination";
+import ArrowButton from "@/components/ui/ArrowButton";
+import { Eyebrow } from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+
+const THUMBNAILS = [
+  "/home/adventure/1.jpg",
+  "/home/adventure/3.jpg",
+  "/home/adventure/4.jpg",
+  "/home/adventure/5.jpg",
+];
 
 const FamilyAdventures = () => {
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-20 md:pt-30 pb-12 sm:pb-20 md:pb-30">
-      <Image
-        src={"/home/adventure/okl.png"}
-        alt="okl.png"
-        fill
-        sizes="100vw"
-        className="absolute top-0 left-0 z-1 "
-        loading="lazy"
-      />
-      <div className="w-32/30 h-1/4 absolute left-0 top-30 z-1">
-        <Image
-          src={"/shapes/paper-plane.png"}
-          alt="paper-plan.png"
-          fill
-          sizes="100vw"
-          loading="lazy"
-        />
-      </div>
-      <ContentLayoutWrapper className={"flex flex-col gap-5 relative z-2"}>
-        {/* Header div */}
-        <div className="grid grid-cols-1 md:grid-cols-10 grid-rows-1 items-center justify-between h-full gap-6 px-4 md:px-0">
-          {/* Image Section */}
-          <div className="col-span-1 md:col-start-1 md:col-end-6 w-full h-full flex justify-center md:justify-start">
-            <Image
-              src={"/home/adventure/mobile-and-plane.png"}
-              alt="Family adventure - mobile and plane"
-              width={800}
-              height={600}
-              className="w-full h-auto max-h-[75%] object-contain"
-              loading="lazy"
-            />
-          </div>
+    <section className="flex flex-col gap-20 md:gap-28">
+      <ContentLayoutWrapper>
+        <Reveal className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+          {/* Text */}
+          <div className="flex flex-col gap-6">
+            <Eyebrow>Family adventures</Eyebrow>
+            <h2 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+              Book your flights
+              <br />
+              <em className="font-serif font-normal normal-case tracking-normal text-gold">
+                effortlessly.
+              </em>
+            </h2>
 
-          {/* Text & Button Section */}
-          <div className="col-span-1 md:col-start-6 md:col-end-11 flex flex-col gap-4 text-center md:text-left">
-            <div>
-              <h3 className="uppercase text-gray-600 text-lg font-semibold">
-                Family adventures
-              </h3>
-              <h1 className="text-primary uppercase font-bold text-4xl md:text-5xl">
-                Book your flights
-              </h1>
-              <h2 className="text-gray-800 uppercase font-thin text-4xl md:text-5xl">
-                Effortlessly
-              </h2>
+            <div className="flex items-center gap-4">
+              <span className="relative h-24 w-36 shrink-0 overflow-hidden rounded-2xl shadow-soft">
+                <Image
+                  src="/flights/welcome/Image2.png"
+                  alt=""
+                  fill
+                  sizes="144px"
+                  className="object-cover"
+                />
+              </span>
+              <p className="text-ink/65">
+                Enjoy seamless booking to our top family-friendly destinations.
+              </p>
             </div>
-            <p className="text-base text-gray-500 max-w-lg mx-auto md:mx-0">
-              Enjoy seamless booking to our top family-friendly destinations.
-              Whether it's theme parks, wildlife safaris, interactive museums,
-              or outdoor activities, embark on exciting adventures and create
-              lasting memories with your loved ones in safe, fun-filled
+
+            <p className="max-w-lg leading-relaxed text-ink/65">
+              Whether it&apos;s theme parks, wildlife safaris, interactive
+              museums, or outdoor activities, embark on exciting adventures and
+              create lasting memories with your loved ones in safe, fun-filled
               environments.
             </p>
-            <div className="flex justify-center md:justify-start mt-10">
-              <Button
-                asChild
-                className="px-12 py-6 rounded-full text-xl"
-                size={"lg"}
-              >
-                <Link href="/flights">View Packages</Link>
-              </Button>
+
+            <ArrowButton href="/flights">View Packages</ArrowButton>
+          </div>
+
+          {/* Image with thumbnail strip */}
+          <div className="flex gap-3 md:gap-4">
+            <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-frame shadow-lift">
+              <Image
+                src="/home/adventure/2.jpg"
+                alt="Paris street with the Eiffel Tower"
+                fill
+                sizes="(max-width: 1024px) 80vw, 40vw"
+                className="object-cover"
+              />
+              <span className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-ink/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                Family-friendly Europe
+              </span>
+            </div>
+            <div className="flex w-16 flex-col gap-3 sm:w-20 md:gap-4">
+              {THUMBNAILS.map((src) => (
+                <span
+                  key={src}
+                  className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-soft"
+                >
+                  <Image src={src} alt="" fill sizes="80px" className="object-cover" />
+                </span>
+              ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </ContentLayoutWrapper>
-      <div className="relative z-2">
-        <PopularDestination />
-      </div>
+
+      <PopularDestination />
     </section>
   );
 };

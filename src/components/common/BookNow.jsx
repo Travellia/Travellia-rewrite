@@ -1,120 +1,103 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { MousePointer2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, Check } from "lucide-react";
 import React from "react";
+import { Eyebrow } from "@/components/ui/SectionHeading";
+import { cn } from "@/lib/utils";
 
+const PAY_LATER_POINTS = [
+  "Lock in today's price",
+  "Pay in up to 26 weekly payments",
+  "No interest, no credit checks & no hidden fees",
+];
+
+/**
+ * Dark feature panel. Default: "Book now, pay later" with a CTA tucked into
+ * the photo corner. With `data2`, shows the "Why book with us" list (`data3`).
+ */
 const BookNow = ({ data, reverse, data2, data3 = [], href = "#plan-your-trip" }) => {
   return (
-    <section className="flex flex-col-reverse lg:grid lg:grid-cols-20 lg:min-h-[50vh] lg:max-h-[60vh] xl:min-h-[80vh] xl:gap-10">
-      {/* ================= CONTENT SECTION ================= */}
+    <section className="px-3 md:px-5">
       <div
-        className={`
-    ${
-      reverse ? "lg:col-start-10 lg:col-end-21" : "lg:col-start-1 lg:col-end-12"
-    }
-    row-start-1
-    ${data2 ? "bg-[url('/umrahDetail/BookNow/bookNow.png')] bg-cover bg-center" : "bg-primary"}
-    rounded-t-[50px]
-    lg:rounded-t-none
-    ${
-      reverse
-        ? "lg:rounded-bl-[100px] lg:rounded-tl-[100px]"
-        : "lg:rounded-br-[100px] lg:rounded-tr-[100px]"
-    }
-    z-50
-    flex
-    items-center
-    -mt-10
-    lg:mt-0
-    py-12
-    lg:py-10
-    xl:py-0
-    relative
-  `}
+        className={cn(
+          "mx-auto grid max-w-[1400px] gap-3 overflow-hidden rounded-frame bg-ink p-3 text-white lg:grid-cols-2",
+          reverse && "lg:[&>*:first-child]:order-2"
+        )}
       >
-        <div
-          className={`flex items-center  h-full w-full px-6 md:px-12 ${data2 ? "justify-start" : "justify-center"}`}
-        >
-          {/* ===== CONDITION START ===== */}
+        {/* Content */}
+        <div className="flex flex-col justify-center gap-6 p-5 sm:p-8 lg:p-12">
           {data2 ? (
-            // ✅ SHOW LIST SECTION
-            <div className="flex flex-col gap-6 xl:gap-10lg:items-start">
-              <h1 className="text-3xl lg:text-4xl xl:text-6xl font-bold capitalize text-primary pb-3">
-                WHY BOOK
+            <>
+              <Eyebrow tone="dark">Travellia</Eyebrow>
+              <h2 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight md:text-5xl">
+                Why book
                 <br />
-                WITH US:
-              </h1>
-
-              <div className="flex flex-col gap-3">
-                {data3.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <MousePointer2 className="rotate-90 text-primary fill-primary" />
-                    <p className="text-black text-sm xl:text-lg font-semibold">
-                      {item}
-                    </p>
-                  </div>
+                <em className="font-serif font-normal normal-case tracking-normal text-gold">
+                  with us
+                </em>
+              </h2>
+              <ul className="flex flex-col gap-3">
+                {data3.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-white/85">
+                    <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-gold text-ink">
+                      <Check className="size-3.5" />
+                    </span>
+                    {item}
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </>
           ) : (
-            // ❌ SHOW DEFAULT SECTION
-            <div className="flex flex-col gap-4 xl:gap-10 text-center lg:text-left items-center lg:items-start">
-              <h1 className="text-3xl lg:text-5xl xl:text-7xl font-bold capitalize text-gray-200 pb-3">
+            <>
+              <Eyebrow tone="dark">Flexible payments</Eyebrow>
+              <h2 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight md:text-6xl">
                 Book now,
                 <br />
-                pay later
-              </h1>
-
-              <p className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-200 max-w-[600px]">
-                Book Flights Now, Pay Later. Lock in today&apos;s price{" "}
-                <br className="hidden md:block" />& pay in up to 26 weekly
-                payments.
+                <em className="font-serif font-normal normal-case tracking-normal text-gold">
+                  pay later.
+                </em>
+              </h2>
+              <p className="max-w-md text-white/70">
+                Book flights now, pay later. Book your next trip today and
+                spread the cost.
               </p>
-
-              <p className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-200">
-                No interest, no credit checks & no hidden fees.
-              </p>
-
-              <p className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-200">
-                Book your next trip
-              </p>
-
-              <Button asChild className="btn-main-reverse">
-                <Link href={href}>Book Now</Link>
-              </Button>
-            </div>
+              <ul className="flex flex-col gap-3">
+                {PAY_LATER_POINTS.map((point) => (
+                  <li key={point} className="flex items-center gap-3 text-white/85">
+                    <span className="grid size-6 shrink-0 place-items-center rounded-full bg-gold text-ink">
+                      <Check className="size-3.5" />
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
-          {/* ===== CONDITION END ===== */}
         </div>
-      </div>
 
-      {/* ================= IMAGE SECTION ================= */}
-      <div
-        className={`
-          ${
-            reverse
-              ? "lg:col-start-1 lg:col-end-12"
-              : "lg:col-start-10 lg:col-end-21"
-          }
-          row-start-1
-          h-[40vh]
-          sm:h-[50vh]
-          lg:h-full
-          w-full
-          relative
-        `}
-      >
-        <Image
-          src={data?.image}
-          alt={data?.alt}
-          fill
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover"
-          loading="lazy"
-        />
+        {/* Photo with the CTA tucked into its corner */}
+        <div className="relative min-h-[320px] overflow-hidden rounded-[28px] lg:min-h-[520px]">
+          <Image
+            src={data?.image}
+            alt={data?.alt || ""}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+          {!data2 && (
+            <Link
+              href={href}
+              className="group absolute bottom-0 right-0 flex items-center gap-3 rounded-tl-[28px] bg-ink py-3 pl-6 pr-3"
+            >
+              <span className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ink transition group-hover:bg-gold">
+                Book Now
+              </span>
+              <span className="grid size-11 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight className="size-5" />
+              </span>
+            </Link>
+          )}
+        </div>
       </div>
     </section>
   );

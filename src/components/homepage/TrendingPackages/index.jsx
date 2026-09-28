@@ -1,5 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import Image from "next/image";
+import ArrowButton from "@/components/ui/ArrowButton";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 import React from "react";
 import BookPackageCard from "@/components/common/BookPackageCard";
 
@@ -7,7 +9,7 @@ const PACKAGES_DATA = [
   {
     days: 8,
     people: 25,
-    city: "Los angeles",
+    city: "Los Angeles",
     country: "United States",
     discountPrice: 499,
     oldPrice: 599,
@@ -38,43 +40,37 @@ const PACKAGES_DATA = [
 
 const index = () => {
   return (
-    <section className="xl:mb-10">
-      <div className="min-h-[60vh] md-h-[70vh] lg:min-h-[80vh] xl:min-h-screen relative flex items-center justify-center ">
-        <Image
-          src="/home/trending-packages/plane-wing.jpg"
-          alt="Plane wing image"
-          fill
-          sizes="100vw"
-        />
-        <ContentLayoutWrapper className="text-center relative z-1">
-          <Image
-            src="/home/trending-packages/airplane.png"
-            alt="airplane"
-            width={200}
-            height={200}
-            className="object-cover mx-auto "
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-12">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Trendy · Our trending tour packages"
+            title={
+              <>
+                Let&apos;s make your next
+                <br />
+                holiday <em>amazing.</em>
+              </>
+            }
           />
-          <h1 className="text-4xl md:text-5xl lg:text-6x xl:ltext-7xl text-gray-800 uppercase text-center font-bold">
-            let&apos;s make your
-          </h1>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl text-primary uppercase text-center font-bold">
-            next holiday amazing
-          </h1>
-        </ContentLayoutWrapper>
-      </div>
-      <div className="min-h-[30vh] lg:min-h-[60vh] md:px-10 mb-20 relative ">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 xl:grid-cols-4  xl:grid-rows-1 place-items-center justify-start gap-8  relative z-50 p-12 xl:absolute md:-top-25 xl:left-14 xl:right-14">
-          {PACKAGES_DATA.map((data, index) => (
-            <BookPackageCard data={data} href="#plan-your-trip" key={index} />
-          ))}
-          <div className="w-full  lg:w-2/3 text-center mt-6 -order-1 sm:order-0">
-            <h4 className="uppercase text-gray-800 text-2xl">trendy</h4>
-            <h1 className="uppercase text-primary text-3xl sm:text-5xl   leading-14 font-bold">
-              our trending tour packages
-            </h1>
-          </div>
+          <ArrowButton href="/holidayPackages" tone="light">
+            All holidays
+          </ArrowButton>
         </div>
-      </div>
+
+        {/* Staggered like "The Edit": the middle card sits lower */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {PACKAGES_DATA.map((data, index) => (
+            <Reveal
+              key={data.city}
+              delay={index * 120}
+              className={index === 1 ? "md:mt-16" : ""}
+            >
+              <BookPackageCard data={data} href="#plan-your-trip" />
+            </Reveal>
+          ))}
+        </div>
+      </ContentLayoutWrapper>
     </section>
   );
 };

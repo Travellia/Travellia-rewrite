@@ -31,7 +31,6 @@ const page = async (props) => {
   const welcomeData = {
     slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.png" }],
     title: "DETAIL PAGE",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const { makkah: MAKKAH_HOTEL_PACKAGE, madinah: MADINAH_HOTEL_PACKAGE } =

@@ -15,8 +15,6 @@ const page = () => {
       { id: 4, image: "/hotel/welcome/slide-4.png" },
     ],
     title: "Hotel",
-
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const imageData = {

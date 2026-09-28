@@ -17,7 +17,6 @@ const page = () => {
     slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
     heading: "SCROLL DOWN",
     title: "BEST UMRAH PACKAGES",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHajjUmmrahPackage;

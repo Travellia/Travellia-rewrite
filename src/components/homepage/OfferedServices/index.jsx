@@ -1,7 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import Image from "next/image";
 import React from "react";
-import { BiSolidNavigation } from "react-icons/bi";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const SERVICES = [
   {
@@ -36,64 +36,54 @@ const SERVICES = [
 
 const Index = () => {
   return (
-    <section className="xl:min-h-screen">
-      <ContentLayoutWrapper className="py-10 md:pt-20 pb-10">
-        <h1 className="text-3xl md:text-4xl text-primary font-bold text-center">
-          Services we offer
-        </h1>
-
-        <div className=" flex-col lg:flex-row lg:flex-nowrap items-start gap-10 py-10 flex ">
-          <div className=" w-full lg:w-1/2 ">
-            <div className="grid grid-cols-6 grid-rows-7">
-              <div className="row-start-1 row-end-5 col-start-1 col-end-7">
-                <Image
-                  src="/home/services/22.png"
-                  alt="Hotel accommodation"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover rounded-3xl"
-                />
-              </div>
-
-              <div className="row-start-5 row-end-8 col-start-1 col-end-4 bg-background pt-3">
-                <Image
-                  src="/home/services/222.png"
-                  alt="Hotel accommodation"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover rounded-3xl"
-                />
-              </div>
-
-              <div className="row-start-4 row-end-8 col-start-4 col-end-7 bg-background pt-3 pl-3 pr-1 rounded-3xl">
-                <Image
-                  src="/home/services/33.png"
-                  alt="Hotel accommodation"
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover rounded-3xl"
-                />
-              </div>
+    <section className="px-3 md:px-5">
+      <div className="mx-auto max-w-[1400px] rounded-frame bg-ink py-16 text-white md:py-24">
+        <ContentLayoutWrapper className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Photo collage */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-card">
+              <Image src="/home/services/22.png" alt="Resort pool at dusk" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-card">
+              <Image src="/home/services/222.png" alt="" fill sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-card">
+              <Image src="/home/services/33.png" alt="" fill sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover" />
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 flex flex-col gap-5">
-            {SERVICES.map((service, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <BiSolidNavigation className="text-primary mt-1 w-4 h-4 flex-shrink-0" />
-
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  <span className="font-bold text-gray-700">
-                    {service.title}
-                    {" - "}
+          {/* Numbered list */}
+          <div className="flex flex-col gap-8">
+            <SectionHeading
+              tone="dark"
+              eyebrow="What we do"
+              title={
+                <>
+                  Services <em>we offer.</em>
+                </>
+              }
+            />
+            <ol className="flex flex-col">
+              {SERVICES.map((service, index) => (
+                <li
+                  key={service.title}
+                  className="flex gap-5 border-t border-white/10 py-5 last:border-b"
+                >
+                  <span className="pt-0.5 text-xs font-semibold text-gold">
+                    0{index + 1}
                   </span>
-                  {service.description}
-                </p>
-              </div>
-            ))}
+                  <div className="flex flex-col gap-1">
+                    <h3 className="font-display text-lg font-bold uppercase tracking-tight">
+                      {service.title}
+                    </h3>
+                    <p className="text-white/65">{service.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
-        </div>
-      </ContentLayoutWrapper>
+        </ContentLayoutWrapper>
+      </div>
     </section>
   );
 };

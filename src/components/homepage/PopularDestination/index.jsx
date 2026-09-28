@@ -1,6 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
-import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/ui/SectionHeading";
 import OurPopularCard from "@/components/common/OurPopular/OurPopularCard";
 
 const DESTINAION_CARDS_DATA = [
@@ -77,29 +77,31 @@ const DESTINAION_CARDS_DATA = [
 
 const index = () => {
   return (
-    <section className="w-full min-h-screen pt-5 ">
-      <ContentLayoutWrapper
-        className={"flex flex-col items-center justify-center gap-10 "}
-      >
-        <div className="text-center ">
-          <h4 className="heading-para">Our popular</h4>
-          <h2 className="heading">Destinations</h2>
+    <section className="w-full">
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Our popular destinations"
+            title={
+              <>
+                Handpicked places,
+                <br />
+                <em>planned around you.</em>
+              </>
+            }
+          />
+          <p className="max-w-sm text-ink/65">
+            From European city breaks to safari and sunshine, these are the
+            trips our travellers keep coming back for.
+          </p>
         </div>
-        <div className="grid grid-cols-10 grid-rows-2 gap-6 w-full">
-          {DESTINAION_CARDS_DATA.map((card, i) => (
-            <div
-              key={card.id}
-              className={`${card.css} rounded-4xl overflow-hidden`}
-            >
-              <OurPopularCard
-                data={card}
-                largeText={i === 0 || i === DESTINAION_CARDS_DATA.length - 1}
-                href="#plan-your-trip"
-              />
+        <div className="grid grid-cols-10 gap-4 md:gap-6">
+          {DESTINAION_CARDS_DATA.map((card) => (
+            <div key={card.id} className={`${card.css} min-h-[380px]`}>
+              <OurPopularCard data={card} href="#plan-your-trip" />
             </div>
           ))}
         </div>
-        {/* <Button className={"btn-main"}>Load More</Button> */}
       </ContentLayoutWrapper>
     </section>
   );

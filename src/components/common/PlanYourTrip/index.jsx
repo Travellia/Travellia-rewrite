@@ -32,7 +32,7 @@ const PlanYourTrip = ({
             {/* Image side */}
             <div className="relative min-h-64 lg:min-h-full">
               <Image
-                src="/home/book-now/girl-on-island.png"
+                src="/hotel/welcome/slide-1.png"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

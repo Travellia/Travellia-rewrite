@@ -2,6 +2,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import Image from "next/image";
 import React from "react";
 import UmrahPackageCard from "./PackageCard";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const COMMON_FEATURES = [
   "Return flights from London, Manchester, Birmingham, Bradford and Scotland",
@@ -59,78 +60,45 @@ const UMRAH_PACKAGES = [
 
 const index = () => {
   return (
-    <section className="py-15 min-h-screen relative">
-      <div className="absolute top-0 left-0 w-1/2 h-full">
-        <Image
-          src={"/home/umrah-package/Madina.jpg"}
-          alt="Madina"
-          fill
-          sizes="50vw"
-          className={"aspect-auto object-cover"}
-        />
-      </div>
-      <div className="absolute top-0 left-0 w-2/10 h-4/10 z-1">
-        <Image src={"/shapes/leaf.png"} alt="leaf" fill sizes="20vw" />
-      </div>
-      <div className="absolute -bottom-5 right-3 w-2/10 h-4/10 z-1 rotate-180">
-        <Image fill src={"/shapes/leaf.png"} alt="leaf" sizes="20vw" />
-      </div>
-      <div className="absolute top-10 left-0 z-1 h-1/2 w-full">
-        <Image src={"/shapes/paper-plane.png"} alt="paper-plane" fill sizes="100vw" />
-      </div>
-      <div className="absolute right-0 top-0 w-1/2 h-full">
-        <Image
-          src={"/home/umrah-package/Makkah.jpg"}
-          alt="Makkah"
-          fill
-          sizes="50vw"
-          className={" aspect-auto object-cover"}
-        />
-      </div>
-      <div className="bg-white/80 backdrop-blur-md w-full h-full absolute left-0 top-0" />
-
-      <ContentLayoutWrapper
-        className={
-          "flex flex-col justify-between items-center gap-6 relative z-2"
-        }
-      >
-        <div className="text-center">
-          <h3 className="text-xl text-gray-800 uppercase">
-            3, 4 &amp; 5 star
-          </h3>
-          <h1 className="text-5xl text-primary font-bold uppercase tracking-wider">
-            umrah package
-          </h1>
+    <section className="px-3 md:px-5">
+      <div className="relative isolate mx-auto max-w-[1400px] overflow-hidden rounded-frame bg-sand-deep py-16 md:py-24">
+        {/* Makkah and Madinah, softened behind the cards */}
+        <div className="absolute inset-0 -z-10 grid grid-cols-2 opacity-25">
+          <div className="relative">
+            <Image src="/home/umrah-package/Madina.jpg" alt="" fill sizes="50vw" className="object-cover" />
+          </div>
+          <div className="relative">
+            <Image src="/home/umrah-package/Makkah.jpg" alt="" fill sizes="50vw" className="object-cover" />
+          </div>
         </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sand-deep via-sand-deep/85 to-sand-deep" />
 
-        <div className="bg-primary h-0.75 w-2/10 mx-auto" />
+        <ContentLayoutWrapper className="flex flex-col gap-12">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading
+              eyebrow="3, 4 & 5 star · Umrah package"
+              title={
+                <>
+                  Affordable. Comfortable.
+                  <br />
+                  <em>A spiritual journey.</em>
+                </>
+              }
+            />
+            <p className="max-w-sm text-ink/65">
+              Experience a blessed Umrah journey with our 3, 4 and 5 Star Umrah
+              Packages, designed for comfort and affordability without
+              compromising on quality.
+            </p>
+          </div>
 
-        <div className="flex flex-col gap-3">
-          <span className="text-gray-700 uppercase text-sm md:text-2xl lg:text-3xl mx-auto tracking-wider">
-            affordable{" "}
-            <span className="text-2xl text-primary uppercase tracking-wider">
-              |
-            </span>{" "}
-            comfortable{" "}
-            <span className="text-2xl text-primary uppercase tracking-wider">
-              |
-            </span>{" "}
-            spiritual journey
-          </span>
-
-          <p className="text-gray-600 text-base text-center w-[80%] m-auto">
-            Experience a blessed Umrah journey with our 3, 4 and 5 Star Umrah
-            Packages, designed for comfort and affordability without
-            compromising on quality.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {UMRAH_PACKAGES.map((pkg) => (
-            <UmrahPackageCard key={pkg.id} data={pkg} />
-          ))}
-        </div>
-      </ContentLayoutWrapper>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {UMRAH_PACKAGES.map((pkg) => (
+              <UmrahPackageCard key={pkg.id} data={pkg} featured={pkg.rating === 5} />
+            ))}
+          </div>
+        </ContentLayoutWrapper>
+      </div>
     </section>
   );
 };

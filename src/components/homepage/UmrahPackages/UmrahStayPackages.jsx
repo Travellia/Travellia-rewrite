@@ -1,8 +1,8 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PackageCard from "@/components/common/PackageCard";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import Link from "next/link";
+import ArrowButton from "@/components/ui/ArrowButton";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 
 const PLACES = [
   {
@@ -57,21 +57,34 @@ const PLACES = [
 
 const UmrahStayPackages = () => {
   return (
-    <section className="">
-      <ContentLayoutWrapper className={"flex flex-col justify-center items-center gap-10"}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-auto gap-6 w-full">
-          {PLACES.map((place) => (
-            <Card
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Halal-friendly holidays"
+            title={
+              <>
+                Umrah, then
+                <br />
+                <em>stay a little longer.</em>
+              </>
+            }
+            intro="Combine your pilgrimage with a relaxing stay in Egypt, Turkey, Dubai or Abu Dhabi."
+          />
+          <ArrowButton href="/hajj-umrah">Explore Now</ArrowButton>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          {PLACES.map((place, index) => (
+            <Reveal
               key={place.id}
-              className="relative overflow-hidden rounded-4xl h-96 group cursor-pointer py-0"
+              delay={(index % 3) * 100}
+              className="relative h-80 overflow-hidden rounded-card shadow-soft md:h-96"
             >
-              <PackageCard data={place} text />
-            </Card>
+              <PackageCard data={place} />
+            </Reveal>
           ))}
         </div>
-        <Button asChild className="btn-main">
-          <Link href="/hajj-umrah">Explore Now</Link>
-        </Button>
       </ContentLayoutWrapper>
     </section>
   );

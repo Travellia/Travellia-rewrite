@@ -1,7 +1,8 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
+import ArrowButton from "@/components/ui/ArrowButton";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const BOOKING_STEPS = [
@@ -25,104 +26,60 @@ const BOOKING_STEPS = [
 
 const index = () => {
   return (
-    <section className="relative overflow-hidden    xl:min-h-screen">
-      {/* Decorative shapes (hidden on small screens) */}
-      <div className="hidden lg:block absolute w-80 h-80 -left-10 top-1/4 opacity-40">
-        <Image src="/shapes/plane.png" alt="Plane" fill sizes="320px" />
-      </div>
-      <div className="hidden lg:block absolute w-80 h-80 -right-10 bottom-0 opacity-30">
-        <Image src="/shapes/bag.png" alt="Bag" fill sizes="320px" />
-      </div>
-
-      <ContentLayoutWrapper
-        className="
-          flex flex-col-reverse 
-          lg:flex-row 
-          items-center 
-          gap-12 
-          pt-10 
-          lg:py-30
-        "
-      >
-        {/* LEFT CONTENT */}
-        <div className="w-full lg:w-1/2 py-6">
-          <h4 className="uppercase text-gray-800 font-semibold text-sm md:text-base">
-            fast & easy
-          </h4>
-
-          <h1
-            className="uppercase text-primary font-bold leading-tight
-            text-2xl 
-            sm:text-3xl 
-            md:text-4xl 
-            xl:text-5xl
-          "
-          >
-            get your favourite hotels / resort bookings
-          </h1>
-
-          <div className="mt-5 h-px bg-gray-300/70 w-full" />
-
-          {/* STEPS */}
-          <div
-            className="
-              grid 
-              grid-cols-1 
-              sm:grid-cols-2 
-              gap-6 
-              mt-6
-            "
-          >
-            {BOOKING_STEPS.map((step, index) => (
-              <div key={index} className="flex flex-col  gap-3 p-2">
-                <div className="flex items-center  gap-4">
-                  <Image
-                    src={step.icon}
-                    alt={step.title}
-                    width={50}
-                    height={50}
-                  />
-                  <h3 className="text-lg md:text-xl font-bold">{step.title}</h3>
-                </div>
-
-                <div className="h-px bg-gray-300/70 w-full" />
-
-                <p className="text-sm text-gray-600">{step.description}</p>
-              </div>
-            ))}
-
-            {/* BUTTON */}
-            <div className="sm:col-span-2 flex justify-center sm:justify-start">
-              <Button asChild className="btn-main">
-                <Link href="/hotels">Book Now</Link>
-              </Button>
-            </div>
+    <section>
+      <ContentLayoutWrapper className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        {/* Heading + image */}
+        <div className="flex flex-col gap-8">
+          <SectionHeading
+            eyebrow="Fast & easy"
+            title={
+              <>
+                Get your favourite
+                <br />
+                hotels &amp; resorts
+                <br />
+                <em>booked.</em>
+              </>
+            }
+          />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-frame shadow-lift">
+            <Image
+              src="/home/hotel-booking/resort.jpg"
+              alt="Resort terrace with sea view"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
-        <div
-          className="
-    relative 
-    w-full 
-    lg:w-1/2 
-    h-64 
-    sm:h-80 
-    md:h-[420px] 
-    lg:h-[520px] 
-    xl:h-[600px]
-    overflow-hidden 
-    rounded-3xl
-  "
-        >
-          <Image
-            src="/home/hotel-booking/resort.jpg"
-            alt="Resort"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-            className="object-cover"
-          />
+        {/* Numbered steps, staggered */}
+        <div className="flex flex-col justify-center gap-5">
+          {BOOKING_STEPS.map((step, index) => (
+            <Reveal
+              key={step.title}
+              delay={index * 120}
+              className={index === 1 ? "lg:ml-12" : index === 2 ? "lg:ml-24" : ""}
+            >
+              <div className="flex items-start gap-5 rounded-card border border-line bg-white p-6 shadow-soft">
+                <span className="font-display text-4xl font-bold leading-none text-gold">
+                  0{index + 1}
+                </span>
+                <div className="flex flex-1 flex-col gap-1">
+                  <h3 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
+                    {step.title}
+                  </h3>
+                  <p className="text-ink/65">{step.description}</p>
+                </div>
+                <span className="relative hidden size-12 shrink-0 sm:block">
+                  <Image src={step.icon} alt="" fill sizes="48px" className="object-contain" />
+                </span>
+              </div>
+            </Reveal>
+          ))}
+          <ArrowButton href="/hotels" className="mt-4 lg:ml-24">
+            Book Now
+          </ArrowButton>
         </div>
       </ContentLayoutWrapper>
     </section>
