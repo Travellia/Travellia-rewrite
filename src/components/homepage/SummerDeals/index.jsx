@@ -1,5 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
@@ -17,8 +18,8 @@ const index = () => {
     },
     {
       icon: "/icons/signpost.png",
-      number: "50+",
-      label: "GLOBAL DESTINATIONS",
+      number: "24/7",
+      label: "CUSTOMER SUPPORT",
     },
   ];
 
@@ -44,11 +45,13 @@ const index = () => {
             are on now
           </h3>
           <p className="text-lg md:text-2xl lg:text-3xl xl:text-4xl text-gray-500 uppercase">
-            Make your big summer gateaway happen: Members save 25% or more on
+            Make your big summer getaway happen: Members save 25% or more on
             thousands of hotels worldwide.
           </p>
         </div>
-        <Button className="btn-main">Load More</Button>
+        <Button asChild className="btn-main">
+          <Link href="/flights">Load More</Link>
+        </Button>
         <div className="z-50 py-8 px-8 sm:p-10 lg:p-16 mx-5 sm:mx-0  rounded-3xl shadow-2xl flex items-center justify-center gap-6 bg-gray-200 w-[90%] sm:w-full absolute -bottom-30 sm:-bottom-40">
           <div className="flex md:flex-row items-center gap-3 sm:gap-8 justify-between md:w-full">
             {STATS.map((stat, index) => (

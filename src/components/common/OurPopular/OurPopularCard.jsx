@@ -3,8 +3,10 @@ import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
-const OurPopularCard = ({ data }) => {
+// Pass `href` only when the card is not already wrapped in a link.
+const OurPopularCard = ({ data, href }) => {
   return (
     <Card
       className={`
@@ -73,9 +75,18 @@ const OurPopularCard = ({ data }) => {
                   </div>
                 ))}
               </div>
-              <Button className={"uppercase text-white rounded-full"}>
-                Book now
-              </Button>
+              {href ? (
+                <Button
+                  asChild
+                  className={"uppercase text-white rounded-full"}
+                >
+                  <Link href={href}>Book now</Link>
+                </Button>
+              ) : (
+                <Button className={"uppercase text-white rounded-full"}>
+                  Book now
+                </Button>
+              )}
             </div>
           )}
         </div>

@@ -7,7 +7,7 @@ const PackageCard = ({ data }) => {
       <div className="w-full h-full">
         <Image
           src={data.image}
-          alt="Image.png"
+          alt={data.description || "package"}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading="lazy"

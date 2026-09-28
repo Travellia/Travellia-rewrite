@@ -28,7 +28,7 @@ const Adventures = () => {
           <p className="mt-3 text-gray-600 lg:px-10 xl:px-20 tracking-widest">
             Embark on thrilling family adventures at our handpicked
             destinations. From theme parks and wildlife safaris to interactive
-            museums and outdoor activities. Create unforgetable memories with
+            museums and outdoor activities. Create unforgettable memories with
             your loved ones in exciting and safe environment.{" "}
           </p>
         </div>

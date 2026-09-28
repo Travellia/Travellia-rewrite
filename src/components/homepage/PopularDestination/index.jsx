@@ -7,10 +7,10 @@ const DESTINAION_CARDS_DATA = [
   {
     id: 1,
     src: "/home/popular-destinations/destination1.png",
-    country: "Barlin",
-    city: "France",
+    country: "Berlin",
+    city: "Germany",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
+      "Historic landmarks, world-class museums and a vibrant food scene.",
     rating: 3,
     isSaleCard: false,
     css: "col-start-1 col-end-11 row-start-1 row-end-2 md:col-start-1 md:col-end-7 md:row-start-1 md:row-end-2 xl:col-start-1 xl:col-end-5 xl:row-start-1 xl:row-end-2 ",
@@ -21,12 +21,12 @@ const DESTINAION_CARDS_DATA = [
     country: "Amsterdam",
     city: "Netherlands",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
+      "Picturesque canals, charming streets and world-class museums.",
     rating: 0,
     isSaleCard: true,
     price: 480,
     duration: "5 days 4 nights",
-    tags: ["largest city", "canals", "world-class museums"],
+    tags: ["canals", "culture", "museums"],
     css: "col-start-1 col-end-11 row-start-2 row-end-3  md:col-start-7 md:col-end-11 md:row-start-1 md:row-end-2 xl:col-start-5 xl:col-end-8 xl:row-start-1 xl:row-end-2",
   },
   {
@@ -35,7 +35,7 @@ const DESTINAION_CARDS_DATA = [
     country: "Moscow",
     city: "Russia",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
+      "Iconic Red Square, grand architecture and rich cultural heritage.",
     rating: 0,
     isSaleCard: false,
     css: "col-start-1 col-end-11 row-start-3 row-end-4 md:col-start-1 md:col-end-5 md:row-start-2 md:row-end-3 xl:col-start-8 xl:col-end-11 xl:row-start-1 xl:row-end-2",
@@ -46,7 +46,7 @@ const DESTINAION_CARDS_DATA = [
     country: "Amsterdam",
     city: "Netherlands",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
+      "Picturesque canals, charming streets and world-class museums.",
     rating: 0,
     isSaleCard: false,
     css: "col-start-1 col-end-11 row-start-4 row-end-5 md:col-start-5 md:col-end-11 md:row-start-2 md:row-end-3 xl:col-start-1 xl:col-end-4 xl:row-start-2 xl:row-end-3",
@@ -57,7 +57,7 @@ const DESTINAION_CARDS_DATA = [
     country: "Moscow",
     city: "Russia",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
+      "Iconic Red Square, grand architecture and rich cultural heritage.",
     rating: 0,
     isSaleCard: false,
     css: "col-start-1 col-end-11 row-start-5 row-end-6 md:col-start-1 md:col-end-7 md:row-start-3 md:row-end-4  xl:col-start-4 xl:col-end-7 xl:row-start-2 xl:row-end-3",
@@ -65,10 +65,10 @@ const DESTINAION_CARDS_DATA = [
   {
     id: 6,
     src: "/home/popular-destinations/destination6.png",
-    country: "Barlin",
-    city: "France",
+    country: "Berlin",
+    city: "Germany",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis accusantium quod sed non culpa",
+      "Historic landmarks, world-class museums and a vibrant food scene.",
     rating: 3,
     isSaleCard: false,
     css: "col-start-1 col-end-11 row-start-6 row-end-7 md:col-start-7 md:col-end-11 md:row-start-3 md:row-end-4 xl:col-start-7 xl:col-end-11 xl:row-start-2 xl:row-end-3",
@@ -94,6 +94,7 @@ const index = () => {
               <OurPopularCard
                 data={card}
                 largeText={i === 0 || i === DESTINAION_CARDS_DATA.length - 1}
+                href="#plan-your-trip"
               />
             </div>
           ))}

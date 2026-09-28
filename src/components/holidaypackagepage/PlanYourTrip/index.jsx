@@ -29,7 +29,7 @@ const Form_Fileds = {
 
 const Index = () => {
   return (
-    <section className="bg-secondary">
+    <section id="plan-your-trip" className="bg-secondary scroll-mt-24">
       <ContentLayoutWrapper className="flex flex-col gap-5 items-center py-20">
         {/* Heading */}
         <div className="flex flex-col text-center heading-big">

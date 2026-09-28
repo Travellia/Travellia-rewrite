@@ -4,6 +4,7 @@ import WhyChooseUs from "@/components/about/WhyChooseUs";
 import AmazingTeam from "@/components/about/AmazingTeam";
 import React from "react";
 import Video from "@/components/about/Video";
+import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const welcomeData = {
@@ -13,12 +14,13 @@ const page = () => {
     heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
   };
   return (
-    <div className="flex flex-col gap-10 bg-background mb-10 md:mb-15 lg:mb-20">
+    <div className="flex flex-col gap-10 bg-background">
       <Welcome data={welcomeData} />
       <AboutTravellia />
       <WhyChooseUs />
       <AmazingTeam />
       <Video />
+      <PlanYourTrip />
     </div>
   );
 };

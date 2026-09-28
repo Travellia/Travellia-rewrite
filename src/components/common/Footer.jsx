@@ -112,7 +112,6 @@ const FOOTER_LINKS = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Contact Us", href: "/contact" },
-      { name: "Services", href: "/services" },
       // { name: "Testimonial", href: "/testimonial" },
       { name: "Terms and Conditions", href: "/terms" },
     ],
@@ -130,7 +129,7 @@ const FOOTER_LINKS = [
     links: [
       { name: "Hajj/Umrah Packages", href: "/hajj-umrah" },
       { name: "Holiday Packages", href: "/holidayPackages" },
-      { name: "Custom Packages", href: "/packages/custom" },
+      { name: "Custom Packages", href: "/contact" },
     ],
   },
 ];
@@ -245,7 +244,7 @@ const Footer = () => {
             Subscribe
           </h1>
           <p className="text-2xl text-gray-500 text-center">
-            Subscribe to get the lastest blog news from us.
+            Subscribe to get the latest travel news and offers from us.
           </p>
           <NewsletterForm inputBg={isContactPage ? "bg-white" : "bg-secondary"} />
         </div>
@@ -288,7 +287,7 @@ const Footer = () => {
           </div>
           <div className="h-px bg-gray-300 w-full" />
           <p className="text-gray-500 self-end text-right">
-            Copyright &copy; 2025. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} Travellia Limited. All rights reserved.
           </p>
         </div>
       </ContentLayoutWrapper>

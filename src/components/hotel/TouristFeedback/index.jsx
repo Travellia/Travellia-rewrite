@@ -2,14 +2,18 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import Image from "next/image";
 import React from "react";
 import ProfileCard from "@/components/common/ProfileCard";
+import { TESTIMONIALS } from "@/lib/data/Testimonial";
+
+// Tossef Khan's Trustpilot review mentions the hotels we arranged.
+const HOTEL_REVIEW = TESTIMONIALS.find(
+  (review) => review.user.name === "Tossef Khan"
+);
 
 const TouristFeedback = () => {
   const TESTIMONIAL = {
-    comment:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,ultricies nec, pellentesque.",
-    src: "/common/CardPic1.png",
-    name: "Shannon J. Williams",
-    location: "New York, USA",
+    comment: `"${HOTEL_REVIEW.comment}"`,
+    name: HOTEL_REVIEW.user.name,
+    location: HOTEL_REVIEW.user.location,
   };
 
   return (
@@ -20,8 +24,9 @@ const TouristFeedback = () => {
             TOURIST FEEDBACK
           </h1>
           <p className="text-gray-600 text-base text-center w-[80%] m-auto">
-            Sorem ipsum dolor sit amet, consectetur adipisicing Suscipit votas
-            aperiam Sorem ipsum dolor consectur adipisicing elit.
+            From stays steps away from the Haram to relaxing family resorts,
+            our guests tell us how much a well-chosen hotel adds to their
+            journey. Here is what one of them had to say.
           </p>
         </div>
 

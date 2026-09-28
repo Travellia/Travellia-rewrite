@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const PackageCard = ({ data }) => {
@@ -18,7 +19,7 @@ const PackageCard = ({ data }) => {
     >
       <Image
         src={data.image}
-        alt="data.city"
+        alt={data.title}
         width={200}
         height={200}
         className="object-cover absolute top-0 left-0 w-full rounded-3xl sm:h7/10 xl:h-6/10 group-hover:h-full transition-all duration-500 "
@@ -47,17 +48,28 @@ const PackageCard = ({ data }) => {
 
           <div className="w-full border-1 bg-gray-300" />
 
-          <div className="flex items-baseline justify-between gap-5">
-            <div className="text-3xl text-primary font-bold">
-              &pound;{data.discountPrice}
+          {data.discountPrice ? (
+            <div className="flex items-baseline justify-between gap-5">
+              <div className="text-3xl text-primary font-bold">
+                &pound;{data.discountPrice}
+              </div>
+              {data.oldPrice && (
+                <div className="text-xl text-gray-500 font-semibold line-through">
+                  &pound;{data.oldPrice}
+                </div>
+              )}
             </div>
-            <div className="text-xl text-gray-500 font-semibold line-through">
-              &pound;{data.oldPrice}
+          ) : (
+            <div className="text-lg text-primary font-semibold">
+              Best rates on request
             </div>
-          </div>
+          )}
 
-          <Button className="rounded-full px-10 py-2 self-stretch mx-10">
-            Book Now
+          <Button
+            asChild
+            className="rounded-full px-10 py-2 self-stretch mx-10"
+          >
+            <Link href="#plan-your-trip">Book Now</Link>
           </Button>
           <div className="text-sm text-gray-500 px-5 text-center">
             {data.description}

@@ -1,6 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const index = () => {
@@ -39,20 +40,20 @@ const index = () => {
               TRAVELLIA
             </h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-              mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-              semper nisi. Aenean vulputate eleifend tellus. <br />
+              Travellia Limited is a UK travel agency based in Pudsey, Leeds,
+              dedicated to making every journey easy and stress-free. We
+              specialise in airline tickets, Umrah and Hajj packages, holiday
+              packages and family bookings, with fares from trusted airlines and
+              hotels handpicked for comfort and location. <br />
               <br />
-              Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
-              enim. Aliquam lorem ante, dapibus in, viverra quis.
+              We understand the needs of every kind of traveller, from families
+              and groups to pilgrims and first-time flyers, and we offer
+              services such as unaccompanied minor bookings to keep your loved
+              ones safe.
             </p>
-            <Button className="btn-main">Explore Now</Button>
+            <Button asChild className="btn-main">
+              <Link href="/holidayPackages">Explore Now</Link>
+            </Button>
           </div>
         </div>
         {/* below */}
@@ -63,14 +64,14 @@ const index = () => {
           </div>
           <div className="flex flex-col gap-10 w-full lg:w-1/2 ">
             <p>
-              Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed
-              fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed
-              consequat, leo eget bibendum sodales, augue velit cursus nunc,
-              quis gravida magna mi a libero. Fusce vulputate eleifend sapien.
-              Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id,
-              metus. Nullam accumsan lorem in dui.
+              Tell us where and when you want to travel, and our team will find
+              the best flights, hotels and packages for your budget. You get
+              clear prices with no hidden fees, flexible payment options and
+              friendly support before, during and after your trip.
             </p>
-            <Button className="btn-main">Book Now</Button>
+            <Button asChild className="btn-main">
+              <Link href="#plan-your-trip">Book Now</Link>
+            </Button>
           </div>
         </div>
       </ContentLayoutWrapper>

@@ -1,20 +1,21 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const index = () => {
   const services = [
     {
-      title: "WIDE VARITY OF DESTINATIONS",
+      title: "WIDE VARIETY OF DESTINATIONS",
       description:
-        "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+        "Flights, holidays and Umrah packages to destinations across Europe, Africa, Asia and the Middle East.",
       iconPath: "/about/WhyChooseUs/map.png",
     },
     {
-      title: "HIGHLY QUALIFIES SERVICE",
+      title: "HIGHLY QUALIFIED SERVICE",
       description:
-        "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+        "Experienced consultants who handle every booking with care, from quote to confirmation.",
 
       iconPath: "/about/WhyChooseUs/guarantee.png",
     },
@@ -26,7 +27,7 @@ const index = () => {
         </>
       ),
       description:
-        "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+        "Comfortable, well-located hotels chosen for quality and value, including stays near the Haram.",
 
       iconPath: "/about/WhyChooseUs/hotel.png",
     },
@@ -38,7 +39,7 @@ const index = () => {
         </>
       ),
       description:
-        "Explore top destinations with our knowledgeable guides, ensuring an enriching travel experience.",
+        "Round-the-clock support before, during and after your journey, whenever you need us.",
 
       iconPath: "/about/WhyChooseUs/24-hours.png",
     },
@@ -63,7 +64,7 @@ const index = () => {
             >
               <Image
                 src={service.iconPath}
-                alt={service.title}
+                alt=""
                 className="w-20 h-20 object-contain"
                 width={60}
                 height={60}
@@ -73,8 +74,12 @@ const index = () => {
                 {service.title}
               </h3>
               <p className="text-gray-600 text-center">{service.description}</p>
-              <Button variant="default" className="mt-4 rounded-full w-full">
-                Book Now
+              <Button
+                asChild
+                variant="default"
+                className="mt-4 rounded-full w-full"
+              >
+                <Link href="#plan-your-trip">Book Now</Link>
               </Button>
             </div>
           ))}

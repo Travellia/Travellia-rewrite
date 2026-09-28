@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import Navbar from "@/components/common/Navbar";
 import Banner from "@/components/common/Banner";
 import Footer from "@/components/common/Footer";
+import HashLinkScroll from "@/components/common/HashLinkScroll";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
@@ -22,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-[100vh] bg-background text-foreground`}
       >
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <HashLinkScroll />
         <SpeedInsights />
       </body>
     </html>

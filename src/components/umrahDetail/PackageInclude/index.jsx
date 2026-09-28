@@ -6,7 +6,7 @@ import React from "react";
 const index = () => {
   const PACKAGE_INCLUDE = [
     "Visa Included",
-    "Accomodation Included",
+    "Accommodation Included",
     "All Ground Transport Included",
     "All Packages Are Based On 3-4 People Sharing",
     "Direct Flight Can Be Arranged ON Special Request",

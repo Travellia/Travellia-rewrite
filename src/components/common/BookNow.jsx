@@ -3,9 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { MousePointer2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const BookNow = ({ data, reverse, data2, data3 = [] }) => {
+const BookNow = ({ data, reverse, data2, data3 = [], href = "#plan-your-trip" }) => {
   return (
     <section className="flex flex-col-reverse lg:grid lg:grid-cols-20 lg:min-h-[50vh] lg:max-h-[60vh] xl:min-h-[80vh] xl:gap-10">
       {/* ================= CONTENT SECTION ================= */}
@@ -68,7 +69,7 @@ const BookNow = ({ data, reverse, data2, data3 = [] }) => {
               </h1>
 
               <p className="text-lg lg:text-xl xl:text-2xl font-bold text-gray-200 max-w-[600px]">
-                Book Flights Now, Pay Later. Lock-in today's price
+                Book Flights Now, Pay Later. Lock in today&apos;s price{" "}
                 <br className="hidden md:block" />& pay in up to 26 weekly
                 payments.
               </p>
@@ -81,7 +82,9 @@ const BookNow = ({ data, reverse, data2, data3 = [] }) => {
                 Book your next trip
               </p>
 
-              <Button className="btn-main-reverse">Book Now</Button>
+              <Button asChild className="btn-main-reverse">
+                <Link href={href}>Book Now</Link>
+              </Button>
             </div>
           )}
           {/* ===== CONDITION END ===== */}

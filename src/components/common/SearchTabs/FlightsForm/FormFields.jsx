@@ -10,126 +10,158 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { format, parseISO } from "date-fns";
 import { cn } from "@/lib/utils";
-import { CITY_LIST } from "@/components/common/citiesCode";
-import { Plus, Minus } from "lucide-react";
+import { AIRPORTS, airportLabel } from "@/lib/data/airports";
+import { Plus, Minus, Armchair } from "lucide-react";
 
-const cityList = CITY_LIST;
+const FLIGHT_CATEGORIES = ["ECONOMY", "PREMIUM", "BUSINESS CLASS"];
 
-const PAGE_SIZE = 100;
+const MIN_QUERY_LENGTH = 3;
+const MAX_RESULTS = 50;
+
+const airportByCode = new Map(AIRPORTS.map((item) => [item.code, item]));
+
+// Exact IATA match first, then cities and airports that start with the query,
+// then anything that merely contains it.
+const searchAirports = (query) => {
+  const q = query.trim().toLowerCase();
+  if (q.length < MIN_QUERY_LENGTH) return [];
+
+  const scored = [];
+  for (const item of AIRPORTS) {
+    const code = item.code.toLowerCase();
+    const city = item.city.toLowerCase();
+    const airport = item.airport.toLowerCase();
+
+    let score;
+    if (code === q) score = 0;
+    else if (city.startsWith(q)) score = 1;
+    else if (airport.startsWith(q)) score = 2;
+    else if (city.includes(q) || airport.includes(q)) score = 3;
+    else continue;
+
+    scored.push({ item, score });
+  }
+
+  return scored
+    .sort((a, b) => a.score - b.score)
+    .slice(0, MAX_RESULTS)
+    .map(({ item }) => item);
+};
 
 const CityCombobox = ({ name, placeholder }) => {
   const { setFieldValue, setFieldTouched } = useFormikContext();
-  const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [query, setQuery] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return cityList.filter((item) => item.code);
-    return cityList.filter(
-      (item) =>
-        item.code &&
-        (item.city.toLowerCase().includes(q) ||
-          item.code.toLowerCase().includes(q)),
-    );
-  }, [query]);
-
-  const visible = filtered.slice(0, visibleCount);
-
-  const handleListScroll = (e) => {
-    const el = e.currentTarget;
-    if (
-      el.scrollTop + el.clientHeight >= el.scrollHeight - 40 &&
-      visibleCount < filtered.length
-    ) {
-      setVisibleCount((count) => Math.min(count + PAGE_SIZE, filtered.length));
-    }
-  };
+  const results = useMemo(() => searchAirports(query ?? ""), [query]);
+  const isTyping = query !== null;
+  const showList = isTyping && query.trim().length >= MIN_QUERY_LENGTH;
+  const showHint = isTyping && !showList && query.trim().length > 0;
 
   return (
     <Field name={name}>
       {({ field }) => {
         const selected = field.value
-          ? cityList.find((item) => item.code === field.value)
+          ? airportByCode.get(field.value)
           : undefined;
-        const label = selected ? `${selected.city} (${selected.code})` : "";
+        const label = selected ? airportLabel(selected) : field.value || "";
+
+        const choose = (item) => {
+          setFieldValue(name, item.code);
+          setFieldTouched(name, true);
+          setQuery(null);
+        };
+
+        const handleKeyDown = (e) => {
+          if (!showList || results.length === 0) return;
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setActiveIndex((i) => Math.min(i + 1, results.length - 1));
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            setActiveIndex((i) => Math.max(i - 1, 0));
+          } else if (e.key === "Enter") {
+            e.preventDefault();
+            choose(results[activeIndex]);
+          } else if (e.key === "Escape") {
+            setQuery(null);
+          }
+        };
 
         return (
-          <Popover
-            open={open}
-            onOpenChange={(next) => {
-              setOpen(next);
-              if (!next) {
-                setQuery("");
-                setVisibleCount(PAGE_SIZE);
+          <div className="relative">
+            <Input
+              type="text"
+              autoComplete="off"
+              role="combobox"
+              aria-expanded={showList}
+              aria-autocomplete="list"
+              value={isTyping ? query : label}
+              placeholder={placeholder}
+              onFocus={(e) => e.target.select()}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setActiveIndex(0);
+              }}
+              onKeyDown={handleKeyDown}
+              onBlur={() => {
+                setQuery(null);
                 setFieldTouched(name, true);
-              }
-            }}
-          >
-            <PopoverTrigger asChild>
-              <Button
-                type="button"
-                variant="outline"
-                className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
+              }}
+              className="h-11 w-full bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 shadow-none focus-visible:ring-1 focus-visible:ring-primary truncate"
+            />
+
+            {showHint && (
+              <p className="absolute left-0 right-0 top-full mt-2 z-50 rounded-xl border bg-white px-3 py-2 text-sm text-muted-foreground shadow-md">
+                Type at least {MIN_QUERY_LENGTH} characters to search
+              </p>
+            )}
+
+            {showList && (
+              <ul
+                role="listbox"
+                className="absolute left-0 right-0 top-full mt-2 z-50 max-h-80 overflow-y-auto overscroll-contain rounded-xl border bg-white py-1 shadow-md"
               >
-                <span
-                  className={cn("truncate", !label && "text-muted-foreground")}
-                >
-                  {label || placeholder}
-                </span>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent
-              side="bottom"
-              align="center"
-              sideOffset={10}
-              alignOffset={0}
-              className="w-72 p-0"
-            >
-              <div className="p-2 border-b sticky top-0 bg-white z-10">
-                <Input
-                  autoFocus
-                  value={query}
-                  onChange={(e) => {
-                    setQuery(e.target.value);
-                    setVisibleCount(PAGE_SIZE);
-                  }}
-                  placeholder="Search city or code..."
-                  className="h-9"
-                />
-              </div>
-              <div
-                className="max-h-80 overflow-y-auto overscroll-contain py-1"
-                onScroll={handleListScroll}
-              >
-                {filtered.length === 0 && (
-                  <p className="px-3 py-2 text-sm text-muted-foreground">
-                    No results found.
-                  </p>
+                {results.length === 0 && (
+                  <li className="px-3 py-2 text-sm text-muted-foreground">
+                    No airports found.
+                  </li>
                 )}
-                {visible.map((item) => (
-                  <button
+                {results.map((item, i) => (
+                  <li
                     key={item.code}
-                    type="button"
-                    onClick={() => {
-                      setFieldValue(name, item.code);
-                      setOpen(false);
-                      setQuery("");
-                      setFieldTouched(name, true);
+                    role="option"
+                    aria-selected={i === activeIndex}
+                    // mousedown fires before the input's blur closes the list
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      choose(item);
                     }}
+                    onMouseEnter={() => setActiveIndex(i)}
                     className={cn(
-                      "w-full text-left px-3 py-2 text-sm hover:bg-gray-100 transition",
-                      field.value === item.code && "bg-gray-100 font-medium",
+                      "cursor-pointer px-3 py-2 text-sm transition",
+                      i === activeIndex && "bg-gray-100",
+                      field.value === item.code && "font-medium",
                     )}
                   >
-                    {item.city} ({item.code})
-                  </button>
+                    <span className="block">{airportLabel(item)}</span>
+                    <span className="block text-xs text-muted-foreground">
+                      {item.country}
+                    </span>
+                  </li>
                 ))}
-              </div>
-            </PopoverContent>
-          </Popover>
+              </ul>
+            )}
+          </div>
         );
       }}
     </Field>
@@ -500,6 +532,42 @@ const FormFields = ({ flightType }) => {
                         </Popover>
                       </div>
                       <FieldError name={`routes.${index}.return`} />
+                    </div>
+                  )}
+
+                  {/* Booking Class – one per search, shown on the first route */}
+                  {index === 0 && (
+                    <div className="w-full">
+                      <div className="relative">
+                        <Armchair
+                          aria-hidden="true"
+                          className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none z-10"
+                        />
+                        <Select
+                          value={values.category}
+                          onValueChange={(value) =>
+                            setFieldValue("category", value)
+                          }
+                          onOpenChange={(open) => {
+                            if (!open) setFieldTouched("category", true);
+                          }}
+                        >
+                          <SelectTrigger
+                            aria-label="Booking class"
+                            className="!h-auto w-full bg-gray-100 rounded-xl pl-10 pr-4 py-[1.4rem] border-0 shadow-none focus-visible:ring-1 focus-visible:ring-primary"
+                          >
+                            <SelectValue placeholder="Booking Class" />
+                          </SelectTrigger>
+                          <SelectContent position="popper" side="bottom">
+                            {FLIGHT_CATEGORIES.map((cls) => (
+                              <SelectItem key={cls} value={cls}>
+                                {cls}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <FieldError name="category" />
                     </div>
                   )}
                 </div>

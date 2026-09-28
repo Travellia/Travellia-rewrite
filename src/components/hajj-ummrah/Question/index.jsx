@@ -6,15 +6,15 @@ import QuestionCard from "./QuestionCard";
 const QUESTION_DATA = [
   {
     id: 1,
-    question: "Experience Hassle-Free Travel with Travellia  Travel.",
+    question: "Can I book extra nights before or after my Umrah package?",
     answer:
-      "With over 15 years of expertise in the travel industry, AlHaram Travel makes it easy for you to book pre- and post-accommodation on an individual basis, subject to availability. Browse through our wide selection of handpicked hotels, and consult with our hotel booking team to find out whether your preferred hotel offers single-bed room options. If it does, we’ll happily include it in your customized Umrah package.",
+      "Yes. Travellia can arrange pre- and post-package accommodation on an individual basis, subject to availability. Browse our handpicked hotels in Makkah and Madinah and our team will add the extra nights to your package.",
   },
   {
     id: 2,
-    question: "Experience Hassle-Free Travel with Travellia  Travel.",
+    question: "Can I choose my hotel and room type?",
     answer:
-      "With over 15 years of expertise in the travel industry, AlHaram Travel makes it easy for you to book pre- and post-accommodation on an individual basis, subject to availability. Browse through our wide selection of handpicked hotels, and consult with our hotel booking team to find out whether your preferred hotel offers single-bed room options. If it does, we’ll happily include it in your customized Umrah package.",
+      "Of course. Tell us your preferred hotel and our booking team will check availability, including single, double, triple and quad rooms, and happily include it in your customised Umrah package.",
   },
 ];
 
@@ -23,11 +23,11 @@ const index = () => {
     <section className="py-10">
       <ContentLayoutWrapper className="flex flex-col gap-10">
         <div className="flex flex-col gap-2">
-          <h1 className="heading">Do You Have Any Question?</h1>
+          <h1 className="heading">Do You Have Any Questions?</h1>
           <p className="para ">
             {" "}
-            Check out below to Find the Answers of your Questions that remove
-            your doubts regarding our services as well as your holy journey!
+            Find answers to common questions about our services and your holy
+            journey below.
           </p>
         </div>
         <div className=" flex flex-col  md:flex-row gap-5">

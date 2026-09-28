@@ -2,19 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CalendarDays, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaRegUser } from "react-icons/fa";
 
-const BookPackageCard = ({ data, isOdd }) => {
+const BookPackageCard = ({ data, isOdd, href }) => {
   return (
     <Card
-      className={
-        "group relative h-[clamp(380px,32vw,700px)] w-[clamp(280px,32vw,350px)] !shadow-none !border-none  bg-transparent !p-0 overflow-hidden rounded-3xl"
-      }
+      className={`group relative h-[clamp(380px,32vw,700px)] w-full min-w-[260px] max-w-[350px] !shadow-none !border-none  bg-transparent !p-0 overflow-hidden rounded-3xl`}
     >
       <Image
         src={data.image}
-        alt="data.city"
+        alt={data.city || data.package || "package"}
         width={200}
         height={200}
         className="object-cover h-6/10 absolute top-0 left-0 w-full rounded-3xl ${
@@ -37,11 +36,11 @@ const BookPackageCard = ({ data, isOdd }) => {
                   <p>Going</p>
                 </div>
               </>
-            ) : (
+            ) : data.stars ? (
               <div className="flex items-center justify-between gap-3 text-gray-500">
                 <p>{"⭐".repeat(data.stars)}</p>
               </div>
-            )}
+            ) : null}
           </div>
 
           <div className="flex flex-col items-center gap-1">
@@ -64,21 +63,37 @@ const BookPackageCard = ({ data, isOdd }) => {
           <div className="h-px w-full bg-gray-300" />
 
           <div className="flex items-baseline justify-between gap-5">
+            {data.priceLabel && (
+              <div className="text-sm text-gray-500 font-semibold">
+                {data.priceLabel}
+              </div>
+            )}
             <div className="text-3xl text-primary font-bold">
               &pound;{data.discountPrice}
             </div>
-            <div className="text-xl text-gray-500 font-semibold line-through">
-              &pound;{data.oldPrice}
-            </div>
+            {data.oldPrice && (
+              <div className="text-xl text-gray-500 font-semibold line-through">
+                &pound;{data.oldPrice}
+              </div>
+            )}
           </div>
 
           <div className="text-sm text-gray-500 px-10 text-center">
             {data.description}
           </div>
 
-          <Button className="rounded-full px-10 py-2 self-stretch mx-10">
-            Book Now
-          </Button>
+          {href ? (
+            <Button
+              asChild
+              className="rounded-full px-10 py-2 self-stretch mx-10"
+            >
+              <Link href={href}>Book Now</Link>
+            </Button>
+          ) : (
+            <Button className="rounded-full px-10 py-2 self-stretch mx-10">
+              Book Now
+            </Button>
+          )}
         </div>
       </div>
     </Card>

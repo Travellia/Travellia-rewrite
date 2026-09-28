@@ -1,6 +1,5 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PackageCard from "@/components/common/PackageCard";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
@@ -10,19 +9,19 @@ const index = () => {
     {
       id: 1,
       image: "/holidayPackage/FreshlyAdded/Image-1.png",
-      description: "Holiday Packages",
+      description: "Paris City Break",
       startingPrice: "Starting From £1349",
     },
     {
       id: 2,
       image: "/holidayPackage/FreshlyAdded/Image-2.png",
-      description: "Christmas Packages",
+      description: "Istanbul Holidays",
       startingPrice: "Starting From £1349",
     },
     {
       id: 3,
       image: "/holidayPackage/FreshlyAdded/Image-3.png",
-      description: "Easter Packages",
+      description: "Dubai Holidays",
       startingPrice: "Starting From £1349",
     },
     {
@@ -34,13 +33,13 @@ const index = () => {
     {
       id: 5,
       image: "/holidayPackage/FreshlyAdded/Image-5.png",
-      description: "Dubai With Turkey Stay",
+      description: "Doha, Qatar Stay",
       startingPrice: "Starting From £1349",
     },
     {
       id: 6,
       image: "/holidayPackage/FreshlyAdded/Image-6.png",
-      description: "Holiday Packages",
+      description: "Morocco Holidays",
       startingPrice: "Starting From £1349",
     },
   ];
@@ -68,11 +67,10 @@ const index = () => {
         <div>
           {" "}
           <p className="text-gray-600 text-base text-center w-[90%] sm:w-[80%] m-auto">
-            , sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-            vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
-            tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.
-            Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-            Duis leo. Sed fringilla
+            Handpicked holidays to some of the world&apos;s most loved
+            destinations. Each package includes return flights, quality hotels
+            and transfers, with flexible dates and family-friendly options, so
+            you can enjoy a stress-free getaway from the moment you land.
           </p>
         </div>
 
@@ -90,7 +88,6 @@ const index = () => {
               );
             })}
           </div>
-          <Button className="btn-main ">Load More</Button>
         </div>
       </ContentLayoutWrapper>
     </section>

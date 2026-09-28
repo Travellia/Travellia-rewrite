@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
+import { TRUSTPILOT_URL } from "@/lib/data/Testimonial";
 import ContentLayoutWrapper from "../ContentLayoutWrapper";
 
 const index = ({ data }) => {
@@ -28,11 +29,19 @@ const index = ({ data }) => {
             <p className="text-gray-800 text-lg md:text-2xl lg:text-3xl font-normal text-center md:text-left lg:text-center uppercase ">
               What our travellers are saying
             </p>
+            <a
+              href={TRUSTPILOT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-primary underline underline-offset-4"
+            >
+              Read all our reviews on Trustpilot
+            </a>
           </div>
         </ContentLayoutWrapper>
 
         {/* Cards */}
-        <div className="p-2 xl:p-10 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-5 relative xl:ml-auto xl:w-[60%] ">
+        <div className="p-2 xl:p-10 grid grid-cols-1 lg:grid-cols-2 gap-5 relative xl:ml-auto xl:w-[60%] ">
           {data.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}

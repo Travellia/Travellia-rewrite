@@ -1,6 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import PopularDestination from "@/components/homepage/PopularDestination";
 
@@ -60,8 +61,12 @@ const FamilyAdventures = () => {
               environments.
             </p>
             <div className="flex justify-center md:justify-start mt-10">
-              <Button className="px-12 py-6 rounded-full text-xl" size={"lg"}>
-                View Packages
+              <Button
+                asChild
+                className="px-12 py-6 rounded-full text-xl"
+                size={"lg"}
+              >
+                <Link href="/flights">View Packages</Link>
               </Button>
             </div>
           </div>

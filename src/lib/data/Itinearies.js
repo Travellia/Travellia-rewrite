@@ -3,51 +3,29 @@ const Itinearies = [
     id: 1,
     heroImage: "/flights/common/card1.png",
     discover: "Discover",
-    city: "Barlin",
-    country: "France",
+    city: "Berlin",
+    country: "Germany",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Berlin is a city where history and creativity meet. Walk through the Brandenburg Gate, see what remains of the Berlin Wall at the East Side Gallery and explore the five world-class museums on Museum Island."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Each neighbourhood has its own character, from the elegant boulevards of Mitte to the cafés and street art of Kreuzberg and Friedrichshain."}
+        <br />
+        <br />
+        {"With direct flights from across the UK, it is an easy choice for a long weekend or a relaxed week-long city break."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Spend your afternoons in the Tiergarten, one of Europe's largest city parks, or take a boat trip along the River Spree to see the city from the water."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Evenings are made for Berlin's famous food scene, from traditional German dishes to international street food at Markthalle Neun."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Our team can arrange flights, central hotels and airport transfers so you can simply enjoy the city."}
       </>
     ),
     included_excluded: [
@@ -62,19 +40,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Berlin",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax and take an evening stroll around the city centre.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Landmarks Tour",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Visit the Brandenburg Gate, the Reichstag, Checkpoint Charlie and the East Side Gallery with a guided experience.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Enjoy personal time for shopping or Museum Island before your transfer to the airport.",
       },
     ],
   },
@@ -87,47 +65,25 @@ const Itinearies = [
     country: "Netherlands",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Amsterdam is one of Europe's most charming capitals, built around a UNESCO-listed ring of canals lined with tall, narrow merchant houses."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Home to the Rijksmuseum, the Van Gogh Museum and the Anne Frank House, the city packs remarkable culture into a compact, walkable centre."}
+        <br />
+        <br />
+        {"Short flights from the UK make it perfect for a weekend away or a longer Dutch holiday."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Explore the city the local way by bike, or take a relaxing canal cruise to admire its bridges and historic architecture."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"In spring, day trips to the Keukenhof gardens and the tulip fields are a must, while year-round the Jordaan district offers cosy cafés and boutique shopping."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can put together flights, hotels and excursions to suit your budget and travel dates."}
       </>
     ),
     included_excluded: [
@@ -142,19 +98,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Amsterdam",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Enjoy an evening walk along the canals.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Museums & Canal Cruise",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Visit the Rijksmuseum and the Van Gogh Museum, then see the city from the water on a guided canal cruise.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Explore the Jordaan and its markets before your transfer to the airport.",
       },
     ],
   },
@@ -167,47 +123,25 @@ const Itinearies = [
     country: "Russia",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Moscow is a city of grand scale, where the colourful domes of St Basil's Cathedral rise over Red Square and the historic Kremlin walls."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Its world-famous theatres, galleries and ornate metro stations make every day of sightseeing memorable."}
+        <br />
+        <br />
+        {"Our team will help you find the best flight connections and a hotel close to the sights."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Stroll along the Arbat, one of the city's oldest streets, or relax in Gorky Park beside the Moskva River."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Don't miss the Tretyakov Gallery and an evening performance at the Bolshoi Theatre."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels and guided tours to make your visit smooth and stress-free."}
       </>
     ),
     included_excluded: [
@@ -222,19 +156,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Moscow",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax after your journey.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Red Square & the Kremlin",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "A guided tour of Red Square, St Basil's Cathedral and the Kremlin, followed by a ride on the historic metro.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Enjoy personal time for shopping or Gorky Park before your transfer to the airport.",
       },
     ],
   },
@@ -243,51 +177,29 @@ const Itinearies = [
     id: 4,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "South-Africa",
-    country: "",
+    city: "Cape Town",
+    country: "South Africa",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Cape Town sits beneath the iconic Table Mountain, with golden beaches, historic neighbourhoods and some of the most beautiful coastal drives in the world."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Take the cable car to the summit for breathtaking views, visit the penguins at Boulders Beach and explore the colourful streets of Bo-Kaap."}
+        <br />
+        <br />
+        {"It is also the perfect starting point for wine tours and unforgettable safari adventures."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Drive the scenic Chapman's Peak route to the Cape of Good Hope, or spend a day in the Stellenbosch and Franschhoek winelands."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Wildlife lovers can add a safari to see the Big Five in a nearby game reserve."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels, tours and transfers so you can make the most of South Africa."}
       </>
     ),
     included_excluded: [
@@ -302,19 +214,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Cape Town",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Enjoy sunset at the V&A Waterfront.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Table Mountain & the Cape",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Ride the cable car up Table Mountain, then drive the coast to Boulders Beach and the Cape of Good Hope.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Explore Bo-Kaap and the local markets before your transfer to the airport.",
       },
     ],
   },
@@ -323,51 +235,29 @@ const Itinearies = [
     id: 5,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "Eygypt",
-    country: "",
+    city: "Cairo",
+    country: "Egypt",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Egypt is home to some of the world's greatest wonders, from the Pyramids of Giza and the Great Sphinx to the treasures of the Grand Egyptian Museum."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Cairo's historic Islamic quarter, with its mosques, markets and the famous Khan el-Khalili bazaar, is a highlight of any visit."}
+        <br />
+        <br />
+        {"Combine your stay with a Nile cruise or a relaxing beach break on the Red Sea."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Sail the Nile between Luxor and Aswan to see the Valley of the Kings, Karnak Temple and the temples of Abu Simbel."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"For sun and sea, Hurghada and Sharm El Sheikh offer excellent resorts, diving and snorkelling."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels, guided tours and cruises across Egypt."}
       </>
     ),
     included_excluded: [
@@ -382,19 +272,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Cairo",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax after your journey.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Pyramids & Museum",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "A guided visit to the Pyramids of Giza and the Sphinx, followed by the Grand Egyptian Museum.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Explore Khan el-Khalili bazaar and historic Cairo before your transfer to the airport.",
       },
     ],
   },
@@ -403,51 +293,29 @@ const Itinearies = [
     id: 6,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "Asia",
-    country: "",
+    city: "Bangkok",
+    country: "Thailand",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Bangkok is a gateway to Asia, where golden temples and royal palaces sit alongside busy markets, rooftop bars and some of the world's best street food."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Visit the Grand Palace, Wat Pho and Wat Arun, then take a long-tail boat along the Chao Phraya River."}
+        <br />
+        <br />
+        {"From here, Thailand's beautiful islands and beaches are just a short flight away."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Extend your trip with a beach stay in Phuket, Krabi or Koh Samui, or head north to the temples and night markets of Chiang Mai."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Thailand is ideal for families, couples and groups alike, with great value hotels and warm hospitality."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels, island hops and transfers to create your perfect Asian holiday."}
       </>
     ),
     included_excluded: [
@@ -462,19 +330,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Bangkok",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax and enjoy the evening food markets.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Temples & River Tour",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Visit the Grand Palace, Wat Pho and Wat Arun, then cruise the Chao Phraya River.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Enjoy personal time for shopping before your transfer to the airport.",
       },
     ],
   },
@@ -483,51 +351,29 @@ const Itinearies = [
     id: 7,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "Barlin",
-    country: "France",
+    city: "Berlin",
+    country: "Germany",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Berlin is a city where history and creativity meet. Walk through the Brandenburg Gate, see what remains of the Berlin Wall at the East Side Gallery and explore the five world-class museums on Museum Island."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Each neighbourhood has its own character, from the elegant boulevards of Mitte to the cafés and street art of Kreuzberg and Friedrichshain."}
+        <br />
+        <br />
+        {"With direct flights from across the UK, it is an easy choice for a long weekend or a relaxed week-long city break."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Spend your afternoons in the Tiergarten, one of Europe's largest city parks, or take a boat trip along the River Spree to see the city from the water."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Evenings are made for Berlin's famous food scene, from traditional German dishes to international street food at Markthalle Neun."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Our team can arrange flights, central hotels and airport transfers so you can simply enjoy the city."}
       </>
     ),
     included_excluded: [
@@ -542,19 +388,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Berlin",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax and take an evening stroll around the city centre.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Landmarks Tour",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Visit the Brandenburg Gate, the Reichstag, Checkpoint Charlie and the East Side Gallery with a guided experience.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Enjoy personal time for shopping or Museum Island before your transfer to the airport.",
       },
     ],
   },
@@ -567,47 +413,25 @@ const Itinearies = [
     country: "Netherlands",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Amsterdam is one of Europe's most charming capitals, built around a UNESCO-listed ring of canals lined with tall, narrow merchant houses."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Home to the Rijksmuseum, the Van Gogh Museum and the Anne Frank House, the city packs remarkable culture into a compact, walkable centre."}
+        <br />
+        <br />
+        {"Short flights from the UK make it perfect for a weekend away or a longer Dutch holiday."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Explore the city the local way by bike, or take a relaxing canal cruise to admire its bridges and historic architecture."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"In spring, day trips to the Keukenhof gardens and the tulip fields are a must, while year-round the Jordaan district offers cosy cafés and boutique shopping."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can put together flights, hotels and excursions to suit your budget and travel dates."}
       </>
     ),
     included_excluded: [
@@ -622,19 +446,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Amsterdam",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Enjoy an evening walk along the canals.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Museums & Canal Cruise",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Visit the Rijksmuseum and the Van Gogh Museum, then see the city from the water on a guided canal cruise.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Explore the Jordaan and its markets before your transfer to the airport.",
       },
     ],
   },
@@ -647,47 +471,25 @@ const Itinearies = [
     country: "Russia",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Moscow is a city of grand scale, where the colourful domes of St Basil's Cathedral rise over Red Square and the historic Kremlin walls."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Its world-famous theatres, galleries and ornate metro stations make every day of sightseeing memorable."}
+        <br />
+        <br />
+        {"Our team will help you find the best flight connections and a hotel close to the sights."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Stroll along the Arbat, one of the city's oldest streets, or relax in Gorky Park beside the Moskva River."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Don't miss the Tretyakov Gallery and an evening performance at the Bolshoi Theatre."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels and guided tours to make your visit smooth and stress-free."}
       </>
     ),
     included_excluded: [
@@ -702,19 +504,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Moscow",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax after your journey.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Red Square & the Kremlin",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "A guided tour of Red Square, St Basil's Cathedral and the Kremlin, followed by a ride on the historic metro.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Enjoy personal time for shopping or Gorky Park before your transfer to the airport.",
       },
     ],
   },
@@ -723,51 +525,29 @@ const Itinearies = [
     id: 10,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "South-Africa",
-    country: "",
+    city: "Cape Town",
+    country: "South Africa",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Cape Town sits beneath the iconic Table Mountain, with golden beaches, historic neighbourhoods and some of the most beautiful coastal drives in the world."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Take the cable car to the summit for breathtaking views, visit the penguins at Boulders Beach and explore the colourful streets of Bo-Kaap."}
+        <br />
+        <br />
+        {"It is also the perfect starting point for wine tours and unforgettable safari adventures."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Drive the scenic Chapman's Peak route to the Cape of Good Hope, or spend a day in the Stellenbosch and Franschhoek winelands."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Wildlife lovers can add a safari to see the Big Five in a nearby game reserve."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels, tours and transfers so you can make the most of South Africa."}
       </>
     ),
     included_excluded: [
@@ -782,19 +562,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Cape Town",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Enjoy sunset at the V&A Waterfront.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Table Mountain & the Cape",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Ride the cable car up Table Mountain, then drive the coast to Boulders Beach and the Cape of Good Hope.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Explore Bo-Kaap and the local markets before your transfer to the airport.",
       },
     ],
   },
@@ -803,51 +583,29 @@ const Itinearies = [
     id: 11,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "Eygypt",
-    country: "",
+    city: "Cairo",
+    country: "Egypt",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Egypt is home to some of the world's greatest wonders, from the Pyramids of Giza and the Great Sphinx to the treasures of the Grand Egyptian Museum."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Cairo's historic Islamic quarter, with its mosques, markets and the famous Khan el-Khalili bazaar, is a highlight of any visit."}
+        <br />
+        <br />
+        {"Combine your stay with a Nile cruise or a relaxing beach break on the Red Sea."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Sail the Nile between Luxor and Aswan to see the Valley of the Kings, Karnak Temple and the temples of Abu Simbel."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"For sun and sea, Hurghada and Sharm El Sheikh offer excellent resorts, diving and snorkelling."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels, guided tours and cruises across Egypt."}
       </>
     ),
     included_excluded: [
@@ -862,19 +620,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Cairo",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax after your journey.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Pyramids & Museum",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "A guided visit to the Pyramids of Giza and the Sphinx, followed by the Grand Egyptian Museum.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Explore Khan el-Khalili bazaar and historic Cairo before your transfer to the airport.",
       },
     ],
   },
@@ -883,51 +641,29 @@ const Itinearies = [
     id: 12,
     heroImage: "/flights/common/card1.1.png",
     discover: "Discover",
-    city: "Asia",
-    country: "",
+    city: "Bangkok",
+    country: "Thailand",
     overview1: (
       <>
-        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-        imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
-        cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
-        accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
-        luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
-        porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
-        orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
-        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.", <br />
-        <br />
-        "lum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Bangkok is a gateway to Asia, where golden temples and royal palaces sit alongside busy markets, rooftop bars and some of the world's best street food."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Visit the Grand Palace, Wat Pho and Wat Arun, then take a long-tail boat along the Chao Phraya River."}
+        <br />
+        <br />
+        {"From here, Thailand's beautiful islands and beaches are just a short flight away."}
       </>
     ),
     gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
     overview2: (
       <>
-        "Bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede
-        sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean
-        posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"Extend your trip with a beach stay in Phuket, Krabi or Koh Samui, or head north to the temples and night markets of Chiang Mai."}
         <br />
         <br />
-        "um elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-        nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
-        posuere. Praesent turpis.",
+        {"Thailand is ideal for families, couples and groups alike, with great value hotels and warm hospitality."}
         <br />
         <br />
-        "Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
-        sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec,
-        volutpat a, suscipit non, turpis. Nullam sagittis.",
+        {"We can arrange flights, hotels, island hops and transfers to create your perfect Asian holiday."}
       </>
     ),
     included_excluded: [
@@ -942,19 +678,19 @@ const Itinearies = [
     ],
     days: [
       {
-        title: "DAY 1: Arrived at Airport",
+        title: "DAY 1: Arrival in Bangkok",
         description:
-          "Meet and greet at the airport followed by hotel transfer. Relax and explore nearby attractions.",
+          "Meet and greet at the airport followed by your hotel transfer. Relax and enjoy the evening food markets.",
       },
       {
-        title: "DAY 2: City Landmarks Tour",
+        title: "DAY 2: Temples & River Tour",
         description:
-          "Visit iconic spots including museums and scenic canal districts with a guided experience.",
+          "Visit the Grand Palace, Wat Pho and Wat Arun, then cruise the Chao Phraya River.",
       },
       {
         title: "DAY 3: Free Day & Departure",
         description:
-          "Enjoy personal time for shopping or photography before departing for the airport.",
+          "Enjoy personal time for shopping before your transfer to the airport.",
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BiggestOffer = () => {
@@ -21,8 +22,8 @@ const BiggestOffer = () => {
           BIGGEST <br /> OFFER
         </h2>
 
-        <Button className="rounded-full px-6 text-primary bg-white">
-          BOOK NOW
+        <Button asChild className="rounded-full px-6 text-primary bg-white">
+          <Link href="#plan-your-trip">BOOK NOW</Link>
         </Button>
       </div>
     </section>

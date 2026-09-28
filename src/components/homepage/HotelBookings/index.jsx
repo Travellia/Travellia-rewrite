@@ -1,6 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BOOKING_STEPS = [
@@ -92,7 +93,9 @@ const index = () => {
 
             {/* BUTTON */}
             <div className="sm:col-span-2 flex justify-center sm:justify-start">
-              <Button className="btn-main">Book Now</Button>
+              <Button asChild className="btn-main">
+                <Link href="/hotels">Book Now</Link>
+              </Button>
             </div>
           </div>
         </div>
