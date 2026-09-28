@@ -9,7 +9,7 @@ const InitialsAvatar = ({ name = "", className = "w-12 h-12" }) => {
   return (
     <div
       aria-hidden="true"
-      className={`${className} rounded-full bg-primary text-white font-semibold flex items-center justify-center shrink-0`}
+      className={`${className} rounded-full bg-ink text-gold font-semibold flex items-center justify-center shrink-0`}
     >
       {initials}
     </div>

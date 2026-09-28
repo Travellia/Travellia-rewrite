@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Eyebrow } from "@/components/ui/SectionHeading";
 import UmrahContactForm from "./UmrahContactForm";
 
 const services = [
@@ -15,73 +16,52 @@ const services = [
 
 const UmrahForm = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full items-center lg:items-start justify-center gap-10 px-4 lg:px-20 py-10">
+    <div className="grid w-full gap-8 lg:grid-cols-2 lg:gap-12">
       {/* Package Summary */}
-      <div className="flex-1 flex flex-col items-center text-center gap-10">
-        {/* Title */}
-        <div>
-          <h1 className="text-3xl text-primary font-bold">PACKAGES</h1>
-          <h1 className="text-3xl font-normal">SUMMARY</h1>
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <Eyebrow>Every package includes</Eyebrow>
+          <h2 className="font-display text-3xl font-bold uppercase leading-none tracking-tight text-ink md:text-4xl">
+            Your Umrah,
+            <br />
+            <em className="font-serif font-normal normal-case tracking-normal text-gold">
+              fully arranged
+            </em>
+          </h2>
         </div>
 
-        {/* Services */}
-        <div className="flex flex-col gap-8 w-full">
-          {/* First Row (3 items) */}
-          <div className="flex items-center justify-center gap-8">
-            {services.slice(0, 3).map((service, index) => (
-              <React.Fragment key={index}>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-14 h-14 relative">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="56px"
-                      className="object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="font-bold text-sm">{service.title}</p>
-                </div>
-                {index !== 2 && <div className="w-px h-14 bg-gray-300"></div>}
-              </React.Fragment>
-            ))}
-          </div>
-
-          {/* Second Row (2 items) */}
-          <div className="flex items-center justify-center gap-8">
-            {services.slice(3).map((service, index) => (
-              <React.Fragment key={index}>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-14 h-14 relative">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="56px"
-                      className="object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="font-bold text-sm">{service.title}</p>
-                </div>
-                {index !== services.slice(3).length - 1 && (
-                  <div className="w-px h-14 bg-gray-300"></div>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {services.map((service) => (
+            <li
+              key={service.title}
+              className="flex flex-col items-start gap-3 rounded-2xl border border-line bg-sand/60 p-4"
+            >
+              <span className="relative grid size-11 place-items-center rounded-full bg-white shadow-soft">
+                <Image
+                  src={service.image}
+                  alt=""
+                  width={26}
+                  height={26}
+                  className="object-contain"
+                />
+              </span>
+              <span className="text-xs font-bold uppercase tracking-wide text-ink">
+                {service.title}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Form */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-5 w-full max-w-md">
-        <div className="flex flex-col items-center text-center">
-          <h1 className="text-lg font-normal">GIVE US DETAIL HERE</h1>
-          <h1 className="text-3xl text-primary font-bold">
-            BOOK YOUR <br />
-            UMRAH PACKAGE
-          </h1>
+      <div className="flex flex-col gap-4 rounded-card bg-ink p-6 text-white md:p-8">
+        <div className="flex flex-col gap-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+            Give us your details
+          </p>
+          <h3 className="font-display text-2xl font-bold uppercase tracking-tight">
+            Book your Umrah package
+          </h3>
         </div>
 
         <UmrahContactForm />

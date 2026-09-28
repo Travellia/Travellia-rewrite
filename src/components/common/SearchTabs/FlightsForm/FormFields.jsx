@@ -117,7 +117,7 @@ const CityCombobox = ({ name, placeholder }) => {
                 setQuery(null);
                 setFieldTouched(name, true);
               }}
-              className="h-11 w-full bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 shadow-none focus-visible:ring-1 focus-visible:ring-primary truncate"
+              className="h-11 w-full bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 truncate"
             />
 
             {showHint && (
@@ -202,7 +202,7 @@ const TravellersPopover = ({ index, route, setFieldValue, setFieldTouched }) => 
           <Button
             type="button"
             variant="outline"
-            className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
+            className="h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50"
           >
             <Image
               src="/holidayPackage/ContactUs/map-icon.png"
@@ -439,7 +439,7 @@ const FormFields = ({ flightType }) => {
                             type="button"
                             variant="outline"
                             className={cn(
-                              "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
+                              "h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50",
                               !route.depart && "text-muted-foreground",
                             )}
                           >
@@ -494,7 +494,7 @@ const FormFields = ({ flightType }) => {
                               type="button"
                               variant="outline"
                               className={cn(
-                                "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
+                                "h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50",
                                 !route.return && "text-muted-foreground",
                               )}
                             >
@@ -554,7 +554,7 @@ const FormFields = ({ flightType }) => {
                         >
                           <SelectTrigger
                             aria-label="Booking class"
-                            className="!h-auto w-full bg-gray-100 rounded-xl pl-10 pr-4 py-[1.4rem] border-0 shadow-none focus-visible:ring-1 focus-visible:ring-primary"
+                            className="!h-auto w-full bg-sand/70 rounded-2xl pl-10 pr-4 py-[1.4rem] border border-line shadow-none shadow-none focus-visible:ring-2 focus-visible:ring-gold/50"
                           >
                             <SelectValue placeholder="Booking Class" />
                           </SelectTrigger>
@@ -622,7 +622,7 @@ const FormFields = ({ flightType }) => {
                     <Input
                       {...field}
                       placeholder="Name"
-                      className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                      className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                     />
                   )}
                 </Field>
@@ -645,7 +645,7 @@ const FormFields = ({ flightType }) => {
                       {...field}
                       type="tel"
                       placeholder="Number"
-                      className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                      className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                     />
                   )}
                 </Field>
@@ -668,7 +668,7 @@ const FormFields = ({ flightType }) => {
                       {...field}
                       type="email"
                       placeholder="Email"
-                      className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                      className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                     />
                   )}
                 </Field>

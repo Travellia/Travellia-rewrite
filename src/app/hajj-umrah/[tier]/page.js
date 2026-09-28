@@ -39,7 +39,7 @@ const page = async (props) => {
   return (
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
-      <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
+      <div className="flex flex-col gap-7 xl:gap-10 relative z-10 -mt-24 md:-mt-40">
         <FilterSearch defaultTab={"umrah"} />
         <div className="relative space-y-5">
           <Image

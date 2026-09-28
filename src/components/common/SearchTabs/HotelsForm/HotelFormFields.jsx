@@ -56,7 +56,7 @@ const TravellersPopover = ({ index, route, setFieldValue }) => {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            className="h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary"
+            className="h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50"
           >
             <span className="text-foreground truncate">
               {rooms} {rooms === 1 ? "Room" : "Rooms"}
@@ -275,7 +275,7 @@ const HotelFormFields = () => {
                               form.setFieldValue(`routes.${index}.from`, value)
                             }
                           >
-                            <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
+                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base">
                               <SelectValue placeholder="Where To" />
                             </SelectTrigger>
                             <SelectContent
@@ -310,7 +310,7 @@ const HotelFormFields = () => {
                           <Button
                             variant="outline"
                             className={cn(
-                              "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
+                              "h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50",
                               !route.depart && "text-muted-foreground"
                             )}
                           >
@@ -361,7 +361,7 @@ const HotelFormFields = () => {
                           <Button
                             variant="outline"
                             className={cn(
-                              "h-11 w-full justify-start text-left font-normal bg-gray-100 rounded-xl pl-10 py-8 pr-4 border-0 focus:ring-1 focus:ring-primary",
+                              "h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50",
                               !route.return && "text-muted-foreground"
                             )}
                           >
@@ -421,7 +421,7 @@ const HotelFormFields = () => {
                               form.setFieldValue(`routes.${index}.to`, value)
                             }
                           >
-                            <SelectTrigger className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base">
+                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base">
                               <SelectValue placeholder="Going To" />
                             </SelectTrigger>
                             <SelectContent
@@ -459,7 +459,7 @@ const HotelFormFields = () => {
                         <Input
                           {...field}
                           placeholder="Name"
-                          className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                          className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                         />
                       )}
                     </Field>
@@ -479,7 +479,7 @@ const HotelFormFields = () => {
                           {...field}
                           type="email"
                           placeholder="Email"
-                          className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                          className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                         />
                       )}
                     </Field>
@@ -499,7 +499,7 @@ const HotelFormFields = () => {
                           {...field}
                           type="tel"
                           placeholder="Contact Number"
-                          className="h-11 bg-gray-100 rounded-xl pl-10 py-8 border-0 focus:ring-1 focus:ring-primary w-full text-base"
+                          className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                         />
                       )}
                     </Field>

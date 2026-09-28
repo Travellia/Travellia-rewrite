@@ -7,7 +7,7 @@ import HoneypotField from "@/components/common/HoneypotField";
 import newsletterSchema from "@/schemas/common/newsletterSchema";
 import useFormSubmit from "@/hooks/useFormSubmit";
 
-const NewsletterForm = ({ inputBg = "bg-secondary" }) => {
+const NewsletterForm = () => {
   const { status, error, submit } = useFormSubmit("newsletter");
 
   const handleSubmit = async (values, { resetForm }) => {
@@ -23,22 +23,22 @@ const NewsletterForm = ({ inputBg = "bg-secondary" }) => {
     >
       {({ isSubmitting }) => (
         <Form className="w-full flex flex-col gap-3 relative">
-          <div
-            className={`rounded-full h-20 w-full flex items-center ${inputBg}`}
-          >
+          <div className="flex w-full items-center gap-2 rounded-full border border-line bg-sand p-1.5 focus-within:ring-2 focus-within:ring-gold/50">
             <Field
               name="email"
               type="email"
-              placeholder="Email"
+              placeholder="Enter your email"
               aria-label="Email address"
-              className="h-full w-7/10 px-8 bg-transparent outline-none placeholder:text-lg placeholder:text-gray-600"
+              className="h-11 min-w-0 flex-1 bg-transparent px-5 text-ink outline-none placeholder:text-ink/45"
             />
             <Button
               type="submit"
+              variant="ink"
+              size="pill"
               disabled={isSubmitting}
-              className="rounded-full h-full w-3/10 text-xl sm:text-2xl"
+              className="shrink-0"
             >
-              {isSubmitting ? "Sending…" : "Submit"}
+              {isSubmitting ? "Sending…" : "Subscribe"}
             </Button>
           </div>
 
@@ -47,7 +47,7 @@ const NewsletterForm = ({ inputBg = "bg-secondary" }) => {
           <ErrorMessage
             name="email"
             component="p"
-            className="text-red-500 text-sm pl-8"
+            className="text-red-600 text-sm pl-5"
           />
 
           <FormStatus

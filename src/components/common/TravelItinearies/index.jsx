@@ -11,7 +11,7 @@ const index = ({ data1, data2, href }) => {
     <section className="w-full">
       <ContentLayoutWrapper className="flex flex-col gap-20 items-center w-full py-10">
         {/* -------------------- TravelItineraries --------------------  */}
-        <div className="flex flex-col gap-8 w-full xl:w-[min(1100px,90vw)]">
+        <div className="flex flex-col gap-8 w-full">
           <h1 className="heading-with-space">{data1.heading}</h1>
           {/* <div className="flex flex-col gap-8 "> */}
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-3 xl:grid-rows-1 place-items-center gap-8">

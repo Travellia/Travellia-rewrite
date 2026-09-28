@@ -1,23 +1,14 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
-import Image from "next/image";
 import SearchTabs from "@/components/common/SearchTabs";
 
 const FilterSearch = ({ defaultTab }) => {
   return (
-    <section className="">
-      {/* Content */}
-      <ContentLayoutWrapper className="lg:w-[90vw] xl:w-[60vw] relative z-10 border border-primary rounded-3xl shadow-2xl bg-secondary">
-        <Image
-          src="/holidayPackage/ContactUs/bg.png"
-          alt="background"
-          fill
-          priority
-          sizes="(max-width: 1024px) 90vw, 60vw"
-          className="absolute object-cover min-h-50 -z-10 rounded-3xl "
-        />
-
-        <SearchTabs defaultTab={defaultTab} />
+    <section id="search" className="relative z-30 scroll-mt-28">
+      <ContentLayoutWrapper>
+        <div className="rounded-frame border border-line bg-white p-4 shadow-lift sm:p-6 md:p-8">
+          <SearchTabs defaultTab={defaultTab} />
+        </div>
       </ContentLayoutWrapper>
     </section>
   );

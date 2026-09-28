@@ -32,58 +32,58 @@ const UmrahContactForm = () => {
           <div className="space-y-3">
             {/* First Name */}
             <div className="flex flex-col gap-2">
-              <label className="font-medium text-gray-500">First Name</label>
+              <label className="text-xs font-semibold uppercase tracking-wide text-white/70">First Name</label>
               <Field name="firstName">
                 {({ field }) => (
                   <Input
                     {...field}
-                    placeholder="Your First Name......"
-                    className="h-12 bg-white rounded-xl border-0 focus:ring-1 focus:ring-primary"
+                    placeholder="Your first name"
+                    className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
                   />
                 )}
               </Field>
               <ErrorMessage
                 name="firstName"
                 component="p"
-                className="text-red-500 text-sm"
+                className="text-red-300 text-sm"
               />
             </div>
             {/* Contact */}
             <div className="flex flex-col gap-2">
-              <label className="font-medium text-gray-500">Your Contact</label>
+              <label className="text-xs font-semibold uppercase tracking-wide text-white/70">Phone</label>
               <Field name="contact">
                 {({ field }) => (
                   <Input
                     {...field}
                     type="tel"
-                    placeholder="Your Contact Details......"
-                    className="h-12 bg-white rounded-xl border-0 focus:ring-1 focus:ring-primary"
+                    placeholder="Phone number"
+                    className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
                   />
                 )}
               </Field>
               <ErrorMessage
                 name="contact"
                 component="p"
-                className="text-red-500 text-sm"
+                className="text-red-300 text-sm"
               />
             </div>
             {/* Email */}
             <div className="flex flex-col gap-2">
-              <label className="font-medium text-gray-500">Your Email</label>
+              <label className="text-xs font-semibold uppercase tracking-wide text-white/70">Your Email</label>
               <Field name="email">
                 {({ field }) => (
                   <Input
                     {...field}
                     type="email"
-                    placeholder="Your Email......"
-                    className="h-12 bg-white rounded-xl border-0 focus:ring-1 focus:ring-primary"
+                    placeholder="you@example.com"
+                    className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
                   />
                 )}
               </Field>
               <ErrorMessage
                 name="email"
                 component="p"
-                className="text-red-500 text-sm"
+                className="text-red-300 text-sm"
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ const UmrahContactForm = () => {
           {/* Submit */}
           <Button
             type="submit"
-            className="btn-main self-center px-10"
+            className="btn-main !bg-gold !text-ink hover:!brightness-105 w-full"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Sending…" : "Submit"}

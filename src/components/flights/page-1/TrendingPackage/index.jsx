@@ -63,7 +63,7 @@ const index = () => {
           <h1 className="heading">OUR TRENDING</h1>
           <h1 className="heading">FLIGHT PACKAGES</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8 w-full self-center xl:w-[min(1100px,90vw)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PACKAGES_DATA.map((data, index) => (
             <BookPackageCard data={data} href="#plan-your-trip" key={index} />
           ))}

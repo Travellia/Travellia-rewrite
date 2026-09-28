@@ -1,102 +1,93 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { CalendarDays, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, CalendarDays, MapPin, Users } from "lucide-react";
 import React from "react";
-import { FaRegUser } from "react-icons/fa";
 
-const BookPackageCard = ({ data, isOdd, href }) => {
+/**
+ * Photo card with a frosted caption ("The Edit" style). Used for trending
+ * tours, trending flights and travel itineraries.
+ */
+const BookPackageCard = ({ data, href }) => {
+  const title = data.city || data.package;
+  const subtitle = data.city ? data.country : data.title;
+
   return (
-    <Card
-      className={`group relative h-[clamp(380px,32vw,700px)] w-full min-w-[260px] max-w-[350px] !shadow-none !border-none  bg-transparent !p-0 overflow-hidden rounded-3xl`}
-    >
+    <article className="group relative h-[440px] w-full overflow-hidden rounded-card bg-ink shadow-soft transition-shadow duration-300 hover:shadow-lift">
       <Image
         src={data.image}
-        alt={data.city || data.package || "package"}
-        width={200}
-        height={200}
-        className="object-cover h-6/10 absolute top-0 left-0 w-full rounded-3xl ${
-          group-hover:h-full transition-all duration-500 "
+        alt={title || "Package"}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl bg-secondary bottom-0 group-hover:bg-white/85 group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:h-7/10 transition-all duration-500">
-        <div className="w-full h-full flex flex-col items-center justify-center gap-5">
-          <div className="flex items-center justify-between gap-3 text-gray-500">
-            {data.days ? (
-              <>
-                <div className="flex items-center justify-between gap-1">
-                  <CalendarDays className="w-3 h-3 block" />
-                  <p>{data.days}</p>
-                  <p>Days</p>
-                </div>
-                <div className="flex items-center justify-between gap-1 text-gray-500">
-                  <FaRegUser className="w-3 h-3 block" />
-                  <p>{data.people}</p>
-                  <p>People</p>
-                  <p>Going</p>
-                </div>
-              </>
-            ) : data.stars ? (
-              <div className="flex items-center justify-between gap-3 text-gray-500">
-                <p>{"⭐".repeat(data.stars)}</p>
-              </div>
-            ) : null}
-          </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
 
-          <div className="flex flex-col items-center gap-1">
-            <h2 className="text-2xl font-semibold text-primary uppercase">
-              {data.city ? data.city : data.package}
-            </h2>
-
-            <div className="mx-auto flex items-center justify-center">
-              {data.country ? (
-                <>
-                  <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-                  <span>{data.country}</span>
-                </>
-              ) : (
-                <span>{data.country ? data.country : data.title}</span>
-              )}
-            </div>
-          </div>
-
-          <div className="h-px w-full bg-gray-300" />
-
-          <div className="flex items-baseline justify-between gap-5">
-            {data.priceLabel && (
-              <div className="text-sm text-gray-500 font-semibold">
-                {data.priceLabel}
-              </div>
-            )}
-            <div className="text-3xl text-primary font-bold">
-              &pound;{data.discountPrice}
-            </div>
-            {data.oldPrice && (
-              <div className="text-xl text-gray-500 font-semibold line-through">
-                &pound;{data.oldPrice}
-              </div>
-            )}
-          </div>
-
-          <div className="text-sm text-gray-500 px-10 text-center">
-            {data.description}
-          </div>
-
-          {href ? (
-            <Button
-              asChild
-              className="rounded-full px-10 py-2 self-stretch mx-10"
-            >
-              <Link href={href}>Book Now</Link>
-            </Button>
-          ) : (
-            <Button className="rounded-full px-10 py-2 self-stretch mx-10">
-              Book Now
-            </Button>
-          )}
-        </div>
+      {/* Top chips */}
+      <div className="absolute left-4 right-4 top-4 flex flex-wrap items-center gap-2">
+        {data.days ? (
+          <>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ink backdrop-blur">
+              <CalendarDays className="size-3.5" /> {data.days} days
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-ink backdrop-blur">
+              <Users className="size-3.5" /> {data.people} going
+            </span>
+          </>
+        ) : data.stars ? (
+          <span className="rounded-full bg-white/90 px-3 py-1 text-xs text-ink backdrop-blur">
+            {"★".repeat(data.stars)}
+          </span>
+        ) : null}
       </div>
-    </Card>
+
+      {/* Caption */}
+      <div className="absolute inset-x-3 bottom-3 flex flex-col gap-3 rounded-2xl border border-white/20 bg-ink/40 p-4 text-white backdrop-blur-md">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight">
+              {title}
+            </h3>
+            {subtitle && (
+              <p className="mt-0.5 flex items-center gap-1 text-sm text-white/75">
+                {data.city && <MapPin className="size-3.5 shrink-0 text-gold" />}
+                <span className="truncate">{subtitle}</span>
+              </p>
+            )}
+          </div>
+          <div className="shrink-0 text-right">
+            {data.priceLabel && (
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-white/60">
+                {data.priceLabel}
+              </p>
+            )}
+            <p className="font-display text-2xl font-bold text-gold">
+              &pound;{data.discountPrice}
+            </p>
+            {data.oldPrice && (
+              <p className="text-xs text-white/55 line-through">
+                &pound;{data.oldPrice}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {data.description && (
+          <p className="line-clamp-2 text-sm text-white/75">{data.description}</p>
+        )}
+
+        {href && (
+          <Link
+            href={href}
+            className="flex items-center justify-between rounded-full bg-white py-1.5 pl-5 pr-1.5 text-sm font-semibold text-ink transition hover:bg-gold"
+          >
+            Book now
+            <span className="grid size-8 place-items-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:rotate-45">
+              <ArrowUpRight className="size-4" />
+            </span>
+          </Link>
+        )}
+      </div>
+    </article>
   );
 };
 

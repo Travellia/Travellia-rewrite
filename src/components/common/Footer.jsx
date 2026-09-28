@@ -1,107 +1,50 @@
 "use client";
 
-import React, { lazy } from "react";
-import ContentLayoutWrapper from "./ContentLayoutWrapper";
+import React from "react";
 import Image from "next/image";
-import NewsletterForm from "@/components/common/NewsletterForm";
-import { data } from "@/lib/contactInfo";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Mail, MapPin, Phone } from "lucide-react";
+import ContentLayoutWrapper from "./ContentLayoutWrapper";
+import NewsletterForm from "@/components/common/NewsletterForm";
+import { phoneHref } from "@/components/common/PhoneNumberViewer";
+import { Eyebrow } from "@/components/ui/SectionHeading";
+import { data } from "@/lib/contactInfo";
 
+// Photo shown in the newsletter card, per section of the site.
 const FOOTER_IMAGE_MAP = [
-  {
-    match: "/",
-    image: {
-      src: "/footer/homeFooter.png",
-      alt: "Home Footer",
-    },
-  },
-  {
-    match: "/flights",
-    image: {
-      src: "/footer/homeFooter.png",
-      alt: "Flight Footer",
-    },
-  },
-  {
-    match: "/hotels",
-    image: {
-      src: "/footer/hotelFooter.png",
-      alt: "Hotel Footer",
-    },
-  },
-  {
-    match: "/holidayPackages",
-    image: {
-      src: "/footer/holidayPackagesFooter.png",
-      alt: "Holiday Packages Footer",
-    },
-  },
-  {
-    match: "/hajj-umrah",
-    image: {
-      src: "/footer/homeFooter.png",
-      alt: "Flight Footer",
-    },
-  },
-  {
-    match: "/contact",
-    image: {
-      src: "/footer/contactFooter.png",
-      alt: "Contact Footer",
-    },
-  },
-  {
-    match: "/terms",
-    image: {
-      src: "/footer/termsFooter.png",
-      alt: "Terms and condition Footer",
-    },
-  },
+  { match: "/hotels", src: "/footer/hotelFooter.png" },
+  { match: "/holidayPackages", src: "/footer/holidayPackagesFooter.png" },
+  { match: "/contact", src: "/footer/contactFooter.png" },
 ];
-
-const PAGE_PATH = [
-  "/",
-  "/flights",
-  "/hotels",
-  "/holidayPackages",
-  "/contact",
-  "/terms",
-];
+const DEFAULT_FOOTER_IMAGE = "/footer/homeFooter.png";
 
 const BRANDS = [
-  "/footer/iata.png",
-  "/footer/atol.png",
-  "/footer/arab.png",
-  "/footer/abta.png",
+  { src: "/footer/iata.png", alt: "IATA" },
+  { src: "/footer/atol.png", alt: "ATOL" },
+  { src: "/footer/arab.png", alt: "Kingdom of Saudi Arabia" },
+  { src: "/footer/abta.png", alt: "ABTA" },
 ];
 
 const SOCIALS = [
-  { icon: "/social-media/facebook.png", href: data.socials.facebook },
-  { icon: "/social-media/instagram.png", href: data.socials.instagram },
-  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok },
+  { icon: "/social-media/facebook.png", href: data.socials.facebook, label: "Facebook" },
+  { icon: "/social-media/instagram.png", href: data.socials.instagram, label: "Instagram" },
+  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok, label: "TikTok" },
 ];
 
 const CARDS = [
-  "/footer/visa.png",
-  "/footer/mastercard.png",
-  "/footer/american-express.png",
-  "/footer/stripecard.png",
-  "/footer/paypal.png",
+  { src: "/footer/visa.png", alt: "Visa" },
+  { src: "/footer/mastercard.png", alt: "Mastercard" },
+  { src: "/footer/american-express.png", alt: "American Express" },
+  { src: "/footer/stripecard.png", alt: "Stripe" },
+  { src: "/footer/paypal.png", alt: "PayPal" },
 ];
 
 const CONTACT_INFO = [
+  { icon: Phone, text: data.PhoneNumber, href: phoneHref },
+  { icon: Mail, text: data.inquiryEmail, href: `mailto:${data.inquiryEmail}` },
   {
-    icon: FiPhone,
-    text: data.PhoneNumber,
-  },
-  {
-    icon: FiMail,
-    text: data.inquiryEmail,
-  },
-  {
-    icon: FiMapPin,
+    icon: MapPin,
     text: "West 44, 44-60 Richardshaw Lane, Stanningley, Pudsey, England, LS28 7UR",
   },
 ];
@@ -112,21 +55,14 @@ const FOOTER_LINKS = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Contact Us", href: "/contact" },
-      // { name: "Testimonial", href: "/testimonial" },
       { name: "Terms and Conditions", href: "/terms" },
     ],
   },
-  // {
-  //   title: "Destinations",
-  //   links: [
-  //     { name: "Maldives", href: "/destinations/maldives" },
-  //     { name: "Los Angeles", href: "/destinations/los-angeles" },
-  //     { name: "Las Vegas", href: "/destinations/las-vegas" },
-  //   ],
-  // },
   {
     title: "Packages",
     links: [
+      { name: "Flights", href: "/flights" },
+      { name: "Hotels", href: "/hotels" },
       { name: "Hajj/Umrah Packages", href: "/hajj-umrah" },
       { name: "Holiday Packages", href: "/holidayPackages" },
       { name: "Custom Packages", href: "/contact" },
@@ -136,173 +72,174 @@ const FOOTER_LINKS = [
 
 const Footer = () => {
   const pathname = usePathname();
-
-  const footerImage = FOOTER_IMAGE_MAP.find((item) => {
-    if (item.match === "/") return pathname === "/";
-    return pathname.startsWith(item.match);
-  })?.image || {
-    src: "/footer/Foot4.png",
-    alt: "Default Footer",
-  };
-
-  const isContactPage = pathname.startsWith("/contact");
+  const footerImage =
+    FOOTER_IMAGE_MAP.find((item) => pathname.startsWith(item.match))?.src ??
+    DEFAULT_FOOTER_IMAGE;
 
   return (
-    <footer className={`pt-10 ${isContactPage ? "bg-secondary" : "bg-white"}`}>
-      <ContentLayoutWrapper
-        className={
-          "flex flex-col items-center justify-between gap-16 pt-16 sm:pt-0"
-        }
-      >
-        {/* Brand Logos */}
-        <div className="flex items-center justify-between w-full ">
-          {BRANDS.map((brand, index) => {
-            return (
-              <React.Fragment key={index}>
-                <div className="flex-1 flex items-center justify-center h-25 md:h-30">
-                  <div className="relative w-18 h-12 md:w-35 md:h-25  lg:w-40 lg:h-30 xl:w-50 xl:h-40">
-                    <Image
-                      src={brand}
-                      alt="brand"
-                      fill
-                      sizes="(max-width: 768px) 72px, (max-width: 1024px) 140px, 200px"
-                      className="object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                {index < BRANDS.length - 1 && (
-                  <div className="bg-gray-300 lg:bg-gray-800 self-center h-10 md:h-15 xl:h-25 w-0.5" />
-                )}
-              </React.Fragment>
-            );
-          })}
+    <footer className="flex flex-col gap-10 px-3 pb-3 pt-20 md:px-5">
+      {/* Newsletter */}
+      <ContentLayoutWrapper className="px-0 md:px-8">
+        <div className="grid overflow-hidden rounded-frame border border-line bg-white shadow-soft md:grid-cols-[1fr_1.15fr]">
+          <div className="relative min-h-56 md:min-h-full">
+            <Image
+              src={footerImage}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 45vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center gap-5 p-7 md:p-12">
+            <Eyebrow>Newsletter</Eyebrow>
+            <h2 className="font-display text-3xl font-bold uppercase leading-none tracking-tight text-ink md:text-4xl">
+              Travel notes
+              <br />
+              <em className="font-serif font-normal normal-case tracking-normal text-gold">
+                worth keeping.
+              </em>
+            </h2>
+            <p className="max-w-md text-ink/65">
+              Get the latest travel news, Umrah dates and offers, sent only when
+              there&apos;s something worth sharing.
+            </p>
+            <NewsletterForm />
+          </div>
         </div>
+      </ContentLayoutWrapper>
 
-        <div className="h-px w-full bg-gray-300" />
-
-        {/* Travellia Logo */}
-        <div className="mx-auto ">
-          <Image
-            src="/logo.png"
-            alt="Travellia Logo"
-            width={300}
-            height={90}
-            loading="lazy"
-            className="bg-contain"
-          />
-        </div>
-
-        {/* Footer Links and Contact Info */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-primary font-bold text-3xl mb-4">
-                Contact Info
-              </h3>
-              <div className="space-y-4">
-                {CONTACT_INFO.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="mt-1 flex-shrink-0 bg-primary p-1 rounded-full">
-                      <item.icon className="w-4 h-4" color="#fff" />
-                    </div>
-                    <div className="text-gray-700 text-sm md:text-lg">
-                      {item.text}
-                    </div>
-                  </div>
+      {/* Main footer */}
+      <div className="relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-frame bg-ink text-white">
+        <div className="mx-auto flex max-w-[1240px] flex-col gap-12 px-6 pt-14 md:px-10">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr]">
+            {/* Brand */}
+            <div className="flex flex-col gap-5">
+              <Link href="/" aria-label="Travellia home" className="w-fit">
+                <Image
+                  src="/logo.png"
+                  alt="Travellia"
+                  width={200}
+                  height={50}
+                  className="h-11 w-auto"
+                />
+              </Link>
+              <p className="max-w-xs text-white/60">
+                Journeys worth remembering: flights, hotels, Umrah and holidays,
+                planned around you.
+              </p>
+              <div className="flex gap-2">
+                {SOCIALS.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="grid size-11 place-items-center rounded-full border border-white/15 bg-white/5 transition hover:border-gold hover:bg-white/10"
+                  >
+                    <Image src={social.icon} alt="" width={18} height={18} />
+                  </a>
                 ))}
               </div>
             </div>
 
-            {/* Dynamic Link Sections */}
-            {FOOTER_LINKS.map((section, index) => (
-              <div key={index}>
-                <h3 className="text-primary font-bold text-3xl mb-4">
+            {/* Link columns */}
+            {FOOTER_LINKS.map((section) => (
+              <nav key={section.title} aria-label={section.title}>
+                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                   {section.title}
                 </h3>
-                <ul className="space-y-2 md:space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a
+                <ul className="flex flex-col gap-3">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
                         href={link.href}
-                        className="text-gray-600 hover:text-primary transition-colors text-sm md:text-lg"
+                        className="text-white/75 transition-colors hover:text-white"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </nav>
             ))}
-          </div>
-        </div>
 
-        {/* Subscribe Section */}
-        <div className="w-8/10 flex flex-col items-center gap-4">
-          <h1 className="text-primary text-center font-bold text-3xl">
-            Subscribe
-          </h1>
-          <p className="text-2xl text-gray-500 text-center">
-            Subscribe to get the latest travel news and offers from us.
-          </p>
-          <NewsletterForm inputBg={isContactPage ? "bg-white" : "bg-secondary"} />
-        </div>
-
-        {/* Footer Bottom Section */}
-        <div className="flex flex-col items-center gap-4 w-full">
-          <div className="flex flex-col md:flex-row items-center justify-between w-full">
-            <div className="flex items-center justify-between gap-5">
-              {SOCIALS.map((social, index) => (
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={index}
-                  className="relative w-10 h-10"
-                >
-                  <Image
-                    src={social.icon}
-                    alt="social"
-                    fill
-                    sizes="40px"
-                    className="object-contain"
-                    loading="lazy"
-                  />
-                </a>
-              ))}
+            {/* Contact */}
+            <div>
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                Contact
+              </h3>
+              <ul className="flex flex-col gap-4">
+                {CONTACT_INFO.map(({ icon: Icon, text, href }) => {
+                  const content = (
+                    <>
+                      <span className="grid size-9 shrink-0 place-items-center rounded-full bg-white/10 text-gold">
+                        <Icon className="size-4" />
+                      </span>
+                      <span className="pt-1.5 text-white/75">{text}</span>
+                    </>
+                  );
+                  return (
+                    <li key={text}>
+                      {href ? (
+                        <a href={href} className="flex items-start gap-3 hover:text-white">
+                          {content}
+                        </a>
+                      ) : (
+                        <div className="flex items-start gap-3">{content}</div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-            <div className="flex items-center justify-between gap-5">
-              {CARDS.map((card, index) => (
+          </div>
+
+          {/* Accreditation and payments */}
+          <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+              {BRANDS.map((brand) => (
                 <Image
-                  src={card}
-                  alt="card"
-                  width={50}
-                  height={50}
-                  key={index}
-                  loading="lazy"
+                  key={brand.alt}
+                  src={brand.src}
+                  alt={brand.alt}
+                  width={80}
+                  height={48}
+                  className="h-9 w-auto object-contain opacity-70 invert"
                 />
               ))}
             </div>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {CARDS.map((card) => (
+                <span
+                  key={card.alt}
+                  className="grid h-8 w-12 place-items-center rounded-md bg-white"
+                >
+                  <Image
+                    src={card.src}
+                    alt={card.alt}
+                    width={36}
+                    height={22}
+                    className="h-5 w-auto object-contain"
+                  />
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="h-px bg-gray-300 w-full" />
-          <p className="text-gray-500 self-end text-right">
-            Copyright &copy; {new Date().getFullYear()} Travellia Limited. All rights reserved.
+
+          <p className="text-center text-sm text-white/45 md:text-left">
+            Copyright &copy; {new Date().getFullYear()} Travellia Limited. All
+            rights reserved.
           </p>
         </div>
-      </ContentLayoutWrapper>
-      <div className="w-full h-[30vh] lg:h-[75vh] relative ">
-        <div
-          className={`absolute inset-0 z-10 bg-linear-to-b to-transparent ${isContactPage ? "from-secondary white via-secondary/20" : "from-white via-white/20"}  `}
-        />
 
-        <Image
-          src={footerImage.src}
-          alt={footerImage.alt}
-          fill
-          sizes="100vw"
-          loading="lazy"
-        />
+        {/* Giant cropped wordmark */}
+        <p
+          aria-hidden="true"
+          className="pointer-events-none mt-6 select-none whitespace-nowrap text-center font-display text-[20vw] font-extrabold uppercase leading-[0.72] tracking-tighter text-gold/90 xl:text-[14rem]"
+        >
+          Travellia
+        </p>
       </div>
     </footer>
   );

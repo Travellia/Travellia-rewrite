@@ -1,31 +1,15 @@
-import Image from "next/image";
 import React from "react";
-import InitialsAvatar from "@/components/common/InitialsAvatar";
+import TestimonialCard from "@/components/common/Testimonial/TestimonialCard";
 
-const ProfileCard = ({ data }) => {
-  return (
-    <section className="bg-secondary rounded-2xl px-10 py-12 lg:py-20 xl:py-25 w-full mx-auto  flex flex-col gap-5">
-      <p className="font-semibold text-gray-500">{data.comment}</p>
-      <div className="bg-gray-200 h-px w-full my-4" />
-      <div className="flex gap-10">
-        {data.src ? (
-          <Image
-            src={data.src}
-            alt={data.name}
-            width={50}
-            height={50}
-            loading="lazy"
-          />
-        ) : (
-          <InitialsAvatar name={data.name} />
-        )}
-        <div className="flex flex-col">
-          <p className="text-primary font-semibold">{data.name}</p>
-          <p className="text-xs font-bold  ">{data.location}</p>
-        </div>
-      </div>
-    </section>
-  );
-};
+// Single review card; shares its design with the testimonial carousel cards.
+const ProfileCard = ({ data }) => (
+  <TestimonialCard
+    className="shadow-lift"
+    testimonial={{
+      comment: data.comment.replace(/^"|"$/g, ""),
+      user: { name: data.name, location: data.location, src: data.src, alt: data.name },
+    }}
+  />
+);
 
 export default ProfileCard;

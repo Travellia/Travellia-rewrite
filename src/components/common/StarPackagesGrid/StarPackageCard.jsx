@@ -1,6 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
 import { FaKaaba, FaMosque } from "react-icons/fa6";
-import { Button } from "@/components/ui/button";
 import CarouselWrapper from "@/components/ui/carousel";
 import Link from "next/link";
 import React from "react";
@@ -13,18 +12,17 @@ const parseNightsBreakdown = (nights) => {
   };
 };
 
-const HotelRow = ({ icon: Icon, hotel, nights }) => (
-  <div className="flex items-center gap-3 bg-secondary/60 border border-primary/10 rounded-xl px-3 py-2">
-    <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 shrink-0">
-      <Icon className="text-base text-primary" />
+const HotelRow = ({ icon: Icon, city, hotel, nights }) => (
+  <div className="flex items-center gap-3 rounded-2xl border border-line bg-sand/60 px-3 py-2.5">
+    <div className="grid size-9 shrink-0 place-items-center rounded-full bg-ink text-gold">
+      <Icon className="text-sm" />
     </div>
-    <div className="min-w-0 flex-1 flex items-center justify-between gap-2">
-      <p className="text-sm font-semibold text-gray-800 truncate">{hotel}</p>
-      {nights && (
-        <span className="shrink-0 text-[10px] font-bold text-primary bg-primary/10 rounded-full px-2 py-0.5">
-          {nights} Nights
-        </span>
-      )}
+    <div className="min-w-0 flex-1">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-ink/50">
+        {city}
+        {nights && ` · ${nights} nights`}
+      </p>
+      <p className="truncate text-sm font-semibold text-ink">{hotel}</p>
     </div>
   </div>
 );
@@ -39,47 +37,61 @@ const StarPackageCard = ({ card, description, stars, tier }) => {
     .filter(Boolean)
     .map((image, index) => ({ id: index + 1, image }));
 
+  const action = (
+    <>
+      {card.buttonText}
+      <span className="grid size-8 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:rotate-45">
+        <MdArrowOutward />
+      </span>
+    </>
+  );
+  const actionClass =
+    "inline-flex items-center gap-3 rounded-full bg-ink py-1.5 pl-4 pr-1.5 text-sm font-semibold text-white transition hover:bg-ink-soft";
+
   return (
-    <div className="rounded-xl overflow-hidden shadow-2xl">
+    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
       {slides.length > 0 && (
-        <div className="relative w-full h-[24vh] sm:h-[11vh] lg:h-[18vh] xl:h-[21vh] overflow-hidden">
-          <CarouselWrapper slides={slides} navigation={false} speed={5000} />
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+          <CarouselWrapper slides={slides} navigation={false} speed={1200} delay={4000} />
+          {stars && (
+            <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 px-2.5 py-1 text-xs text-gold backdrop-blur">
+              {"★".repeat(stars)}
+            </span>
+          )}
         </div>
       )}
 
-      <div className="p-4 space-y-2">
-        {stars && <p>{"⭐".repeat(stars)}</p>}
-        <p className="md:font-medium lg:text-sm text-primary lg:font-semibold">
+      <div className="flex flex-1 flex-col gap-4 p-4">
+        <h3 className="text-base font-semibold leading-snug text-ink">
           {description || card.nights}
-        </p>
+        </h3>
 
-        <div className="space-y-2">
-          <HotelRow icon={FaKaaba} hotel={card.makkah} nights={makkahNights} />
-          <HotelRow icon={FaMosque} hotel={card.madinah} nights={madinahNights} />
+        <div className="flex flex-col gap-2">
+          <HotelRow icon={FaKaaba} city="Makkah" hotel={card.makkah} nights={makkahNights} />
+          <HotelRow icon={FaMosque} city="Madinah" hotel={card.madinah} nights={madinahNights} />
         </div>
 
-        <div
-          className="flex justify-between md:flex-col-reverse md:items-start gap-2
-                lg:flex lg:flex-row lg:items-center lg:justify-between pt-1"
-        >
-          {detailLink ? (
-            <Button asChild className="rounded-full text-sm px-5 h-8 ">
-              <Link href={detailLink}>
-                {card.buttonText} <MdArrowOutward className="text-white " />
-              </Link>
-            </Button>
-          ) : (
-            <Button className="rounded-full text-sm px-5 h-8 ">
-              {card.buttonText} <MdArrowOutward className="text-white " />
-            </Button>
-          )}
-          <div className="flex flex-col items-center">
-            <p className="text-[10px] tracking-tight font-semibold">{card.start}</p>
-            <p className="font-bold text-primary">{card.price}</p>
+        <div className="mt-auto flex items-end justify-between gap-3 border-t border-line pt-4">
+          <div className="flex flex-col">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/50">
+              {card.start}
+            </span>
+            <span className="font-display text-xl font-bold text-gold-deep">
+              {card.price}
+            </span>
           </div>
+          {detailLink ? (
+            <Link href={detailLink} className={actionClass}>
+              {action}
+            </Link>
+          ) : (
+            <button type="button" className={actionClass}>
+              {action}
+            </button>
+          )}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

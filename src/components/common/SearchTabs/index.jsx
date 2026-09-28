@@ -4,17 +4,18 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import FlightsForm from "./FlightsForm/FlightsForm";
-import Image from "next/image";
+import { BedDouble, Moon, Plane } from "lucide-react";
+import { cn } from "@/lib/utils";
 import HotelsForm from "./HotelsForm/HotelsForm";
 import UmrahForm from "./UmrahForm/UmrahForm";
 // import HolidaysForm from "./tabs/HolidaysForm";
 // import UmrahForm from "./tabs/UmrahForm";
 
 const TABS = [
-  { key: "flights", label: "Flights", path: "/flights", component: <FlightsForm /> },
-  { key: "hotels", label: "Hotels", path: "/hotels", component: <HotelsForm /> },
+  { key: "flights", label: "Flights", path: "/flights", icon: Plane, component: <FlightsForm /> },
+  { key: "hotels", label: "Hotels", path: "/hotels", icon: BedDouble, component: <HotelsForm /> },
   // { key: "holidays", label: "Holidays", path: "/holidayPackages", component: <HolidaysForm /> },
-  { key: "umrah", label: "Umrah", path: "/hajj-umrah", component: <UmrahForm /> },
+  { key: "umrah", label: "Umrah", path: "/hajj-umrah", icon: Moon, component: <UmrahForm /> },
 ];
 
 const SearchTabs = ({ defaultTab = "flights" }) => {
@@ -27,13 +28,18 @@ const SearchTabs = ({ defaultTab = "flights" }) => {
   };
 
   return (
-    <section className="flex flex-col gap-5 px-5 -translate-y-10  ">
+    <section className="flex flex-col gap-6">
       {/* Tabs Header */}
-      <div className="flex gap-3 z-1">
+      <div
+        role="tablist"
+        aria-label="Search type"
+        className="inline-flex w-fit gap-1 rounded-full bg-sand p-1"
+      >
         {TABS.map((tab) => (
           <Tab
             key={tab.key}
             label={tab.label}
+            icon={tab.icon}
             active={activeTab === tab.key}
             onClick={() => handleTabClick(tab)}
           />
@@ -46,26 +52,20 @@ const SearchTabs = ({ defaultTab = "flights" }) => {
   );
 };
 
-const Tab = ({ label, active, onClick }) => (
+const Tab = ({ label, icon: Icon, active, onClick }) => (
   <button
     type="button"
+    role="tab"
+    aria-selected={active}
     onClick={onClick}
-    className={`flex items-center justify-center p-3 gap-2 rounded-full text-sm font-semibold transition-all z-10 cursor-pointer
-      ${
-        active
-          ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
-          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-      }
-        `}
+    className={cn(
+      "flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all sm:px-5",
+      active
+        ? "bg-ink text-white shadow-soft"
+        : "text-ink/60 hover:bg-white hover:text-ink"
+    )}
   >
-    <Image
-      src="/holidayPackage/ContactUs/bag.png"
-      alt="background"
-      width={25}
-      height={4}
-      className="filter invert brightness-200 h-5.5 text-white"
-      loading="lazy"
-    />
+    <Icon className={cn("size-4", active && "text-gold")} aria-hidden="true" />
     {label}
   </button>
 );

@@ -32,7 +32,7 @@ const page = () => {
         className=" absolute w-[22%] lg:w-[32%] h-auto bottom-1 z-10 translate-y-25 md:translate-y-5 lg:translate-y-25  xl:translate-y-30  "
       />
       <Welcome data={welcomeData} />
-      <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
+      <div className="flex flex-col gap-7 xl:gap-10 relative z-10 -mt-24 md:-mt-40">
         <FilterSearch defaultTab="flights" />
         <MainContent />
         <PlanYourTrip />

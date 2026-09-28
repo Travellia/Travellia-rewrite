@@ -3,7 +3,7 @@ import LuxuryAssuring from "@/components/common/LuxuryAssuring";
 import FreshlyAdded from "@/components/holidaypackagepage/FreshlyAdded";
 import ContactUs from "@/components/holidaypackagepage/ContactUs";
 import TravelItinearies from "@/components/common/TravelItinearies";
-import PlanYourTrip from "@/components/holidaypackagepage/PlanYourTrip";
+import PlanYourTrip from "@/components/common/PlanYourTrip";
 import React from "react";
 import FilterSearch from "@/components/common/FilterSearch";
 import BookNow from "@/components/common/BookNow";
@@ -34,7 +34,7 @@ const page = () => {
   return (
     <div className="flex flex-col ">
       <Welcome data={welcomeData} />
-      <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
+      <div className="flex flex-col gap-7 xl:gap-10 relative z-10 -mt-24 md:-mt-40">
         <FilterSearch />
         <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
         <div className="flex flex-col">
