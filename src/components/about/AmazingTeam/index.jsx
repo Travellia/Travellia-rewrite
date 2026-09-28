@@ -1,4 +1,5 @@
 "use client";
+import SectionHeading from "@/components/ui/SectionHeading";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PhotoCollageCarousel from "@/components/common/photo-collage-carousel";
 import React from "react";
@@ -18,18 +19,19 @@ const photos = [
 
 const index = () => {
   return (
-    <section className="h-auto md:py-10 lg:py-15 bg-background">
+    <section>
       <ContentLayoutWrapper className={"flex flex-col"}>
-        <div className="text-center mb-8">
-          <h2 className="text-lg font-normal text-center uppercase">TEAM</h2>
-          <h2 className="text-xl md:text-3xl lg:text-4xl lg:pb-5 xl:text-5xl  font-bold text-center uppercase text-primary md:px-20 lg:px-5">
-            OUR AMAZING TEAM
-          </h2>
-          <p className="mt-3 text-gray-600 lg:px-10 xl:px-20 tracking-widest">
-            Our friendly, experienced travel consultants are here to plan every
-            detail of your trip, from the first quote to your safe return home.
-          </p>
-        </div>
+        <SectionHeading
+          align="center"
+          eyebrow="Team"
+          title={
+            <>
+              Our amazing <em>team.</em>
+            </>
+          }
+          intro="Our friendly, experienced travel consultants are here to plan every detail of your trip, from the first quote to your safe return home."
+          className="mb-10"
+        />
         <PhotoCollageCarousel slides={photos} />
       </ContentLayoutWrapper>
     </section>

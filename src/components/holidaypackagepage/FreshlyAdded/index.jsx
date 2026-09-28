@@ -1,7 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PackageCard from "@/components/common/PackageCard";
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
+import SectionHeading from "@/components/ui/SectionHeading";
 import React from "react";
 
 const index = () => {
@@ -44,29 +43,29 @@ const index = () => {
     },
   ];
 
-  return (
-    <section className="relative z-1 bg-[url('/holidayPackage/FreshlyAdded/bg.png')] bg-center bg-cover">
-      <Image
-        src={"/holidayPackage/FreshlyAdded/bg.png"}
-        alt="bg"
-        fill
-        sizes="100vw"
-        className="absolute object-cover"
-        loading="lazy"
-      />
-      <ContentLayoutWrapper className="flex flex-col gap-5 py-20 justify-center items-center relative z-2">
-        {/* Header */}
-        <div className="flex flex-col items-center">
-          <p className="font-semibold">LUXURY ASSURING 5 STAR</p>
-          <h1 className="text-4xl font-bold text-primary tracking-widest">
-            HOLIDAY PACKAGE
-          </h1>
-        </div>
+  // Two text tiles sit between the photos, like an editorial grid.
+  const tiles = [
+    { type: "text", id: "t1", text: "Handpicked holidays.", sub: "Planned around you." },
+    ...Packages.slice(0, 4),
+    { type: "text", id: "t2", text: "Flights, hotels & transfers.", sub: "All in one booking." },
+    ...Packages.slice(4),
+  ];
 
-        {/* Description */}
-        <div>
-          {" "}
-          <p className="text-gray-600 text-base text-center w-[90%] sm:w-[80%] m-auto">
+  return (
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Luxury assuring 5 star"
+            title={
+              <>
+                Holidays worth
+                <br />
+                <em>packing for.</em>
+              </>
+            }
+          />
+          <p className="max-w-md text-ink/65">
             Handpicked holidays to some of the world&apos;s most loved
             destinations. Each package includes return flights, quality hotels
             and transfers, with flexible dates and family-friendly options, so
@@ -74,20 +73,28 @@ const index = () => {
           </p>
         </div>
 
-        {/* Card */}
-        <div className="flex flex-col justify-center items-center gap-10  w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-auto gap-6  w-full">
-            {Packages.map((place) => {
-              return (
-                <Card
-                  key={place.id}
-                  className="relative overflow-hidden rounded-4xl h-96 group cursor-pointer py-0"
-                >
-                  <PackageCard data={place} text />
-                </Card>
-              );
-            })}
-          </div>
+        <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-4">
+          {tiles.map((tile) =>
+            tile.type === "text" ? (
+              <div
+                key={tile.id}
+                className="flex aspect-[3/4] flex-col justify-center gap-2 rounded-card bg-sand-deep p-5 text-center"
+              >
+                <p className="font-display text-lg font-bold uppercase leading-tight tracking-tight text-ink md:text-xl">
+                  {tile.text}
+                </p>
+                <p className="font-serif text-lg italic text-gold-deep">{tile.sub}</p>
+              </div>
+            ) : (
+              <a
+                key={tile.id}
+                href="#plan-your-trip"
+                className="relative aspect-[3/4] overflow-hidden rounded-card shadow-soft"
+              >
+                <PackageCard data={tile} />
+              </a>
+            )
+          )}
         </div>
       </ContentLayoutWrapper>
     </section>

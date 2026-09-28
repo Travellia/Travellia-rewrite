@@ -1,5 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import StarPackageCard from "./StarPackageCard";
+import SectionHeading from "@/components/ui/SectionHeading";
+import ArrowButton from "@/components/ui/ArrowButton";
 import React from "react";
 
 const StarPackagesGrid = ({ data, tier }) => {
@@ -10,32 +12,28 @@ const StarPackagesGrid = ({ data, tier }) => {
 
   return (
     <section>
-      <ContentLayoutWrapper className=" sm:pt-5 flex justify-center items-center ">
-        <div className="flex flex-col gap-5 m-auto">
-          {/* Header */}
-          <div className="flex flex-col items-center">
-            <h1 className="text-4xl font-bold text-primary tracking-widest">
-              {data.heading}
-            </h1>
-          </div>
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow={`${data.stars}-star Umrah`}
+            title={data.heading}
+            intro="Choose your Makkah and Madinah hotel pairing. Every package includes flights, visa, transport and Ziyarat."
+          />
+          <ArrowButton href="/hajj-umrah" tone="light">
+            All Umrah packages
+          </ArrowButton>
+        </div>
 
-          {/* Line */}
-          <div className="flex justify-center">
-            <hr className="border-primary border-t-2 w-[20%]" />
-          </div>
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-5">
-            {data.cards.map((card) => (
-              <StarPackageCard
-                key={card.id}
-                card={card}
-                description={description}
-                stars={data.stars}
-                tier={tier}
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {data.cards.map((card) => (
+            <StarPackageCard
+              key={card.id}
+              card={card}
+              description={description}
+              stars={data.stars}
+              tier={tier}
+            />
+          ))}
         </div>
       </ContentLayoutWrapper>
     </section>

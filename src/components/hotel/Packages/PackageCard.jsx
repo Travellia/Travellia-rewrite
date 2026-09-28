@@ -54,11 +54,11 @@ const PackageCard = ({ data }) => {
               )}
             </p>
           ) : (
-            <p className="text-sm font-semibold text-gold">Best rates on request</p>
+            <p className="text-sm font-semibold leading-tight text-gold">Best rates on request</p>
           )}
           <Link
             href="#plan-your-trip"
-            className="inline-flex items-center gap-2 rounded-full bg-white py-1.5 pl-4 pr-1.5 text-sm font-semibold text-ink transition hover:bg-gold"
+            className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white py-1.5 pl-4 pr-1.5 text-sm font-semibold text-ink transition hover:bg-gold"
           >
             Book now
             <span className="grid size-7 place-items-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:rotate-45">

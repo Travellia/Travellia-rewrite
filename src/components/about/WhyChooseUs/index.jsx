@@ -1,5 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -45,66 +46,43 @@ const index = () => {
     },
   ];
   return (
-    <section className="py-5 md:py-10  bg-background relative overflow-hidden flex flex-col">
-      <ContentLayoutWrapper className="flex flex-col z-2">
-        <div className="text-center mb-8 z-2">
-          <h2 className="text-lg font-ultralight text-center capitalize">
-            WHY
-          </h2>
-          <h2 className="text-5xl font-bold text-center capitalize text-primary">
-            CHOOSE US
-          </h2>
-        </div>
-        <div className="grid gap-6 w-full sm:grid-cols-1 md:grid-rows-2 md:grid-cols-2 lg:w-[90%] lg:grid-cols-2 xl:w-[85%] z-2 auto-rows-fr">
-          {" "}
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-12">
+        <SectionHeading
+          align="center"
+          eyebrow="Why"
+          title={
+            <>
+              Choose <em>us.</em>
+            </>
+          }
+        />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <div
+            <article
               key={index}
-              className="flex flex-col h-full items-center gap-4 p-8 border border-gray-200 bg-gray-100 rounded-4xl hover:shadow-lg transition-shadow duration-300"
+              className="group flex h-full flex-col gap-5 rounded-card border border-line bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
             >
-              <Image
-                src={service.iconPath}
-                alt=""
-                className="w-20 h-20 object-contain"
-                width={60}
-                height={60}
-                loading="lazy"
-              />
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black/70 text-center capitalize">
+              <span className="grid size-16 place-items-center rounded-full bg-sand">
+                <Image src={service.iconPath} alt="" width={34} height={34} className="object-contain" />
+              </span>
+              <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight text-ink">
                 {service.title}
               </h3>
-              <p className="text-gray-600 text-center">{service.description}</p>
-              <Button
-                asChild
-                variant="default"
-                className="mt-4 rounded-full w-full"
+              <p className="flex-1 text-ink/65">{service.description}</p>
+              <Link
+                href="#plan-your-trip"
+                className="flex items-center justify-between rounded-full bg-sand py-1.5 pl-5 pr-1.5 text-sm font-semibold text-ink transition-colors group-hover:bg-gold"
               >
-                <Link href="#plan-your-trip">Book Now</Link>
-              </Button>
-            </div>
+                Book Now
+                <span className="grid size-8 place-items-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="size-4" />
+                </span>
+              </Link>
+            </article>
           ))}
         </div>
       </ContentLayoutWrapper>
-      <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full z-1">
-        <Image
-          src={"/about/WhyChooseUs/bag.png"}
-          alt="About us image"
-          fill
-          sizes="50vw"
-          className="object-contain"
-          loading="lazy"
-        />
-      </div>
-      <div className="hidden lg:block absolute top-0 right-0 w-full h-full z-0">
-        <Image
-          src={"/about/WhyChooseUs/bg.png"}
-          alt="About us image"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          loading="lazy"
-        />
-      </div>
     </section>
   );
 };

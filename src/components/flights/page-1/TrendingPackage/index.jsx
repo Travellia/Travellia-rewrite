@@ -1,6 +1,8 @@
 import BookPackageCard from "@/components/common/BookPackageCard";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 
 // Fares from the latest offers list (GBP per person).
 const PACKAGES_DATA = [
@@ -57,15 +59,23 @@ const PACKAGES_DATA = [
 const index = () => {
   return (
     <section>
-      <ContentLayoutWrapper className="flex flex-col gap-10">
-        <div className="flex flex-col ">
-          <p className="heading-para">TRENDY</p>
-          <h1 className="heading">OUR TRENDING</h1>
-          <h1 className="heading">FLIGHT PACKAGES</h1>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ContentLayoutWrapper className="flex flex-col gap-12">
+        <SectionHeading
+          eyebrow="Trendy · Our trending flight packages"
+          title={
+            <>
+              Great fares,
+              <br />
+              <em>trending now.</em>
+            </>
+          }
+          intro="Return fares from London, per person. Fares change daily, so send us your dates for a live quote."
+        />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {PACKAGES_DATA.map((data, index) => (
-            <BookPackageCard data={data} href="#plan-your-trip" key={index} />
+            <Reveal key={data.city} delay={(index % 3) * 100}>
+              <BookPackageCard data={data} href="#plan-your-trip" />
+            </Reveal>
           ))}
         </div>
       </ContentLayoutWrapper>

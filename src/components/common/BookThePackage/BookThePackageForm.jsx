@@ -38,18 +38,18 @@ const BookThePackageForm = () => {
       onSubmit={handleSubmit}
     >
       {({ values, setFieldValue, isSubmitting }) => (
-        <Form className="w-full flex flex-col gap-5 relative">
+        <Form className="w-full flex flex-col gap-4 relative">
           {/* First Name */}
           <div>
             <Field
               name="firstName"
               placeholder="Your First name"
-              className="w-full p-5 bg-gray-100 rounded-2xl"
+              className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
             />
             <ErrorMessage
               name="firstName"
               component="p"
-              className="text-red-500 text-sm pl-5 pt-2"
+              className="text-red-600 text-sm pl-1 pt-1"
             />
           </div>
 
@@ -58,12 +58,12 @@ const BookThePackageForm = () => {
             <Field
               name="email"
               placeholder="Your Email"
-              className="w-full p-5 bg-gray-100 rounded-2xl"
+              className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
             />
             <ErrorMessage
               name="email"
               component="p"
-              className="text-red-500 text-sm pl-5 pt-2"
+              className="text-red-600 text-sm pl-1 pt-1"
             />
           </div>
 
@@ -72,12 +72,12 @@ const BookThePackageForm = () => {
             <Field
               name="phone"
               placeholder="Phone"
-              className="w-full p-5 bg-gray-100 rounded-2xl"
+              className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
             />
             <ErrorMessage
               name="phone"
               component="p"
-              className="text-red-500 text-sm pl-5 pt-2"
+              className="text-red-600 text-sm pl-1 pt-1"
             />
           </div>
 
@@ -89,7 +89,7 @@ const BookThePackageForm = () => {
                 value={values.adult}
                 onValueChange={(value) => setFieldValue("adult", value)}
               >
-                <SelectTrigger className="w-full p-5 bg-gray-100 rounded-2xl">
+                <SelectTrigger className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40">
                   <SelectValue placeholder="Adults" />
                 </SelectTrigger>
                 <SelectContent position="popper" side="bottom" align="start">
@@ -103,7 +103,7 @@ const BookThePackageForm = () => {
               <ErrorMessage
                 name="adult"
                 component="p"
-                className="text-red-500 text-sm pl-5 pt-2"
+                className="text-red-600 text-sm pl-1 pt-1"
               />
             </div>
 
@@ -113,7 +113,7 @@ const BookThePackageForm = () => {
                 value={values.child}
                 onValueChange={(value) => setFieldValue("child", value)}
               >
-                <SelectTrigger className="w-full p-5 bg-gray-100 rounded-2xl">
+                <SelectTrigger className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40">
                   <SelectValue placeholder="Children" />
                 </SelectTrigger>
                 <SelectContent position="popper" side="bottom" align="start">
@@ -127,7 +127,7 @@ const BookThePackageForm = () => {
               <ErrorMessage
                 name="child"
                 component="p"
-                className="text-red-500 text-sm pl-5 pt-2"
+                className="text-red-600 text-sm pl-1 pt-1"
               />
             </div>
           </div>
@@ -138,19 +138,19 @@ const BookThePackageForm = () => {
               as="textarea"
               name="message"
               placeholder="Message"
-              className="w-full p-5 h-40 bg-gray-100 rounded-2xl resize-none"
+              className="w-full px-4 py-3.5 h-28 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40 resize-none"
             />
             <ErrorMessage
               name="message"
               component="p"
-              className="text-red-500 text-sm pl-5 pt-2"
+              className="text-red-600 text-sm pl-1 pt-1"
             />
           </div>
 
           <HoneypotField />
 
           <div className="flex flex-col items-center gap-4">
-            <Button type="submit" className="btn-main" disabled={isSubmitting}>
+            <Button type="submit" className="btn-main w-full" disabled={isSubmitting}>
               {isSubmitting ? "Sending…" : "Book Now"}
             </Button>
             <FormStatus status={status} error={error} />

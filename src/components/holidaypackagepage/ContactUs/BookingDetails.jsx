@@ -11,7 +11,7 @@ const BookingDetails = ({ data }) => {
 
   return (
     <div className="flex flex-col gap-1 w-full">
-      <div className="flex items-center relative border py-2 border-gray-300 rounded-xl bg-white/70">
+      <div className="relative flex items-center rounded-2xl border border-line bg-sand/60 py-2 transition focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/30">
         <div className="p-3 shrink-0">
           <Image
             src={"/holidayPackage/ContactUs/map-icon.png"}
@@ -25,7 +25,7 @@ const BookingDetails = ({ data }) => {
         <div className="flex flex-col min-w-0 flex-1 pr-3">
           <label
             htmlFor={`holiday-${name}`}
-            className="text-[13px] text-gray-500"
+            className="text-[11px] font-semibold uppercase tracking-wider text-ink/50"
           >
             {title}
           </label>
@@ -35,7 +35,7 @@ const BookingDetails = ({ data }) => {
               as="select"
               id={`holiday-${name}`}
               name={name}
-              className="text-sm font-bold bg-transparent outline-none w-full"
+              className="text-sm font-semibold text-ink bg-transparent outline-none w-full"
             >
               <option value="">Select…</option>
               {options.map((option) => (
@@ -50,7 +50,7 @@ const BookingDetails = ({ data }) => {
               name={name}
               type={type}
               placeholder={placeholder}
-              className="text-sm font-bold bg-transparent outline-none w-full placeholder:font-normal placeholder:text-gray-400"
+              className="text-sm font-semibold text-ink bg-transparent outline-none w-full placeholder:font-normal placeholder:text-ink/40"
             />
           )}
         </div>
@@ -59,7 +59,7 @@ const BookingDetails = ({ data }) => {
       <ErrorMessage
         name={name}
         component="p"
-        className="text-red-500 text-xs pl-3"
+        className="text-red-600 text-xs pl-3"
       />
     </div>
   );

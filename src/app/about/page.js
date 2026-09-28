@@ -9,16 +9,24 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 const page = () => {
   const welcomeData = {
     slides: [{ id: 1, image: "/about/welcome/Image1.png" }],
-    title: "ABOUT US",
+    heading: "About us",
+    title: (
+      <>
+        Journeys, <em>made personal.</em>
+      </>
+    ),
+    subtitle: "A UK travel team in Leeds, planning flights, Umrah and holidays around you.",
   };
   return (
-    <div className="flex flex-col gap-10 bg-background">
+    <div className="flex flex-col">
       <Welcome data={welcomeData} />
-      <AboutTravellia />
-      <WhyChooseUs />
-      <AmazingTeam />
-      <Video />
-      <PlanYourTrip />
+      <div className="flex flex-col gap-20 pt-20 md:gap-28 md:pt-28">
+        <AboutTravellia />
+        <WhyChooseUs />
+        <AmazingTeam />
+        <Video />
+        <PlanYourTrip />
+      </div>
     </div>
   );
 };

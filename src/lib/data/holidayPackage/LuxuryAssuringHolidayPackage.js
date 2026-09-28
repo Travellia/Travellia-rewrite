@@ -1,6 +1,6 @@
 export const LuxuryAssuringHolidayPackage = {
   subtitle: "LUXURY ASSURING 5 STAR",
-  title: "HOLIDAY PACKAGE",
+  title: "Holiday packages",
   highlights: ["affordable", "comfortable", "memorable"],
   description:
     "From sunny beach escapes to exciting city breaks, our holiday packages combine flights, hotels and transfers so you can simply relax and enjoy the trip.",

@@ -15,9 +15,17 @@ const page = () => {
   const welcomeData = {
     slides: [
       { id: 1, image: "/holidayPackage/welcome/welcome1.jpg" },
-      { id: 2, image: "/holidayPackage/welcome/welcome2.jpg" },
+      { id: 2, image: "/about/welcome/Image1.png" },
+      { id: 3, image: "/home/welcome/welcome.jpg" },
     ],
-    title: "HOLIDAY PACKAGES",
+    heading: "Holiday packages",
+    title: (
+      <>
+        Escape <em>somewhere new.</em>
+      </>
+    ),
+    subtitle:
+      "Beach escapes, city breaks and family adventures, with flights, hotels and transfers in one booking.",
   };
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHolidayPackage;
@@ -27,26 +35,22 @@ const page = () => {
 
   const imageData = {
     image: "/holidayPackage/BookNow/bgImage.png",
-    alt: "resturant",
+    alt: "",
   };
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <Welcome data={welcomeData} />
-      <div className="flex flex-col gap-7 xl:gap-10 relative z-10 -mt-24 md:-mt-40">
+      <div className="relative z-10 -mt-24 flex flex-col gap-20 md:-mt-40 md:gap-28">
         <FilterSearch />
         <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
-        <div className="flex flex-col">
-          <FreshlyAdded />
-          <BookNow data={imageData} />
-        </div>
-        <div className="flex flex-col">
-          <TravelItinearies
-            data1={PACKAGE_DATA}
-            data2={BULLETS}
-            href="#plan-your-trip"
-          />
-        </div>
+        <FreshlyAdded />
+        <BookNow data={imageData} />
+        <TravelItinearies
+          data1={PACKAGE_DATA}
+          data2={BULLETS}
+          href="#plan-your-trip"
+        />
         <ContactUs />
         <PlanYourTrip />
       </div>

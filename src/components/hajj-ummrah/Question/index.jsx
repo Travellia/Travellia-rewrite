@@ -1,7 +1,15 @@
+"use client";
+
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Card } from "@/components/ui/card";
-import React from "react";
-import QuestionCard from "./QuestionCard";
+import React, { useState } from "react";
+import Image from "next/image";
+import SectionHeading from "@/components/ui/SectionHeading";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const QUESTION_DATA = [
   {
@@ -19,22 +27,61 @@ const QUESTION_DATA = [
 ];
 
 const index = () => {
+  const [open, setOpen] = useState(`q-${QUESTION_DATA[0].id}`);
+  const activeIndex = Math.max(
+    0,
+    QUESTION_DATA.findIndex((q) => `q-${q.id}` === open)
+  );
+
   return (
-    <section className="py-10">
-      <ContentLayoutWrapper className="flex flex-col gap-10">
-        <div className="flex flex-col gap-2">
-          <h1 className="heading">Do You Have Any Questions?</h1>
-          <p className="para ">
-            {" "}
-            Find answers to common questions about our services and your holy
-            journey below.
-          </p>
+    <section>
+      <ContentLayoutWrapper className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="flex flex-col gap-8">
+          <SectionHeading
+            eyebrow="FAQ"
+            title={
+              <>
+                Your questions,
+                <br />
+                <em>our answers.</em>
+              </>
+            }
+            intro="Find answers to common questions about our services and your holy journey below."
+          />
+          <div className="flex items-center gap-5">
+            <span className="font-display text-6xl font-bold text-ink/15">
+              /0{activeIndex + 1}
+            </span>
+            <span className="relative h-28 w-44 overflow-hidden rounded-2xl shadow-soft">
+              <Image
+                src="/hajj-ummrah/welcome/slide1.png"
+                alt=""
+                fill
+                sizes="176px"
+                className="object-cover"
+              />
+            </span>
+          </div>
         </div>
-        <div className=" flex flex-col  md:flex-row gap-5">
-          {QUESTION_DATA.map((card, index) => (
-            <QuestionCard key={index} data={card} />
+
+        <Accordion
+          type="single"
+          value={open}
+          onValueChange={(value) => value && setOpen(value)}
+          className="flex flex-col gap-3 self-center"
+        >
+          {QUESTION_DATA.map((item, index) => (
+            <AccordionItem key={item.id} value={`q-${item.id}`}>
+              <AccordionTrigger>
+                <span className="flex items-center gap-3">
+                  <span className="text-xs font-semibold text-gold">/0{index + 1}</span>
+                  {item.question}
+                </span>
+              </AccordionTrigger>
+              <AccordionContent>{item.answer}</AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </ContentLayoutWrapper>
     </section>
   );

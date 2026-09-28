@@ -8,7 +8,6 @@ import { buildHotelPackageDetails } from "@/lib/data/umrahDetail/HotelPackageDet
 import { StarPackagesByTier } from "@/lib/data/hajj-umrah/StarPackagesData";
 import HotelGallery from "@/components/umrahDetail/HotelGallery";
 import PackageInclude from "@/components/umrahDetail/PackageInclude";
-import Image from "next/image";
 import React from "react";
 import { notFound } from "next/navigation";
 
@@ -30,7 +29,13 @@ const page = async (props) => {
 
   const welcomeData = {
     slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.png" }],
-    title: "DETAIL PAGE",
+    heading: `${tierData.stars}-star Umrah package`,
+    title: (
+      <>
+        {card.nights?.split(" (")[0] ?? "Your Umrah"} <em>in the Holy Cities.</em>
+      </>
+    ),
+    subtitle: `${card.makkah} in Makkah and ${card.madinah} in Madinah, ${card.start?.toLowerCase() ?? "from"} ${card.price} per person.`,
   };
 
   const { makkah: MAKKAH_HOTEL_PACKAGE, madinah: MADINAH_HOTEL_PACKAGE } =
@@ -38,11 +43,11 @@ const page = async (props) => {
 
   const imageData = {
     image: "/umrahDetail/BookNow/BookNow-bg.png",
-    alt: "resturant",
+    alt: "",
   };
   const imageData2 = {
     image: "/umrahDetail/BookNow/bookNow.png",
-    alt: "resturant",
+    alt: "",
   };
 
   const BOOKNOWLIST = BookNowList;
@@ -50,49 +55,18 @@ const page = async (props) => {
   return (
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
-      <div className="flex flex-col gap-7 xl:gap-10 relative z-10 -mt-24 md:-mt-40">
+      <div className="relative z-10 -mt-24 flex flex-col gap-20 md:-mt-40 md:gap-28">
         <FilterSearch defaultTab={"umrah"} />
-
-        <div className="flex flex-col gap-7 xl:gap-20 relative">
-          <Image
-            src="/umrahDetail/umrahPackage/makkah.png"
-            alt="makkah"
-            height={1000}
-            width={1000}
-            className="hidden lg:block absolute bottom-0 right-0 -z-10 pointer-events-none"
-            loading="lazy"
-          />
-          <Image
-            src="/umrahDetail/umrahPackage/madinah.png"
-            alt="makkah"
-            height={1000}
-            width={1000}
-            className="hidden lg:block absolute bottom-0 left-0 -z-10 pointer-events-none"
-            loading="lazy"
-          />
-          <Image
-            src="/umrahDetail/umrahPackage/dot.png"
-            alt="makkah"
-            height={1000}
-            width={1000}
-            className="hidden lg:block absolute w-full right-0 -translate-y-10 -z-10 pointer-events-none"
-            loading="lazy"
-          />
-
-          <HotelPackage data={MAKKAH_HOTEL_PACKAGE} />
-          <HotelPackage data={MADINAH_HOTEL_PACKAGE} reverse />
-          <BookNow
-            data={imageData}
-            data2={imageData2}
-            data3={BOOKNOWLIST}
-            reverse
-          />
-        </div>
-
-        <div>
-          <HotelGallery />
-          <PackageInclude />
-        </div>
+        <HotelPackage data={MAKKAH_HOTEL_PACKAGE} />
+        <HotelPackage data={MADINAH_HOTEL_PACKAGE} reverse />
+        <BookNow
+          data={imageData}
+          data2={imageData2}
+          data3={BOOKNOWLIST}
+          reverse
+        />
+        <HotelGallery />
+        <PackageInclude />
         <PlanYourTrip />
       </div>
     </div>

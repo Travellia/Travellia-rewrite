@@ -17,13 +17,14 @@ const LuxuryAssuringCard = ({ card, link }) => {
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+      {/* The source images have a blank band in their bottom third, so crop to the top. */}
+      <div className="relative aspect-[16/9] overflow-hidden rounded-[22px]">
         <Image
           src={card.image}
           alt={card.description}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
         {card.stars > 0 && (
           <span className="absolute left-3 top-3 flex items-center gap-0.5 rounded-full bg-white/90 px-2.5 py-1 backdrop-blur">

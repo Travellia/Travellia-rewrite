@@ -1,46 +1,33 @@
 import Image from "next/image";
 import React from "react";
 
-const PopularPackageCard = ({ data, index, total }) => {
+const PopularPackageCard = ({ data }) => {
   return (
-    <>
-      <section className="flex gap-5 items-center [w-50%]">
-        {/* <div className="w-full lg:w-auto flex justify-center lg:justify-start">
-          </div> */}
+    <a
+      href="#plan-your-trip"
+      className="group flex items-center gap-4 rounded-2xl p-1.5 transition-colors hover:bg-sand"
+    >
+      <span className="relative size-20 shrink-0 overflow-hidden rounded-xl">
         <Image
           src={data.image}
           alt={data.place}
-          width={100}
-          height={100}
-          className="
-                  rounded-xl object-cover
-                  w-auto       h-30
-                  sm:w-auto sm:h-35
-                  md:w-auto md:h-50
-                  lg:w-auto lg:h-25
-                  xl:w-auto xl:h-30
-                      "
-          loading="lazy"
+          fill
+          sizes="80px"
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="flex flex-col w-[50%]">
-          <div className="text-xl sm:text-2xl lg:text-sm">{data.days}</div>
-
-          <div className="text-xl sm:text-3xl lg:text-lg text-primary font-bold tracking-wide">
-            {data.place}
-          </div>
-
-          <div className="flex items-end gap-2">
-            <div className="text-xl sm:text-3xl lg:text-lg text-primary font-bold tracking-wide ">
-              {data.price}
-            </div>
-            <div className="text-sm sm:text-xl lg:text-sm">{data.person}</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider (only if NOT last item) */}
-      {index !== total - 1 && <div className="bg-gray-200 h-px w-full my-4" />}
-    </>
+      </span>
+      <span className="flex flex-col gap-0.5">
+        <span className="text-xs font-semibold uppercase tracking-wider text-ink/50">
+          {data.days}
+        </span>
+        <span className="font-display font-bold uppercase tracking-tight text-ink">
+          {data.place}
+        </span>
+        <span className="text-sm text-ink/60">
+          <span className="font-bold text-gold-deep">{data.price}</span> {data.person}
+        </span>
+      </span>
+    </a>
   );
 };
 

@@ -3,11 +3,10 @@ import React from "react";
 import termsList from "./termsList";
 import TermCard from "./TermCard";
 import BookNow from "@/components/common/BookNow";
-import Image from "next/image";
 
 const imageData = {
   image: "/holidayPackage/BookNow/bgImage.png",
-  alt: "resturant",
+  alt: "",
 };
 
 const index = () => {
@@ -15,55 +14,21 @@ const index = () => {
   const secondHalf = termsList.slice(11);
 
   return (
-    <section className="overflow-hidden">
-      <div className="flex flex-col gap-10 items-center  m-auto text-center">
+    <section>
+      <div className="flex flex-col gap-20 md:gap-28">
         {/* Header */}
         <div className="relative w-full ">
-          <Image
-            src="/terms/MainContent/top-flower.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[16%] h-auto absolute top-0"
-          />
-          <Image
-            src="/terms/MainContent/plan.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[8%] hidden lg:block  lg:-translate-x-22 xl:-translate-x-35 lg:-translate-y-28  xl:-translate-y-34 h-auto absolute right-0 top-1/2"
-          />
-          <Image
-            src="/terms/MainContent/DashLine.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[8%] -translate-y-15 h-auto absolute right-0 top-1/2"
-          />
-          <Image
-            src="/terms/MainContent/bottom-flower.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[16%]  h-auto absolute right-0 bottom-0 lg:translate-x-20  xl:translate-x-30 "
-          />
-          <Image
-            src="/terms/MainContent/bridge.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[35%] h-auto absolute  bottom-0"
-          />
-          <ContentLayoutWrapper className="relative flex flex-col gap-5">
-            <div className=" font-sans flex flex-col gap-2 items-center font-normal  mx-auto">
-              <h1 className="text-3xl md:text-5xl text-primary tracking-wider  ">
-                FLIGHT TICKETS, HOLIDAY
-              </h1>
-              <h2 className="text-xl w-full md:text-4xl tracking-wider md:w-[85%]">
-                PACKAGES & DEPOSITS – NON-REFUNDABLE & NON-CHANGEABLE (Terms &
-                Conditions Apply)
+          <ContentLayoutWrapper>
+          <div className="flex flex-col gap-8 rounded-frame border border-line bg-white p-6 shadow-soft md:p-12">
+            <div className="flex flex-col gap-4">
+              <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-ink md:text-5xl">
+                Terms &amp; <em className="font-serif font-normal normal-case tracking-normal text-gold">conditions</em>
               </h2>
-              <p className=" pt-5 w-full md:w-[72%]">
+              <h3 className="text-lg font-semibold uppercase tracking-wide text-gold-deep md:text-xl">
+                Flight tickets, holiday packages & deposits – NON-REFUNDABLE & NON-CHANGEABLE (Terms &
+                Conditions Apply)
+              </h3>
+              <p className="leading-relaxed text-ink/75">
                 All flight tickets, holiday/umrah bookings, hotel bookings, and
                 deposits made through Travellia Limited are strictly
                 non-refundable and non-changeable, unless otherwise stated. This
@@ -80,10 +45,8 @@ const index = () => {
             </div>
 
             {/* firstHalf Terms List */}
-            <TermsList
-              terms={firstHalf}
-              className="w-full md:w-[72%] mx-auto"
-            />
+            <TermsList terms={firstHalf} />
+          </div>
           </ContentLayoutWrapper>
         </div>
 
@@ -94,43 +57,20 @@ const index = () => {
 
         {/* seconHalf Terms List */}
         <div className="relative w-full">
-          <Image
-            src="/terms/MainContent/plan2.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[16%] h-auto absolute md:-translate-x-10 lg:-translate-x-20 bottom-2/3"
-          />
-          <Image
-            src="/terms/MainContent/bag.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-[12%] h-auto absolute right-0 lg:translate-x-15 xl:translate-x-30  bottom-1/2"
-          />
-          <Image
-            src="/terms/MainContent/planwithline.png"
-            alt="top-flower"
-            width={1000}
-            height={1000}
-            className="w-full h-auto absolute right-0 top-2/3 translate-x-10 lg:translate-y-40 xl:translate-y-0  lg:top-1/2"
-          />
-          <ContentLayoutWrapper className="flex flex-col gap-10">
-            <TermsList
-              terms={secondHalf}
-              className="w-full md:w-[72%] mx-auto"
-            />
+          <ContentLayoutWrapper>
+          <div className="flex flex-col gap-8 rounded-frame border border-line bg-white p-6 shadow-soft md:p-12">
+            <TermsList terms={secondHalf} />
 
-            <p className="w-full md:w-[72%] mx-auto">
-              <span className="text-primary font-bold text-2xl pr-2">›</span>{" "}
-              <span className="font-bold">Flights</span>– If the airline offers
+            <p className="leading-relaxed text-ink/75">
+              <span className="text-gold-deep font-bold text-2xl pr-2">›</span>{" "}
+              <span className="font-bold text-ink">Flights</span> – If the airline offers
               a full or partial refund, the customer will be entitled to receive
               this refund, subject to Travellia Limited’s administration fee for
               processing. <br />
-              <span className="text-primary font-bold text-2xl pr-2">
+              <span className="text-gold-deep font-bold text-2xl pr-2">
                 ›{" "}
               </span>{" "}
-              <span className="font-bold">Hotels & Transport</span>– Refunds may
+              <span className="font-bold text-ink">Hotels & Transport</span> – Refunds may
               not be provided, or may only be processed in accordance with the
               relevant supplier’s terms and conditions. Travellia Limited has no
               control over these decisions. <br /> This policy clearly sets out
@@ -145,6 +85,7 @@ const index = () => {
                 will apply to all members of your booking party.
               </span>
             </p>
+          </div>
           </ContentLayoutWrapper>
         </div>
       </div>

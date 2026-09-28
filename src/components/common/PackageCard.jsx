@@ -20,7 +20,7 @@ const PackageCard = ({ data }) => {
 
       <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-3 text-white">
         <div className="flex flex-col gap-2">
-          <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight md:text-2xl">
+          <h3 className="font-display text-lg font-bold uppercase leading-tight tracking-tight lg:text-xl">
             {data.description}
           </h3>
           {data.startingPrice && (

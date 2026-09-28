@@ -23,9 +23,9 @@ const HotelInfo = ({ info }) => {
           {highlights.map((highlight) => (
             <li
               key={highlight}
-              className="flex items-center gap-1.5 rounded-full bg-secondary/60 border border-primary/10 px-3 py-1 text-xs font-semibold text-gray-700"
+              className="flex items-center gap-1.5 rounded-full border border-line bg-sand px-3 py-1 text-xs font-semibold text-ink/80"
             >
-              <MdCheck className="text-primary text-sm shrink-0" />
+              <MdCheck className="text-gold-deep text-sm shrink-0" />
               {highlight}
             </li>
           ))}
@@ -34,13 +34,13 @@ const HotelInfo = ({ info }) => {
 
       {lead && (
         <div className="flex flex-col gap-3">
-          <p className="text-sm leading-relaxed text-gray-600">{lead}</p>
+          <p className="text-sm leading-relaxed text-ink/70">{lead}</p>
 
           {isExpanded &&
             rest.map((paragraph) => (
               <p
                 key={paragraph}
-                className="text-sm leading-relaxed text-gray-600"
+                className="text-sm leading-relaxed text-ink/70"
               >
                 {paragraph}
               </p>
@@ -51,7 +51,7 @@ const HotelInfo = ({ info }) => {
               type="button"
               onClick={() => setIsExpanded((value) => !value)}
               aria-expanded={isExpanded}
-              className="flex items-center gap-1 self-start text-sm font-semibold text-primary cursor-pointer hover:underline"
+              className="flex items-center gap-1 self-start text-sm font-semibold text-gold-deep cursor-pointer hover:underline"
             >
               {isExpanded ? "Read less" : "Read more"}
               <MdExpandMore
