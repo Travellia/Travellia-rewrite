@@ -43,7 +43,7 @@ const LuxuryAssuringCard = ({ card, link }) => {
         <div className="mt-auto flex items-end justify-between gap-3 border-t border-line pt-4">
           <div className="flex flex-col">
             {card.start && (
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/50">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/60">
                 {card.start}
               </span>
             )}
@@ -51,7 +51,7 @@ const LuxuryAssuringCard = ({ card, link }) => {
               {card.price}
             </span>
             {card.perPerson && (
-              <span className="text-xs text-ink/50">{card.perPerson}</span>
+              <span className="text-xs text-ink/60">{card.perPerson}</span>
             )}
           </div>
 

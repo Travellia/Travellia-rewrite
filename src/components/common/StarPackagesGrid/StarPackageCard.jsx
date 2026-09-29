@@ -18,7 +18,7 @@ const HotelRow = ({ icon: Icon, city, hotel, nights }) => (
       <Icon className="text-sm" />
     </div>
     <div className="min-w-0 flex-1">
-      <p className="text-[10px] font-semibold uppercase tracking-wider text-ink/50">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-ink/60">
         {city}
         {nights && ` · ${nights} nights`}
       </p>
@@ -54,7 +54,7 @@ const StarPackageCard = ({ card, description, stars, tier }) => {
         <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
           <CarouselWrapper slides={slides} navigation={false} speed={1200} delay={4000} />
           {stars && (
-            <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 px-2.5 py-1 text-xs text-gold backdrop-blur">
+            <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 px-2.5 py-1 text-xs text-gold-deep backdrop-blur">
               {"★".repeat(stars)}
             </span>
           )}
@@ -73,7 +73,7 @@ const StarPackageCard = ({ card, description, stars, tier }) => {
 
         <div className="mt-auto flex items-end justify-between gap-3 border-t border-line pt-4">
           <div className="flex flex-col">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/50">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/60">
               {card.start}
             </span>
             <span className="font-display text-xl font-bold text-gold-deep">

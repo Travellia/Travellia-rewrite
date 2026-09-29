@@ -89,7 +89,7 @@ const Adventures = () => {
                 <AccordionItem key={d.id} value={d.id}>
                   <AccordionTrigger>
                     <span className="flex items-center gap-4">
-                      <span className="text-xs font-semibold text-gold">
+                      <span className="text-xs font-semibold text-gold-deep in-data-[state=open]:text-gold">
                         0{index + 1}
                       </span>
                       <span className="font-display text-lg uppercase tracking-tight">

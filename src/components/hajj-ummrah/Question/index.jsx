@@ -74,7 +74,7 @@ const index = () => {
             <AccordionItem key={item.id} value={`q-${item.id}`}>
               <AccordionTrigger>
                 <span className="flex items-center gap-3">
-                  <span className="text-xs font-semibold text-gold">/0{index + 1}</span>
+                  <span className="text-xs font-semibold text-gold-deep in-data-[state=open]:text-gold">/0{index + 1}</span>
                   {item.question}
                 </span>
               </AccordionTrigger>

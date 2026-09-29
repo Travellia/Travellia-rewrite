@@ -16,6 +16,7 @@
   --color-sand-deep: var(--sand-deep);
   --color-gold: var(--gold);
   --color-gold-deep: var(--gold-deep);
+  --color-gold-accent: var(--gold-accent);
   --color-line: var(--line);
   --radius-card: 28px;
   --radius-frame: 36px;
@@ -68,7 +69,10 @@
   --sand: #f6f1e7;
   --sand-deep: #ece4d3;
   --gold: #c9a23a;
-  --gold-deep: #8f6f1e;
+  /* gold-deep: small gold text (4.5:1 on white and sand).
+     gold-accent: large gold text on light backgrounds (3:1). */
+  --gold-deep: #7d6019;
+  --gold-accent: #9a7a22;
   --line: rgb(15 17 21 / 0.08);
 
   --primary: var(--gold);
@@ -222,7 +226,7 @@ button:disabled {
 
 /* Serif accent word inside display headlines: <em className="accent">…</em> */
 .accent {
-  @apply font-serif italic font-normal normal-case tracking-normal text-gold;
+  @apply font-serif italic font-normal normal-case tracking-normal text-gold-accent;
 }
 
 /* Scroll reveal, driven by useReveal(). */

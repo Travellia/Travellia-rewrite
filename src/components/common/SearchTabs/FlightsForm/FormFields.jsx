@@ -107,6 +107,7 @@ const CityCombobox = ({ name, placeholder }) => {
               aria-autocomplete="list"
               value={isTyping ? query : label}
               placeholder={placeholder}
+              aria-label={placeholder}
               onFocus={(e) => e.target.select()}
               onChange={(e) => {
                 setQuery(e.target.value);
@@ -621,6 +622,7 @@ const FormFields = ({ flightType }) => {
                   {({ field }) => (
                     <Input
                       {...field}
+                      aria-label="Name"
                       placeholder="Name"
                       className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                     />
@@ -644,6 +646,7 @@ const FormFields = ({ flightType }) => {
                     <Input
                       {...field}
                       type="tel"
+                      aria-label="Number"
                       placeholder="Number"
                       className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                     />
@@ -667,6 +670,7 @@ const FormFields = ({ flightType }) => {
                     <Input
                       {...field}
                       type="email"
+                      aria-label="Email"
                       placeholder="Email"
                       className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                     />

@@ -47,8 +47,8 @@ const SectionHeading = ({
       {eyebrow && <Eyebrow tone={tone}>{eyebrow}</Eyebrow>}
       <Tag
         className={cn(
-          "font-display font-bold uppercase leading-[1.02] tracking-tight text-3xl sm:text-4xl lg:text-5xl [&_em]:font-serif [&_em]:font-normal [&_em]:normal-case [&_em]:tracking-normal [&_em]:text-gold",
-          tone === "dark" ? "text-white" : "text-ink"
+          "font-display font-bold uppercase leading-[1.02] tracking-tight text-3xl sm:text-4xl lg:text-5xl [&_em]:font-serif [&_em]:font-normal [&_em]:normal-case [&_em]:tracking-normal",
+          tone === "dark" ? "text-white [&_em]:text-gold" : "text-ink [&_em]:text-gold-accent"
         )}
       >
         <span className="block">{title}</span>

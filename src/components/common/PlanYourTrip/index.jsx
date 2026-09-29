@@ -59,7 +59,7 @@ const PlanYourTrip = ({
                 <h2 className="font-display text-3xl font-bold uppercase leading-none tracking-tight text-ink md:text-4xl">
                   {titleLines1}
                   <br />
-                  <em className="font-serif font-normal normal-case tracking-normal text-gold">
+                  <em className="font-serif font-normal normal-case tracking-normal text-gold-accent">
                     {titleLines2}
                   </em>
                 </h2>

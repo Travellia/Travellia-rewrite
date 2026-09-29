@@ -31,7 +31,7 @@ const HotelPackage = ({ data, reverse = false }) => {
               {data.desc}
             </h2>
             {data.stars && (
-              <p className="text-gold" aria-label={`${data.stars} star hotel`}>
+              <p className="text-gold-accent" aria-label={`${data.stars} star hotel`}>
                 {"★".repeat(data.stars)}
               </p>
             )}

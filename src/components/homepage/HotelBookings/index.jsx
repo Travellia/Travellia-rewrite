@@ -62,7 +62,7 @@ const index = () => {
               className={index === 1 ? "lg:ml-12" : index === 2 ? "lg:ml-24" : ""}
             >
               <div className="flex items-start gap-5 rounded-card border border-line bg-white p-6 shadow-soft">
-                <span className="font-display text-4xl font-bold leading-none text-gold">
+                <span className="font-display text-4xl font-bold leading-none text-gold-accent">
                   0{index + 1}
                 </span>
                 <div className="flex flex-1 flex-col gap-1">

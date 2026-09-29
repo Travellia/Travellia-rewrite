@@ -30,7 +30,7 @@ const HotelFacilities = ({ facilities = [], hotel }) => {
               <span className="font-display text-lg font-bold uppercase tracking-tight text-ink">
                 Hotel facilities
               </span>
-              <span className="text-xs font-semibold text-ink/50">
+              <span className="text-xs font-semibold text-ink/60">
                 {hotel} · {itemCount} amenities
               </span>
             </span>

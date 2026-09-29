@@ -275,7 +275,7 @@ const HotelFormFields = () => {
                               form.setFieldValue(`routes.${index}.from`, value)
                             }
                           >
-                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base">
+                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base" aria-label="Where To">
                               <SelectValue placeholder="Where To" />
                             </SelectTrigger>
                             <SelectContent
@@ -421,7 +421,7 @@ const HotelFormFields = () => {
                               form.setFieldValue(`routes.${index}.to`, value)
                             }
                           >
-                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base">
+                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base" aria-label="Going To">
                               <SelectValue placeholder="Going To" />
                             </SelectTrigger>
                             <SelectContent
@@ -458,6 +458,7 @@ const HotelFormFields = () => {
                       {({ field }) => (
                         <Input
                           {...field}
+                          aria-label="Name"
                           placeholder="Name"
                           className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                         />
@@ -478,6 +479,7 @@ const HotelFormFields = () => {
                         <Input
                           {...field}
                           type="email"
+                          aria-label="Email"
                           placeholder="Email"
                           className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                         />
@@ -498,6 +500,7 @@ const HotelFormFields = () => {
                         <Input
                           {...field}
                           type="tel"
+                          aria-label="Contact Number"
                           placeholder="Contact Number"
                           className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
                         />

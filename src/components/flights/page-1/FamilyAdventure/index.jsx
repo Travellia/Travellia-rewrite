@@ -24,7 +24,7 @@ const index = () => {
             <h2 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight text-ink md:text-5xl">
               Book your flights
               <br />
-              <em className="font-serif font-normal normal-case tracking-normal text-gold">
+              <em className="font-serif font-normal normal-case tracking-normal text-gold-accent">
                 effortlessly.
               </em>
             </h2>

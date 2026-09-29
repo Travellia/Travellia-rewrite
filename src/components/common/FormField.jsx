@@ -14,9 +14,11 @@ const FormField = ({
   errorClass,
   inputBg = "bg-sand/60",
 }) => {
+  const inputId = `field-${name}`;
   return (
     <div className={cn("w-full", wrapperClass)}>
       <label
+        htmlFor={inputId}
         className={cn(
           "mb-2 block pl-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink/60",
           labelClass,
@@ -26,12 +28,13 @@ const FormField = ({
       </label>
 
       <Field
+        id={inputId}
         name={name}
         type={type}
         placeholder={placeholder}
         as={as}
         className={cn(
-          "w-full rounded-2xl border border-line px-5 py-4 text-ink outline-none transition placeholder:text-ink/40 focus-visible:border-gold focus-visible:ring-2 focus-visible:ring-gold/40",
+          "w-full rounded-2xl border border-line px-5 py-4 text-ink outline-none transition placeholder:text-ink/60 focus-visible:border-gold focus-visible:ring-2 focus-visible:ring-gold/40",
           inputBg,
           className,
         )}

@@ -32,11 +32,12 @@ const UmrahContactForm = () => {
           <div className="space-y-3">
             {/* First Name */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs font-semibold uppercase tracking-wide text-white/70">First Name</label>
+              <label htmlFor="umrah-firstName" className="text-xs font-semibold uppercase tracking-wide text-white/70">First Name</label>
               <Field name="firstName">
                 {({ field }) => (
                   <Input
                     {...field}
+                    id="umrah-firstName"
                     placeholder="Your first name"
                     className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
                   />
@@ -50,11 +51,12 @@ const UmrahContactForm = () => {
             </div>
             {/* Contact */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs font-semibold uppercase tracking-wide text-white/70">Phone</label>
+              <label htmlFor="umrah-contact" className="text-xs font-semibold uppercase tracking-wide text-white/70">Phone</label>
               <Field name="contact">
                 {({ field }) => (
                   <Input
                     {...field}
+                    id="umrah-contact"
                     type="tel"
                     placeholder="Phone number"
                     className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
@@ -69,11 +71,12 @@ const UmrahContactForm = () => {
             </div>
             {/* Email */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs font-semibold uppercase tracking-wide text-white/70">Your Email</label>
+              <label htmlFor="umrah-email" className="text-xs font-semibold uppercase tracking-wide text-white/70">Your Email</label>
               <Field name="email">
                 {({ field }) => (
                   <Input
                     {...field}
+                    id="umrah-email"
                     type="email"
                     placeholder="you@example.com"
                     className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"

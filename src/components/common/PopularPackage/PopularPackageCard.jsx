@@ -17,7 +17,7 @@ const PopularPackageCard = ({ data }) => {
         />
       </span>
       <span className="flex flex-col gap-0.5">
-        <span className="text-xs font-semibold uppercase tracking-wider text-ink/50">
+        <span className="text-xs font-semibold uppercase tracking-wider text-ink/60">
           {data.days}
         </span>
         <span className="font-display font-bold uppercase tracking-tight text-ink">

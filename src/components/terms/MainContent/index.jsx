@@ -22,7 +22,7 @@ const index = () => {
           <div className="flex flex-col gap-8 rounded-frame border border-line bg-white p-6 shadow-soft md:p-12">
             <div className="flex flex-col gap-4">
               <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-ink md:text-5xl">
-                Terms &amp; <em className="font-serif font-normal normal-case tracking-normal text-gold">conditions</em>
+                Terms &amp; <em className="font-serif font-normal normal-case tracking-normal text-gold-accent">conditions</em>
               </h2>
               <h3 className="text-lg font-semibold uppercase tracking-wide text-gold-deep md:text-xl">
                 Flight tickets, holiday packages & deposits – NON-REFUNDABLE & NON-CHANGEABLE (Terms &

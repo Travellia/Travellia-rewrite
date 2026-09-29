@@ -43,6 +43,7 @@ const BookThePackageForm = () => {
           <div>
             <Field
               name="firstName"
+              aria-label="Your First name"
               placeholder="Your First name"
               className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
             />
@@ -57,6 +58,7 @@ const BookThePackageForm = () => {
           <div>
             <Field
               name="email"
+              aria-label="Your Email"
               placeholder="Your Email"
               className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
             />
@@ -71,6 +73,7 @@ const BookThePackageForm = () => {
           <div>
             <Field
               name="phone"
+              aria-label="Phone"
               placeholder="Phone"
               className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
             />
@@ -89,7 +92,7 @@ const BookThePackageForm = () => {
                 value={values.adult}
                 onValueChange={(value) => setFieldValue("adult", value)}
               >
-                <SelectTrigger className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40">
+                <SelectTrigger className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40" aria-label="Adults">
                   <SelectValue placeholder="Adults" />
                 </SelectTrigger>
                 <SelectContent position="popper" side="bottom" align="start">
@@ -113,7 +116,7 @@ const BookThePackageForm = () => {
                 value={values.child}
                 onValueChange={(value) => setFieldValue("child", value)}
               >
-                <SelectTrigger className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40">
+                <SelectTrigger className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40" aria-label="Children">
                   <SelectValue placeholder="Children" />
                 </SelectTrigger>
                 <SelectContent position="popper" side="bottom" align="start">
@@ -137,6 +140,7 @@ const BookThePackageForm = () => {
             <Field
               as="textarea"
               name="message"
+              aria-label="Message"
               placeholder="Message"
               className="w-full px-4 py-3.5 h-28 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40 resize-none"
             />

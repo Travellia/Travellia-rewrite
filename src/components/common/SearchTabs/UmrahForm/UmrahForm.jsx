@@ -24,7 +24,7 @@ const UmrahForm = () => {
           <h2 className="font-display text-3xl font-bold uppercase leading-none tracking-tight text-ink md:text-4xl">
             Your Umrah,
             <br />
-            <em className="font-serif font-normal normal-case tracking-normal text-gold">
+            <em className="font-serif font-normal normal-case tracking-normal text-gold-accent">
               fully arranged
             </em>
           </h2>

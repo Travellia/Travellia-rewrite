@@ -77,7 +77,7 @@ const UmrahPackageCard = ({ data, featured = false }) => {
               <ArrowUpRight className="size-4" />
             </span>
           </Link>
-          <p className={cn("text-center text-sm", featured ? "text-white/60" : "text-ink/55")}>
+          <p className={cn("text-center text-sm", featured ? "text-white/60" : "text-ink/60")}>
             Starting from{" "}
             <span className={cn("font-display text-2xl font-bold", featured ? "text-gold" : "text-gold-deep")}>
               £{data.price}

@@ -41,7 +41,7 @@ const TestimonialCard = ({ testimonial, className }) => {
         )}
         <span className="flex flex-col">
           <span className="font-semibold text-ink">{testimonial.user.name}</span>
-          <span className="text-xs text-ink/55">{testimonial.user.location}</span>
+          <span className="text-xs text-ink/60">{testimonial.user.location}</span>
         </span>
       </figcaption>
     </figure>

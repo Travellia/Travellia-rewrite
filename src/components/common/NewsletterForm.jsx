@@ -29,7 +29,7 @@ const NewsletterForm = () => {
               type="email"
               placeholder="Enter your email"
               aria-label="Email address"
-              className="h-11 min-w-0 flex-1 bg-transparent px-5 text-ink outline-none placeholder:text-ink/45"
+              className="h-11 min-w-0 flex-1 bg-transparent px-5 text-ink outline-none placeholder:text-ink/60"
             />
             <Button
               type="submit"

@@ -50,7 +50,7 @@ const index = () => {
               <Eyebrow>Are on now</Eyebrow>
               <h2 className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-ink md:text-4xl">
                 Make your big summer{" "}
-                <em className="font-serif font-normal normal-case tracking-normal text-gold">
+                <em className="font-serif font-normal normal-case tracking-normal text-gold-accent">
                   getaway
                 </em>{" "}
                 happen.
@@ -75,7 +75,7 @@ const index = () => {
               </span>
               <div>
                 <p className="font-display text-3xl font-bold text-ink">{stat.number}</p>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/55">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink/60">
                   {stat.label}
                 </p>
               </div>

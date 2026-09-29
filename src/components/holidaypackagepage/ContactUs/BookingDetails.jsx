@@ -25,7 +25,7 @@ const BookingDetails = ({ data }) => {
         <div className="flex flex-col min-w-0 flex-1 pr-3">
           <label
             htmlFor={`holiday-${name}`}
-            className="text-[11px] font-semibold uppercase tracking-wider text-ink/50"
+            className="text-[11px] font-semibold uppercase tracking-wider text-ink/60"
           >
             {title}
           </label>
@@ -50,7 +50,7 @@ const BookingDetails = ({ data }) => {
               name={name}
               type={type}
               placeholder={placeholder}
-              className="text-sm font-semibold text-ink bg-transparent outline-none w-full placeholder:font-normal placeholder:text-ink/40"
+              className="text-sm font-semibold text-ink bg-transparent outline-none w-full placeholder:font-normal placeholder:text-ink/60"
             />
           )}
         </div>
