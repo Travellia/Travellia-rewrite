@@ -30,9 +30,9 @@ export default function PackagesClient({ packages }) {
   return (
     <div className="w-full space-y-10">
       {/* Cards - 2 columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-6 md:gap-y-15 xl:gap-y-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {currentPackages.map((pkg) => (
-          <div key={pkg.id} className="flex justify-center">
+          <div key={pkg.id}>
             <PackageCard data={pkg} />
           </div>
         ))}

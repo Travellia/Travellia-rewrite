@@ -10,25 +10,28 @@ const CONTACT_FOOTER_LIST = Contact_footer_List;
 const page = () => {
   const welcomeData = {
     slides: [{ id: 1, image: "/contact/Image.png" }],
-    title: "CONTACT",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
+    heading: "Contact",
+    title: (
+      <>
+        Let&apos;s plan <em>your trip.</em>
+      </>
+    ),
+    subtitle:
+      "Call, email or send us a few details. A real travel expert will get back to you.",
   };
 
   return (
-    <section className="relative flex flex-col gap-20 pb-20">
+    <section className="flex flex-col">
       <Welcome data={welcomeData} />
-      <ContentLayoutWrapper className="flex flex-col gap-20">
+      <div className="relative z-10 -mt-24 flex flex-col gap-20 md:-mt-32 md:gap-28">
+        <ContentLayoutWrapper>
+          <ContactFooterCard data={CONTACT_FOOTER_LIST} />
+        </ContentLayoutWrapper>
         <PlanYourTrip
-          titleLines1={"LEAVE US A LITTLE INFO,"}
-          titleLines2={"AND WE'LL BE IN TOUCH."}
-          titleLines2Class={"text-primary"}
-          sectionBg={"bg-white"}
-          inputBg="bg-secondary"
-          paddingY="py-0"
+          titleLines1={"Leave us a little info,"}
+          titleLines2={"and we'll be in touch."}
         />
-        <hr />
-        <ContactFooterCard data={CONTACT_FOOTER_LIST} />
-      </ContentLayoutWrapper>
+      </div>
     </section>
   );
 };

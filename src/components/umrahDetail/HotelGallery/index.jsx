@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 const index = () => {
   const HOTEL_GALLERY = [
@@ -35,19 +37,30 @@ const index = () => {
     },
   ];
   return (
-    <section className="grid grid-cols-3 grid-rows-2 gap-2 md:gap-6 h-80 md:h-125 lg:h-150 xl:h-225 md:p-10  w-[90%] mx-auto">
-      {HOTEL_GALLERY.map((data) => (
-        <div key={data.id} className={`relative ${data.className}`}>
-          <Image
-            src={data.image}
-            alt={data.alt}
-            fill
-            sizes="(max-width: 768px) 33vw, 30vw"
-            className="object-cover rounded-2xl"
-            loading="lazy"
-          />
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <SectionHeading
+          eyebrow="Gallery"
+          title={
+            <>
+              A look <em>inside.</em>
+            </>
+          }
+        />
+        <div className="grid h-80 grid-cols-3 grid-rows-2 gap-2 md:h-[520px] md:gap-4 lg:h-[620px]">
+          {HOTEL_GALLERY.map((data) => (
+            <div key={data.id} className={`relative overflow-hidden rounded-card ${data.className}`}>
+              <Image
+                src={data.image}
+                alt={data.alt}
+                fill
+                sizes="(max-width: 768px) 33vw, 30vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      </ContentLayoutWrapper>
     </section>
   );
 };

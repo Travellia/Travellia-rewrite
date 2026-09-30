@@ -1,8 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PackageCard from "@/components/common/PackageCard";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
+import ArrowButton from "@/components/ui/ArrowButton";
+import SectionHeading from "@/components/ui/SectionHeading";
 import React from "react";
 
 const index = () => {
@@ -46,52 +45,40 @@ const index = () => {
   ];
 
   return (
-    <section className="relative ">
-      <Image
-        src={"/hajj-ummrah/halalFriendly/halalfriendly-bg.png"}
-        alt="qaba"
-        fill
-        sizes="100vw"
-        className="absolute object-cover"
-        loading="lazy"
-      />
-      <ContentLayoutWrapper className="flex flex-col gap-5 py-20 justify-center items-center relative ">
-        {" "}
-        {/* Header */}
-        <div className="flex flex-col items-center">
-          <p className="font-semibold">HALAL-FRIENDLY</p>
-          <h1 className="text-3xl lg:text-4xl font-bold text-primary text-center tracking-widest">
-            HOLIDAY ABUTTING UMRAH PACKAGE
-          </h1>
-        </div>
-        {/* Description */}
-        <div>
-          {" "}
-          <p className="text-gray-600 text-base text-center w-[90%] sm:w-[80%] m-auto">
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="Halal-friendly"
+            title={
+              <>
+                Holiday abutting
+                <br />
+                <em>Umrah package.</em>
+              </>
+            }
+          />
+          <p className="max-w-md text-ink/65">
             Extend your Umrah journey with a holiday that follows the rules of
             Islamic Shariah. Visit countries with hotels serving halal food,
             alcohol-free properties, private beaches, secluded pools and
-            women-only spas. Add a special spark of
-            excitement in your Umrah trip by having a holiday stay in any
-            halal-friendly destination.
+            women-only spas. Add a special spark of excitement in your Umrah
+            trip by having a holiday stay in any halal-friendly destination.
           </p>
         </div>
-        {/* Card */}
-        <div className="flex flex-col justify-center items-center gap-10  w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-auto gap-6  w-full">
-            {Packages.map((place) => {
-              return (
-                <Card
-                  key={place.id}
-                  className="relative overflow-hidden rounded-4xl h-96 group cursor-pointer py-0"
-                >
-                  <PackageCard data={place} text />
-                </Card>
-              );
-            })}
-          </div>
-          <Button className="btn-main ">Load More</Button>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          {Packages.map((place) => (
+            <a
+              key={place.id}
+              href="#plan-your-trip"
+              className="relative h-80 overflow-hidden rounded-card shadow-soft md:h-96"
+            >
+              <PackageCard data={place} />
+            </a>
+          ))}
         </div>
+        <ArrowButton href="#plan-your-trip">Enquire Now</ArrowButton>
       </ContentLayoutWrapper>
     </section>
   );

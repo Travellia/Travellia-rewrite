@@ -1,26 +1,41 @@
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import React from "react";
 
+/**
+ * Image tile with its label and price over the photo. The parent supplies the
+ * size and rounded frame (it is usually a <Card> with a fixed height).
+ */
 const PackageCard = ({ data }) => {
   return (
-    <div>
-      <div className="w-full h-full">
-        <Image
-          src={data.image}
-          alt={data.description || "package"}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          loading="lazy"
-          className="object-cover transition-transform duration-300 group-hover:scale-110"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-      </div>
+    <div className="group absolute inset-0">
+      <Image
+        src={data.image}
+        alt={data.description || "package"}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
 
-      {/* Text Overlay */}
-      <h3 className="text-xl font-semibold absolute bottom-0 left-0 right-0 p-6 text-white text-center">
-        {data.description} <br /> {data.startingPrice}
-      </h3>
+      <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-3 text-white">
+        <div className="flex flex-col gap-2">
+          <h3 className="font-display text-lg font-bold uppercase leading-tight tracking-tight lg:text-xl">
+            {data.description}
+          </h3>
+          {data.startingPrice && (
+            <span className="w-fit rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold backdrop-blur-md">
+              {data.startingPrice}
+            </span>
+          )}
+        </div>
+        <span
+          aria-hidden="true"
+          className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-ink group-hover:bg-gold"
+        >
+          <ArrowIcon className="size-5" />
+        </span>
+      </div>
     </div>
   );
 };

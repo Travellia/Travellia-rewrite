@@ -1,22 +1,33 @@
-import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
+import { Quote, Star } from "lucide-react";
 import InitialsAvatar from "@/components/common/InitialsAvatar";
+import { cn } from "@/lib/utils";
 
-const TestimonialCard = ({ testimonial, variant = "home" }) => {
-  const isHome = variant === "home";
-
+const TestimonialCard = ({ testimonial, className }) => {
   return (
-    <Card className="bg-secondary rounded-2xl px-10 py-12 h-full flex flex-col !gap-0">
-      <p className="text-gray-500 font-semibold flex-1">
-        "{testimonial.comment}"
-      </p>
+    <figure
+      className={cn(
+        "flex h-full flex-col gap-6 rounded-card border border-line bg-white p-7 shadow-soft md:p-8",
+        className
+      )}
+    >
+      <div className="flex items-center justify-between">
+        <span className="flex gap-0.5" aria-label="Rated 5 out of 5">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="size-4 fill-gold text-gold" />
+          ))}
+        </span>
+        <Quote className="size-8 text-gold/30" aria-hidden="true" />
+      </div>
 
-      <div className="bg-gray-200 h-px w-full my-6" />
+      <blockquote className="flex-1 leading-relaxed text-ink/75">
+        &ldquo;{testimonial.comment}&rdquo;
+      </blockquote>
 
-      <div className="flex items-center gap-6">
+      <figcaption className="flex items-center gap-4 border-t border-line pt-5">
         {testimonial.user.src ? (
-          <div className="relative overflow-hidden rounded-full w-12 h-12">
+          <span className="relative size-12 overflow-hidden rounded-full">
             <Image
               src={testimonial.user.src}
               alt={testimonial.user.alt}
@@ -24,22 +35,16 @@ const TestimonialCard = ({ testimonial, variant = "home" }) => {
               sizes="48px"
               className="object-cover"
             />
-          </div>
+          </span>
         ) : (
           <InitialsAvatar name={testimonial.user.name} />
         )}
-
-        <div>
-          <h2 className="text-primary capitalize text-lg font-semibold">
-            {testimonial.user.name}
-          </h2>
-
-          <p className="text-gray-700 text-xs font-bold">
-            {testimonial.user.location}
-          </p>
-        </div>
-      </div>
-    </Card>
+        <span className="flex flex-col">
+          <span className="font-semibold text-ink">{testimonial.user.name}</span>
+          <span className="text-xs text-ink/60">{testimonial.user.location}</span>
+        </span>
+      </figcaption>
+    </figure>
   );
 };
 

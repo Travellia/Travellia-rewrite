@@ -9,9 +9,10 @@ const HotelPackage = ({ data, reverse = false }) => {
   const images = data.images?.length ? data.images : [data.image];
 
   return (
-    <section className="">
-      <ContentLayoutWrapper
-        className={`flex flex-col gap-8 items-center  lg:flex-row ${
+    <section className="flex flex-col gap-4">
+      <ContentLayoutWrapper>
+      <div
+        className={`flex flex-col items-center gap-8 rounded-frame border border-line bg-white p-5 shadow-soft md:p-8 lg:flex-row ${
           reverse ? "lg:flex-row-reverse" : ""
         }`}
       >
@@ -22,22 +23,27 @@ const HotelPackage = ({ data, reverse = false }) => {
           <HotelImageCarousel images={images} alt={data.alt} />
         </div>
         <div className="flex flex-col gap-8 xl:gap-10 p-1">
-          <div>
-            <h1 className="text-3xl x:text-4xl font-bold text-primary">
+          <div className="flex flex-col gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-deep">
               {data.heading}
-            </h1>
-            <h1 className="text-3xl xl:text-4xl font-light">{data.desc}</h1>
+            </p>
+            <h2 className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-ink xl:text-4xl">
+              {data.desc}
+            </h2>
             {data.stars && (
-              <p className="text-sm mt-1">{"⭐".repeat(data.stars)}</p>
+              <p className="text-gold-accent" aria-label={`${data.stars} star hotel`}>
+                {"★".repeat(data.stars)}
+              </p>
             )}
           </div>
           <HotelInfo info={data.info} />
-          <div className="grid  md:grid-cols-2 md:space-x-5 space-y-5">
+          <div className="grid gap-4 md:grid-cols-2">
             {data.packages.map((item) => (
               <ServicePackage key={item.id} data={item} />
             ))}
           </div>
         </div>
+      </div>
       </ContentLayoutWrapper>
 
       <HotelFacilities facilities={data.info?.facilities} hotel={data.desc} />

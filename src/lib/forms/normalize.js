@@ -25,7 +25,7 @@ const formatPlace = (code, type) => {
   const city = cityByCode.get(key);
   const airport = airportByCode.get(key);
   if (type === "airport" && airport) return airportLabel(airport);
-  if (city) return `${city} (${key})`;
+  if (city) return key === city.toUpperCase() ? city : `${city} (${key})`;
   if (airport) return airportLabel(airport);
   // Not a known IATA code — a free-text place name, most likely. Pass it
   // through untouched rather than upper-casing it into "DUBAI".

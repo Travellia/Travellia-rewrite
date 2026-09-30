@@ -1,20 +1,23 @@
-import { data } from '@/lib/contactInfo'
-import { FaWhatsapp } from "react-icons/fa";
+import { Phone } from "lucide-react";
+import { data } from "@/lib/contactInfo";
+import { cn } from "@/lib/utils";
 
-export default function PhoneNumberViewer() {
-    return (
-        <div className='pl-2 pr-6 py-2 bg-primary rounded-l-full hidden md:block'>
-            <a
-                href={`https://wa.me/${data?.PhoneNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className='flex items-center justify-start gap-2 text-white text-2xl font-bold'
-            >
-                <div className='bg-green-600 p-2 rounded-full'>
-                    <FaWhatsapp className='text-white h-6 w-6' />
-                </div>
-                {data?.PhoneNumber || 'No phone number available'}
-            </a>
-        </div>
-    )
+// "0203 504 0786" → "+442035040786" for tel: links.
+export const phoneHref = `tel:+44${data.PhoneNumber.replace(/\s+/g, "").replace(/^0/, "")}`;
+
+export default function PhoneNumberViewer({ className }) {
+  return (
+    <a
+      href={phoneHref}
+      className={cn(
+        "group hidden items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-4 text-sm font-semibold text-ink shadow-soft transition-colors hover:bg-sand lg:flex",
+        className
+      )}
+    >
+      <span className="grid size-9 place-items-center rounded-full bg-ink text-gold transition-transform group-hover:rotate-12">
+        <Phone className="size-4" />
+      </span>
+      {data.PhoneNumber}
+    </a>
+  );
 }

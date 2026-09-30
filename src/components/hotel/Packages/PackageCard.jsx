@@ -1,82 +1,74 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { MapPin } from "lucide-react";
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
+import { MapPin, Star } from "lucide-react";
 import React from "react";
 
 const PackageCard = ({ data }) => {
   return (
-    <Card
-      className="
-        group  
-        relative
-        h-170 sm:h-140 md:h-140 xl:h-162.5
-        w-full
-        max-w-90
-        shadow-none! border-none! bg-transparent p-0! overflow-hidden rounded-3xl
-      "
-    >
+    <article className="group relative h-[460px] w-full overflow-hidden rounded-card bg-ink shadow-soft transition-shadow duration-300 hover:shadow-lift">
       <Image
         src={data.image}
         alt={data.title}
-        width={200}
-        height={200}
-        className="object-cover absolute top-0 left-0 w-full rounded-3xl sm:h7/10 xl:h-6/10 group-hover:h-full transition-all duration-500 "
-        loading="lazy"
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 420px"
+        className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
       />
-      <div className="p-4 w-9/10 flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-3xl  top-1/2 md:-translate-y-18 xl:-translate-y-12  sm:h7/10 xl:h-5/10 bg-secondary group-hover:bg-white/85 group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:h-7/10 transition-all duration-500">
-        <div className="w-full h-full flex flex-col items-center justify-center gap-4 sm:gap-3 xl:gap-1">
-          <p className="text-[8px]">{"⭐".repeat(data.stars)}</p>
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
 
-          <div className="flex flex-col items-center gap-1">
-            <h2 className="text-md font-semibold text-primary uppercase">
-              {data.package}
-            </h2>
-            <div className="w-full border bg-gray-300" />
-            <h2 className="md:text-2xl lg:text-xl xl:text-2xl font-semibold text-primary uppercase text-center">
-              {data.title}
-            </h2>
+      <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-2">
+        <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink backdrop-blur">
+          {data.package}
+        </span>
+        <span className="flex items-center gap-0.5 rounded-full bg-ink/40 px-2.5 py-1 backdrop-blur">
+          {[...Array(data.stars)].map((_, i) => (
+            <Star key={i} className="size-3 fill-gold text-gold" />
+          ))}
+        </span>
+      </div>
 
-            <div className="mx-auto flex items-center justify-center">
-              <MapPin className="w-4 h-4 text-gray-500 mr-1" />
-              <span className="text-sm md:text-[12px] lg:text-[10px]  xl:text-sm text-center xl:text-start font-semibold ">
-                {data.location}
-              </span>
-            </div>
-          </div>
+      <div className="absolute inset-x-3 bottom-3 flex flex-col gap-3 rounded-2xl border border-white/20 bg-ink/40 p-4 text-white backdrop-blur-md">
+        <div>
+          <h3 className="font-display text-lg font-bold uppercase leading-tight tracking-tight">
+            {data.title}
+          </h3>
+          <p className="mt-1 flex items-center gap-1 text-sm text-white/75">
+            <MapPin className="size-3.5 text-gold" />
+            {data.location}
+          </p>
+        </div>
 
-          <div className="w-full border-1 bg-gray-300" />
+        {data.description && (
+          <p className="text-xs text-white/70">{data.description}</p>
+        )}
 
+        <div className="flex items-center justify-between gap-3 border-t border-white/15 pt-3">
           {data.discountPrice ? (
-            <div className="flex items-baseline justify-between gap-5">
-              <div className="text-3xl text-primary font-bold">
+            <p>
+              <span className="font-display text-xl font-bold text-gold">
                 &pound;{data.discountPrice}
-              </div>
+              </span>
               {data.oldPrice && (
-                <div className="text-xl text-gray-500 font-semibold line-through">
+                <span className="ml-2 text-xs text-white/55 line-through">
                   &pound;{data.oldPrice}
-                </div>
+                </span>
               )}
-            </div>
+            </p>
           ) : (
-            <div className="text-lg text-primary font-semibold">
-              Best rates on request
-            </div>
+            <p className="text-sm font-semibold leading-tight text-gold">Best rates on request</p>
           )}
-
-          <Button
-            asChild
-            className="rounded-full px-10 py-2 self-stretch mx-10"
+          <Link
+            href="#plan-your-trip"
+            className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white py-1.5 pl-4 pr-1.5 text-sm font-semibold text-ink transition hover:bg-gold"
           >
-            <Link href="#plan-your-trip">Book Now</Link>
-          </Button>
-          <div className="text-sm text-gray-500 px-5 text-center">
-            {data.description}
-          </div>
+            Book now
+            <span className="grid size-7 place-items-center rounded-full bg-ink text-white">
+              <ArrowIcon className="size-3.5" />
+            </span>
+          </Link>
         </div>
       </div>
-    </Card>
+    </article>
   );
 };
 

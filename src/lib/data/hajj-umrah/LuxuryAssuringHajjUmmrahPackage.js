@@ -1,5 +1,5 @@
 export const LuxuryAssuringHajjUmmrahPackage = {
-  title: "UMRAH PACKAGE",
+  title: "Umrah packages",
   highlights: ["affordable", "comfortable", "spiritual journey"],
   description:
     "Experience a blessed Umrah journey with our 3, 4 and 5 Star Umrah Packages, designed for comfort and affordability without compromising on quality.",

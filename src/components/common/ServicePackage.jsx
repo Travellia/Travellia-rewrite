@@ -3,23 +3,22 @@ import React from "react";
 
 const ServicePackage = ({ data }) => {
   return (
-    <div className="flex flex-col gap-3 h-full">
+    <div className="flex h-full flex-col gap-3 rounded-2xl border border-line bg-sand/50 p-4">
       <div className="flex items-center gap-3">
         {/* Fixed-size square image container */}
-        <div className="w-12 h-12 relative ">
+        <div className="relative size-10 shrink-0">
           <Image
             src={data.image}
             alt={data.alt}
             fill
-            sizes="48px"
+            sizes="40px"
             className="object-contain"
             loading="lazy"
           />
         </div>
-        <h1 className="text-lg font-bold">{data.title}</h1>
+        <h3 className="font-semibold text-ink">{data.title}</h3>
       </div>
-      <hr />
-      <p className="text-sm flex-1">{data.content}</p>
+      <p className="flex-1 text-sm text-ink/70">{data.content}</p>
     </div>
   );
 };

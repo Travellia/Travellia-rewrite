@@ -13,30 +13,40 @@ import FilterSearch from "@/components/common/FilterSearch";
 import { TESTIMONIALS } from "@/lib/data/Testimonial";
 import FamilyAdventures from "@/components/homepage/Adventures/FamilyAdventures";
 import PlanYourTrip from "@/components/common/PlanYourTrip";
+import Marquee from "@/components/ui/Marquee";
 
 export default function Home() {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/home/welcome/welcome.png" },
+      { id: 1, image: "/home/services/22.png" },
       { id: 2, image: "/flights/welcome/Image2.png" },
-      { id: 3, image: "/flights/welcome/Image3.png" },],
-    title: "TRAVELLIA",
-    buttons: [
-      { label: "Explore Our Tours" },
-      { label: "View Packages", variant: "ghost" },
+      { id: 3, image: "/hajj-ummrah/welcome/slide1.png" },
+      { id: 4, image: "/home/welcome/welcome.jpg" },
     ],
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
+    heading: "Flights · Hotels · Umrah · Holidays",
+    title: (
+      <>
+        Travel <em>beautifully.</em>
+      </>
+    ),
+    subtitle:
+      "Handpicked flights, hotels, Umrah packages and holidays, planned around you by a UK travel team you can call.",
+    feature: {
+      image: "/home/umrah-package/package1.png",
+      label: "Umrah · 7 nights",
+      title: "5-Star Umrah from £885",
+      href: "/hajj-umrah/5-star-7-nights",
+    },
   };
 
-  const TESTIMONIAL = TESTIMONIALS;
-
   return (
-    <div className="flex flex-col bg-background">
+    <div className="flex flex-col">
       <Welcome data={welcomeData} />
-      <div className="flex flex-col  -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
+      <div className="relative z-10 -mt-24 flex flex-col gap-20 md:-mt-40 md:gap-28">
         <FilterSearch />
-        <FamilyAdventures/>
+        <FamilyAdventures />
         <TrendingPackages />
+        <Marquee />
         <BookNow />
         <HotelBookings />
         <UmrahPackages />
@@ -45,7 +55,7 @@ export default function Home() {
         <SummerDeals />
         <BestServices />
         <OfferedServices />
-        <Testimonials data={TESTIMONIAL} />
+        <Testimonials data={TESTIMONIALS} />
         <PlanYourTrip />
       </div>
     </div>

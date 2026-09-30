@@ -1,51 +1,76 @@
-import Image from "next/image";
 import React from "react";
+import ArrowIcon from "@/components/ui/ArrowIcon";
+import { Star } from "lucide-react";
 import TestimonialCard from "./TestimonialCard";
-import { TRUSTPILOT_URL } from "@/lib/data/Testimonial";
 import ContentLayoutWrapper from "../ContentLayoutWrapper";
+import InitialsAvatar from "@/components/common/InitialsAvatar";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { TRUSTPILOT_URL } from "@/lib/data/Testimonial";
+
+// From the Trustpilot profile at TRUSTPILOT_URL.
+const TRUSTPILOT_SCORE = "4.2";
 
 const index = ({ data }) => {
   return (
-    <section className="relative py-20 p-10 sm:px-12 lg:px-18 lg:py-10">
-      {/* Background */}
-      <div className="absolute inset-0 hidden xl:block w-[80vw] lg:w-[60vw] aspect-[4/5] max-h-full">
-        <Image
-          src="/common/Testimonial/friends-trip.png"
-          alt="friends trip"
-          fill
-          sizes="60vw"
-          className="z-0 object-contain object-left-bottom"
-        />
-      </div>
+    <section className="overflow-hidden">
+      <ContentLayoutWrapper className="flex flex-col gap-12">
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <SectionHeading
+            eyebrow="Testimonial"
+            title="What our travellers"
+            subtitle={<em>are saying.</em>}
+            stagger
+          />
 
-      {/* Main Layout */}
-      <div className="relative z-10 ">
-        <ContentLayoutWrapper>
-          <div className="flex-[45%] flex flex-col gap-2 sm:gap-3 md:gap-5 items-center xl:items-center pb-8">
-            <h1 className="text-primary text-3xl md:text-5xl font-bold uppercase">
-              Testimonial
-            </h1>
-
-            <p className="text-gray-800 text-lg md:text-2xl lg:text-3xl font-normal text-center md:text-left lg:text-center uppercase ">
-              What our travellers are saying
-            </p>
-            <a
-              href={TRUSTPILOT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-semibold text-primary underline underline-offset-4"
-            >
-              Read all our reviews on Trustpilot
-            </a>
-          </div>
-        </ContentLayoutWrapper>
-
-        {/* Cards */}
-        <div className="p-2 xl:p-10 grid grid-cols-1 lg:grid-cols-2 gap-5 relative xl:ml-auto xl:w-[60%] ">
-          {data.map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} />
-          ))}
+          {/* Trustpilot score */}
+          <a
+            href={TRUSTPILOT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-5 rounded-card border border-line bg-white p-4 pr-5 shadow-soft transition hover:shadow-lift"
+          >
+            <span className="flex -space-x-3">
+              {data.map((t) => (
+                <InitialsAvatar
+                  key={t.user.name}
+                  name={t.user.name}
+                  className="size-11 ring-2 ring-white text-sm"
+                />
+              ))}
+            </span>
+            <span className="flex flex-col">
+              <span className="flex items-center gap-2">
+                <span className="font-display text-2xl font-bold text-ink">
+                  {TRUSTPILOT_SCORE}
+                </span>
+                <span className="flex gap-0.5">
+                  {[...Array(4)].map((_, i) => (
+                    <Star key={i} className="size-3.5 fill-gold text-gold" />
+                  ))}
+                  <Star className="size-3.5 text-gold" />
+                </span>
+              </span>
+              <span className="flex items-center gap-1 text-xs font-semibold text-ink/60">
+                Read all our reviews on Trustpilot
+                <ArrowIcon className="size-3.5" />
+              </span>
+            </span>
+          </a>
         </div>
+      </ContentLayoutWrapper>
+
+      {/* Snap-scrolling row of reviews */}
+      <div className="mx-auto mt-10 max-w-[1400px]">
+        <ul className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-6 md:px-8 [scrollbar-width:thin]">
+          {data.map((testimonial) => (
+            <li
+              key={testimonial.user.name}
+              className="w-[85%] shrink-0 snap-start sm:w-[420px]"
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

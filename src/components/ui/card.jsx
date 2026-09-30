@@ -2,17 +2,23 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+const CARD_VARIANTS = {
+  default:
+    "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+  // White surface with a soft layered shadow that lifts on hover.
+  premium:
+    "bg-white text-ink flex flex-col rounded-card border border-line shadow-soft transition-all duration-300 hover:shadow-lift",
+};
+
 function Card({
   className,
+  variant = "default",
   ...props
 }) {
   return (
     <div
       data-slot="card"
-      className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
-        className
-      )}
+      className={cn(CARD_VARIANTS[variant], className)}
       {...props} />
   );
 }

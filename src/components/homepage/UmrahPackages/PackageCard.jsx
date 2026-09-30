@@ -1,66 +1,93 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Star } from "lucide-react";
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Check, Star } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const UmrahPackageCard = ({ data }) => {
+const UmrahPackageCard = ({ data, featured = false }) => {
   return (
-    <Card className="w-full overflow-hidden p-2 !gap-3 flex flex-col">
-      {/* Image Header */}
-      <div className="relative h-48 w-full rounded-xl overflow-hidden">
+    <article
+      className={cn(
+        "group flex h-full flex-col overflow-hidden rounded-card p-2 shadow-soft transition-all duration-300 hover:shadow-lift",
+        featured ? "bg-ink text-white" : "border border-line bg-white text-ink"
+      )}
+    >
+      <div className="relative aspect-[16/10] overflow-hidden rounded-[22px]">
         <Image
           src={data.image}
           alt={data.alt}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
         />
+        {featured && (
+          <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink">
+            Most premium
+          </span>
+        )}
       </div>
 
-      <CardHeader className="pb-1 !px-3">
-        {/* Title */}
-        <h3 className="text-lg font-semibold text-primary">{data.title}</h3>
-
-        {/* Star Rating */}
-        <div className="flex gap-1 mt-2">
-          {[...Array(data.rating)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-          ))}
+      <div className="flex flex-1 flex-col gap-5 p-5">
+        <div className="flex flex-col gap-2">
+          <span className="flex gap-0.5" aria-label={`${data.rating} star`}>
+            {[...Array(data.rating)].map((_, i) => (
+              <Star key={i} className="size-4 fill-gold text-gold" />
+            ))}
+          </span>
+          <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight">
+            {data.title}
+          </h3>
         </div>
-      </CardHeader>
 
-      <CardContent className="pb-1 !px-3 flex-1">
-        <ul className="space-y-2 text-sm text-gray-700">
-          {data.features.map((feature, i) => {
-            return (
-              <li className="flex items-start" key={i}>
-                <span className="mr-1 text-primary">●</span>
-                <span>{feature}</span>
-              </li>
-            );
-          })}
+        <ul className={cn("flex flex-col gap-2.5 text-sm", featured ? "text-white/75" : "text-ink/70")}>
+          {data.features.map((feature) => (
+            <li className="flex items-start gap-2.5" key={feature}>
+              <span
+                className={cn(
+                  "mt-0.5 grid size-4 shrink-0 place-items-center rounded-full",
+                  featured ? "bg-gold text-ink" : "bg-ink text-gold"
+                )}
+              >
+                <Check className="size-2.5" />
+              </span>
+              {feature}
+            </li>
+          ))}
         </ul>
-      </CardContent>
 
-      <CardFooter className="flex flex-col items-center gap-3 py-3 border-t !px-3">
-        <Button asChild className="btn-main w-full">
-          <Link href={data.href}>Book Now</Link>
-        </Button>
-        <p className="text-sm text-gray-600">
-          Starting from{" "}
-          <span className="text-2xl font-bold text-primary">
-            £{data.price}
-          </span>{" "}
-          per person
-        </p>
-      </CardFooter>
-    </Card>
+        <div
+          className={cn(
+            "mt-auto flex flex-col gap-4 border-t pt-5",
+            featured ? "border-white/10" : "border-line"
+          )}
+        >
+          <Link
+            href={data.href}
+            className={cn(
+              "flex items-center justify-between rounded-full py-1.5 pl-5 pr-1.5 text-sm font-semibold transition",
+              featured ? "bg-gold text-ink hover:brightness-105" : "bg-ink text-white hover:bg-ink-soft"
+            )}
+          >
+            Book Now
+            <span
+              className={cn(
+                "grid size-9 place-items-center rounded-full",
+                featured ? "bg-ink text-gold" : "bg-gold text-ink"
+              )}
+            >
+              <ArrowIcon className="size-4" />
+            </span>
+          </Link>
+          <p className={cn("text-center text-sm", featured ? "text-white/60" : "text-ink/60")}>
+            Starting from{" "}
+            <span className={cn("font-display text-2xl font-bold", featured ? "text-gold" : "text-gold-deep")}>
+              £{data.price}
+            </span>{" "}
+            per person
+          </p>
+        </div>
+      </div>
+    </article>
   );
 };
 

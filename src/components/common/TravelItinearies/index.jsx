@@ -1,6 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 
-import { FaLocationArrow } from "react-icons/fa";
+import { Check } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 import React from "react";
 import Image from "next/image";
@@ -8,70 +9,46 @@ import BookPackageCard from "@/components/common/BookPackageCard";
 
 const index = ({ data1, data2, href }) => {
   return (
-    <section className="w-full">
-      <ContentLayoutWrapper className="flex flex-col gap-20 items-center w-full py-10">
-        {/* -------------------- TravelItineraries --------------------  */}
-        <div className="flex flex-col gap-8 w-full xl:w-[min(1100px,90vw)]">
-          <h1 className="heading-with-space">{data1.heading}</h1>
-          {/* <div className="flex flex-col gap-8 "> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-3 xl:grid-rows-1 place-items-center gap-8">
-            {data1.packageDataCar.map((data, index) => {
-              // 3rd card (index 2)
-              if (index === 2) {
-                return (
-                  <div
-                    key={index}
-                    className="w-full md:col-span-2 xl:col-span-1 flex justify-center"
-                  >
-                    <BookPackageCard data={data} isOdd={index % 2 !== 0} href={href} />
-                  </div>
-                );
-              }
-
-              return (
-                <BookPackageCard
-                  data={data}
-                  isOdd={index % 2 !== 0}
-                  href={href}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-
-          {/* </div> */}
+    <section className="flex flex-col gap-20 md:gap-28">
+      {/* Itineraries */}
+      <ContentLayoutWrapper className="flex flex-col gap-10">
+        <SectionHeading eyebrow="Handpicked routes" title={data1.heading} />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {data1.packageDataCar.map((data, index) => (
+            <div key={index} className={index === 1 ? "xl:mt-12" : ""}>
+              <BookPackageCard data={data} href={href} />
+            </div>
+          ))}
         </div>
-        {/* -------------------- Travellia referral program -------------------- */}
-        <div className="flex flex-col gap-5">
-          {/* heading */}
-          <h1 className="heading">{data2.heading}</h1>
+      </ContentLayoutWrapper>
 
-          {/* Description */}
-          <p className="para font-bold">{data2.description}</p>
-
-          {/* Discount */}
-          <div className="flex flex-col items-center lg:flex-row  gap-10">
-            {/* Image */}
-            <div className="h-full w-full">
-              <Image
-                src={"/holidayPackage/TravelItinearies/discount-card.png"}
-                alt="discount card"
-                width={500}
-                height={400}
-                className="bg-secondary p-5 rounded-3xl h-full w-full "
-              />
-            </div>
-
-            {/* Bulltes */}
-            <div className="flex flex-col gap-2 justify-center">
+      {/* Referral programme */}
+      <ContentLayoutWrapper>
+        <div className="grid items-center gap-8 rounded-frame border border-line bg-white p-6 shadow-soft md:p-10 lg:grid-cols-2 lg:gap-12">
+          <div className="relative overflow-hidden rounded-card bg-sand p-6">
+            <Image
+              src="/holidayPackage/TravelItinearies/discount-card.png"
+              alt="Travellia referral discount card"
+              width={500}
+              height={400}
+              className="h-auto w-full"
+            />
+          </div>
+          <div className="flex flex-col gap-6">
+            <h2 className="font-display text-3xl font-bold uppercase leading-tight tracking-tight text-ink md:text-4xl">
+              {data2.heading}
+            </h2>
+            <p className="text-ink/65">{data2.description}</p>
+            <ul className="flex flex-col gap-3">
               {data2.bullets.map((item) => (
-                <div key={item.id} className="flex items-start gap-3">
-                  <FaLocationArrow className="text-primary shrink-0 h-full " />
-
-                  <p>{item.text}</p>
-                </div>
+                <li key={item.id} className="flex items-start gap-3 text-ink/80">
+                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-ink text-gold">
+                    <Check className="size-3.5" />
+                  </span>
+                  {item.text}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </ContentLayoutWrapper>

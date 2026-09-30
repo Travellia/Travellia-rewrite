@@ -14,30 +14,31 @@ const page = () => {
       { id: 3, image: "/hotel/welcome/slide-3.png" },
       { id: 4, image: "/hotel/welcome/slide-4.png" },
     ],
-    title: "Hotel",
-
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
+    heading: "Hotels & resorts",
+    title: (
+      <>
+        Stay <em>somewhere special.</em>
+      </>
+    ),
+    subtitle:
+      "Handpicked hotels in Makkah, Madinah and beyond, with the best rates checked for you.",
   };
 
   const imageData = {
     image: "/hotel/BookNow/bg.png",
-    alt: "resturant",
+    alt: "",
   };
 
   return (
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
 
-      <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
+      <div className="relative z-10 -mt-24 flex flex-col gap-20 md:-mt-40 md:gap-28">
         <FilterSearch defaultTab="hotels" />
-        <div className="flex flex-col gap-10  sm:pb-15 h-auto ">
-          <Packages />
-          <TouristFeedback />
-        </div>
-        <div>
-          <BookNow data={imageData} />
-          <PlanYourTrip />
-        </div>
+        <Packages />
+        <TouristFeedback />
+        <BookNow data={imageData} />
+        <PlanYourTrip />
       </div>
     </div>
   );

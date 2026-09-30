@@ -1,5 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Button } from "@/components/ui/button";
+import ArrowIcon from "@/components/ui/ArrowIcon";
+import SectionHeading from "@/components/ui/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,52 +36,44 @@ const services = [
 ];
 export default function BestServices() {
   return (
-    <section className="z-0 pt-5 md:pt-10  xl:pt-60 bg-background relative overflow-hidden">
-      <ContentLayoutWrapper className="flex flex-col z-2">
-        <div className="text-center mb-8 z-2">
-          <h2 className="text-lg font-ultralight text-center capitalize">
-            We Offer best
-          </h2>
-          <h2 className="text-5xl font-bold text-center capitalize text-primary">
-            services
-          </h2>
-        </div>
-        <div className="grid gap-6 w-full sm:grid-cols-1 md:grid-rows-2 md:grid-cols-2  lg:w-[90%] lg:grid-cols-2 xl:w-[75%] z-2">
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-12">
+        <SectionHeading
+          align="center"
+          eyebrow="Why Travellia"
+          title={
+            <>
+              We offer the best <em>services.</em>
+            </>
+          }
+        />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center gap-4 py-8 px-12 border border-gray-200 bg-gray-100 rounded-4xl hover:shadow-lg transition-shadow duration-300"
-            >
-              <Image
-                src={service.iconPath}
-                alt={service.title}
-                className="w-20 h-20 object-contain"
-                width={60}
-                height={60}
-              />
-              <h3 className="md:text-xl lg:text-4xl font-bold text-primary text-center capitalize">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 text-center">{service.description}</p>
-              <Button
-                asChild
-                variant="default"
-                className="mt-4 rounded-full w-[100%]"
-              >
-                <Link href={service.href}>Book Now</Link>
-              </Button>
+            <div key={service.title} className="h-full">
+              <article className="group flex h-full flex-col gap-5 rounded-card border border-line bg-white p-7 shadow-soft transition-all duration-300 hover:bg-ink hover:text-white hover:shadow-lift">
+                <span className="grid size-16 place-items-center rounded-full bg-sand transition-colors group-hover:bg-white">
+                  <Image src={service.iconPath} alt="" width={36} height={36} className="object-contain" />
+                </span>
+                <h3 className="font-display text-xl font-bold uppercase leading-tight tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="flex-1 text-ink/65 transition-colors group-hover:text-white/70">
+                  {service.description}
+                </p>
+                <Link
+                  href={service.href}
+                  className="flex items-center justify-between rounded-full bg-sand py-1.5 pl-5 pr-1.5 text-sm font-semibold text-ink transition-colors group-hover:bg-gold"
+                >
+                  Book Now
+                  <span className="grid size-8 place-items-center rounded-full bg-ink text-white">
+                    <ArrowIcon className="size-4" />
+                  </span>
+                </Link>
+              </article>
             </div>
           ))}
         </div>
       </ContentLayoutWrapper>
-      <div className="hidden lg:block w-100 lg:w-1/2 h-full absolute top-0 right-0 z-1">
-        <Image
-          src={"/home/offered-services/about-us.png"}
-          alt="About us image"
-          fill
-          sizes="(max-width: 1024px) 0px, 50vw"
-        />
-      </div>
     </section>
   );
 }

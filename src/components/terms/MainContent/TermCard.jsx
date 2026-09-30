@@ -2,9 +2,11 @@ import React from "react";
 
 const TermCard = ({ data }) => {
   return (
-    <section>
-      <h1 className="text-2xl font-bold  text-primary">{data.heading}</h1>
-      <p>{data.content}</p>
+    <section className="flex flex-col gap-2 border-t border-line pt-5">
+      <h3 className="font-display text-lg font-bold uppercase tracking-tight text-ink">
+        {data.heading}
+      </h3>
+      <p className="leading-relaxed text-ink/75">{data.content}</p>
     </section>
   );
 };

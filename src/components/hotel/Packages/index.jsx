@@ -2,7 +2,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
 import SideMenu from "./SideMenu/index.";
 import PackagesClient from "./PackagesClient";
-import Image from "next/image";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { getHotelInfo } from "@/lib/data/umrahDetail/hotelInfo";
 import { StarPackagesByTier } from "@/lib/data/hajj-umrah/StarPackagesData";
 
@@ -45,33 +45,31 @@ const HOTEL_PACKAGES = FEATURED_HOTELS.map(({ name, city }, index) => {
 const Packages = () => {
   const PACKAGES_DATA = HOTEL_PACKAGES;
   return (
-    <section className="relative">
-      <Image
-        src="/hotel/Ballon.png"
-        alt="background"
-        width={300}
-        height={300}
-        className="hidden lg:block absolute top-1/2 left-0 "
-        loading="lazy"
-      />
+    <section>
+      <ContentLayoutWrapper className="flex flex-col gap-12">
+        <SectionHeading
+          eyebrow="Hotels near the Haram"
+          title={
+            <>
+              Stays in Makkah
+              <br />
+              &amp; Madinah, <em>handpicked.</em>
+            </>
+          }
+          intro="From steps-away 5-star towers to great-value 3-star hotels. Tell us your dates and we'll check the best rates for you."
+        />
+        <div className="flex flex-col gap-8 xl:grid xl:grid-cols-12 xl:gap-8">
+          {/* Cards */}
+          <div className="xl:col-span-8">
+            <PackagesClient packages={PACKAGES_DATA} />
+          </div>
 
-      <Image
-        src="/hotel/passport.png"
-        alt="passport"
-        width={300}
-        height={300}
-        className="hidden lg:block absolute right-0 bottom-0 "
-        loading="lazy"
-      />
-      <ContentLayoutWrapper className=" flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-6">
-        {/* Cards */}
-        <div className="lg:col-span-8">
-          <PackagesClient packages={PACKAGES_DATA} />
-        </div>
-
-        {/* Sidebar */}
-        <div className="lg:col-span-4">
-          <SideMenu />
+          {/* Sidebar */}
+          <aside className="xl:col-span-4">
+            <div className="xl:sticky xl:top-28">
+              <SideMenu />
+            </div>
+          </aside>
         </div>
       </ContentLayoutWrapper>
     </section>

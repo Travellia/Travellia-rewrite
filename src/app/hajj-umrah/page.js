@@ -5,7 +5,6 @@ import Question from "@/components/hajj-ummrah/Question";
 import { LuxuryAssuringHajjUmmrahPackage } from "@/lib/data/hajj-umrah/LuxuryAssuringHajjUmmrahPackage";
 import HalalFriendly from "@/components/hajj-ummrah/HalalFriendly";
 import React from "react";
-import Image from "next/image";
 import BookNow from "@/components/common/BookNow";
 import TravelItinearies from "@/components/common/TravelItinearies";
 import { PACKAGES_DATA } from "@/lib/data/hajj-umrah/TravelItineariesPackageData-hajj-umrah";
@@ -15,9 +14,14 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 const page = () => {
   const welcomeData = {
     slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
-    heading: "SCROLL DOWN",
-    title: "BEST UMRAH PACKAGES",
-    heightClassName: "h-[65vh] md:h-[72vh] lg:h-[77vh] xl:h-[90vh]",
+    heading: "Umrah & Hajj packages",
+    title: (
+      <>
+        A journey of <em>the heart.</em>
+      </>
+    ),
+    subtitle:
+      "All-inclusive Umrah packages with flights, visa, hotels near the Haram, transport and Ziyarat.",
   };
 
   const LUXURY_ASSURING_DATA = LuxuryAssuringHajjUmmrahPackage;
@@ -27,30 +31,18 @@ const page = () => {
 
   const imageData = {
     image: "/umrahDetail/BookNow/BookNow-bg.png",
-    
-    alt: "hajj-umrah",
+    alt: "",
   };
 
   return (
     <div className="flex flex-col">
       <Welcome data={welcomeData} />
-      <div className="flex flex-col gap-7 xl:gap-10 -translate-y-10  md:-translate-y-40 lg:-translate-y-32 xl:-translate-y-50 z-1 -mb-20">
+      <div className="relative z-10 -mt-24 flex flex-col gap-20 md:-mt-40 md:gap-28">
         <FilterSearch defaultTab={"umrah"} />
-        <div className="relative space-y-5">
-          <Image
-            src="/hajj-ummrah/haram.png"
-            alt="haram"
-            fill
-            sizes="100vw"
-            className="object-contain absolute bottom-0 -z-10 pointer-events-none"
-          />
-          <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
-        </div>
-        <div>
-          <HalalFriendly />
-          <BookNow data={imageData} />
-        </div>
-        <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} />
+        <LuxuryAssuring data={LUXURY_ASSURING_DATA} />
+        <HalalFriendly />
+        <BookNow data={imageData} />
+        <TravelItinearies data1={PACKAGE_DATA} data2={BULLETS} href="#plan-your-trip" />
         <Question />
         <PlanYourTrip />
       </div>

@@ -4,7 +4,7 @@ export default function ContentLayoutWrapper({ children, className }) {
   return (
     <div
       className={cn(
-        "w-full md:w-[90vw] lg:w-[80vw] xl:w-[60vw] mx-auto p-4",
+        "w-full max-w-[1240px] mx-auto px-5 md:px-8",
         className
       )}
     >

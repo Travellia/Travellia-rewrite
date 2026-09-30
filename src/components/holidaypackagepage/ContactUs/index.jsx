@@ -1,11 +1,11 @@
 "use client";
 
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import Image from "next/image";
 import React from "react";
 import { Formik, Form } from "formik";
 import BookingDetails from "./BookingDetails";
-import { Button } from "@/components/ui/button";
+import ArrowButton from "@/components/ui/ArrowButton";
+import SectionHeading from "@/components/ui/SectionHeading";
 import FormStatus from "@/components/common/FormStatus";
 import HoneypotField from "@/components/common/HoneypotField";
 import holidayContactSchema from "@/schemas/holidayPackage/holidayContactSchema";
@@ -91,7 +91,18 @@ const BookingPage = () => {
 
   return (
     <section className="">
-      <ContentLayoutWrapper className="relative pb-0 rounded-2xl shadow-2xl z-1 bg-white h-auto border border-primary before:absolute before:inset-0 before:bg-[url('/holidayPackage/ContactUs/bg-3.png')] before:bg-center before:bg-cover before:opacity-20 sm:before:opacity-40 before:content-[''] before:z-[-1]">
+      <ContentLayoutWrapper>
+        <div className="flex flex-col gap-8 rounded-frame border border-line bg-white p-6 shadow-soft md:p-10">
+        <SectionHeading
+          eyebrow="Holiday enquiry"
+          title={
+            <>
+              Contact us to book your
+              <br />
+              <em>holiday package.</em>
+            </>
+          }
+        />
         <Formik
           initialValues={{
             from: "",
@@ -109,21 +120,7 @@ const BookingPage = () => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
-            <Form className="flex flex-col gap-6 sm:gap-4 lg:gap-8 items-center -translate-y-10 relative">
-              {/* Heading Box */}
-              <div className="border bg-white border-y-amber-400 sm:border-none relative flex items-center justify-center gap-3 w-[95%] sm:w-[80%] m-auto px-4 py-3 rounded-lg">
-                <Image
-                  src="/holidayPackage/ContactUs/bag.png"
-                  alt=""
-                  aria-hidden="true"
-                  width={25}
-                  height={25}
-                  loading="lazy"
-                />
-                <h1 className="text-sm text-center sm:text-xl">
-                  Contact Us to Book your Holiday Package
-                </h1>
-              </div>
+            <Form className="relative flex flex-col items-start gap-6">
 
               {/* Booking Details Grid */}
               <div className="relative grid grid-cols-1 grid-rows-9 sm:grid-cols-3 sm:grid-rows-3 xl:grid-cols-13 lg:grid-rows-2 gap-4 w-full">
@@ -136,18 +133,15 @@ const BookingPage = () => {
 
               <HoneypotField />
 
-              <Button
-                type="submit"
-                className="btn-main"
-                disabled={isSubmitting}
-              >
+              <ArrowButton type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Sending…" : "Submit Now"}
-              </Button>
+              </ArrowButton>
 
               <FormStatus status={status} error={error} className="max-w-xl" />
             </Form>
           )}
         </Formik>
+        </div>
       </ContentLayoutWrapper>
     </section>
   );

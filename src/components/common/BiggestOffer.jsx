@@ -1,30 +1,31 @@
-import { Button } from "@/components/ui/button";
+import ArrowButton from "@/components/ui/ArrowButton";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const BiggestOffer = () => {
   return (
-    <section className="relative w-full min-h-[50vh] rounded-3xl overflow-hidden">
-      {/* Background Image */}
+    <section className="relative flex min-h-[340px] w-full flex-col justify-end overflow-hidden rounded-card p-6 text-white shadow-soft">
       <Image
         src="/common/BiggestOffer/bg.png"
-        alt="bg-image"
+        alt=""
         fill
-        sizes="100vw"
+        sizes="(max-width: 1024px) 100vw, 30vw"
         className="object-cover"
-        loading="lazy"
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
 
-      {/* Overlay Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full pt-20 text-white gap-4">
-        <h2 className="text-4xl font-bold text-center leading-tight">
-          BIGGEST <br /> OFFER
+      <div className="relative z-10 flex flex-col gap-4">
+        <span className="w-fit rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink">
+          Limited time
+        </span>
+        <h2 className="font-display text-4xl font-extrabold uppercase leading-[0.9] tracking-tight">
+          Biggest
+          <br />
+          offer
         </h2>
-
-        <Button asChild className="rounded-full px-6 text-primary bg-white">
-          <Link href="#plan-your-trip">BOOK NOW</Link>
-        </Button>
+        <ArrowButton href="#plan-your-trip" tone="glass" size="sm">
+          Book Now
+        </ArrowButton>
       </div>
     </section>
   );
