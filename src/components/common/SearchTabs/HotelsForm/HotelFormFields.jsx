@@ -1,519 +1,130 @@
 "use client";
 
-// RoutesFields.jsx
-import { FieldArray, Field, useFormikContext } from "formik";
-import Image from "next/image";
+import { getIn, useFormikContext } from "formik";
+import { addDays, differenceInCalendarDays, parseISO } from "date-fns";
+import { BedDouble, CalendarCheck, CalendarX, MapPin } from "lucide-react";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/components/ui/select";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { format, parseISO } from "date-fns";
-import { cn } from "@/lib/utils";
 import { CITY_LIST } from "@/components/common/cities";
-import { Plus, Minus } from "lucide-react";
-import { useState } from "react";
+import { cn } from "@/lib/utils";
+import {
+  Bar,
+  CounterSegment,
+  DateSegment,
+  Segment,
+  SegmentBody,
+  segmentInnerClass,
+} from "../fields";
 
-const cityList = CITY_LIST;
+const GUEST_ROWS = [
+  { key: "room", label: "Rooms", min: 1 },
+  { key: "adult", label: "Adults", hint: "12+ years", min: 1 },
+  { key: "child", label: "Children", hint: "2–11 years" },
+  { key: "infant", label: "Infants", hint: "Under 2 years" },
+];
 
-const TravellersPopover = ({ index, route, setFieldValue }) => {
-  const rooms = route.room ? Number.parseInt(route.room) : 1;
-  const adults = route.adult ? Number.parseInt(route.adult) : 1;
-  const children = route.child ? Number.parseInt(route.child) : 0;
-  const infants = route.infant ? Number.parseInt(route.infant) : 0;
-  const totalTravellers = adults + children + infants;
+const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
-  const [travellersOpen, setTravellersOpen] = useState(false);
-
-  const updateTravellers = (type, value) => {
-    const newValue = Math.max(0, value);
-    if (type === "room" && newValue < 1) return;
-    setFieldValue(`routes.${index}.${type}`, newValue.toString());
-  };
+/** City dropdown for the first segment. */
+const DestinationSegment = ({ name }) => {
+  const { values, setFieldValue, setFieldTouched } = useFormikContext();
+  const value = getIn(values, name);
+  const city = CITY_LIST.find((item) => item.code === value)?.city;
 
   return (
-    <div className="relative flex-1">
-      {/* LEFT ICON (same as other fields) */}
-      <Image
-        src="/holidayPackage/ContactUs/map-icon.png"
-        alt="Rooms"
-        width={20}
-        height={20}
-        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-      />
-
-      <Popover open={travellersOpen} onOpenChange={setTravellersOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            className="h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50"
-          >
-            <span className="text-foreground truncate">
-              {rooms} {rooms === 1 ? "Room" : "Rooms"}
-              {totalTravellers > 0 &&
-                ` - ${totalTravellers} ${
-                  totalTravellers === 1 ? "Person" : "Persons"
-                }`}
-            </span>
-          </Button>
-        </PopoverTrigger>
-
-        <PopoverContent
-          side="bottom"
-          align="center"
-          sideOffset={10}
-          className="w-80 p-4"
+    <Segment className="lg:flex-[1.3]">
+      <Select
+        value={value}
+        onValueChange={(next) => setFieldValue(name, next)}
+        onOpenChange={(open) => {
+          if (!open) setFieldTouched(name, true);
+        }}
+      >
+        <SelectTrigger
+          className={cn(
+            segmentInnerClass,
+            "!h-auto items-start whitespace-normal border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60 [&>svg:last-child]:hidden"
+          )}
         >
-          <div className="space-y-4">
-            {/* Rooms */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-medium text-sm">Rooms</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("room", rooms - 1)}
-                  disabled={rooms <= 1}
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <Input
-                  type="number"
-                  value={rooms}
-                  className="h-8 w-14 text-center"
-                  min="1"
-                  readOnly
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("room", rooms + 1)}
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Adults */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-medium text-sm">Adults</p>
-                <p className="text-xs text-muted-foreground">12+ years</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("adult", adults - 1)}
-                  disabled={adults <= 0}
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <Input
-                  type="number"
-                  value={adults}
-                  className="h-8 w-14 text-center"
-                  min="0"
-                  readOnly
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("adult", adults + 1)}
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Children */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-medium text-sm">Children</p>
-                <p className="text-xs text-muted-foreground">2–11 years</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("child", children - 1)}
-                  disabled={children <= 0}
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <Input
-                  type="number"
-                  value={children}
-                  className="h-8 w-14 text-center"
-                  readOnly
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("child", children + 1)}
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Infants */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-medium text-sm">Infants</p>
-                <p className="text-xs text-muted-foreground">Under 2 years</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("infant", infants - 1)}
-                  disabled={infants <= 0}
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <Input
-                  type="number"
-                  value={infants}
-                  className="h-8 w-14 text-center"
-                  readOnly
-                />
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => updateTravellers("infant", infants + 1)}
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            <Button
-              type="button"
-              className="w-full"
-              onClick={() => setTravellersOpen(false)}
-            >
-              Done
-            </Button>
-          </div>
-        </PopoverContent>
-      </Popover>
-
-      {/* Hidden fields */}
-      <Field name={`routes.${index}.room`} type="hidden" />
-      <Field name={`routes.${index}.adult`} type="hidden" />
-      <Field name={`routes.${index}.child`} type="hidden" />
-      <Field name={`routes.${index}.infant`} type="hidden" />
-    </div>
+          <SegmentBody
+            icon={MapPin}
+            label="Where to"
+            value={city}
+            placeholder="Choose a city"
+            errorName={name}
+          />
+        </SelectTrigger>
+        <SelectContent position="popper" side="bottom" sideOffset={10} className="max-h-80">
+          {CITY_LIST.map((item) => (
+            <SelectItem key={item.code} value={item.code}>
+              {item.city}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </Segment>
   );
 };
 
 const HotelFormFields = () => {
-  const { values, setFieldValue } = useFormikContext();
+  const { values } = useFormikContext();
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  const checkInValue = getIn(values, "routes.0.depart");
+  const checkOutValue = getIn(values, "routes.0.return");
+  const checkIn = checkInValue ? parseISO(checkInValue) : undefined;
+  // Check-out is at least the night after check-in.
+  const earliestCheckOut = addDays(checkIn ?? today, 1);
+  const nights =
+    checkIn && checkOutValue
+      ? differenceInCalendarDays(parseISO(checkOutValue), checkIn)
+      : 0;
+
   return (
-    <FieldArray name="routes">
-      {({ push, remove }) => (
-        <div className="space-y-6">
-          {values.routes.map((route, index) => {
-            const departDate = route.depart
-              ? parseISO(route.depart)
-              : undefined;
-            const returnDate = route.return
-              ? parseISO(route.return)
-              : undefined;
-
-            return (
-              <div key={index} className="space-y-4">
-                <div className="flex gap-5">
-                  <div className="flex flex-col gap-4 md:flex-row md:gap-4 md:items-center relative w-full">
-                    {/* Where To */}
-                    <div className="relative flex-1">
-                      <Image
-                        src="/holidayPackage/ContactUs/map-icon.png"
-                        alt="From"
-                        width={20}
-                        height={20}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                      />
-                      <Field name={`routes.${index}.from`}>
-                        {({ field, form }) => (
-                          <Select
-                            value={field.value}
-                            onValueChange={(value) =>
-                              form.setFieldValue(`routes.${index}.from`, value)
-                            }
-                          >
-                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base" aria-label="Where To">
-                              <SelectValue placeholder="Where To" />
-                            </SelectTrigger>
-                            <SelectContent
-                              position="popper"
-                              side="bottom"
-                              align="center"
-                              sideOffset={10}
-                              alignOffset={0}
-                            >
-                              {cityList.map((item) => (
-                                <SelectItem key={item.code} value={item.code}>
-                                  {item.city} ({item.code})
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        )}
-                      </Field>
-                    </div>
-
-                    {/* Check In */}
-                    <div className="relative flex-1">
-                      <Image
-                        src="/holidayPackage/ContactUs/map-icon.png"
-                        alt="Check In"
-                        width={20}
-                        height={20}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                      />
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="outline"
-                            className={cn(
-                              "h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50",
-                              !route.depart && "text-muted-foreground"
-                            )}
-                          >
-                            {route.depart ? (
-                              format(departDate, "dd/MM/yyyy")
-                            ) : (
-                              <span className="text-muted-foreground">
-                                Check In
-                              </span>
-                            )}
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent
-                          side="bottom"
-                          align="center"
-                          sideOffset={10}
-                          alignOffset={0}
-                          className="w-auto p-0"
-                        >
-                          <Calendar
-                            mode="single"
-                            selected={departDate}
-                            onSelect={(selected) => {
-                              setFieldValue(
-                                `routes.${index}.depart`,
-                                selected ? format(selected, "yyyy-MM-dd") : ""
-                              );
-                            }}
-                            disabled={(date) => date < today}
-                            initialFocus
-                          />
-                        </PopoverContent>
-                      </Popover>
-                    </div>
-
-                    {/* Check Out */}
-
-                    <div className="relative flex-1">
-                      <Image
-                        src="/holidayPackage/ContactUs/map-icon.png"
-                        alt="Check Out"
-                        width={20}
-                        height={20}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                      />
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="outline"
-                            className={cn(
-                              "h-11 w-full justify-start text-left font-normal bg-sand/70 rounded-2xl pl-10 py-8 pr-4 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50",
-                              !route.return && "text-muted-foreground"
-                            )}
-                          >
-                            {route.return ? (
-                              format(returnDate, "dd/MM/yyyy")
-                            ) : (
-                              <span className="text-muted-foreground">
-                                Check Out
-                              </span>
-                            )}
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent
-                          side="bottom"
-                          align="center"
-                          sideOffset={10}
-                          alignOffset={0}
-                          className="w-auto p-0"
-                        >
-                          <Calendar
-                            mode="single"
-                            selected={returnDate}
-                            onSelect={(selected) => {
-                              setFieldValue(
-                                `routes.${index}.return`,
-                                selected ? format(selected, "yyyy-MM-dd") : ""
-                              );
-                            }}
-                            disabled={(date) => date < today}
-                            initialFocus
-                          />
-                        </PopoverContent>
-                      </Popover>
-                    </div>
-
-                    {/* Travellers - Using separate component */}
-                    <TravellersPopover
-                      index={index}
-                      route={route}
-                      setFieldValue={setFieldValue}
-                    />
-
-                    {/* Going To */}
-                    {/* <div className="relative flex-1">
-                      <Image
-                        src="/holidayPackage/ContactUs/map-icon.png"
-                        alt="To"
-                        width={20}
-                        height={20}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"
-                      />
-                      <Field name={`routes.${index}.to`}>
-                        {({ field, form }) => (
-                          <Select
-                            value={field.value}
-                            onValueChange={(value) =>
-                              form.setFieldValue(`routes.${index}.to`, value)
-                            }
-                          >
-                            <SelectTrigger className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base" aria-label="Going To">
-                              <SelectValue placeholder="Going To" />
-                            </SelectTrigger>
-                            <SelectContent
-                              position="popper"
-                              side="bottom"
-                              align="center"
-                              sideOffset={10}
-                              alignOffset={0}
-                            >
-                              {cityList.map((item) => (
-                                <SelectItem key={item.code} value={item.code}>
-                                  {item.city} ({item.code})
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        )}
-                      </Field>
-                    </div> */}
-                  </div>
-                </div>
-
-                {/* Second Line - Name, Email, Contact Number */}
-                <div className="flex flex-col gap-4 md:flex-row md:gap-4 md:items-center">
-                  <div className="relative flex-1">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="Check In"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2  pointer-events-none z-10"
-                    />
-                    <Field name={`routes.${index}.name`}>
-                      {({ field }) => (
-                        <Input
-                          {...field}
-                          aria-label="Name"
-                          placeholder="Name"
-                          className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
-                        />
-                      )}
-                    </Field>
-                  </div>
-
-                  <div className="relative flex-1">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="Check In"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2  pointer-events-none z-10"
-                    />
-                    <Field name={`routes.${index}.email`}>
-                      {({ field }) => (
-                        <Input
-                          {...field}
-                          type="email"
-                          aria-label="Email"
-                          placeholder="Email"
-                          className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
-                        />
-                      )}
-                    </Field>
-                  </div>
-
-                  <div className="relative flex-1">
-                    <Image
-                      src="/holidayPackage/ContactUs/map-icon.png"
-                      alt="Check In"
-                      width={20}
-                      height={20}
-                      className="absolute left-3 top-1/2 -translate-y-1/2  pointer-events-none z-10"
-                    />
-                    <Field name={`routes.${index}.contact`}>
-                      {({ field }) => (
-                        <Input
-                          {...field}
-                          type="tel"
-                          aria-label="Contact Number"
-                          placeholder="Contact Number"
-                          className="h-11 bg-sand/70 rounded-2xl pl-10 py-8 border border-line shadow-none focus-visible:ring-2 focus-visible:ring-gold/50 w-full text-base"
-                        />
-                      )}
-                    </Field>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    <Bar>
+      <DestinationSegment name="routes.0.from" />
+      <DateSegment
+        name="routes.0.depart"
+        label="Check in"
+        icon={CalendarCheck}
+        isDisabled={(date) => date < today}
+      />
+      <DateSegment
+        name="routes.0.return"
+        label="Check out"
+        icon={CalendarX}
+        hint={checkIn ? undefined : "Pick check-in first"}
+        isDisabled={(date) => date < earliestCheckOut}
+        defaultMonth={earliestCheckOut}
+      />
+      {nights > 0 && (
+        <span className="sr-only" aria-live="polite">
+          {plural(nights, "night")}
+        </span>
       )}
-    </FieldArray>
+      <CounterSegment
+        prefix="routes.0"
+        label="Rooms & guests"
+        icon={BedDouble}
+        rows={GUEST_ROWS}
+        value={(count) => {
+          const guests = count("adult") + count("child") + count("infant");
+          return guests > 0 ? plural(guests, "guest") : "";
+        }}
+        hint={(count) =>
+          [plural(count("room") || 1, "room"), nights > 0 && plural(nights, "night")]
+            .filter(Boolean)
+            .join(" · ")
+        }
+        errorName="routes.0.adult"
+      />
+    </Bar>
   );
 };
 

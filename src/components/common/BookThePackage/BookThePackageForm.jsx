@@ -11,7 +11,7 @@ import {
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import bookThePackageSchema from "@/schemas/hotel/BookThePackageSchema";
-import { Button } from "@/components/ui/button";
+import ArrowButton from "@/components/ui/ArrowButton";
 import FormStatus from "@/components/common/FormStatus";
 import HoneypotField from "@/components/common/HoneypotField";
 import useFormSubmit from "@/hooks/useFormSubmit";
@@ -58,6 +58,8 @@ const BookThePackageForm = () => {
           <div>
             <Field
               name="email"
+              type="email"
+              autoComplete="email"
               aria-label="Your Email"
               placeholder="Your Email"
               className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
@@ -73,6 +75,8 @@ const BookThePackageForm = () => {
           <div>
             <Field
               name="phone"
+              type="tel"
+              autoComplete="tel"
               aria-label="Phone"
               placeholder="Phone"
               className="w-full px-4 py-3.5 bg-sand/60 border border-line rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
@@ -97,8 +101,8 @@ const BookThePackageForm = () => {
                 </SelectTrigger>
                 <SelectContent position="popper" side="bottom" align="start">
                   {[...Array(10)].map((_, i) => (
-                    <SelectItem key={i + 1} value={i.toString()}>
-                      {i}
+                    <SelectItem key={i + 1} value={(i + 1).toString()}>
+                      {i + 1}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -153,10 +157,10 @@ const BookThePackageForm = () => {
 
           <HoneypotField />
 
-          <div className="flex flex-col items-center gap-4">
-            <Button type="submit" className="btn-main w-full" disabled={isSubmitting}>
-              {isSubmitting ? "Sending…" : "Book Now"}
-            </Button>
+          <div className="flex flex-col items-start gap-4">
+            <ArrowButton type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Sending…" : "Book now"}
+            </ArrowButton>
             <FormStatus status={status} error={error} />
           </div>
         </Form>

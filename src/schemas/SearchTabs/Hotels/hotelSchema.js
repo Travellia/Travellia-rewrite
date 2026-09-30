@@ -13,7 +13,7 @@ const hotelSchema = Yup.object({
 
         room: Yup.number().min(1, "At least 1 room required").required(),
 
-        adult: Yup.number().min(0).required(),
+        adult: Yup.number().min(1, "At least 1 adult").required(),
 
         child: Yup.number().min(0),
         infant: Yup.number().min(0),

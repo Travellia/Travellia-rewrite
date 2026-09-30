@@ -1,71 +1,50 @@
-import Image from "next/image";
-import React from "react";
-import { Eyebrow } from "@/components/ui/SectionHeading";
+import { Bus, Headset, Hotel, Plane, Stamp } from "lucide-react";
 import UmrahContactForm from "./UmrahContactForm";
 
 const services = [
-  { title: "VISA", image: "/umrahDetail/From/visa.png" },
-  { title: "FLIGHTS", image: "/umrahDetail/From/flight.png" },
-  { title: "TRANSPORTATION", image: "/umrahDetail/From/transportation.png" },
-  { title: "ACCOMMODATION", image: "/umrahDetail/From/accomodation.png" },
-  {
-    title: "24/7 CUSTOMER SERVICE",
-    image: "/umrahDetail/From/customer-service.png",
-  },
+  { title: "Visa", icon: Stamp },
+  { title: "Flights", icon: Plane },
+  { title: "Transport", icon: Bus },
+  { title: "Hotels", icon: Hotel },
+  { title: "24/7 support", icon: Headset },
 ];
 
 const UmrahForm = () => {
   return (
-    <div className="grid w-full gap-8 lg:grid-cols-2 lg:gap-12">
+    <div className="flex flex-col gap-7">
       {/* Package Summary */}
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-3">
-          <Eyebrow>Every package includes</Eyebrow>
-          <h2 className="font-display text-3xl font-bold uppercase leading-none tracking-tight text-ink md:text-4xl">
-            Your Umrah,
-            <br />
-            <em className="font-serif font-normal normal-case tracking-normal text-gold-accent">
+      <div className="flex flex-col gap-5 rounded-[28px] bg-ink p-5 text-white sm:p-6 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+        <div className="flex flex-col gap-1">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+            Every package includes
+          </p>
+          <p className="font-display text-xl font-bold uppercase tracking-tight">
+            Your Umrah,{" "}
+            <em className="font-serif font-normal normal-case tracking-normal text-gold">
               fully arranged
             </em>
-          </h2>
+          </p>
         </div>
-
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {services.map((service) => (
+        <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:flex lg:flex-wrap lg:justify-end">
+          {services.map(({ title, icon: Icon }) => (
             <li
-              key={service.title}
-              className="flex flex-col items-start gap-3 rounded-2xl border border-line bg-sand/60 p-4"
+              key={title}
+              className="flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 py-1.5 pl-1.5 pr-4 text-sm font-semibold"
             >
-              <span className="relative grid size-11 place-items-center rounded-full bg-white shadow-soft">
-                <Image
-                  src={service.image}
-                  alt=""
-                  width={26}
-                  height={26}
-                  className="object-contain"
-                />
+              <span
+                aria-hidden="true"
+                className="grid size-8 shrink-0 place-items-center rounded-full bg-gold text-ink"
+              >
+                <Icon className="size-4" />
               </span>
-              <span className="text-xs font-bold uppercase tracking-wide text-ink">
-                {service.title}
-              </span>
+              {title}
             </li>
           ))}
         </ul>
       </div>
 
       {/* Form */}
-      <div className="flex flex-col gap-4 rounded-card bg-ink p-6 text-white md:p-8">
-        <div className="flex flex-col gap-1">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            Give us your details
-          </p>
-          <h3 className="font-display text-2xl font-bold uppercase tracking-tight">
-            Book your Umrah package
-          </h3>
-        </div>
-
-        <UmrahContactForm />
-      </div>
+      <UmrahContactForm />
     </div>
   );
 };

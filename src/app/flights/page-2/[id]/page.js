@@ -1,8 +1,6 @@
 import Welcome from "@/components/common/Welcome";
 import FilterSearch from "@/components/common/FilterSearch";
-import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
+import { notFound } from "next/navigation";
 import { getItinearyById } from "@/services/itineariesService";
 import FlightPackage from "@/components/flights/page-2/page-2/id/FlightPackage";
 import BookNow from "@/components/common/BookNow";
@@ -11,6 +9,7 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 const page = async (props) => {
   const params = await props.params;
   const data = await getItinearyById(params.id);
+  if (!data) notFound();
 
   const welcomeData = {
     slides: [
@@ -18,7 +17,12 @@ const page = async (props) => {
       { id: 2, image: "/flights/welcome/Image5.png" },
       { id: 3, image: "/flights/welcome/Image3.png" },
     ],
-    title: "FLIGHT DETAIL",
+    heading: `Flight packages · ${data.country}`,
+    title: (
+      <>
+        Discover <em>{data.city}.</em>
+      </>
+    ),
   };
 
   const imageData = {

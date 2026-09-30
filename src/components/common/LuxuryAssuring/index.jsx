@@ -30,7 +30,7 @@ const LuxuryAssuring = ({ data }) => {
           <div
             role="tablist"
             aria-label={`${data.title} categories`}
-            className="flex w-fit flex-wrap gap-1 rounded-full border border-line bg-white p-1 shadow-soft"
+            className="flex w-fit max-w-full shrink-0 gap-1 overflow-x-auto rounded-full border border-line bg-white p-1 shadow-soft [scrollbar-width:none]"
           >
             {sections.map((section) => {
               const selected = section.id === active.id;
@@ -42,7 +42,7 @@ const LuxuryAssuring = ({ data }) => {
                   aria-selected={selected}
                   onClick={() => setActiveId(section.id)}
                   className={cn(
-                    "rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors",
+                    "shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors",
                     selected ? "bg-ink text-white" : "text-ink/60 hover:bg-sand hover:text-ink"
                   )}
                 >

@@ -1,4 +1,8 @@
 export const CITY_LIST = [
+  // Our main hotel destinations come first. Makkah has no airport, so its code
+  // is the city name; normalize.js prints it without a code in the email.
+  { city: "Makkah", code: "MAKKAH" },
+  { city: "Madinah", code: "MED" },
   { city: "Abu Dhabi", code: "AUH" },
   { city: "Accra", code: "ACC" },
   { city: "Addis Ababa", code: "ADD" },

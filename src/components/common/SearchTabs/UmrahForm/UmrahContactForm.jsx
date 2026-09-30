@@ -1,12 +1,17 @@
 "use client";
 
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Formik, Form } from "formik";
+import { Mail, Phone, UserRound } from "lucide-react";
 import umrahSchema from "@/schemas/SearchTabs/Umrah/umrahSchema";
-import FormStatus from "@/components/common/FormStatus";
 import HoneypotField from "@/components/common/HoneypotField";
 import useFormSubmit from "@/hooks/useFormSubmit";
+import { DetailsRow } from "../fields";
+
+const DETAIL_FIELDS = [
+  { name: "firstName", label: "First name", icon: UserRound, placeholder: "Your first name", autoComplete: "given-name" },
+  { name: "contact", label: "Phone", icon: Phone, type: "tel", placeholder: "Phone number", autoComplete: "tel" },
+  { name: "email", label: "Email", icon: Mail, type: "email", placeholder: "you@example.com", autoComplete: "email" },
+];
 
 const UmrahContactForm = () => {
   const { status, error, submit } = useFormSubmit("umrahEnquiry");
@@ -28,80 +33,15 @@ const UmrahContactForm = () => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="flex flex-col gap-5 w-[80%] mx-auto relative">
-          <div className="space-y-3">
-            {/* First Name */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="umrah-firstName" className="text-xs font-semibold uppercase tracking-wide text-white/70">First Name</label>
-              <Field name="firstName">
-                {({ field }) => (
-                  <Input
-                    {...field}
-                    id="umrah-firstName"
-                    placeholder="Your first name"
-                    className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
-                  />
-                )}
-              </Field>
-              <ErrorMessage
-                name="firstName"
-                component="p"
-                className="text-red-300 text-sm"
-              />
-            </div>
-            {/* Contact */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="umrah-contact" className="text-xs font-semibold uppercase tracking-wide text-white/70">Phone</label>
-              <Field name="contact">
-                {({ field }) => (
-                  <Input
-                    {...field}
-                    id="umrah-contact"
-                    type="tel"
-                    placeholder="Phone number"
-                    className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
-                  />
-                )}
-              </Field>
-              <ErrorMessage
-                name="contact"
-                component="p"
-                className="text-red-300 text-sm"
-              />
-            </div>
-            {/* Email */}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="umrah-email" className="text-xs font-semibold uppercase tracking-wide text-white/70">Your Email</label>
-              <Field name="email">
-                {({ field }) => (
-                  <Input
-                    {...field}
-                    id="umrah-email"
-                    type="email"
-                    placeholder="you@example.com"
-                    className="h-12 bg-white text-ink rounded-2xl border-0 shadow-none focus-visible:ring-2 focus-visible:ring-gold/60"
-                  />
-                )}
-              </Field>
-              <ErrorMessage
-                name="email"
-                component="p"
-                className="text-red-300 text-sm"
-              />
-            </div>
-          </div>
-
+        <Form className="relative">
           <HoneypotField />
-
-          {/* Submit */}
-          <Button
-            type="submit"
-            className="btn-main !bg-gold !text-ink hover:!brightness-105 w-full"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Sending…" : "Submit"}
-          </Button>
-          <FormStatus status={status} error={error} />
+          <DetailsRow
+            fields={DETAIL_FIELDS}
+            submitLabel="Book my Umrah"
+            isSubmitting={isSubmitting}
+            status={status}
+            error={error}
+          />
         </Form>
       )}
     </Formik>

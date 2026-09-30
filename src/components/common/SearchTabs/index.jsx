@@ -33,7 +33,7 @@ const SearchTabs = ({ defaultTab = "flights" }) => {
       <div
         role="tablist"
         aria-label="Search type"
-        className="inline-flex w-fit gap-1 rounded-full bg-sand p-1"
+        className="flex w-full gap-1 rounded-full bg-sand p-1 sm:inline-flex sm:w-fit"
       >
         {TABS.map((tab) => (
           <Tab
@@ -59,7 +59,7 @@ const Tab = ({ label, icon: Icon, active, onClick }) => (
     aria-selected={active}
     onClick={onClick}
     className={cn(
-      "flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all sm:px-5",
+      "flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full px-3 py-2.5 text-sm font-semibold transition-all sm:flex-none sm:px-5",
       active
         ? "bg-ink text-white shadow-soft"
         : "text-ink/60 hover:bg-white hover:text-ink"
