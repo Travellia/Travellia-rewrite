@@ -8,22 +8,22 @@ import FilterSearch from "@/components/common/FilterSearch";
 const page = () => {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/flights/welcome/Image4.png" },
-      { id: 2, image: "/flights/welcome/Image5.png" },
-      { id: 3, image: "/flights/welcome/Image3.png" },
+      { id: 1, image: "/flights/welcome/Image4.webp" },
+      { id: 2, image: "/flights/welcome/Image5.webp" },
+      { id: 3, image: "/flights/welcome/Image3.webp" },
     ],
     title: "FLIGHT DETAIL",
   };
 
   const imageData = {
-    image: "/flights/page-1/booknow.png",
+    image: "/flights/page-1/booknow.webp",
     alt: "resturant",
   };
 
   return (
     <section className="relative flex flex-col">
       <Image
-        src="/common/plane.png"
+        src="/common/plane.webp"
         alt="Plan Image"
         width={1000}
         height={1000}

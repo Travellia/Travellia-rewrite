@@ -4,21 +4,21 @@ import PopularPackageCard from "./PopularPackageCard";
 const PopularPackage = () => {
   const Popular_Destination = [
     {
-      image: "/common/PopularPackages/Image1.png",
+      image: "/common/PopularPackages/Image1.webp",
       days: "6 Days / 5 Nights",
       place: "Lake Garda",
       price: "£180",
       person: "per person",
     },
     {
-      image: "/common/PopularPackages/Image2.png",
+      image: "/common/PopularPackages/Image2.webp",
       days: "6 Days / 5 Nights",
       place: "Paris Hill Tour",
       price: "£200",
       person: "per person",
     },
     {
-      image: "/common/PopularPackages/Image3.png",
+      image: "/common/PopularPackages/Image3.webp",
       days: "6 Days / 5 Nights",
       place: "Lake Garda",
       price: "£200",

@@ -54,7 +54,7 @@ const index = () => {
             </span>
             <span className="relative h-28 w-44 overflow-hidden rounded-2xl shadow-soft">
               <Image
-                src="/hajj-ummrah/welcome/slide1.png"
+                src="/hajj-ummrah/welcome/slide1.webp"
                 alt=""
                 fill
                 sizes="176px"

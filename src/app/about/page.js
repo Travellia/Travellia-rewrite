@@ -8,7 +8,7 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const welcomeData = {
-    slides: [{ id: 1, image: "/about/welcome/Image1.png" }],
+    slides: [{ id: 1, image: "/about/welcome/Image1.webp" }],
     heading: "About us",
     title: (
       <>

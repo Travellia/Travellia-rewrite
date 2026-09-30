@@ -8,37 +8,37 @@ const index = () => {
   const Packages = [
     {
       id: 1,
-      image: "/hajj-ummrah/halalFriendly/Image-1.png",
+      image: "/hajj-ummrah/halalFriendly/Image-1.webp",
       description: "Ramadan Packages",
       startingPrice: "Starting From £1349",
     },
     {
       id: 2,
-      image: "/hajj-ummrah/halalFriendly/Image-2.png",
+      image: "/hajj-ummrah/halalFriendly/Image-2.webp",
       description: "Christmas Packages",
       startingPrice: "Starting From £1349",
     },
     {
       id: 3,
-      image: "/hajj-ummrah/halalFriendly/Image-3.png",
+      image: "/hajj-ummrah/halalFriendly/Image-3.webp",
       description: "Easter Packages",
       startingPrice: "Starting From £1349",
     },
     {
       id: 4,
-      image: "/hajj-ummrah/halalFriendly/Image-4.png",
+      image: "/hajj-ummrah/halalFriendly/Image-4.webp",
       description: "Umrah with Abu Dhabi Stay",
       startingPrice: "Starting From £1349",
     },
     {
       id: 5,
-      image: "/hajj-ummrah/halalFriendly/Image-5.png",
+      image: "/hajj-ummrah/halalFriendly/Image-5.webp",
       description: "Umrah with Turkey Stay",
       startingPrice: "Starting From £1349",
     },
     {
       id: 6,
-      image: "/hajj-ummrah/halalFriendly/Image-6.png",
+      image: "/hajj-ummrah/halalFriendly/Image-6.webp",
       description: "Umrah with Abu Dhabi Stay",
       startingPrice: "Starting From £1349",
     },

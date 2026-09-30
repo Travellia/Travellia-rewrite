@@ -14,7 +14,7 @@ const BookingDetails = ({ data }) => {
       <div className="relative flex items-center rounded-2xl border border-line bg-sand/60 py-2 transition focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/30">
         <div className="p-3 shrink-0">
           <Image
-            src={"/holidayPackage/ContactUs/map-icon.png"}
+            src={"/holidayPackage/ContactUs/map-icon.webp"}
             alt=""
             aria-hidden="true"
             width={20}

@@ -11,9 +11,9 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 const page = () => {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/flights/welcome/Image4.png" },
-      { id: 2, image: "/flights/welcome/Image5.png" },
-      { id: 3, image: "/flights/welcome/Image3.png" },
+      { id: 1, image: "/flights/welcome/Image4.webp" },
+      { id: 2, image: "/flights/welcome/Image5.webp" },
+      { id: 3, image: "/flights/welcome/Image3.webp" },
     ],
     title: "FLIGHT DETAIL",
   };
@@ -21,7 +21,7 @@ const page = () => {
   const AIR_FLIGHTS_LIST = AirFlightLists;
 
   const imageData = {
-    image: "/flights/page-4/bg.png",
+    image: "/flights/page-4/bg.webp",
     alt: "resturant",
   };
 

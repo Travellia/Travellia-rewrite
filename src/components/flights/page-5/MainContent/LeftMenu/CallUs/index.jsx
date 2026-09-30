@@ -6,7 +6,7 @@ const CallUs = () => {
   return (
     <section className="relative w-full h-75">
       <Image
-        src="/flights/page-5/MainContent/LeftMenu/CallUs/callcenterbg.png"
+        src="/flights/page-5/MainContent/LeftMenu/CallUs/callcenterbg.webp"
         alt="call center"
         fill
         sizes="(max-width: 1024px) 100vw, 33vw"

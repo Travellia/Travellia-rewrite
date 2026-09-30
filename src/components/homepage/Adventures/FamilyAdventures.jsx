@@ -7,10 +7,10 @@ import { Eyebrow } from "@/components/ui/SectionHeading";
 import Unveil from "@/components/ui/Unveil";
 
 const THUMBNAILS = [
-  "/home/adventure/1.jpg",
-  "/home/adventure/3.jpg",
-  "/home/adventure/4.jpg",
-  "/home/adventure/5.jpg",
+  "/home/adventure/1.webp",
+  "/home/adventure/3.webp",
+  "/home/adventure/4.webp",
+  "/home/adventure/5.webp",
 ];
 
 const FamilyAdventures = () => {
@@ -32,7 +32,7 @@ const FamilyAdventures = () => {
             <div className="flex items-center gap-4">
               <span className="relative h-24 w-36 shrink-0 overflow-hidden rounded-2xl shadow-soft">
                 <Image
-                  src="/flights/welcome/Image2.png"
+                  src="/flights/welcome/Image2.webp"
                   alt=""
                   fill
                   sizes="144px"
@@ -61,7 +61,7 @@ const FamilyAdventures = () => {
               className="relative aspect-[4/5] flex-1 overflow-hidden rounded-frame shadow-lift"
             >
               <Image
-                src="/home/adventure/2.jpg"
+                src="/home/adventure/2.webp"
                 alt="Paris street with the Eiffel Tower"
                 fill
                 sizes="(max-width: 1024px) 80vw, 40vw"

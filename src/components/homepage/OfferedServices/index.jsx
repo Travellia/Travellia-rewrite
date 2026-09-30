@@ -42,13 +42,13 @@ const Index = () => {
           {/* Photo collage */}
           <div className="grid grid-cols-2 gap-3">
             <div className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-card">
-              <Image src="/home/services/22.png" alt="Resort pool at dusk" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+              <Image src="/home/services/22.webp" alt="Resort pool at dusk" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
             </div>
             <div className="relative aspect-square overflow-hidden rounded-card">
-              <Image src="/home/services/222.png" alt="" fill sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover" />
+              <Image src="/home/services/222.webp" alt="" fill sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover" />
             </div>
             <div className="relative aspect-square overflow-hidden rounded-card">
-              <Image src="/home/services/33.png" alt="" fill sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover" />
+              <Image src="/home/services/33.webp" alt="" fill sizes="(max-width: 1024px) 50vw, 22vw" className="object-cover" />
             </div>
           </div>
 

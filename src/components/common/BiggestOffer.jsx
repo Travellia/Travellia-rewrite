@@ -6,7 +6,7 @@ const BiggestOffer = () => {
   return (
     <section className="relative flex min-h-[340px] w-full flex-col justify-end overflow-hidden rounded-card p-6 text-white shadow-soft">
       <Image
-        src="/common/BiggestOffer/bg.png"
+        src="/common/BiggestOffer/bg.webp"
         alt=""
         fill
         sizes="(max-width: 1024px) 100vw, 30vw"

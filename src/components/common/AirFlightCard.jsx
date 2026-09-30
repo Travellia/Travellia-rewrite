@@ -38,14 +38,14 @@ const AirFlightCard = ({ data }) => {
 
           <div className="flex gap-4">
             <Image
-              src="/common/phone-logo.png"
+              src="/common/phone-logo.webp"
               alt="phone"
               width={22}
               height={22}
               loading="lazy"
             />
             <Image
-              src="/common/Whatsapp-Logo.png"
+              src="/common/Whatsapp-Logo.webp"
               alt="whatsapp"
               width={22}
               height={22}

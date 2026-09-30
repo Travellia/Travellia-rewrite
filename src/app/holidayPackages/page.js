@@ -14,9 +14,9 @@ import { Bullets } from "@/lib/data/holidayPackage/TravelItineariesBullets-holid
 const page = () => {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/holidayPackage/welcome/welcome1.jpg" },
-      { id: 2, image: "/about/welcome/Image1.png" },
-      { id: 3, image: "/home/welcome/welcome.jpg" },
+      { id: 1, image: "/holidayPackage/welcome/welcome1.webp" },
+      { id: 2, image: "/about/welcome/Image1.webp" },
+      { id: 3, image: "/home/welcome/welcome.webp" },
     ],
     heading: "Holiday packages",
     title: (
@@ -34,7 +34,7 @@ const page = () => {
   const BULLETS = Bullets;
 
   const imageData = {
-    image: "/holidayPackage/BookNow/bgImage.png",
+    image: "/holidayPackage/BookNow/bgImage.webp",
     alt: "",
   };
 

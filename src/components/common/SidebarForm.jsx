@@ -6,7 +6,7 @@ const SidebarForm = ({ data }) => {
   return (
     <section className="relative w-full">
       <Image
-        src="/common/sidebarForm/bg-image.png"
+        src="/common/sidebarForm/bg-image.webp"
         alt="bg.png"
         fill
         sizes="(max-width: 1024px) 100vw, 33vw"
@@ -24,7 +24,7 @@ const SidebarForm = ({ data }) => {
         </h2>
         <div className="flex gap-5 items-center ">
           <Image
-            src="/common/sidebarForm/phone-logo.png"
+            src="/common/sidebarForm/phone-logo.webp"
             alt="logo"
             width={50}
             height={50}
@@ -34,7 +34,7 @@ const SidebarForm = ({ data }) => {
             BOOK NOW
           </Button>
           <Image
-            src="/common/Whatsapp-Logo.png"
+            src="/common/Whatsapp-Logo.webp"
             alt="logo"
             width={40}
             height={40}

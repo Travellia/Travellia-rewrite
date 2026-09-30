@@ -1,7 +1,7 @@
 const Itinearies = [
   {
     id: 1,
-    heroImage: "/flights/common/card1.png",
+    heroImage: "/flights/common/card1.webp",
     discover: "Discover",
     city: "Berlin",
     country: "Germany",
@@ -16,7 +16,7 @@ const Itinearies = [
         {"With direct flights from across the UK, it is an easy choice for a long weekend or a relaxed week-long city break."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Spend your afternoons in the Tiergarten, one of Europe's largest city parks, or take a boat trip along the River Spree to see the city from the water."}
@@ -59,7 +59,7 @@ const Itinearies = [
 
   {
     id: 2,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Amsterdam",
     country: "Netherlands",
@@ -74,7 +74,7 @@ const Itinearies = [
         {"Short flights from the UK make it perfect for a weekend away or a longer Dutch holiday."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Explore the city the local way by bike, or take a relaxing canal cruise to admire its bridges and historic architecture."}
@@ -117,7 +117,7 @@ const Itinearies = [
 
   {
     id: 3,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Moscow",
     country: "Russia",
@@ -132,7 +132,7 @@ const Itinearies = [
         {"Our team will help you find the best flight connections and a hotel close to the sights."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Stroll along the Arbat, one of the city's oldest streets, or relax in Gorky Park beside the Moskva River."}
@@ -175,7 +175,7 @@ const Itinearies = [
 
   {
     id: 4,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Cape Town",
     country: "South Africa",
@@ -190,7 +190,7 @@ const Itinearies = [
         {"It is also the perfect starting point for wine tours and unforgettable safari adventures."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Drive the scenic Chapman's Peak route to the Cape of Good Hope, or spend a day in the Stellenbosch and Franschhoek winelands."}
@@ -233,7 +233,7 @@ const Itinearies = [
 
   {
     id: 5,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Cairo",
     country: "Egypt",
@@ -248,7 +248,7 @@ const Itinearies = [
         {"Combine your stay with a Nile cruise or a relaxing beach break on the Red Sea."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Sail the Nile between Luxor and Aswan to see the Valley of the Kings, Karnak Temple and the temples of Abu Simbel."}
@@ -291,7 +291,7 @@ const Itinearies = [
 
   {
     id: 6,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Bangkok",
     country: "Thailand",
@@ -306,7 +306,7 @@ const Itinearies = [
         {"From here, Thailand's beautiful islands and beaches are just a short flight away."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Extend your trip with a beach stay in Phuket, Krabi or Koh Samui, or head north to the temples and night markets of Chiang Mai."}
@@ -349,7 +349,7 @@ const Itinearies = [
 
   {
     id: 7,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Berlin",
     country: "Germany",
@@ -364,7 +364,7 @@ const Itinearies = [
         {"With direct flights from across the UK, it is an easy choice for a long weekend or a relaxed week-long city break."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Spend your afternoons in the Tiergarten, one of Europe's largest city parks, or take a boat trip along the River Spree to see the city from the water."}
@@ -407,7 +407,7 @@ const Itinearies = [
 
   {
     id: 8,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Amsterdam",
     country: "Netherlands",
@@ -422,7 +422,7 @@ const Itinearies = [
         {"Short flights from the UK make it perfect for a weekend away or a longer Dutch holiday."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Explore the city the local way by bike, or take a relaxing canal cruise to admire its bridges and historic architecture."}
@@ -465,7 +465,7 @@ const Itinearies = [
 
   {
     id: 9,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Moscow",
     country: "Russia",
@@ -480,7 +480,7 @@ const Itinearies = [
         {"Our team will help you find the best flight connections and a hotel close to the sights."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Stroll along the Arbat, one of the city's oldest streets, or relax in Gorky Park beside the Moskva River."}
@@ -523,7 +523,7 @@ const Itinearies = [
 
   {
     id: 10,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Cape Town",
     country: "South Africa",
@@ -538,7 +538,7 @@ const Itinearies = [
         {"It is also the perfect starting point for wine tours and unforgettable safari adventures."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Drive the scenic Chapman's Peak route to the Cape of Good Hope, or spend a day in the Stellenbosch and Franschhoek winelands."}
@@ -581,7 +581,7 @@ const Itinearies = [
 
   {
     id: 11,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Cairo",
     country: "Egypt",
@@ -596,7 +596,7 @@ const Itinearies = [
         {"Combine your stay with a Nile cruise or a relaxing beach break on the Red Sea."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Sail the Nile between Luxor and Aswan to see the Valley of the Kings, Karnak Temple and the temples of Abu Simbel."}
@@ -639,7 +639,7 @@ const Itinearies = [
 
   {
     id: 12,
-    heroImage: "/flights/common/card1.1.png",
+    heroImage: "/flights/common/card1.1.webp",
     discover: "Discover",
     city: "Bangkok",
     country: "Thailand",
@@ -654,7 +654,7 @@ const Itinearies = [
         {"From here, Thailand's beautiful islands and beaches are just a short flight away."}
       </>
     ),
-    gallery: ["/flights/common/card1.2.png", "/flights/common/card1.3.png"],
+    gallery: ["/flights/common/card1.2.webp", "/flights/common/card1.3.webp"],
     overview2: (
       <>
         {"Extend your trip with a beach stay in Phuket, Krabi or Koh Samui, or head north to the temples and night markets of Chiang Mai."}

@@ -11,9 +11,9 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 const page = () => {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/flights/welcome/Image1.png" },
-      { id: 2, image: "/flights/welcome/Image2.png" },
-      { id: 3, image: "/flights/welcome/Image3.png" },
+      { id: 1, image: "/flights/welcome/Image1.webp" },
+      { id: 2, image: "/flights/welcome/Image2.webp" },
+      { id: 3, image: "/flights/welcome/Image3.webp" },
     ],
     heading: "Flights from UK airports",
     title: (
@@ -28,7 +28,7 @@ const page = () => {
   const FLIGHTS_CARDS_DATA = popularFlightData.slice(0, 6);
 
   const imageData = {
-    image: "/flights/page-1/booknow.png",
+    image: "/flights/page-1/booknow.webp",
     alt: "",
   };
 

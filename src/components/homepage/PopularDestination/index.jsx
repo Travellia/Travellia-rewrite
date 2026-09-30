@@ -6,7 +6,7 @@ import OurPopularCard from "@/components/common/OurPopular/OurPopularCard";
 const DESTINAION_CARDS_DATA = [
   {
     id: 1,
-    src: "/home/popular-destinations/destination1.png",
+    src: "/home/popular-destinations/destination1.webp",
     country: "Berlin",
     city: "Germany",
     description:
@@ -17,7 +17,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 2,
-    src: "/home/popular-destinations/destination2.png",
+    src: "/home/popular-destinations/destination2.webp",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -31,7 +31,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 3,
-    src: "/home/popular-destinations/destination3.png",
+    src: "/home/popular-destinations/destination3.webp",
     country: "Moscow",
     city: "Russia",
     description:
@@ -42,7 +42,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 4,
-    src: "/home/popular-destinations/destination4.png",
+    src: "/home/popular-destinations/destination4.webp",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -53,7 +53,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 5,
-    src: "/home/popular-destinations/destination5.png",
+    src: "/home/popular-destinations/destination5.webp",
     country: "Moscow",
     city: "Russia",
     description:
@@ -64,7 +64,7 @@ const DESTINAION_CARDS_DATA = [
   },
   {
     id: 6,
-    src: "/home/popular-destinations/destination6.png",
+    src: "/home/popular-destinations/destination6.webp",
     country: "Berlin",
     city: "Germany",
     description:

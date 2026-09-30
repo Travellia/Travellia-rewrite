@@ -19,7 +19,7 @@ const PlanYourTrip = ({
     <section id="plan-your-trip" className="scroll-mt-28 px-3 md:px-5">
       <div className="relative isolate mx-auto max-w-[1400px] overflow-hidden rounded-frame py-14 md:py-20">
         <Image
-          src="/holidayPackage/welcome/welcome1.jpg"
+          src="/holidayPackage/welcome/welcome1.webp"
           alt=""
           fill
           sizes="100vw"
@@ -32,7 +32,7 @@ const PlanYourTrip = ({
             {/* Image side */}
             <div className="relative min-h-64 lg:min-h-full">
               <Image
-                src="/hotel/welcome/slide-1.png"
+                src="/hotel/welcome/slide-1.webp"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

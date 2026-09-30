@@ -13,9 +13,9 @@ const page = async (props) => {
 
   const welcomeData = {
     slides: [
-      { id: 1, image: "/flights/welcome/Image4.png" },
-      { id: 2, image: "/flights/welcome/Image5.png" },
-      { id: 3, image: "/flights/welcome/Image3.png" },
+      { id: 1, image: "/flights/welcome/Image4.webp" },
+      { id: 2, image: "/flights/welcome/Image5.webp" },
+      { id: 3, image: "/flights/welcome/Image3.webp" },
     ],
     heading: `Flight packages · ${data.country}`,
     // The card clicked on the previous page grows into this photo.
@@ -32,7 +32,7 @@ const page = async (props) => {
   };
 
   const imageData = {
-    image: "/hotel/BookNow/bg.png",
+    image: "/hotel/BookNow/bg.webp",
     alt: "resturant",
   };
 

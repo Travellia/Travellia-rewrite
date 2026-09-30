@@ -11,7 +11,7 @@ const PACKAGES_DATA = [
     priceLabel: "From",
     discountPrice: 535,
     description: "Return flights from London to Banjul (BJL).",
-    image: "/flights/page-1/TrendingPackage/banjul.jpg",
+    image: "/flights/page-1/TrendingPackage/banjul.webp",
   },
   {
     city: "Dakar",
@@ -19,7 +19,7 @@ const PACKAGES_DATA = [
     priceLabel: "From",
     discountPrice: 460,
     description: "Return flights from London to Dakar (DSS).",
-    image: "/flights/page-1/TrendingPackage/dakar.jpg",
+    image: "/flights/page-1/TrendingPackage/dakar.webp",
   },
   {
     city: "Freetown",
@@ -27,7 +27,7 @@ const PACKAGES_DATA = [
     priceLabel: "From",
     discountPrice: 730,
     description: "Return flights from London to Freetown (FNA).",
-    image: "/flights/page-1/TrendingPackage/freetown.jpg",
+    image: "/flights/page-1/TrendingPackage/freetown.webp",
   },
   {
     city: "Conakry",
@@ -35,7 +35,7 @@ const PACKAGES_DATA = [
     priceLabel: "From",
     discountPrice: 610,
     description: "Return flights from London to Conakry (CKY).",
-    image: "/flights/page-1/TrendingPackage/conakry.jpg",
+    image: "/flights/page-1/TrendingPackage/conakry.webp",
   },
   {
     city: "Monrovia",
@@ -43,7 +43,7 @@ const PACKAGES_DATA = [
     priceLabel: "From",
     discountPrice: 495,
     description: "Return flights from London to Monrovia (ROB).",
-    image: "/flights/page-1/TrendingPackage/monrovia.jpg",
+    image: "/flights/page-1/TrendingPackage/monrovia.webp",
   },
   {
     city: "Abidjan",
@@ -51,7 +51,7 @@ const PACKAGES_DATA = [
     priceLabel: "From",
     discountPrice: 520,
     description: "Return flights from London to Abidjan (ABJ).",
-    image: "/flights/page-1/TrendingPackage/abidjan.jpg",
+    image: "/flights/page-1/TrendingPackage/abidjan.webp",
   },
 ];
 

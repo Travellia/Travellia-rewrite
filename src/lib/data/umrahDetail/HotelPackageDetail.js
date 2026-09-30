@@ -26,7 +26,7 @@ const buildStayItem = (card, stars) => {
 
   return {
     id: 1,
-    image: "/umrahDetail/umrahPackage/bed.png",
+    image: "/umrahDetail/umrahPackage/bed.webp",
     alt: "bed",
     title,
     content,
@@ -36,7 +36,7 @@ const buildStayItem = (card, stars) => {
 const SHARED_PACKAGE_ITEMS = [
   {
     id: 2,
-    image: "/umrahDetail/umrahPackage/car.png",
+    image: "/umrahDetail/umrahPackage/car.webp",
     alt: "car",
     title: "Transport",
     content:
@@ -44,14 +44,14 @@ const SHARED_PACKAGE_ITEMS = [
   },
   {
     id: 3,
-    image: "/umrahDetail/umrahPackage/visa.png",
+    image: "/umrahDetail/umrahPackage/visa.webp",
     alt: "visa",
     title: "Visa Processing",
     content: " Complete Umrah visa services included in the package.",
   },
   {
     id: 4,
-    image: "/umrahDetail/umrahPackage/support.png",
+    image: "/umrahDetail/umrahPackage/support.webp",
     alt: "support",
     title: "Support",
     content:
@@ -59,7 +59,7 @@ const SHARED_PACKAGE_ITEMS = [
   },
   {
     id: 5,
-    image: "/umrahDetail/umrahPackage/meal.png",
+    image: "/umrahDetail/umrahPackage/meal.webp",
     alt: "meal",
     title: "Meals",
     content:
@@ -84,7 +84,7 @@ export const buildHotelPackageDetails = (card, stars) => {
     makkah: {
       heading: "MAKKAH HOTEL PACKAGE",
       desc: card.makkah,
-      image: "/umrahDetail/umrahPackage/makkahHotel.png",
+      image: "/umrahDetail/umrahPackage/makkahHotel.webp",
       images: withFit(card.makkahImages),
       alt: card.makkah,
       stars,
@@ -94,7 +94,7 @@ export const buildHotelPackageDetails = (card, stars) => {
     madinah: {
       heading: "MADINAH HOTEL PACKAGE",
       desc: card.madinah,
-      image: "/umrahDetail/umrahPackage/madinahHotel.png",
+      image: "/umrahDetail/umrahPackage/madinahHotel.webp",
       images: withFit(card.madinahImages),
       alt: card.madinah,
       stars,

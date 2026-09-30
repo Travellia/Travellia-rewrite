@@ -4,9 +4,9 @@ import { MdEmail } from "react-icons/md";
 import { phoneHref } from "@/components/common/PhoneNumberViewer";
 
 const SOCIALS = [
-  { icon: "/social-media/facebook.png", href: data.socials.facebook, label: "Facebook" },
-  { icon: "/social-media/instagram.png", href: data.socials.instagram, label: "Instagram" },
-  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok, label: "TikTok" },
+  { icon: "/social-media/facebook.webp", href: data.socials.facebook, label: "Facebook" },
+  { icon: "/social-media/instagram.webp", href: data.socials.instagram, label: "Instagram" },
+  { icon: "/social-media/tik-tok.webp", href: data.socials.tiktok, label: "TikTok" },
 ];
 
 export default function Banner() {
@@ -17,7 +17,7 @@ export default function Banner() {
           <a href={phoneHref} className="flex items-center gap-2 hover:text-gold">
             <span className="relative size-5 shrink-0">
               <Image
-                src="/common/phone-white-logo.png"
+                src="/common/phone-white-logo.webp"
                 alt=""
                 fill
                 sizes="20px"
@@ -44,7 +44,7 @@ export default function Banner() {
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5">
             <Image
-              src="/banner/united-kingdom.png"
+              src="/banner/united-kingdom.webp"
               alt=""
               width={16}
               height={16}

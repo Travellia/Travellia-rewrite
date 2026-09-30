@@ -5,16 +5,16 @@ import PhotoCollageCarousel from "@/components/common/photo-collage-carousel";
 import React from "react";
 
 const photos = [
-  { id: 1, src: "/about/AmazingTeam/pic1.png", alt: "Photo 1" },
-  { id: 2, src: "/about/AmazingTeam/pic2.png", alt: "Photo 2" },
-  { id: 3, src: "/about/AmazingTeam/pic3.png", alt: "Photo 3" },
-  { id: 4, src: "/about/AmazingTeam/pic4.png", alt: "Photo 4" },
-  { id: 5, src: "/about/AmazingTeam/pic5.png", alt: "Photo 5" },
-  { id: 6, src: "/about/AmazingTeam/pic1.png", alt: "Photo 1" },
-  { id: 7, src: "/about/AmazingTeam/pic2.png", alt: "Photo 2" },
-  { id: 8, src: "/about/AmazingTeam/pic3.png", alt: "Photo 3" },
-  { id: 9, src: "/about/AmazingTeam/pic4.png", alt: "Photo 4" },
-  { id: 10, src: "/about/AmazingTeam/pic5.png", alt: "Photo 5" },
+  { id: 1, src: "/about/AmazingTeam/pic1.webp", alt: "Photo 1" },
+  { id: 2, src: "/about/AmazingTeam/pic2.webp", alt: "Photo 2" },
+  { id: 3, src: "/about/AmazingTeam/pic3.webp", alt: "Photo 3" },
+  { id: 4, src: "/about/AmazingTeam/pic4.webp", alt: "Photo 4" },
+  { id: 5, src: "/about/AmazingTeam/pic5.webp", alt: "Photo 5" },
+  { id: 6, src: "/about/AmazingTeam/pic1.webp", alt: "Photo 1" },
+  { id: 7, src: "/about/AmazingTeam/pic2.webp", alt: "Photo 2" },
+  { id: 8, src: "/about/AmazingTeam/pic3.webp", alt: "Photo 3" },
+  { id: 9, src: "/about/AmazingTeam/pic4.webp", alt: "Photo 4" },
+  { id: 10, src: "/about/AmazingTeam/pic5.webp", alt: "Photo 5" },
 ];
 
 const index = () => {

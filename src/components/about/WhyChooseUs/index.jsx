@@ -11,14 +11,14 @@ const index = () => {
       title: "WIDE VARIETY OF DESTINATIONS",
       description:
         "Flights, holidays and Umrah packages to destinations across Europe, Africa, Asia and the Middle East.",
-      iconPath: "/about/WhyChooseUs/map.png",
+      iconPath: "/about/WhyChooseUs/map.webp",
     },
     {
       title: "HIGHLY QUALIFIED SERVICE",
       description:
         "Experienced consultants who handle every booking with care, from quote to confirmation.",
 
-      iconPath: "/about/WhyChooseUs/guarantee.png",
+      iconPath: "/about/WhyChooseUs/guarantee.webp",
     },
     {
       title: (
@@ -30,7 +30,7 @@ const index = () => {
       description:
         "Comfortable, well-located hotels chosen for quality and value, including stays near the Haram.",
 
-      iconPath: "/about/WhyChooseUs/hotel.png",
+      iconPath: "/about/WhyChooseUs/hotel.webp",
     },
     {
       title: (
@@ -42,7 +42,7 @@ const index = () => {
       description:
         "Round-the-clock support before, during and after your journey, whenever you need us.",
 
-      iconPath: "/about/WhyChooseUs/24-hours.png",
+      iconPath: "/about/WhyChooseUs/24-hours.webp",
     },
   ];
   return (

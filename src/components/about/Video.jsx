@@ -7,7 +7,7 @@ const Video = () => {
     <ContentLayoutWrapper>
       <div className="relative h-[30vh] w-full overflow-hidden rounded-frame shadow-lift md:h-[45vh] xl:h-[55vh]">
         <Image
-          src="/about/video/video.png"
+          src="/about/video/video.webp"
           alt="Video thumbnail"
           fill
           sizes="100vw"

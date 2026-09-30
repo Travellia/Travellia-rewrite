@@ -13,31 +13,31 @@ import { data } from "@/lib/contactInfo";
 
 // Photo shown in the newsletter card, per section of the site.
 const FOOTER_IMAGE_MAP = [
-  { match: "/hotels", src: "/footer/hotelFooter.png" },
-  { match: "/holidayPackages", src: "/footer/holidayPackagesFooter.png" },
-  { match: "/contact", src: "/footer/contactFooter.png" },
+  { match: "/hotels", src: "/footer/hotelFooter.webp" },
+  { match: "/holidayPackages", src: "/footer/holidayPackagesFooter.webp" },
+  { match: "/contact", src: "/footer/contactFooter.webp" },
 ];
-const DEFAULT_FOOTER_IMAGE = "/footer/homeFooter.png";
+const DEFAULT_FOOTER_IMAGE = "/footer/homeFooter.webp";
 
 const BRANDS = [
-  { src: "/footer/iata.png", alt: "IATA" },
-  { src: "/footer/atol.png", alt: "ATOL" },
-  { src: "/footer/arab.png", alt: "Kingdom of Saudi Arabia" },
-  { src: "/footer/abta.png", alt: "ABTA" },
+  { src: "/footer/iata.webp", alt: "IATA" },
+  { src: "/footer/atol.webp", alt: "ATOL" },
+  { src: "/footer/arab.webp", alt: "Kingdom of Saudi Arabia" },
+  { src: "/footer/abta.webp", alt: "ABTA" },
 ];
 
 const SOCIALS = [
-  { icon: "/social-media/facebook.png", href: data.socials.facebook, label: "Facebook" },
-  { icon: "/social-media/instagram.png", href: data.socials.instagram, label: "Instagram" },
-  { icon: "/social-media/tik-tok.png", href: data.socials.tiktok, label: "TikTok" },
+  { icon: "/social-media/facebook.webp", href: data.socials.facebook, label: "Facebook" },
+  { icon: "/social-media/instagram.webp", href: data.socials.instagram, label: "Instagram" },
+  { icon: "/social-media/tik-tok.webp", href: data.socials.tiktok, label: "TikTok" },
 ];
 
 const CARDS = [
-  { src: "/footer/visa.png", alt: "Visa" },
-  { src: "/footer/mastercard.png", alt: "Mastercard" },
-  { src: "/footer/american-express.png", alt: "American Express" },
-  { src: "/footer/stripecard.png", alt: "Stripe" },
-  { src: "/footer/paypal.png", alt: "PayPal" },
+  { src: "/footer/visa.webp", alt: "Visa" },
+  { src: "/footer/mastercard.webp", alt: "Mastercard" },
+  { src: "/footer/american-express.webp", alt: "American Express" },
+  { src: "/footer/stripecard.webp", alt: "Stripe" },
+  { src: "/footer/paypal.webp", alt: "PayPal" },
 ];
 
 const CONTACT_INFO = [
@@ -116,7 +116,7 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <Link href="/" aria-label="Travellia home" className="w-fit">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Travellia"
                   width={200}
                   height={50}
