@@ -9,7 +9,7 @@ export const PACKAGES_DATA = {
       oldPrice: 699,
       description:
         "Gardens by the Bay, Marina Bay and Sentosa Island on a relaxed city itinerary.",
-      image: "/holidayPackage/TravelItinearies/Image-1.png",
+      image: "/holidayPackage/TravelItinearies/Image-1.webp",
     },
     {
       stars: 4,
@@ -19,7 +19,7 @@ export const PACKAGES_DATA = {
       oldPrice: 699,
       description:
         "Big Ben, Westminster, the Tower of London and a Thames river cruise.",
-      image: "/holidayPackage/TravelItinearies/Image-2.png",
+      image: "/holidayPackage/TravelItinearies/Image-2.webp",
     },
     {
       stars: 5,
@@ -29,7 +29,7 @@ export const PACKAGES_DATA = {
       oldPrice: 699,
       description:
         "Gondola rides on the Grand Canal, St Mark's Square and the Italian lakes.",
-      image: "/holidayPackage/TravelItinearies/Image-3.png",
+      image: "/holidayPackage/TravelItinearies/Image-3.webp",
     },
   ],
 };

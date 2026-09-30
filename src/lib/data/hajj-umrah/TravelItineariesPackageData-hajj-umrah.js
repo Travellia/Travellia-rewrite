@@ -9,7 +9,7 @@ export const PACKAGES_DATA = {
       oldPrice: 816,
       description:
         "Modern hotel offering comfortable rooms, essential amenities, and convenient services.",
-      image: "/holidayPackage/TravelItinearies/Image-1.png",
+      image: "/holidayPackage/TravelItinearies/Image-1.webp",
     },
     {
       stars: 4,
@@ -19,7 +19,7 @@ export const PACKAGES_DATA = {
       oldPrice: 983,
       description:
         "Modern hotel offering comfortable rooms, essential amenities, and convenient services.",
-      image: "/holidayPackage/TravelItinearies/Image-2.png",
+      image: "/holidayPackage/TravelItinearies/Image-2.webp",
     },
     {
       stars: 5,
@@ -29,7 +29,7 @@ export const PACKAGES_DATA = {
       oldPrice: 1283,
       description:
         "Modern hotel offering comfortable rooms, essential amenities, and convenient services.",
-      image: "/holidayPackage/TravelItinearies/Image-3.png",
+      image: "/holidayPackage/TravelItinearies/Image-3.webp",
     },
   ],
 };

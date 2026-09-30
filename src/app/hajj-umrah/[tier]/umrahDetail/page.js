@@ -28,7 +28,7 @@ const page = async (props) => {
     tierData.cards.find((item) => item.id === packageId) ?? tierData.cards[0];
 
   const welcomeData = {
-    slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.png" }],
+    slides: [{ id: 1, image: "/umrahDetail/welcome/slide1.webp" }],
     heading: `${tierData.stars}-star Umrah package`,
     title: (
       <>
@@ -42,11 +42,11 @@ const page = async (props) => {
     buildHotelPackageDetails(card, tierData.stars);
 
   const imageData = {
-    image: "/umrahDetail/BookNow/BookNow-bg.png",
+    image: "/umrahDetail/BookNow/BookNow-bg.webp",
     alt: "",
   };
   const imageData2 = {
-    image: "/umrahDetail/BookNow/bookNow.png",
+    image: "/umrahDetail/BookNow/bookNow.webp",
     alt: "",
   };
 

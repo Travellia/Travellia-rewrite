@@ -13,7 +13,7 @@ import PlanYourTrip from "@/components/common/PlanYourTrip";
 
 const page = () => {
   const welcomeData = {
-    slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.png" }],
+    slides: [{ id: 1, image: "/hajj-ummrah/welcome/slide1.webp" }],
     heading: "Umrah & Hajj packages",
     title: (
       <>
@@ -30,7 +30,7 @@ const page = () => {
   const BULLETS = Bullets;
 
   const imageData = {
-    image: "/umrahDetail/BookNow/BookNow-bg.png",
+    image: "/umrahDetail/BookNow/BookNow-bg.webp",
     alt: "",
   };
 

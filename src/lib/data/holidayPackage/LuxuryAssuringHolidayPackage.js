@@ -12,7 +12,7 @@ export const LuxuryAssuringHolidayPackage = {
       cards: [
         {
           id: 1,
-          image: "/holidayPackage/LuxuryAssuring/card1-image-1.png",
+          image: "/holidayPackage/LuxuryAssuring/card1-image-1.webp",
           stars: 4,
           description: "Sri Lanka Beach Escape - 7 Nights, Hotel & Flights",
           buttonText: "Book Now",
@@ -23,7 +23,7 @@ export const LuxuryAssuringHolidayPackage = {
         },
         {
           id: 2,
-          image: "/holidayPackage/LuxuryAssuring/card1-image-2.png",
+          image: "/holidayPackage/LuxuryAssuring/card1-image-2.webp",
           stars: 4,
           description: "Canadian Rockies Lakes & Mountains - 8 Nights",
           buttonText: "Book Now",
@@ -34,7 +34,7 @@ export const LuxuryAssuringHolidayPackage = {
         },
         {
           id: 3,
-          image: "/holidayPackage/LuxuryAssuring/card1-image-3.png",
+          image: "/holidayPackage/LuxuryAssuring/card1-image-3.webp",
           stars: 5,
           description: "Maldives Overwater Villa Retreat - 7 Nights",
           buttonText: "Book Now",
@@ -51,7 +51,7 @@ export const LuxuryAssuringHolidayPackage = {
       cards: [
         {
           id: 1,
-          image: "/holidayPackage/LuxuryAssuring/card2-image-1.png",
+          image: "/holidayPackage/LuxuryAssuring/card2-image-1.webp",
           stars: 5,
           description: "Antalya All-Inclusive Family Resort - 7 Nights",
           buttonText: "Book Now",
@@ -62,7 +62,7 @@ export const LuxuryAssuringHolidayPackage = {
         },
         {
           id: 2,
-          image: "/holidayPackage/LuxuryAssuring/card2-image-2.png",
+          image: "/holidayPackage/LuxuryAssuring/card2-image-2.webp",
           stars: 4,
           description: "New York City Break - 5 Nights, Hotel & Flights",
           buttonText: "Book Now",
@@ -73,7 +73,7 @@ export const LuxuryAssuringHolidayPackage = {
         },
         {
           id: 3,
-          image: "/holidayPackage/LuxuryAssuring/card2-image-3.png",
+          image: "/holidayPackage/LuxuryAssuring/card2-image-3.webp",
           stars: 4,
           description: "Istanbul City Break - 4 Nights, Hotel & Flights",
           buttonText: "Book Now",
@@ -90,7 +90,7 @@ export const LuxuryAssuringHolidayPackage = {
       cards: [
         {
           id: 1,
-          image: "/holidayPackage/LuxuryAssuring/card3-image-1.png",
+          image: "/holidayPackage/LuxuryAssuring/card3-image-1.webp",
           stars: 4,
           description: "New York by Night - Skyline & Sightseeing Tour",
           buttonText: "Book Now",
@@ -101,7 +101,7 @@ export const LuxuryAssuringHolidayPackage = {
         },
         {
           id: 2,
-          image: "/holidayPackage/LuxuryAssuring/card3-image-2.png",
+          image: "/holidayPackage/LuxuryAssuring/card3-image-2.webp",
           stars: 4,
           description: "Swiss Alps Ski Holiday - 7 Nights",
           buttonText: "Book Now",
@@ -112,7 +112,7 @@ export const LuxuryAssuringHolidayPackage = {
         },
         {
           id: 3,
-          image: "/holidayPackage/LuxuryAssuring/card3-image-3.png",
+          image: "/holidayPackage/LuxuryAssuring/card3-image-3.webp",
           stars: 4,
           description: "Norway Mountains & Northern Lights - 5 Nights",
           buttonText: "Book Now",

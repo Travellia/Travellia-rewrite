@@ -72,7 +72,7 @@ export default function Navbar() {
       >
         <Link href="/" className="shrink-0" aria-label="Travellia home">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Travellia"
             width={200}
             height={50}

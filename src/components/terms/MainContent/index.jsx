@@ -5,7 +5,7 @@ import TermCard from "./TermCard";
 import BookNow from "@/components/common/BookNow";
 
 const imageData = {
-  image: "/holidayPackage/BookNow/bgImage.png",
+  image: "/holidayPackage/BookNow/bgImage.webp",
   alt: "",
 };
 

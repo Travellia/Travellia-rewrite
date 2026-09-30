@@ -8,17 +8,17 @@ import React from "react";
 const index = () => {
   const STATS = [
     {
-      icon: "/icons/users-like.png",
+      icon: "/icons/users-like.webp",
       number: "10K+",
       label: "HAPPY TRAVELLERS",
     },
     {
-      icon: "/icons/hands.png",
+      icon: "/icons/hands.webp",
       number: "50+",
       label: "GLOBAL DESTINATIONS",
     },
     {
-      icon: "/icons/signpost.png",
+      icon: "/icons/signpost.webp",
       number: "24/7",
       label: "CUSTOMER SUPPORT",
     },
@@ -31,7 +31,7 @@ const index = () => {
           {/* Photo with big campaign text */}
           <Unveil radius="36px" className="relative min-h-[340px] overflow-hidden rounded-frame bg-ink md:min-h-[460px]">
             <Image
-              src="/home/summer-deals/plane.png"
+              src="/home/summer-deals/plane.webp"
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 55vw"

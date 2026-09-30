@@ -8,7 +8,7 @@ const index = () => {
   return (
     <section className="relative">
       <Image
-        src="/flights/page-5/MainContent/bg.png"
+        src="/flights/page-5/MainContent/bg.webp"
         alt="Plan Image"
         width={2000}
         height={2000}

@@ -35,7 +35,7 @@ const TouristFeedback = () => {
         <div className="relative grid items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-frame shadow-lift">
             <Image
-              src="/hotel/TouristFeedback/Image.png"
+              src="/hotel/TouristFeedback/Image.webp"
               alt="Guests relaxing at a hotel"
               fill
               sizes="(max-width: 1024px) 100vw, 55vw"

@@ -7,18 +7,18 @@ import React from "react";
 const BOOKING_STEPS = [
   {
     title: "Choose Destination",
-    icon: "/home/hotel-booking/destination.png",
+    icon: "/home/hotel-booking/destination.webp",
     description:
       "Find your perfect travel spot from our diverse list of destinations.",
   },
   {
     title: "Check Availability",
-    icon: "/home/hotel-booking/wall-clock.png",
+    icon: "/home/hotel-booking/wall-clock.webp",
     description: "Get real-time updates on flights, hotels and activities.",
   },
   {
     title: "Let's Go",
-    icon: "/home/hotel-booking/taxi.png",
+    icon: "/home/hotel-booking/taxi.webp",
     description: "Start your adventure with everything planned and ready.",
   },
 ];
@@ -43,7 +43,7 @@ const index = () => {
           />
           <div className="relative aspect-[4/3] overflow-hidden rounded-frame shadow-lift">
             <Image
-              src="/home/hotel-booking/resort.jpg"
+              src="/home/hotel-booking/resort.webp"
               alt="Resort terrace with sea view"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"

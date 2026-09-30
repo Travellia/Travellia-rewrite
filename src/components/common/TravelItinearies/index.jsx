@@ -27,7 +27,7 @@ const index = ({ data1, data2, href }) => {
         <div className="grid items-center gap-8 rounded-frame border border-line bg-white p-6 shadow-soft md:p-10 lg:grid-cols-2 lg:gap-12">
           <div className="relative overflow-hidden rounded-card bg-sand p-6">
             <Image
-              src="/holidayPackage/TravelItinearies/discount-card.png"
+              src="/holidayPackage/TravelItinearies/discount-card.webp"
               alt="Travellia referral discount card"
               width={500}
               height={400}

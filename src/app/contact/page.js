@@ -9,7 +9,7 @@ const CONTACT_FOOTER_LIST = Contact_footer_List;
 
 const page = () => {
   const welcomeData = {
-    slides: [{ id: 1, image: "/contact/Image.png" }],
+    slides: [{ id: 1, image: "/contact/Image.webp" }],
     heading: "Contact",
     title: (
       <>

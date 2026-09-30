@@ -12,7 +12,7 @@ const index = () => {
         <div className="grid overflow-hidden rounded-frame border border-line bg-white shadow-soft lg:grid-cols-2">
           <div className="relative min-h-[300px] lg:min-h-[480px]">
             <Image
-              src="/home/adventure/5.jpg"
+              src="/home/adventure/5.webp"
               alt="Traveller on a swing above the jungle in Bali"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

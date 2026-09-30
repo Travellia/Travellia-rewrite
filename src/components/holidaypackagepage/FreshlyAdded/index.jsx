@@ -7,37 +7,37 @@ const index = () => {
   const Packages = [
     {
       id: 1,
-      image: "/holidayPackage/FreshlyAdded/Image-1.png",
+      image: "/holidayPackage/FreshlyAdded/Image-1.webp",
       description: "Paris City Break",
       startingPrice: "Starting From £1349",
     },
     {
       id: 2,
-      image: "/holidayPackage/FreshlyAdded/Image-2.png",
+      image: "/holidayPackage/FreshlyAdded/Image-2.webp",
       description: "Istanbul Holidays",
       startingPrice: "Starting From £1349",
     },
     {
       id: 3,
-      image: "/holidayPackage/FreshlyAdded/Image-3.png",
+      image: "/holidayPackage/FreshlyAdded/Image-3.webp",
       description: "Dubai Holidays",
       startingPrice: "Starting From £1349",
     },
     {
       id: 4,
-      image: "/holidayPackage/FreshlyAdded/Image-4.png",
+      image: "/holidayPackage/FreshlyAdded/Image-4.webp",
       description: "Abu Dhabi Stay",
       startingPrice: "Starting From £1349",
     },
     {
       id: 5,
-      image: "/holidayPackage/FreshlyAdded/Image-5.png",
+      image: "/holidayPackage/FreshlyAdded/Image-5.webp",
       description: "Doha, Qatar Stay",
       startingPrice: "Starting From £1349",
     },
     {
       id: 6,
-      image: "/holidayPackage/FreshlyAdded/Image-6.png",
+      image: "/holidayPackage/FreshlyAdded/Image-6.webp",
       description: "Morocco Holidays",
       startingPrice: "Starting From £1349",
     },

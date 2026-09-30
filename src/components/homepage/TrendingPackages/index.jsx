@@ -13,7 +13,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 599,
     description: "Experience the Vibrant City of Los Angeles",
-    image: "/home/trending-packages/los-angeles.jpg",
+    image: "/home/trending-packages/los-angeles.webp",
   },
   {
     days: 8,
@@ -23,7 +23,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 699,
     description: "Experience the Vibrant City of Las Vegas",
-    image: "/home/trending-packages/las-vegas.png",
+    image: "/home/trending-packages/las-vegas.webp",
   },
   {
     days: 8,
@@ -33,7 +33,7 @@ const PACKAGES_DATA = [
     discountPrice: 499,
     oldPrice: 599,
     description: "Experience the stunning islands of Maldives",
-    image: "/home/trending-packages/maldives.png",
+    image: "/home/trending-packages/maldives.webp",
   },
 ];
 

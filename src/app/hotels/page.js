@@ -9,10 +9,10 @@ import BookNow from "@/components/common/BookNow";
 const page = () => {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/hotel/welcome/slide-1.png" },
-      { id: 2, image: "/hotel/welcome/slide-2.png" },
-      { id: 3, image: "/hotel/welcome/slide-3.png" },
-      { id: 4, image: "/hotel/welcome/slide-4.png" },
+      { id: 1, image: "/hotel/welcome/slide-1.webp" },
+      { id: 2, image: "/hotel/welcome/slide-2.webp" },
+      { id: 3, image: "/hotel/welcome/slide-3.webp" },
+      { id: 4, image: "/hotel/welcome/slide-4.webp" },
     ],
     heading: "Hotels & resorts",
     title: (
@@ -25,7 +25,7 @@ const page = () => {
   };
 
   const imageData = {
-    image: "/hotel/BookNow/bg.png",
+    image: "/hotel/BookNow/bg.webp",
     alt: "",
   };
 

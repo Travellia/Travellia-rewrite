@@ -2,7 +2,7 @@ import BookNow from "@/components/common/BookNow";
 import React from "react";
 
 const imageData = {
-  image: "/home/book-now/girl-on-island.png",
+  image: "/home/book-now/girl-on-island.webp",
   alt: "girl-on-island.png",
 };
 

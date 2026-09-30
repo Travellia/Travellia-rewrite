@@ -7,31 +7,31 @@ const index = () => {
   const HOTEL_GALLERY = [
     {
       id: 1,
-      image: "/umrahDetail/HotelGallery/grid1.png",
+      image: "/umrahDetail/HotelGallery/grid1.webp",
       alt: "Hotel room with city view",
       className: "col-span-1 row-span-1",
     },
     {
       id: 2,
-      image: "/umrahDetail/HotelGallery/grid2.png",
+      image: "/umrahDetail/HotelGallery/grid2.webp",
       alt: "Hotel room with city view",
       className: "col-span-1 row-span-2",
     },
     {
       id: 3,
-      image: "/umrahDetail/HotelGallery/grid3.png",
+      image: "/umrahDetail/HotelGallery/grid3.webp",
       alt: "Hotel room with city view",
       className: "col-span-1 row-span-1",
     },
     {
       id: 4,
-      image: "/umrahDetail/HotelGallery/grid4.png",
+      image: "/umrahDetail/HotelGallery/grid4.webp",
       alt: "Hotel room with city view",
       className: "col-span-1 row-span-1",
     },
     {
       id: 5,
-      image: "/umrahDetail/HotelGallery/grid5.png",
+      image: "/umrahDetail/HotelGallery/grid5.webp",
       alt: "Hotel room with city view",
       className: "col-span-1 row-span-1",
     },

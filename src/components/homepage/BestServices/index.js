@@ -9,28 +9,28 @@ const services = [
     title: "Incredible Destinations",
     description:
       "Discover handpicked holiday destinations and family-friendly getaways, planned around you.",
-    iconPath: "/home/offered-services/destination.png",
+    iconPath: "/home/offered-services/destination.webp",
     href: "/holidayPackages",
   },
   {
     title: "Best Flight Options",
     description:
       "Compare fares from trusted airlines and fly from your nearest UK airport at the best price.",
-    iconPath: "/home/offered-services/flight-route.png",
+    iconPath: "/home/offered-services/flight-route.webp",
     href: "/flights",
   },
   {
     title: "Hajj / Umrah Tours",
     description:
       "All-inclusive Hajj and Umrah packages with flights, visa, hotels near the Haram and Ziyarat.",
-    iconPath: "/home/offered-services/religion.png",
+    iconPath: "/home/offered-services/religion.webp",
     href: "/hajj-umrah",
   },
   {
     title: "Luxury Accommodation",
     description:
       "Comfortable, well-located hotels and resorts, from 3-star value stays to 5-star luxury.",
-    iconPath: "/home/offered-services/five.png",
+    iconPath: "/home/offered-services/five.webp",
     href: "/hotels",
   },
 ];

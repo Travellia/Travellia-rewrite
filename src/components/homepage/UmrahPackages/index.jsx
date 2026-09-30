@@ -23,7 +23,7 @@ const UMRAH_PACKAGES = [
     ],
     price: 695,
     href: "/hajj-umrah/3-star-7-nights",
-    image: "/home/umrah-package/package1.png",
+    image: "/home/umrah-package/package1.webp",
     alt: "3-Star Umrah Package",
   },
   {
@@ -38,7 +38,7 @@ const UMRAH_PACKAGES = [
     ],
     price: 765,
     href: "/hajj-umrah/4-star-7-nights",
-    image: "/home/umrah-package/package2.png",
+    image: "/home/umrah-package/package2.webp",
     alt: "4-Star Umrah Package",
   },
   {
@@ -53,7 +53,7 @@ const UMRAH_PACKAGES = [
     ],
     price: 885,
     href: "/hajj-umrah/5-star-7-nights",
-    image: "/home/umrah-package/package3.png",
+    image: "/home/umrah-package/package3.webp",
     alt: "5-Star Umrah Package",
   },
 ];
@@ -65,10 +65,10 @@ const index = () => {
         {/* Makkah and Madinah, softened behind the cards */}
         <div className="absolute inset-0 -z-10 grid grid-cols-2 opacity-25">
           <div className="relative">
-            <Image src="/home/umrah-package/Madina.jpg" alt="" fill sizes="50vw" className="object-cover" />
+            <Image src="/home/umrah-package/Madina.webp" alt="" fill sizes="50vw" className="object-cover" />
           </div>
           <div className="relative">
-            <Image src="/home/umrah-package/Makkah.jpg" alt="" fill sizes="50vw" className="object-cover" />
+            <Image src="/home/umrah-package/Makkah.webp" alt="" fill sizes="50vw" className="object-cover" />
           </div>
         </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sand-deep via-sand-deep/85 to-sand-deep" />

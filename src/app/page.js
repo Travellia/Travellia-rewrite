@@ -18,10 +18,10 @@ import Marquee from "@/components/ui/Marquee";
 export default function Home() {
   const welcomeData = {
     slides: [
-      { id: 1, image: "/home/services/22.png" },
-      { id: 2, image: "/flights/welcome/Image2.png" },
-      { id: 3, image: "/hajj-ummrah/welcome/slide1.png" },
-      { id: 4, image: "/home/welcome/welcome.jpg" },
+      { id: 1, image: "/home/services/22.webp" },
+      { id: 2, image: "/flights/welcome/Image2.webp" },
+      { id: 3, image: "/hajj-ummrah/welcome/slide1.webp" },
+      { id: 4, image: "/home/welcome/welcome.webp" },
     ],
     heading: "Flights · Hotels · Umrah · Holidays",
     title: (
@@ -32,7 +32,7 @@ export default function Home() {
     subtitle:
       "Handpicked flights, hotels, Umrah packages and holidays, planned around you by a UK travel team you can call.",
     feature: {
-      image: "/home/umrah-package/package1.png",
+      image: "/home/umrah-package/package1.webp",
       label: "Umrah · 7 nights",
       title: "5-Star Umrah from £885",
       href: "/hajj-umrah/5-star-7-nights",

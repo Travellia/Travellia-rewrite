@@ -20,7 +20,7 @@ const DESTINATIONS = [
     rating: 5,
     description:
       "Paris, Rome, Barcelona and Amsterdam: iconic sights, great food and short flights from UK airports, perfect for a family city break.",
-    image: "/home/adventure/western-europe.png",
+    image: "/home/adventure/western-europe.webp",
   },
   {
     id: "south-africa",
@@ -28,7 +28,7 @@ const DESTINATIONS = [
     rating: 4,
     description:
       "Cape Town, the Garden Route and Big Five safaris: mountains, beaches and wildlife the whole family will remember.",
-    image: "/home/adventure/south-africa.png",
+    image: "/home/adventure/south-africa.webp",
   },
   {
     id: "scandinavia",
@@ -36,7 +36,7 @@ const DESTINATIONS = [
     rating: 3,
     description:
       "Fjords, the northern lights and friendly design-led cities like Copenhagen, Stockholm and Oslo.",
-    image: "/home/adventure/scandinavia.png",
+    image: "/home/adventure/scandinavia.webp",
   },
 ];
 

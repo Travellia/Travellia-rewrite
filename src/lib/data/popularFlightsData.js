@@ -1,7 +1,7 @@
 const popularFlightData = [
   {
     id: 1,
-    src: "/flights/common/card1.png",
+    src: "/flights/common/card1.webp",
     country: "Berlin",
     city: "Germany",
     description:
@@ -15,7 +15,7 @@ const popularFlightData = [
   },
   {
     id: 2,
-    src: "/flights/common/card2.png",
+    src: "/flights/common/card2.webp",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -29,7 +29,7 @@ const popularFlightData = [
   },
   {
     id: 3,
-    src: "/flights/common/card3.png",
+    src: "/flights/common/card3.webp",
     country: "Moscow",
     city: "Russia",
     description:
@@ -43,7 +43,7 @@ const popularFlightData = [
   },
   {
     id: 4,
-    src: "/flights/common/card4.png",
+    src: "/flights/common/card4.webp",
     country: "Cape Town",
     city: "South Africa",
     description:
@@ -57,7 +57,7 @@ const popularFlightData = [
   },
   {
     id: 5,
-    src: "/flights/common/card5.png",
+    src: "/flights/common/card5.webp",
     country: "Cairo",
     city: "Egypt",
     description:
@@ -71,7 +71,7 @@ const popularFlightData = [
   },
   {
     id: 6,
-    src: "/flights/common/card6.png",
+    src: "/flights/common/card6.webp",
     country: "Bangkok",
     city: "Thailand",
     description:
@@ -85,7 +85,7 @@ const popularFlightData = [
   },
   {
     id: 7,
-    src: "/flights/common/card7.png",
+    src: "/flights/common/card7.webp",
     country: "Berlin",
     city: "Germany",
     description:
@@ -99,7 +99,7 @@ const popularFlightData = [
   },
   {
     id: 8,
-    src: "/flights/common/card8.png",
+    src: "/flights/common/card8.webp",
     country: "Amsterdam",
     city: "Netherlands",
     description:
@@ -113,7 +113,7 @@ const popularFlightData = [
   },
   {
     id: 9,
-    src: "/flights/common/card9.png",
+    src: "/flights/common/card9.webp",
     country: "Moscow",
     city: "Russia",
     description:
@@ -127,7 +127,7 @@ const popularFlightData = [
   },
   {
     id: 10,
-    src: "/flights/common/card10.png",
+    src: "/flights/common/card10.webp",
     country: "Cape Town",
     city: "South Africa",
     description:
@@ -141,7 +141,7 @@ const popularFlightData = [
   },
   {
     id: 11,
-    src: "/flights/common/card11.png",
+    src: "/flights/common/card11.webp",
     country: "Cairo",
     city: "Egypt",
     description:
@@ -155,7 +155,7 @@ const popularFlightData = [
   },
   {
     id: 12,
-    src: "/flights/common/card12.png",
+    src: "/flights/common/card12.webp",
     country: "Bangkok",
     city: "Thailand",
     description:

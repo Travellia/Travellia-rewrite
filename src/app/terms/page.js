@@ -9,7 +9,7 @@ const page = () => {
     <div className="relative flex flex-col">
       <Welcome
         data={{
-          slides: [{ id: 1, image: "/terms/Image.png" }],
+          slides: [{ id: 1, image: "/terms/Image.webp" }],
           heading: "Legal",
           title: (
             <>

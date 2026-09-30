@@ -3,7 +3,7 @@ const AirFlightLists = [
     id: "1",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -11,7 +11,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -24,7 +24,7 @@ const AirFlightLists = [
     id: "2",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -32,7 +32,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -45,7 +45,7 @@ const AirFlightLists = [
     id: "3",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -53,7 +53,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -66,7 +66,7 @@ const AirFlightLists = [
     id: "4",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -74,7 +74,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -87,7 +87,7 @@ const AirFlightLists = [
     id: "5",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -95,7 +95,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -108,7 +108,7 @@ const AirFlightLists = [
     id: "6",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -116,7 +116,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -129,7 +129,7 @@ const AirFlightLists = [
     id: "7",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -137,7 +137,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -150,7 +150,7 @@ const AirFlightLists = [
     id: "8",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -158,7 +158,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -171,7 +171,7 @@ const AirFlightLists = [
     id: "9",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -179,7 +179,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },
@@ -192,7 +192,7 @@ const AirFlightLists = [
     id: "10",
     route: "Etihad Airways To Nairobi",
     going: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.png",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/BR-logo.webp",
       alt: "BR-logo",
       from: { time: "07:10", location: "KJA" },
       stop: { number: "1 Stop", location: "MOS" },
@@ -200,7 +200,7 @@ const AirFlightLists = [
       time: "18H.20M",
     },
     return: {
-      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.jpg",
+      src: "/flights/page-5/MainContent/LeftMenu/AirFlights/qatar-airways.webp",
       alt: "qatar-airways",
       from: { time: "08:10", location: "MIL" },
       stop: { number: "2 Stop", location: "CGN, VKO" },

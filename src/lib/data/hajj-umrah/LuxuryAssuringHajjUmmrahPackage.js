@@ -11,7 +11,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
       cards: [
         {
           id: 1,
-          image: "/hajj-ummrah/LuxuryAssuring/card1-image-1.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card1-image-1.webp",
           stars: 3,
           description:
             "3-Star December Umrah Packages for 7 Nights - All-inclusive",
@@ -22,7 +22,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
         },
         {
           id: 2,
-          image: "/hajj-ummrah/LuxuryAssuring/card1-image-2.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card1-image-2.webp",
           stars: 3,
           description:
             "3-Star December Umrah Packages for 10 Nights - All-inclusive",
@@ -33,7 +33,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
         },
         {
           id: 3,
-          image: "/hajj-ummrah/LuxuryAssuring/card1-image-3.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card1-image-3.webp",
           stars: 3,
           description:
             "3-Star December Umrah Packages for 14 Nights - All-inclusive",
@@ -50,7 +50,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
       cards: [
         {
           id: 1,
-          image: "/hajj-ummrah/LuxuryAssuring/card2-image-1.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card2-image-1.webp",
           stars: 4,
           description:
             "4-Star December Umrah Packages for 7 Nights - All-inclusive",
@@ -61,7 +61,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
         },
         {
           id: 2,
-          image: "/hajj-ummrah/LuxuryAssuring/card2-image-2.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card2-image-2.webp",
           stars: 4,
           description:
             "4-Star December Umrah Packages for 10 Nights - All-inclusive",
@@ -72,7 +72,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
         },
         {
           id: 3,
-          image: "/hajj-ummrah/LuxuryAssuring/card2-image-3.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card2-image-3.webp",
           stars: 4,
           description:
             "4-Star December Umrah Packages for 14 Nights - All-inclusive",
@@ -89,7 +89,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
       cards: [
         {
           id: 1,
-          image: "/hajj-ummrah/LuxuryAssuring/card3-image-1.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card3-image-1.webp",
           stars: 5,
           description:
             "5-Star December Umrah Packages for 7 Nights - All-inclusive",
@@ -100,7 +100,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
         },
         {
           id: 2,
-          image: "/hajj-ummrah/LuxuryAssuring/card3-image-2.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card3-image-2.webp",
           stars: 5,
           description:
             "5-Star December Umrah Packages for 10 Nights - All-inclusive",
@@ -111,7 +111,7 @@ export const LuxuryAssuringHajjUmmrahPackage = {
         },
         {
           id: 3,
-          image: "/hajj-ummrah/LuxuryAssuring/card3-image-3.png",
+          image: "/hajj-ummrah/LuxuryAssuring/card3-image-3.webp",
           stars: 5,
           description:
             "5-Star December Umrah Packages for 14 Nights - All-inclusive",
