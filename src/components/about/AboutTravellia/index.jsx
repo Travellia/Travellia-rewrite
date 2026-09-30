@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import ArrowButton from "@/components/ui/ArrowButton";
+import Unveil from "@/components/ui/Unveil";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const STATS = [
@@ -16,7 +17,7 @@ const index = () => {
       <ContentLayoutWrapper className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         {/* Photos */}
         <div className="grid h-[520px] grid-cols-5 grid-rows-6 gap-3 md:h-[600px]">
-          <div className="relative col-span-3 row-span-6 overflow-hidden rounded-frame shadow-lift">
+          <Unveil radius="36px" className="relative col-span-3 row-span-6 overflow-hidden rounded-frame shadow-lift">
             <Image
               src="/about/AboutTravellia/Image4.png"
               alt="Travellers exploring a city"
@@ -24,7 +25,7 @@ const index = () => {
               sizes="(max-width: 1024px) 60vw, 30vw"
               className="object-cover"
             />
-          </div>
+          </Unveil>
           <div className="relative col-span-2 row-span-3 overflow-hidden rounded-card shadow-soft">
             <Image src="/about/AboutTravellia/Image2.png" alt="" fill sizes="20vw" className="object-cover" />
           </div>

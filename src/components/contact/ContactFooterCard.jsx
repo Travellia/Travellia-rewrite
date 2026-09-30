@@ -33,7 +33,7 @@ const ContactFooterCard = ({ data }) => {
           </>
         );
         const className =
-          "group flex h-full items-start gap-4 rounded-card border border-line bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift";
+          "group flex h-full items-start gap-4 rounded-card border border-line bg-white p-6 shadow-soft transition-all duration-300 hover:shadow-lift";
 
         return href ? (
           <a key={item[0]} href={href} className={className}>

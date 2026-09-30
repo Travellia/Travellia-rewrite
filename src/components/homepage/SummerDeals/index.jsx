@@ -1,6 +1,7 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import ArrowButton from "@/components/ui/ArrowButton";
 import { Eyebrow } from "@/components/ui/SectionHeading";
+import Unveil from "@/components/ui/Unveil";
 import Image from "next/image";
 import React from "react";
 
@@ -28,7 +29,7 @@ const index = () => {
       <ContentLayoutWrapper className="flex flex-col gap-6">
         <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
           {/* Photo with big campaign text */}
-          <div className="relative min-h-[340px] overflow-hidden rounded-frame bg-ink md:min-h-[460px]">
+          <Unveil radius="36px" className="relative min-h-[340px] overflow-hidden rounded-frame bg-ink md:min-h-[460px]">
             <Image
               src="/home/summer-deals/plane.png"
               alt=""
@@ -42,7 +43,7 @@ const index = () => {
               <br />
               <span className="text-gold">deals</span>
             </p>
-          </div>
+          </Unveil>
 
           {/* Offer card */}
           <div className="flex flex-col justify-between gap-8 rounded-frame border border-line bg-white p-8 shadow-soft md:p-10">

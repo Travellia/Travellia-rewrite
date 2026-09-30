@@ -1,13 +1,14 @@
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
-import { ArrowUpRight, Check, Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const UmrahPackageCard = ({ data, featured = false }) => {
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-card p-2 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift",
+        "group flex h-full flex-col overflow-hidden rounded-card p-2 shadow-soft transition-all duration-300 hover:shadow-lift",
         featured ? "bg-ink text-white" : "border border-line bg-white text-ink"
       )}
     >
@@ -17,7 +18,7 @@ const UmrahPackageCard = ({ data, featured = false }) => {
           alt={data.alt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
         />
         {featured && (
           <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink">
@@ -70,11 +71,11 @@ const UmrahPackageCard = ({ data, featured = false }) => {
             Book Now
             <span
               className={cn(
-                "grid size-9 place-items-center rounded-full transition-transform duration-300 group-hover:rotate-45",
+                "grid size-9 place-items-center rounded-full",
                 featured ? "bg-ink text-gold" : "bg-gold text-ink"
               )}
             >
-              <ArrowUpRight className="size-4" />
+              <ArrowIcon className="size-4" />
             </span>
           </Link>
           <p className={cn("text-center text-sm", featured ? "text-white/60" : "text-ink/60")}>

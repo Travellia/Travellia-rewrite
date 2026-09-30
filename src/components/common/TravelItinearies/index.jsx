@@ -2,7 +2,6 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 
 import { Check } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
 
 import React from "react";
 import Image from "next/image";
@@ -16,9 +15,9 @@ const index = ({ data1, data2, href }) => {
         <SectionHeading eyebrow="Handpicked routes" title={data1.heading} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {data1.packageDataCar.map((data, index) => (
-            <Reveal key={index} delay={index * 100} className={index === 1 ? "xl:mt-12" : ""}>
+            <div key={index} className={index === 1 ? "xl:mt-12" : ""}>
               <BookPackageCard data={data} href={href} />
-            </Reveal>
+            </div>
           ))}
         </div>
       </ContentLayoutWrapper>

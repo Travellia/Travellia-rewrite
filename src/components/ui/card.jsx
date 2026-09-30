@@ -7,7 +7,7 @@ const CARD_VARIANTS = {
     "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
   // White surface with a soft layered shadow that lifts on hover.
   premium:
-    "bg-white text-ink flex flex-col rounded-card border border-line shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift",
+    "bg-white text-ink flex flex-col rounded-card border border-line shadow-soft transition-all duration-300 hover:shadow-lift",
 };
 
 function Card({

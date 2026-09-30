@@ -40,7 +40,7 @@ const StarPackageCard = ({ card, description, stars, tier }) => {
   const action = (
     <>
       {card.buttonText}
-      <span className="grid size-8 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:rotate-45">
+      <span className="grid size-8 place-items-center rounded-full bg-gold text-ink">
         <MdArrowOutward />
       </span>
     </>
@@ -49,7 +49,7 @@ const StarPackageCard = ({ card, description, stars, tier }) => {
     "inline-flex items-center gap-3 rounded-full bg-ink py-1.5 pl-4 pr-1.5 text-sm font-semibold text-white transition hover:bg-ink-soft";
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white p-2 shadow-soft transition-all duration-300 hover:shadow-lift">
       {slides.length > 0 && (
         <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
           <CarouselWrapper slides={slides} navigation={false} speed={1200} delay={4000} />

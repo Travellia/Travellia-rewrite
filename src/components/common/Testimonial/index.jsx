@@ -1,5 +1,6 @@
 import React from "react";
-import { ArrowUpRight, Star } from "lucide-react";
+import ArrowIcon from "@/components/ui/ArrowIcon";
+import { Star } from "lucide-react";
 import TestimonialCard from "./TestimonialCard";
 import ContentLayoutWrapper from "../ContentLayoutWrapper";
 import InitialsAvatar from "@/components/common/InitialsAvatar";
@@ -51,7 +52,7 @@ const index = ({ data }) => {
               </span>
               <span className="flex items-center gap-1 text-xs font-semibold text-ink/60">
                 Read all our reviews on Trustpilot
-                <ArrowUpRight className="size-3.5 transition-transform group-hover:rotate-45" />
+                <ArrowIcon className="size-3.5" />
               </span>
             </span>
           </a>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import { cn } from "@/lib/utils";
 
 const TONES = {
@@ -52,18 +52,18 @@ const ArrowButton = ({
       <span
         aria-hidden="true"
         className={cn(
-          "inline-flex items-center justify-center rounded-full shadow-soft transition-transform duration-300 group-hover:rotate-45",
+          "inline-flex items-center justify-center rounded-full shadow-soft",
           icon,
           t.icon
         )}
       >
-        <ArrowUpRight className="size-4" />
+        <ArrowIcon />
       </span>
     </>
   );
 
   const classes = cn(
-    "group inline-flex w-fit items-center gap-1.5 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none",
+    "group inline-flex w-fit items-center gap-1.5 rounded-full outline-none transition-transform duration-100 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-60 disabled:pointer-events-none",
     className
   );
 

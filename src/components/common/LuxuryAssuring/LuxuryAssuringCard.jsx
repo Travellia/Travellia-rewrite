@@ -1,14 +1,15 @@
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
-import { ArrowUpRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import React from "react";
 
 const LuxuryAssuringCard = ({ card, link }) => {
   const action = (
     <>
       {card.buttonText}
-      <span className="grid size-8 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:rotate-45">
-        <ArrowUpRight className="size-4" />
+      <span className="grid size-8 place-items-center rounded-full bg-gold text-ink">
+        <ArrowIcon className="size-4" />
       </span>
     </>
   );
@@ -16,7 +17,7 @@ const LuxuryAssuringCard = ({ card, link }) => {
     "inline-flex items-center gap-3 rounded-full bg-ink py-1.5 pl-4 pr-1.5 text-sm font-semibold text-white transition hover:bg-ink-soft";
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white p-2 shadow-soft transition-all duration-300 hover:shadow-lift">
       {/* The source images have a blank band in their bottom third, so crop to the top. */}
       <div className="relative aspect-[16/9] overflow-hidden rounded-[22px]">
         <Image
@@ -24,7 +25,7 @@ const LuxuryAssuringCard = ({ card, link }) => {
           alt={card.description}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          className="object-cover object-top transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
         />
         {card.stars > 0 && (
           <span className="absolute left-3 top-3 flex items-center gap-0.5 rounded-full bg-white/90 px-2.5 py-1 backdrop-blur">

@@ -1,7 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import ArrowButton from "@/components/ui/ArrowButton";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
 import React from "react";
 import BookPackageCard from "@/components/common/BookPackageCard";
 
@@ -61,13 +60,12 @@ const index = () => {
         {/* Staggered like "The Edit": the middle card sits lower */}
         <div className="grid gap-6 md:grid-cols-3">
           {PACKAGES_DATA.map((data, index) => (
-            <Reveal
+            <div
               key={data.city}
-              delay={index * 120}
               className={index === 1 ? "md:mt-16" : ""}
             >
               <BookPackageCard data={data} href="#plan-your-trip" />
-            </Reveal>
+            </div>
           ))}
         </div>
       </ContentLayoutWrapper>

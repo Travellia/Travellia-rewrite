@@ -11,7 +11,7 @@ const SOCIALS = [
 
 export default function Banner() {
   return (
-    <div className="w-full bg-ink text-white">
+    <div className="w-full bg-ink text-white [view-transition-name:site-banner]">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-2 text-xs md:px-8">
         <div className="flex items-center gap-4 md:gap-6">
           <a href={phoneHref} className="flex items-center gap-2 hover:text-gold">

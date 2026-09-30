@@ -1,7 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
-import { ArrowUpRight } from "lucide-react";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,8 +49,8 @@ export default function BestServices() {
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
-            <Reveal key={service.title} delay={index * 100} className="h-full">
-              <article className="group flex h-full flex-col gap-5 rounded-card border border-line bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:bg-ink hover:text-white hover:shadow-lift">
+            <div key={service.title} className="h-full">
+              <article className="group flex h-full flex-col gap-5 rounded-card border border-line bg-white p-7 shadow-soft transition-all duration-300 hover:bg-ink hover:text-white hover:shadow-lift">
                 <span className="grid size-16 place-items-center rounded-full bg-sand transition-colors group-hover:bg-white">
                   <Image src={service.iconPath} alt="" width={36} height={36} className="object-contain" />
                 </span>
@@ -66,12 +65,12 @@ export default function BestServices() {
                   className="flex items-center justify-between rounded-full bg-sand py-1.5 pl-5 pr-1.5 text-sm font-semibold text-ink transition-colors group-hover:bg-gold"
                 >
                   Book Now
-                  <span className="grid size-8 place-items-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:rotate-45">
-                    <ArrowUpRight className="size-4" />
+                  <span className="grid size-8 place-items-center rounded-full bg-ink text-white">
+                    <ArrowIcon className="size-4" />
                   </span>
                 </Link>
               </article>
-            </Reveal>
+            </div>
           ))}
         </div>
       </ContentLayoutWrapper>

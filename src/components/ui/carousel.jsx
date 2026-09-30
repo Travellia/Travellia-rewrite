@@ -13,16 +13,36 @@ import "swiper/css/effect-fade";
 const ARROW_CLASS =
   "grid size-11 place-items-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur-md transition hover:bg-white hover:text-ink disabled:opacity-40";
 
+/**
+ * Hero variant: slides turn like magazine pages (.hero-swiper in
+ * globals.css). The outgoing slide is tagged here for the CSS: by element,
+ * not index, because loop mode reorders the slides, and with a data
+ * attribute, because swiper/react re-renders each slide's className.
+ */
+const rememberActiveSlide = (swiper) => {
+  swiper.heroActiveSlide = swiper.slides[swiper.activeIndex];
+};
+const markLeavingSlide = (swiper) => {
+  const active = swiper.slides[swiper.activeIndex];
+  const previous = swiper.heroActiveSlide;
+  if (!active || active === previous) return;
+  swiper.slides.forEach((slide) => slide.removeAttribute("data-leaving"));
+  previous?.setAttribute("data-leaving", "");
+  swiper.heroActiveSlide = active;
+};
+
 const Carousel = ({
   effect = "fade",
   effectOptions = { crossFade: true },
   speed = 1200,
   delay = 5000,
   navigation = true,
+  variant,
   slides,
   className,
 }) => {
   const hasMany = slides.length > 1;
+  const isHero = variant === "hero";
 
   return (
     <>
@@ -30,15 +50,17 @@ const Carousel = ({
         modules={[Navigation, EffectFade, Autoplay]}
         effect={effect}
         fadeEffect={effectOptions}
-        speed={speed}
-        autoplay={hasMany ? { delay, disableOnInteraction: false } : false}
+        speed={isHero ? 1100 : speed}
+        autoplay={hasMany ? { delay: isHero ? 6000 : delay, disableOnInteraction: false } : false}
         navigation={
           navigation && hasMany
             ? { prevEl: ".hero-prev", nextEl: ".hero-next" }
             : false
         }
         loop={hasMany}
-        className={`w-full h-full absolute top-0 left-0 ${className}`}
+        onAfterInit={isHero ? rememberActiveSlide : undefined}
+        onSlideChange={isHero ? markLeavingSlide : undefined}
+        className={`w-full h-full absolute top-0 left-0 ${isHero ? "hero-swiper hero-settle" : ""} ${className}`}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>

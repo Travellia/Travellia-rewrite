@@ -2,7 +2,6 @@ import BookPackageCard from "@/components/common/BookPackageCard";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import React from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
 
 // Fares from the latest offers list (GBP per person).
 const PACKAGES_DATA = [
@@ -73,9 +72,9 @@ const index = () => {
         />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {PACKAGES_DATA.map((data, index) => (
-            <Reveal key={data.city} delay={(index % 3) * 100}>
+            <div key={data.city}>
               <BookPackageCard data={data} href="#plan-your-trip" />
-            </Reveal>
+            </div>
           ))}
         </div>
       </ContentLayoutWrapper>

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import PhotoLink from "@/components/ui/PhotoLink";
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import OurPopularCard from "@/components/common/OurPopular/OurPopularCard";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -24,9 +24,14 @@ const index = ({ cards, heading = true }) => {
         <div className="grid grid-cols-10 gap-4 md:gap-6">
           {cards.map((card) => (
             <div key={card.id} className={`${card.css} min-h-[380px]`}>
-              <Link href={`/flights/page-2/${card.id}`} className="block h-full rounded-card">
+              {/* The card grows into the photo in the detail page's hero. */}
+              <PhotoLink
+                href={`/flights/page-2/${card.id}`}
+                transitionName="flight-photo"
+                className="block h-full rounded-card"
+              >
                 <OurPopularCard data={card} />
-              </Link>
+              </PhotoLink>
             </div>
           ))}
         </div>

@@ -1,3 +1,4 @@
+import { ViewTransition } from "react";
 import { Geist_Mono, Instrument_Serif, Manrope, Syne } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "@/components/common/Navbar";
@@ -36,13 +37,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    // data-scroll-behavior lets Next turn smooth scrolling off during page
+    // changes, so a new page starts at the top instead of scrolling there.
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body
         className={`${manrope.variable} ${syne.variable} ${instrumentSerif.variable} ${geistMono.variable} font-sans antialiased min-h-[100vh] bg-background text-foreground`}
       >
         <Banner />
         <Navbar />
-        {children}
+        {/* Page changes: the old page steps back and the new one settles in
+            (".page-swap" in globals.css). Banner, navbar and footer carry
+            their own view-transition names so they never blink. */}
+        <ViewTransition update="page-swap" default="none">
+          <main>{children}</main>
+        </ViewTransition>
         <Footer />
         <HashLinkScroll />
         <SpeedInsights />

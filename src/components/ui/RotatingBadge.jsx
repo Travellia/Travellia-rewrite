@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import { cn } from "@/lib/utils";
 
 /** Round badge with text spinning around a ↗ arrow. */
@@ -40,8 +40,8 @@ const RotatingBadge = ({
           </textPath>
         </text>
       </svg>
-      <span className="grid size-10 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:rotate-45">
-        <ArrowUpRight className="size-5" />
+      <span className="grid size-10 place-items-center rounded-full bg-gold text-ink">
+        <ArrowIcon className="size-5" />
       </span>
     </Wrapper>
   );

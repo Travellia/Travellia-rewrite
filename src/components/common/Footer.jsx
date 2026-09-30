@@ -77,7 +77,7 @@ const Footer = () => {
     DEFAULT_FOOTER_IMAGE;
 
   return (
-    <footer className="flex flex-col gap-10 px-3 pb-3 pt-20 md:px-5">
+    <footer className="flex flex-col gap-10 px-3 pb-3 pt-20 md:px-5 [view-transition-name:site-footer]">
       {/* Newsletter */}
       <ContentLayoutWrapper className="px-0 md:px-8">
         <div className="grid overflow-hidden rounded-frame border border-line bg-white shadow-soft md:grid-cols-[1fr_1.15fr]">

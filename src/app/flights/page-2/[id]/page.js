@@ -18,6 +18,12 @@ const page = async (props) => {
       { id: 3, image: "/flights/welcome/Image3.png" },
     ],
     heading: `Flight packages · ${data.country}`,
+    // The card clicked on the previous page grows into this photo.
+    portrait: {
+      image: data.heroImage,
+      caption: `${data.city}, ${data.country}`,
+      transitionName: "flight-photo",
+    },
     title: (
       <>
         Discover <em>{data.city}.</em>

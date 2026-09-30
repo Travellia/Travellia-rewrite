@@ -2,7 +2,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PackageCard from "@/components/common/PackageCard";
 import ArrowButton from "@/components/ui/ArrowButton";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
+import Unveil from "@/components/ui/Unveil";
 
 const PLACES = [
   {
@@ -75,14 +75,13 @@ const UmrahStayPackages = () => {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
-          {PLACES.map((place, index) => (
-            <Reveal
+          {PLACES.map((place) => (
+            <Unveil
               key={place.id}
-              delay={(index % 3) * 100}
               className="relative h-80 overflow-hidden rounded-card shadow-soft md:h-96"
             >
               <PackageCard data={place} />
-            </Reveal>
+            </Unveil>
           ))}
         </div>
       </ContentLayoutWrapper>

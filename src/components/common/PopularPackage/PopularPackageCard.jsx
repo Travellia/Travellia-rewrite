@@ -13,7 +13,7 @@ const PopularPackageCard = ({ data }) => {
           alt={data.place}
           fill
           sizes="80px"
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
         />
       </span>
       <span className="flex flex-col gap-0.5">

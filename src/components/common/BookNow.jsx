@@ -1,8 +1,10 @@
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import React from "react";
 import { Eyebrow } from "@/components/ui/SectionHeading";
+import Unveil from "@/components/ui/Unveil";
 import { cn } from "@/lib/utils";
 
 const PAY_LATER_POINTS = [
@@ -76,7 +78,7 @@ const BookNow = ({ data, reverse, data2, data3 = [], href = "#plan-your-trip" })
         </div>
 
         {/* Photo with the CTA tucked into its corner */}
-        <div className="relative min-h-[320px] overflow-hidden rounded-[28px] lg:min-h-[520px]">
+        <Unveil radius="28px" className="relative min-h-[320px] overflow-hidden rounded-[28px] lg:min-h-[520px]">
           <Image
             src={data?.image}
             alt={data?.alt || ""}
@@ -92,12 +94,12 @@ const BookNow = ({ data, reverse, data2, data3 = [], href = "#plan-your-trip" })
               <span className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ink transition group-hover:bg-gold">
                 Book Now
               </span>
-              <span className="grid size-11 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:rotate-45">
-                <ArrowUpRight className="size-5" />
+              <span className="grid size-11 place-items-center rounded-full bg-gold text-ink">
+                <ArrowIcon className="size-5" />
               </span>
             </Link>
           )}
-        </div>
+        </Unveil>
       </div>
     </section>
   );

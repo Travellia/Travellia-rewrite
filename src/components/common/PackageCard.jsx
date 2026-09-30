@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import React from "react";
 
 /**
@@ -14,7 +14,7 @@ const PackageCard = ({ data }) => {
         alt={data.description || "package"}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
 
@@ -31,9 +31,9 @@ const PackageCard = ({ data }) => {
         </div>
         <span
           aria-hidden="true"
-          className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-ink transition-transform duration-300 group-hover:rotate-45 group-hover:bg-gold"
+          className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-ink group-hover:bg-gold"
         >
-          <ArrowUpRight className="size-5" />
+          <ArrowIcon className="size-5" />
         </span>
       </div>
     </div>

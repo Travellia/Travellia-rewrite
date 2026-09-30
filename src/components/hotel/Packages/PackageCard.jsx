@@ -1,6 +1,7 @@
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import React from "react";
 
 const PackageCard = ({ data }) => {
@@ -11,7 +12,7 @@ const PackageCard = ({ data }) => {
         alt={data.title}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 420px"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
 
@@ -61,8 +62,8 @@ const PackageCard = ({ data }) => {
             className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white py-1.5 pl-4 pr-1.5 text-sm font-semibold text-ink transition hover:bg-gold"
           >
             Book now
-            <span className="grid size-7 place-items-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:rotate-45">
-              <ArrowUpRight className="size-3.5" />
+            <span className="grid size-7 place-items-center rounded-full bg-ink text-white">
+              <ArrowIcon className="size-3.5" />
             </span>
           </Link>
         </div>

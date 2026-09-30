@@ -4,7 +4,7 @@ import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import PopularDestination from "@/components/homepage/PopularDestination";
 import ArrowButton from "@/components/ui/ArrowButton";
 import { Eyebrow } from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
+import Unveil from "@/components/ui/Unveil";
 
 const THUMBNAILS = [
   "/home/adventure/1.jpg",
@@ -17,7 +17,7 @@ const FamilyAdventures = () => {
   return (
     <section className="flex flex-col gap-20 md:gap-28">
       <ContentLayoutWrapper>
-        <Reveal className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           {/* Text */}
           <div className="flex flex-col gap-6">
             <Eyebrow>Family adventures</Eyebrow>
@@ -56,7 +56,10 @@ const FamilyAdventures = () => {
 
           {/* Image with thumbnail strip */}
           <div className="flex gap-3 md:gap-4">
-            <div className="relative aspect-[4/5] flex-1 overflow-hidden rounded-frame shadow-lift">
+            <Unveil
+              radius="36px"
+              className="relative aspect-[4/5] flex-1 overflow-hidden rounded-frame shadow-lift"
+            >
               <Image
                 src="/home/adventure/2.jpg"
                 alt="Paris street with the Eiffel Tower"
@@ -67,7 +70,7 @@ const FamilyAdventures = () => {
               <span className="absolute bottom-4 left-4 rounded-full border border-white/25 bg-ink/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
                 Family-friendly Europe
               </span>
-            </div>
+            </Unveil>
             <div className="flex w-16 flex-col gap-3 sm:w-20 md:gap-4">
               {THUMBNAILS.map((src) => (
                 <span
@@ -79,7 +82,7 @@ const FamilyAdventures = () => {
               ))}
             </div>
           </div>
-        </Reveal>
+        </div>
       </ContentLayoutWrapper>
 
       <PopularDestination />

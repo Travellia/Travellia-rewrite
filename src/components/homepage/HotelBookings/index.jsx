@@ -1,7 +1,6 @@
 import ContentLayoutWrapper from "@/components/common/ContentLayoutWrapper";
 import ArrowButton from "@/components/ui/ArrowButton";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import React from "react";
 
@@ -56,9 +55,8 @@ const index = () => {
         {/* Numbered steps, staggered */}
         <div className="flex flex-col justify-center gap-5">
           {BOOKING_STEPS.map((step, index) => (
-            <Reveal
+            <div
               key={step.title}
-              delay={index * 120}
               className={index === 1 ? "lg:ml-12" : index === 2 ? "lg:ml-24" : ""}
             >
               <div className="flex items-start gap-5 rounded-card border border-line bg-white p-6 shadow-soft">
@@ -75,7 +73,7 @@ const index = () => {
                   <Image src={step.icon} alt="" fill sizes="48px" className="object-contain" />
                 </span>
               </div>
-            </Reveal>
+            </div>
           ))}
           <ArrowButton href="/hotels" className="mt-4 lg:ml-24">
             Book Now

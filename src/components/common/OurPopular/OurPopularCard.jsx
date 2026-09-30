@@ -1,6 +1,7 @@
 import Image from "next/image";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 import Link from "next/link";
-import { ArrowUpRight, MapPin, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 
 // Pass `href` only when the card is not already wrapped in a link.
 const OurPopularCard = ({ data, href }) => {
@@ -11,7 +12,7 @@ const OurPopularCard = ({ data, href }) => {
         alt={`${data.country}, ${data.city}`}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        className="object-cover transition-[scale] duration-[900ms] ease-arrive group-hover:scale-[1.03]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-ink/10" />
 
@@ -74,14 +75,14 @@ const OurPopularCard = ({ data, href }) => {
                 aria-label={`Book ${data.country}`}
                 className="grid size-9 shrink-0 place-items-center rounded-full bg-white text-ink transition hover:bg-gold"
               >
-                <ArrowUpRight className="size-4" />
+                <ArrowIcon className="size-4" />
               </Link>
             ) : (
               <span
                 aria-hidden="true"
-                className="grid size-9 shrink-0 place-items-center rounded-full bg-white text-ink transition-transform duration-300 group-hover:rotate-45"
+                className="grid size-9 shrink-0 place-items-center rounded-full bg-white text-ink"
               >
-                <ArrowUpRight className="size-4" />
+                <ArrowIcon className="size-4" />
               </span>
             )}
           </div>
